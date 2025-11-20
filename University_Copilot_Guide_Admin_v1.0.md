@@ -91,7 +91,7 @@ Git(깃)은 파일의 변경 이력을 관리하는 '버전 관리 시스템'입
 
 ```bash
 git config --global user.name "홍길동"
-git config --global user.email "gildong@university.ac.kr"
+git config --global user.email "gildong@deu.ac.kr"
 ```
 
 ### 1.3 GitHub Copilot 도입
