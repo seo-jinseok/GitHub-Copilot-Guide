@@ -1,0 +1,42 @@
+/* Force light theme for Markdown preview */
+body, .vscode-body, .vscode-light, .vscode-dark, .vscode-high-contrast {
+    background-color: white !important;
+    color: black !important;
+}
+
+/* Ensure links are visible and standard blue */
+a {
+    color: #0000EE !important;
+}
+
+/* Code blocks */
+code {
+    color: #333 !important;
+}
+
+pre {
+    background-color: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+}
+
+/* Blockquotes */
+blockquote {
+    background: #f9f9f9 !important;
+    border-left: 4px solid #ccc !important;
+    color: #333 !important;
+}
+
+/* Tables */
+table tr {
+    background-color: white !important;
+    border-top: 1px solid #ccc !important;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8 !important;
+}
+
+table th, table td {
+    border: 1px solid #ddd !important;
+    color: black !important;
+}
