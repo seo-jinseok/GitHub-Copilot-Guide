@@ -706,4 +706,147 @@ graph TD
 **Usage Tip:** Determine purpose first → Specify format → Add specific requirements
 
 ---
+
+## C. Good vs Bad Prompt Examples
+
+Understanding what makes a good prompt is essential. Below are three real administrative scenarios showing the difference between vague and effective prompts.
+
+### 💡 The R.C.O. Formula for Good Prompts
+- **R**ole: Who is the AI helping? (e.g., "You are assisting a university admin staff member...")
+- **C**ontext: What's the situation? (e.g., "Our department is hosting a year-end event...")
+- **O**utput: What format do you need? (e.g., "Write a 200-word email in polite tone...")
+
+---
+
+### Example 1: Department-Wide Email Drafting
+
+#### ❌ Bad Prompt (Vague)
+```
+Write an email about the event.
+```
+
+**Problems:**
+- No context: What event? Who is the audience?
+- No tone guidance: Formal or casual?
+- No format requirements: Length? Key points to include?
+
+#### ✅ Good Prompt (Using R.C.O.)
+```
+You are helping a university General Affairs staff member draft an official email.
+
+**Context:** Our department is hosting a year-end faculty appreciation dinner on December 22nd, 6 PM at the University Conference Hall. We need to invite all faculty members (approximately 120 people).
+
+**Output Requirements:**
+- Write a 200-word email in polite business tone
+- Include: Event purpose, date/time/location, RSVP deadline (December 15th), dress code (business casual)
+- End with contact information (General Affairs Office, ext. 1234)
+```
+
+**Why it's better:** Provides complete context, specifies exact length and tone, lists all required details.
+
+---
+
+### Example 2: Meeting Minutes Summarization
+
+#### ❌ Bad Prompt (Vague)
+```
+Summarize this meeting.
+```
+
+**Problems:**
+- No focus: Summarize what aspects? Action items? Decisions?
+- No format: Bullet points? Paragraph? Table?
+- No audience consideration: For participants or executives?
+
+#### ✅ Good Prompt (Using R.C.O.)
+```
+You are helping a university Planning Office staff member summarize a budget meeting.
+
+**Context:** This is a 2-hour budget allocation meeting with 5 department heads. The transcript is attached below. The summary will be shared with the Vice President who needs to make final decisions.
+
+**Output Requirements:**
+- Create a structured summary with these sections:
+  1. Key Decisions Made (bullet points)
+  2. Budget Allocation by Department (table format)
+  3. Unresolved Issues (numbered list)
+  4. Action Items with Deadlines (who/what/when format)
+- Keep the total summary under 500 words
+- Use professional tone suitable for executive review
+
+[Paste meeting transcript here]
+```
+
+**Why it's better:** Defines the audience (Vice President), specifies exact structure, provides word limit, and explains the summary's purpose.
+
+---
+
+### Example 3: Annual Report Data Compilation
+
+#### ❌ Bad Prompt (Vague)
+```
+Organize this data for the report.
+```
+
+**Problems:**
+- No data context: What type of data? What report?
+- No visualization needs: Tables? Charts? Text?
+- No comparison requirements: Year-over-year? Trends?
+
+#### ✅ Good Prompt (Using R.C.O.)
+```
+You are helping a university Student Affairs staff member compile annual enrollment statistics for the 2024 Academic Report.
+
+**Context:** I have raw enrollment data for 2022, 2023, and 2024 across 8 colleges. The data includes new students, transfers, leave of absence, and graduations. This will be presented to the Board of Trustees.
+
+**Output Requirements:**
+- Create a summary table showing:
+  - Total enrollment by year (2022-2024)
+  - Percentage change year-over-year
+  - Top 3 colleges by enrollment growth
+- Highlight any significant trends (e.g., >10% change)
+- Write 3-4 sentence interpretation of the data trends
+- Format: Excel-compatible table with clear headers
+
+**Data:**
+[Paste raw data here: College name, year, enrollment numbers, etc.]
+```
+
+**Why it's better:** Specifies data type and timeframe, defines exact table structure, requests trend analysis, and indicates the output format needed.
+
+---
+
+### 📊 Impact Comparison
+
+| Prompt Type | Time to Get Useful Result | Revision Cycles Needed | Output Quality |
+|:------------|:--------------------------|:-----------------------|:---------------|
+| ❌ Bad (Vague) | 15-20 minutes | 3-4 revisions | 40-60% usable |
+| ✅ Good (R.C.O.) | 3-5 minutes | 0-1 revisions | 85-95% usable |
+
+```mermaid
+graph LR
+    subgraph Bad["❌ Vague Prompt Path"]
+        B1[Write Vague Prompt] --> B2[Get Generic Output]
+        B2 --> B3[Revise Prompt]
+        B3 --> B4[Still Not Right]
+        B4 --> B5[Manually Fix]
+        B5 --> B6[20+ Minutes]
+    end
+    
+    subgraph Good["✅ Good Prompt Path"]
+        G1[Write Detailed Prompt<br/>Using R.C.O.] --> G2[Get Targeted Output]
+        G2 --> G3[Minor Tweaks Only]
+        G3 --> G4[Ready to Use]
+        G4 --> G5[5 Minutes]
+    end
+    
+    style Bad fill:#ffebee,stroke:#c62828
+    style Good fill:#e8f5e9,stroke:#2e7d32
+    style B6 fill:#ffcdd2
+    style G5 fill:#a5d6a7
+```
+
+**Key Takeaway:** Spending 2 extra minutes writing a detailed prompt saves 15+ minutes in revisions and manual corrections.
+
+---
+
 **"Starting is half the work. Press `Ctrl + Alt + I` right now!"**
