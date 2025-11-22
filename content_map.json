@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "created": "2025-11-22",
+    "purpose": "Map source content to final consolidated documents",
+    "critical_finding": "docs/ko/ and docs/en/ are SKELETONS ONLY. ALL substantive content is in root guides."
+  },
+  "content_priority": {
+    "order": [
+      "1. Root guides (University_Copilot_Guide_*.md) - PRIMARY CONTENT SOURCE",
+      "2. Legacy (legacy/University_Copilot_Guide_Admin.md) - IDENTICAL to root Admin.md except missing duplicate Level 2 section",
+      "3. Templates (templates/exercises/) - WORKBOOK EXERCISE FILES",
+      "4. docs/ko|en/ - NAVIGATION SKELETONS ONLY (no content to merge)",
+      "5. staging/refined_content.md - EMPTY FILE (ignore)"
+    ],
+    "resolution_notes": [
+      "Root guides contain 100% of tutorial content",
+      "Legacy/Admin.md is identical to root (just cleaner without duplicate)",
+      "docs/ folders provide TOC structure template only",
+      "Templates provide exercise files for workbooks"
+    ]
+  },
+  "source_inventory": {
+    "root_guides": {
+      "University_Copilot_Guide_for_Beginners.md": {
+        "size": "397 lines",
+        "status": "COMPLETE - Primary Korean content source",
+        "structure": {
+          "h1": "대학 행정직원을 위한 GitHub Copilot 완전 정복 (All-in-One 가이드)",
+          "sections": [
+            "목차 (Table of Contents)",
+            "Level 1: 입문 (01-setup, 02-fundamentals, 03-workbook)",
+            "Level 2: 실무 (04-prompt-engineering, 05-copilot-edits, 06-workbook-2)",
+            "Level 3: 전문가 (07-agents-instructions, 08-data-visualization, 09-workbook-3)",
+            "부록 A: 실전 시나리오 라이브러리",
+            "부록 B: 행정직원을 위한 프롬프트 사전"
+          ],
+          "features": [
+            "Complete tutorial content with detailed explanations",
+            "3 Workbooks with step-by-step exercises",
+            "2 Mermaid diagrams (Copilot Edits workflow, Agents sequence)",
+            "Self-assessment quizzes after each section",
+            "Key Takeaways summaries",
+            "Learning completion checkboxes (- [ ])",
+            "TIP/NOTE callouts using [!TIP] and [!NOTE] syntax",
+            "Image references (../../../images/01-copilot-install.png)",
+            "Proper Korean honorifics (해요 style)"
+          ],
+          "template_references": [
+            "templates/exercises/level-1/email_draft_template.md",
+            "templates/exercises/level-2/plan_2024.md + memo_2025.txt",
+            "templates/exercises/level-3/meeting_note_template.txt"
+          ]
+        }
+      },
+      "University_Copilot_Guide_Admin.md": {
+        "size": "321 lines",
+        "status": "COMPLETE - Same as for_Beginners but simpler format",
+        "differences_from_beginners": [
+          "Missing learning checkboxes (- [ ])",
+          "Missing self-assessment quizzes",
+          "Missing Key Takeaways sections",
+          "Missing image references",
+          "Has 1 duplicate Level 2 section (lines 104-169 duplicated at 172-237)",
+          "Title: 'v3.0' instead of 'All-in-One 가이드'",
+          "Subtitle: 'From Novice to Specialist'"
+        ],
+        "same_as_beginners": [
+          "Identical content structure (9 sections + 2 appendices)",
+          "Same R.C.O formula, workbook steps, code examples",
+          "Same Mermaid diagram (업무 흐름도)",
+          "Same appendix tables (시나리오, 프롬프트 사전)"
+        ]
+      }
+    },
+    "legacy": {
+      "legacy/University_Copilot_Guide_Admin.md": {
+        "size": "254 lines",
+        "status": "IDENTICAL to root Admin.md (minus the duplicate section)",
+        "diff_summary": "Root Admin.md has accidental duplicate of Level 2 sections 4-6 (lines 104-169 → 172-237). Legacy version is cleaner.",
+        "recommendation": "Use legacy version as reference for deduplication"
+      }
+    },
+    "docs_structure": {
+      "docs/ko/": {
+        "file_count": 13,
+        "status": "SKELETON ONLY - navigation templates with NO content",
+        "files": {
+          "README.md": "TOC with checkboxes (- [ ]) and breadcrumb navigation",
+          "PROGRESS.md": "Learning progress dashboard template",
+          "level-1-basics/": ["01-setup.md", "02-fundamentals.md", "03-workbook.md"],
+          "level-2-practical/": ["04-prompt-engineering.md", "05-copilot-edits.md", "06-workbook-2.md"],
+          "level-3-expert/": ["07-agents-instructions.md", "08-data-visualization.md", "09-workbook-3.md"],
+          "appendix/": ["01-scenarios.md", "02-prompt-dictionary.md"]
+        },
+        "content_characteristics": [
+          "All files have headers and section placeholders only",
+          "Breadcrumb navigation: [🏠 목차로 돌아가기] | [🇺🇸 English Version]",
+          "No tutorial content, workbooks, or examples"
+        ],
+        "use_case": "Use as TOC/navigation template for final document structure"
+      },
+      "docs/en/": {
+        "file_count": 12,
+        "status": "SKELETON ONLY - mirrors Korean structure minus PROGRESS.md",
+        "content_characteristics": [
+          "YAML frontmatter with title: and level: fields",
+          "No actual content - placeholders only"
+        ],
+        "use_case": "Use for English translation structure template"
+      }
+    },
+    "staging": {
+      "staging/refined_content.md": {
+        "size": "0 lines (EMPTY)",
+        "status": "IGNORE - no content to integrate"
+      }
+    },
+    "templates": {
+      "templates/exercises/": {
+        "level-1/email_draft_template.md": {
+          "size": "907 bytes",
+          "purpose": "Starter template for Workbook 1 (영문 이메일 작성)",
+          "referenced_in": "University_Copilot_Guide_for_Beginners.md:114"
+        },
+        "level-2/plan_2024.md": {
+          "size": "1.1K",
+          "purpose": "Sample business plan for Workbook 2 (작년 보고서 리모델링)",
+          "referenced_in": "University_Copilot_Guide_for_Beginners.md:231"
+        },
+        "level-2/memo_2025.txt": {
+          "size": "781 bytes",
+          "purpose": "Sample memo with new priorities for Workbook 2",
+          "referenced_in": "University_Copilot_Guide_for_Beginners.md:232"
+        },
+        "level-3/meeting_note_template.txt": {
+          "size": "1.6K",
+          "purpose": "Sample meeting notes for Workbook 3 (회의록 자동화)",
+          "referenced_in": "University_Copilot_Guide_for_Beginners.md:351"
+        }
+      }
+    }
+  },
+  "final_document_mapping": {
+    "dist/University_Copilot_Guide_Complete_KO.md": {
+      "primary_source": "University_Copilot_Guide_for_Beginners.md",
+      "enhancements_needed": [
+        "Add 8-13 additional Mermaid diagrams (currently only 2)",
+        "Embed template files inline or as appendix",
+        "Add learning path flowchart",
+        "Add feature comparison diagrams",
+        "Verify all Korean honorifics (하십시오/해요)",
+        "Ensure all code blocks have language identifiers",
+        "Replace image references with actual images or placeholders"
+      ],
+      "structure": {
+        "front_matter": [
+          "Document title, version (v4.0), date (2025.11.22)",
+          "Target audience",
+          "User guide (활용법)",
+          "Complete TOC with checkboxes"
+        ],
+        "level_1": {
+          "source": "University_Copilot_Guide_for_Beginners.md:27-151",
+          "sections": ["01-setup", "02-fundamentals", "03-workbook"],
+          "workbook_template": "templates/exercises/level-1/email_draft_template.md"
+        },
+        "level_2": {
+          "source": "University_Copilot_Guide_for_Beginners.md:152-263",
+          "sections": ["04-prompt-engineering", "05-copilot-edits", "06-workbook-2"],
+          "workbook_templates": [
+            "templates/exercises/level-2/plan_2024.md",
+            "templates/exercises/level-2/memo_2025.txt"
+          ]
+        },
+        "level_3": {
+          "source": "University_Copilot_Guide_for_Beginners.md:266-374",
+          "sections": ["07-agents-instructions", "08-data-visualization", "09-workbook-3"],
+          "workbook_template": "templates/exercises/level-3/meeting_note_template.txt"
+        },
+        "appendices": {
+          "source": "University_Copilot_Guide_for_Beginners.md:377-397",
+          "sections": [
+            "A. 실전 시나리오 라이브러리 (Before & After)",
+            "B. 행정직원을 위한 프롬프트 사전"
+          ]
+        }
+      }
+    },
+    "dist/University_Copilot_Guide_Complete_EN.md": {
+      "primary_source": "TO BE CREATED - translate from Korean complete guide",
+      "translation_strategy": [
+        "Translate dist/University_Copilot_Guide_Complete_KO.md after completion",
+        "Use docs/en/ structure as parallel reference",
+        "Maintain same section numbering and structure",
+        "Adapt examples for English-speaking university context"
+      ],
+      "structure": "Mirror Korean guide structure exactly"
+    }
+  },
+  "duplicate_content_issues": {
+    "University_Copilot_Guide_Admin.md": {
+      "issue": "Level 2 sections duplicated at lines 104-169 and 172-237",
+      "resolution": "Remove duplicate when consolidating (use legacy/Admin.md as reference)"
+    }
+  },
+  "diagram_requirements": {
+    "current_diagrams": [
+      {
+        "location": "University_Copilot_Guide_for_Beginners.md:198-205",
+        "type": "Mermaid flowchart (graph TD)",
+        "subject": "Copilot Edits 5-step workflow"
+      },
+      {
+        "location": "University_Copilot_Guide_for_Beginners.md:289-297",
+        "type": "Mermaid sequence diagram",
+        "subject": "Agent invocation flow (@workspace)"
+      },
+      {
+        "location": "University_Copilot_Guide_for_Beginners.md:321-326",
+        "type": "Mermaid flowchart (graph LR)",
+        "subject": "업무 흐름도 (approval workflow)"
+      }
+    ],
+    "needed_diagrams": [
+      "Learning path progression (Level 1 → 2 → 3)",
+      "Feature comparison matrix (Chat vs Ghost Text)",
+      "R.C.O prompt structure visualization",
+      "VS Code screen layout diagram",
+      "Workbook exercise flow (3 exercises)",
+      "GitHub Copilot installation sequence",
+      "File reference (@) workflow",
+      "Template integration diagram",
+      "Data analysis workflow (8.2)",
+      "Complete feature ecosystem map"
+    ],
+    "target": "10-15 total diagrams (currently 3, need 7-12 more)"
+  },
+  "style_compliance": {
+    "markdown_standards": {
+      "h1_usage": "✅ Single H1 per file in both guides",
+      "header_hierarchy": "✅ Logical progression (no skipped levels)",
+      "code_blocks": "⚠️ Mermaid blocks OK, need to verify all other code blocks have language IDs",
+      "list_indentation": "✅ Consistent 4-space indentation",
+      "emoji_usage": "✅ Proper usage (💡 in Level 1-3, no overuse)"
+    },
+    "korean_style": {
+      "honorifics": "✅ Consistent 해요 style throughout for_Beginners.md",
+      "date_format": "⚠️ Check all dates use YYYY. MM. DD. (some may use YYYY년 MM월 DD일)",
+      "terminology": "✅ Proper university terms (수강신청, 단과대학)"
+    },
+    "learning_features": {
+      "checkboxes": "✅ for_Beginners.md has - [ ] for all sections",
+      "quizzes": "✅ for_Beginners.md has ✍️ 자가 진단 퀴즈 with <details>",
+      "takeaways": "✅ for_Beginners.md has ✅ Key Takeaways",
+      "callouts": "✅ [!TIP] and [!NOTE] properly formatted"
+    }
+  },
+  "consolidation_strategy": {
+    "phase_1_korean": {
+      "base_file": "University_Copilot_Guide_for_Beginners.md",
+      "modifications": [
+        "Update title to include v4.0 and 2025.11.22 date",
+        "Add 7-12 Mermaid diagrams for workflows and concepts",
+        "Embed template file content as code blocks in workbook sections",
+        "Fix any date format inconsistencies (YYYY. MM. DD.)",
+        "Verify all code blocks have language identifiers",
+        "Add image placeholders or actual screenshots",
+        "Add learning path overview diagram at beginning"
+      ],
+      "output": "dist/University_Copilot_Guide_Complete_KO.md"
+    },
+    "phase_2_english": {
+      "base_file": "dist/University_Copilot_Guide_Complete_KO.md (after Phase 1)",
+      "method": "Full translation with cultural adaptation",
+      "structure": "Mirror Korean guide exactly",
+      "output": "dist/University_Copilot_Guide_Complete_EN.md"
+    },
+    "phase_3_verification": {
+      "checklist": [
+        "All content from root guides merged",
+        "No duplicate sections",
+        "10-15 Mermaid diagrams rendering",
+        "All links functional",
+        "Korean honorifics verified",
+        "English parallel structure maintained",
+        "Template files integrated",
+        "Learning features intact (checkboxes, quizzes, takeaways)"
+      ]
+    }
+  }
+}

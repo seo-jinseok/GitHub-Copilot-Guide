@@ -512,15 +512,15 @@
         "dependencies": [
           "19"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
             "title": "Verify Archive Integrity",
             "description": "Perform a safety check to ensure the archive directory contains a complete backup of all source materials before deletion.",
             "dependencies": [],
-            "details": "Compare the contents of `docs/`, `legacy/`, `staging/`, and `templates/` against the existing contents of `archive/`. If any files are missing in `archive/`, copy them over to a timestamped subfolder within `archive/` (e.g., `archive/pre_cleanup_backup/`) to prevent data loss.",
-            "status": "pending",
+            "details": "Compare the contents of `docs/`, `legacy/`, `staging/`, and `templates/` against the existing contents of `archive/`. If any files are missing in `archive/`, copy them over to a timestamped subfolder within `archive/` (e.g., `archive/pre_cleanup_backup/`) to prevent data loss.\n<info added on 2025-11-22T15:45:06.517Z>\n{\n  \"subtask_update\": \"Archive Integrity Verification COMPLETE\\n\\n**Archive Structure Verified:**\\n✅ `archive/en/` - 13 files (matches docs/en/)\\n✅ `archive/ko/` - 14 files (matches docs/ko/)\\n✅ `archive/legacy/` - Contains University_Copilot_Guide_Admin.md\\n✅ `archive/exercises/` - 7 files (matches templates/exercises/)\\n✅ `archive/` root files:\\n  - University_Copilot_Guide_Admin.md (15,779 bytes)\\n  - University_Copilot_Guide_for_Beginners.md (19,637 bytes)\\n  - GitHub_Copilot_Admin_Guide_old.md (230,054 bytes) - NEWLY ADDED\\n  - refined_content.md (empty)\\n\\n**Comparison Results:**\\n✅ docs/en/ vs archive/en/ - IDENTICAL\\n✅ docs/ko/ vs archive/ko/ - IDENTICAL\\n✅ legacy/ vs archive/legacy/ - IDENTICAL\\n✅ templates/exercises/ vs archive/exercises/ - IDENTICAL\\n✅ staging/refined_content.md - EMPTY\\n\\n**Safety Actions Taken:**\\n✅ Added GitHub_Copilot_Admin_Guide_old.md to archive (was missing)\\n\\n**Conclusion:** All source materials safely backed up in archive/. Ready for cleanup.\"\n}\n</info added on 2025-11-22T15:45:06.517Z>",
+            "status": "done",
             "testStrategy": "Run a script or command (diff -r or similar) to verify that all files in source directories exist within the archive path.",
             "parentId": "undefined"
           },
@@ -531,8 +531,8 @@
             "dependencies": [
               1
             ],
-            "details": "Execute removal commands for `docs/`, `legacy/`, `staging/`, and `templates/`. Ensure that no processes have these files open. This step should only proceed after the archive integrity check (Subtask 1) passes successfully.",
-            "status": "pending",
+            "details": "Execute removal commands for `docs/`, `legacy/`, `staging/`, and `templates/`. Ensure that no processes have these files open. This step should only proceed after the archive integrity check (Subtask 1) passes successfully.\n<info added on 2025-11-22T15:46:02.653Z>\n{\n  \"subtask_update\": \"Obsolete Source Directories Removal COMPLETE\\n\\n**Directories Removed:**\\n✅ docs/ - Removed successfully\\n✅ legacy/ - Removed successfully\\n✅ staging/ - Removed successfully\\n✅ templates/ - Removed successfully\\n\\n**Verification Test:**\\nRan: `ls -d docs/ legacy/ staging/ templates/`\\nResult: \\\"No such file or directory\\\" for all paths (PASSED)\\n\\n**Data Safety:** All content backed up in archive/ before deletion (verified in Task 20.1)\"\n}\n</info added on 2025-11-22T15:46:02.653Z>",
+            "status": "done",
             "testStrategy": "Run `ls -d docs/ legacy/ staging/ templates/` and verify that the command returns 'No such file or directory' for all listed paths.",
             "parentId": "undefined"
           },
@@ -544,7 +544,7 @@
               2
             ],
             "details": "Identify and delete specific root-level files such as `University_Copilot_Guide_for_Beginners.md` and `University_Copilot_Guide_Advanced.md`. Ensure that `README.md` is NOT deleted during this process. Only files explicitly identified as obsolete source content should be removed.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run `ls *.md` in the root directory. The output should ideally only list `README.md` (and potentially `CONTRIBUTING.md` or `LICENSE` if they exist).",
             "parentId": "undefined"
           },
@@ -555,8 +555,8 @@
             "dependencies": [
               3
             ],
-            "details": "Edit `README.md` to remove references to the deleted source folders. Add clear links to the final artifacts in `dist/` (e.g., `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md`). Add a note explaining the `archive/` directory structure.",
-            "status": "pending",
+            "details": "Edit `README.md` to remove references to the deleted source folders. Add clear links to the final artifacts in `dist/` (e.g., `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md`). Add a note explaining the `archive/` directory structure.\n<info added on 2025-11-22T15:48:48.339Z>\n{\n  \"update_content\": \"Root README Update COMPLETE.\\n\\nChanges Made:\\n✅ Added '📚 완성된 가이드 (최종 버전)' section with direct links to `dist/University_Copilot_Guide_Complete_KO.md` and `dist/University_Copilot_Guide_Complete_EN.md`.\\n✅ Removed obsolete references to deleted directories (`docs/`, `legacy/`).\\n✅ Added '🗂️ 프로젝트 구조' section documenting `dist/`, `archive/`, and configuration files.\\n✅ Added '📋 원본 소스 구조' section explaining archive organization.\\n✅ Updated '🤝 기여하기' section with note about `dist/` regeneration from `archive/` sources.\\n\\nVerification: README now accurately reflects cleaned-up project structure and provides clear navigation to final guides.\"\n}\n</info added on 2025-11-22T15:48:48.339Z>",
+            "status": "done",
             "testStrategy": "Manually review `README.md` rendering. Click the links to `dist/` files to verify they are valid and accessible.",
             "parentId": "undefined"
           },
@@ -568,7 +568,7 @@
               4
             ],
             "details": "Perform a final audit of the directory structure. The root should only contain `dist/`, `archive/`, `README.md`, and project configuration files (like `.gitignore`, `package.json`). Verify that the files in `dist/` are the complete, consolidated versions generated in previous tasks.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run `tree -L 1` (or equivalent) to confirm directory hierarchy. Open the markdown files in `dist/` to ensure they are not corrupted.",
             "parentId": "undefined"
           }
@@ -588,7 +588,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:43:09.256Z"
+      "updated": "2025-11-22T15:49:59.048Z"
     }
   }
 }
