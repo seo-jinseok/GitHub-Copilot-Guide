@@ -1,1046 +1,172 @@
-# University GitHub Copilot Guide - Improvement PRD
-
-<overview>
-
-## Problem Statement
-
-The current "University GitHub Copilot Guide for Administrative Staff" (v3.0) has excellent content but faces several challenges:
-
-**Pain Points:**
-1. **Content Duplication**: Sections 4-6 are duplicated (Level 2 appears twice), causing confusion
-2. **Structural Issues**: No clear separation between tutorial content and reference documentation
-3. **Missing Internationalization**: Guide is Korean-only, limiting accessibility for international staff
-4. **Limited Interactivity**: No practical exercises or downloadable templates that users can work with
-5. **Outdated Organization**: Guide exists as a single monolithic Markdown file, making it hard to maintain and navigate
-6. **No Progress Tracking**: Users have no way to track their learning progress through the guide
-7. **Missing AI Agent Integration**: The guide doesn't leverage the Task Master or other AI agents for automated learning paths
-
-## Target Users
-
-**Primary Personas:**
-
-1. **Administrative Novice (초보자)**: 
-   - Never used AI tools before
-   - Basic computer literacy
-   - Workflow: Email, Word documents, Excel spreadsheets
-   - Goal: Complete basic tasks faster
-
-2. **Administrative Professional (실무자)**:
-   - Comfortable with office software
-   - Handles complex reports and data analysis
-   - Workflow: Multi-document workflows, data processing
-   - Goal: Automate repetitive tasks
-
-3. **Administrative Specialist (전문가)**:
-   - Technical proficiency
-   - Manages department-wide processes
-   - Workflow: Documentation systems, process optimization
-   - Goal: Build custom AI-assisted workflows
-
-4. **International Staff (국제 직원)**:
-   - Non-Korean speakers working in Korean universities
-   - Need bilingual or English-only version
-   - Same workflow patterns as above personas
-
-## Success Metrics
-
-- **Content Quality**: 100% duplicate content removed
-- **User Engagement**: 80% of users complete at least one workbook exercise
-- **Internationalization**: English version covering 100% of Korean content
-- **Navigation Efficiency**: Average time to find specific topic < 30 seconds
-- **Learning Progress**: Users can track completion through 3 levels
-- **Maintenance**: Update time for new Copilot features < 2 hours
-- **Accessibility**: Mobile-friendly format with responsive design
-- **AI Integration**: Task Master can parse learning paths and track progress
-
-</overview>
-
----
-
-<functional-decomposition>
-
-## Capability Tree
-
-### Capability: Content Structure Management
-Manage and organize guide content with clear hierarchy and no duplication.
-
-#### Feature: Duplicate Detection and Removal
-- **Description**: Identify and eliminate duplicated sections across the guide
-- **Inputs**: Current markdown file content
-- **Outputs**: Cleaned content with unique sections only
-- **Behavior**: Parse document, hash content sections, flag duplicates, merge intelligently
-
-#### Feature: Modular Content Organization
-- **Description**: Break monolithic guide into logical, manageable modules
-- **Inputs**: Complete guide content, section metadata
-- **Outputs**: Multiple markdown files organized by topic and level
-- **Behavior**: Split by level (入門/실무/전문가), create index file, establish cross-references
-
-#### Feature: Table of Contents Generation
-- **Description**: Auto-generate navigable TOC from modular structure
-- **Inputs**: Directory structure, file metadata
-- **Outputs**: Interactive TOC with links and progress indicators
-- **Behavior**: Traverse files, extract headers, build hierarchical links
-
-### Capability: Internationalization System
-Enable multi-language support for guide content.
-
-#### Feature: Language File Structure
-- **Description**: Organize content by language with consistent structure
-- **Inputs**: Source language content (Korean), target languages
-- **Outputs**: Parallel directory structure for each language
-- **Behavior**: Create `ko/`, `en/` directories, maintain matching file structure
-
-#### Feature: Translation Management
-- **Description**: Facilitate translation workflow with AI assistance
-- **Inputs**: Korean source files
-- **Outputs**: English translated files maintaining formatting
-- **Behavior**: Use AI translation, preserve markdown syntax, maintain technical terms
-
-#### Feature: Language Switcher
-- **Description**: Allow users to switch between language versions
-- **Inputs**: Current language, available translations
-- **Outputs**: Navigation mechanism for language selection
-- **Behavior**: Detect language, provide switcher links, maintain current position
-
-### Capability: Interactive Learning System
-Provide hands-on exercises and track user progress.
-
-#### Feature: Exercise Templates
-- **Description**: Create downloadable template files for each workbook
-- **Inputs**: Exercise requirements, sample data
-- **Outputs**: Ready-to-use template files (MD, TXT, sample data)
-- **Behavior**: Generate starter files, include instructions, provide sample content
-
-#### Feature: Progress Tracking
-- **Description**: Enable users to track completed sections and exercises
-- **Inputs**: User checkmarks, completion status
-- **Outputs**: Visual progress indicators, completion statistics
-- **Behavior**: Use markdown checkboxes, calculate percentages, show badges
-
-#### Feature: Self-Assessment Quizzes
-- **Description**: Provide knowledge checks after each level
-- **Inputs**: Section content, learning objectives
-- **Outputs**: Quiz questions with answers
-- **Behavior**: Generate multiple choice/true-false, provide immediate feedback
-
-### Capability: Documentation Standards
-Establish consistent formatting and style conventions.
-
-#### Feature: Style Guide Definition
-- **Description**: Define markdown formatting standards for consistency
-- **Inputs**: Best practices, Korean technical writing conventions
-- **Outputs**: Style guide document
-- **Behavior**: Document emoji usage, header hierarchy, code block standards
-
-#### Feature: Template Library
-- **Description**: Provide reusable templates for common scenarios
-- **Inputs**: Common use cases (email, report, analysis)
-- **Outputs**: Template files with placeholders
-- **Behavior**: Create examples, include usage instructions, provide customization notes
-
-#### Feature: Formatting Validation
-- **Description**: Ensure content adheres to style guide
-- **Inputs**: Markdown files, style rules
-- **Outputs**: Validation report, auto-fix suggestions
-- **Behavior**: Lint markdown, check heading structure, validate links
-
-### Capability: AI Agent Integration
-Integrate with Task Master and other AI agents for enhanced learning.
-
-#### Feature: Learning Path PRD
-- **Description**: Define guided learning paths as parseable PRDs
-- **Inputs**: Learning objectives, skill levels
-- **Outputs**: Task Master compatible PRD files
-- **Behavior**: Structure as RPG format, define dependencies, specify exercises
-
-#### Feature: Automated Exercise Generation
-- **Description**: Use AI to generate custom exercises based on user context
-- **Inputs**: User department, role, skill level
-- **Outputs**: Personalized exercise files
-- **Behavior**: Query user context, generate scenarios, create files
-
-#### Feature: Progress Synchronization
-- **Description**: Sync learning progress with Task Master
-- **Inputs**: Completed exercises, quiz results
-- **Outputs**: Updated task statuses
-- **Behavior**: Track checkboxes, update task-master state, generate reports
-
-### Capability: Visual Enhancement
-Improve visual clarity and engagement through diagrams and formatting.
-
-#### Feature: Mermaid Diagram Library
-- **Description**: Create reusable visual diagrams for concepts
-- **Inputs**: Workflow descriptions, process flows
-- **Outputs**: Mermaid diagram code
-- **Behavior**: Design flowcharts, create sequence diagrams, build decision trees
-
-#### Feature: Screenshot Integration
-- **Description**: Add visual guides with annotated screenshots
-- **Inputs**: UI screenshots, annotation requirements
-- **Outputs**: Image files with callouts and descriptions
-- **Behavior**: Capture screens, add annotations, optimize for web
-
-#### Feature: Responsive Design
-- **Description**: Ensure content is readable on all devices
-- **Inputs**: Current markdown formatting
-- **Outputs**: Mobile-optimized layouts
-- **Behavior**: Use responsive markdown features, test on mobile, adjust tables
-
-### Capability: Maintenance Workflow
-Streamline updating and extending the guide.
-
-#### Feature: Version Control Strategy
-- **Description**: Establish clear versioning and update workflow
-- **Inputs**: Change requests, new features
-- **Outputs**: Versioned releases, changelog
-- **Behavior**: Use semantic versioning, maintain changelog, tag releases
-
-#### Feature: Content Review Process
-- **Description**: Define review workflow for content updates
-- **Inputs**: Draft content, reviewer feedback
-- **Outputs**: Approved content ready for merge
-- **Behavior**: Create review checklists, track feedback, enforce standards
-
-#### Feature: Feature Update Templates
-- **Description**: Standardize how new Copilot features are documented
-- **Inputs**: New feature announcement, testing notes
-- **Outputs**: Documentation section following template
-- **Behavior**: Use template structure, include examples, add workbook exercise
-
-</functional-decomposition>
-
----
-
-<structural-decomposition>
-
-## Repository Structure
-
-```
-University_Github_Copilot_Guide/
-├── docs/
-│   ├── ko/                          # Korean content
-│   │   ├── level-1-basics/
-│   │   │   ├── 01-setup.md
-│   │   │   ├── 02-fundamentals.md
-│   │   │   └── 03-workbook-email.md
-│   │   ├── level-2-practical/
-│   │   │   ├── 04-prompt-engineering.md
-│   │   │   ├── 05-copilot-edits.md
-│   │   │   └── 06-workbook-report-update.md
-│   │   ├── level-3-expert/
-│   │   │   ├── 07-agents-instructions.md
-│   │   │   ├── 08-data-visualization.md
-│   │   │   └── 09-workbook-meeting-automation.md
-│   │   ├── appendix/
-│   │   │   ├── scenarios.md
-│   │   │   ├── prompt-dictionary.md
-│   │   │   └── troubleshooting.md
-│   │   └── README.md                # Main guide entry point (Korean)
-│   ├── en/                          # English content (same structure)
-│   │   ├── level-1-basics/
-│   │   ├── level-2-practical/
-│   │   ├── level-3-expert/
-│   │   ├── appendix/
-│   │   └── README.md                # Main guide entry point (English)
-│   └── images/                      # Shared images
-│       ├── screenshots/
-│       └── diagrams/
-├── templates/
-│   ├── exercises/
-│   │   ├── level-1/
-│   │   │   └── email_draft_template.md
-│   │   ├── level-2/
-│   │   │   ├── plan_2024.md
-│   │   │   └── memo_2025.txt
-│   │   └── level-3/
-│   │       └── meeting_note_template.txt
-│   ├── prompts/
-│   │   └── common_prompts.md
-│   └── documents/
-│       ├── report_template.md
-│       └── email_template.md
-├── learning-paths/
-│   ├── basic-track.prd.md           # Task Master parseable learning path
-│   ├── advanced-track.prd.md
-│   └── custom-track-generator.md
-├── .github/
-│   ├── copilot-instructions.md
-│   └── instructions/
-│       ├── guide_maintenance.instructions.md
-│       └── content_review.instructions.md
-├── .taskmaster/
-│   ├── docs/
-│   │   ├── improvement_prd.md       # This file
-│   │   └── learning_paths_prd.md
-│   └── config.json
-├── .gemini/
-│   └── settings.json
-├── scripts/
-│   ├── validate-structure.js
-│   └── generate-toc.js
-├── CONTRIBUTING.md                   # Guide for contributors
-├── STYLE_GUIDE.md                    # Content style standards
-├── AGENTS.md                         # AI agent integration (existing)
-├── GEMINI.md                         # Gemini-specific (existing)
-└── University_Copilot_Guide_Admin.md # Legacy (archive)
-```
-
-## Module Definitions
-
-### Module: Content Structure
-- **Maps to capability**: Content Structure Management
-- **Responsibility**: Maintain organized, non-duplicated content hierarchy
-- **File structure**:
-  ```
-  docs/
-  ├── ko/
-  ├── en/
-  └── images/
-  ```
-- **Exports**: N/A (documentation files)
-
-### Module: I18n System
-- **Maps to capability**: Internationalization System
-- **Responsibility**: Support multiple languages with parallel structure
-- **File structure**:
-  ```
-  docs/
-  ├── ko/              # Korean
-  ├── en/              # English
-  └── [lang]/          # Future languages
-  ```
-- **Exports**: Language-specific documentation
-
-### Module: Exercises
-- **Maps to capability**: Interactive Learning System
-- **Responsibility**: Provide hands-on practice materials
-- **File structure**:
-  ```
-  templates/
-  ├── exercises/
-  ├── prompts/
-  └── documents/
-  ```
-- **Exports**: Template files, sample data, exercise instructions
-
-### Module: Standards
-- **Maps to capability**: Documentation Standards
-- **Responsibility**: Define and enforce content quality
-- **File structure**:
-  ```
-  STYLE_GUIDE.md
-  CONTRIBUTING.md
-  scripts/validate-structure.js
-  ```
-- **Exports**: Validation scripts, style documentation
-
-### Module: AI Integration
-- **Maps to capability**: AI Agent Integration
-- **Responsibility**: Enable AI-assisted learning workflows
-- **File structure**:
-  ```
-  learning-paths/
-  ├── basic-track.prd.md
-  ├── advanced-track.prd.md
-  └── custom-track-generator.md
-  ```
-- **Exports**: Task Master PRD files
-
-### Module: Visuals
-- **Maps to capability**: Visual Enhancement
-- **Responsibility**: Provide visual learning aids
-- **File structure**:
-  ```
-  docs/images/
-  ├── screenshots/
-  └── diagrams/
-  ```
-- **Exports**: Image files, diagram source code
-
-### Module: Maintenance
-- **Maps to capability**: Maintenance Workflow
-- **Responsibility**: Streamline updates and contributions
-- **File structure**:
-  ```
-  .github/instructions/
-  scripts/
-  CONTRIBUTING.md
-  ```
-- **Exports**: Scripts, process documentation
-
-</structural-decomposition>
-
----
-
-<dependency-graph>
-
-## Dependency Chain
-
-### Foundation Layer (Phase 0)
-No dependencies - these establish the base structure.
-
-- **Documentation Standards**: Defines style guide, formatting rules, validation approach
-- **Repository Structure**: Creates directory hierarchy, moves existing content
-- **Content Cleanup**: Removes duplicates, fixes broken links, standardizes formatting
-
-### Content Layer (Phase 1)
-Depends on Foundation Layer having clean structure and standards.
-
-- **Content Modularization**: Depends on [Repository Structure, Documentation Standards, Content Cleanup]
-- **Table of Contents**: Depends on [Content Modularization, Repository Structure]
-- **Template Library**: Depends on [Documentation Standards, Repository Structure]
-
-### Internationalization Layer (Phase 2)
-Depends on having modular, standardized content ready to translate.
-
-- **I18n Structure**: Depends on [Content Modularization, Repository Structure]
-- **English Translation**: Depends on [I18n Structure, Documentation Standards, Content Modularization]
-- **Language Switcher**: Depends on [I18n Structure, English Translation]
-
-### Enhancement Layer (Phase 3)
-Depends on having organized, bilingual content.
-
-- **Exercise Templates**: Depends on [Template Library, Content Modularization]
-- **Mermaid Diagrams**: Depends on [Content Modularization, Documentation Standards]
-- **Screenshot Integration**: Depends on [Repository Structure, Content Modularization]
-- **Progress Tracking**: Depends on [Content Modularization, Exercise Templates]
-
-### Integration Layer (Phase 4)
-Depends on having complete, enhanced content ready for AI integration.
-
-- **Learning Path PRDs**: Depends on [Content Modularization, Exercise Templates, Progress Tracking]
-- **Task Master Integration**: Depends on [Learning Path PRDs, Progress Tracking]
-- **Exercise Automation**: Depends on [Exercise Templates, Task Master Integration]
-
-### Maintenance Layer (Phase 5)
-Depends on having complete system ready for ongoing updates.
-
-- **Version Control Strategy**: Depends on [Repository Structure, Content Modularization]
-- **Content Review Process**: Depends on [Documentation Standards, Version Control Strategy]
-- **Validation Scripts**: Depends on [Documentation Standards, Repository Structure]
-
-</dependency-graph>
-
----
-
-<implementation-roadmap>
-
-## Development Phases
-
-### Phase 0: Foundation
-**Goal**: Establish clean structure and documentation standards
-
-**Entry Criteria**: Current guide exists with known issues
-
-**Tasks**:
-- [ ] Create STYLE_GUIDE.md defining formatting standards (depends on: none)
-  - Acceptance criteria: Style guide covers markdown syntax, emoji usage, heading hierarchy, code blocks
-  - Test strategy: Manual review, example content validation
-
-- [ ] Create CONTRIBUTING.md for contribution workflow (depends on: none)
-  - Acceptance criteria: Clear instructions for adding content, updating translations
-  - Test strategy: Have external reviewer follow the guide
-
-- [ ] Remove duplicate content (sections 4-6 duplication) (depends on: none)
-  - Acceptance criteria: No duplicate sections remain, content flows logically
-  - Test strategy: Automated duplicate detection, manual verification
-
-- [ ] Create new directory structure (depends on: none)
-  - Acceptance criteria: All directories created as per structural-decomposition
-  - Test strategy: Verify structure matches specification
-
-**Exit Criteria**: 
-- Zero duplicate sections
-- Clear directory structure established
-- Style guide and contribution guide published
-- All broken links fixed
-
-**Delivers**: Clean foundation ready for modularization
-
----
-
-### Phase 1: Content Modularization
-**Goal**: Break monolithic guide into manageable, navigable modules
-
-**Entry Criteria**: Phase 0 complete, clean structure exists
-
-**Tasks**:
-- [ ] Split Level 1 content into separate files (depends on: [Repository Structure, Content Cleanup])
-  - Acceptance criteria: 3 separate files (setup, fundamentals, workbook) in `docs/ko/level-1-basics/`
-  - Test strategy: Each file is < 500 lines, contains single focused topic
-
-- [ ] Split Level 2 content into separate files (depends on: [Repository Structure, Content Cleanup])
-  - Acceptance criteria: 3 separate files in `docs/ko/level-2-practical/`
-  - Test strategy: No duplicate content, clear topic separation
-
-- [ ] Split Level 3 content into separate files (depends on: [Repository Structure, Content Cleanup])
-  - Acceptance criteria: 3 separate files in `docs/ko/level-3-expert/`
-  - Test strategy: Advanced topics properly separated
-
-- [ ] Create appendix section with sub-files (depends on: [Repository Structure, Content Cleanup])
-  - Acceptance criteria: scenarios.md, prompt-dictionary.md, troubleshooting.md created
-  - Test strategy: All appendix content properly categorized
-
-- [ ] Generate master README.md with TOC (depends on: [Content Modularization complete])
-  - Acceptance criteria: Interactive TOC with links to all sections, progress tracking checkboxes
-  - Test strategy: All links work, TOC accurately reflects structure
-
-**Exit Criteria**: 
-- Monolithic file split into 13+ focused files
-- Master README provides clear navigation
-- All internal links updated and working
-- Each file under 500 lines
-
-**Delivers**: Modular content structure easy to navigate and maintain
-
----
-
-### Phase 2: Internationalization
-**Goal**: Create English version of complete guide
-
-**Entry Criteria**: Phase 1 complete, Korean content modularized
-
-**Tasks**:
-- [ ] Create parallel en/ directory structure (depends on: [I18n Structure design])
-  - Acceptance criteria: Identical directory structure under `docs/en/`
-  - Test strategy: Automated structure comparison script
-
-- [ ] Translate Level 1 content to English (depends on: [en/ structure, Level 1 modularization])
-  - Acceptance criteria: All 3 Level 1 files translated, technical terms preserved
-  - Test strategy: Native speaker review, technical accuracy check
-
-- [ ] Translate Level 2 content to English (depends on: [en/ structure, Level 2 modularization])
-  - Acceptance criteria: All 3 Level 2 files translated
-  - Test strategy: Consistency check with Level 1 terminology
-
-- [ ] Translate Level 3 content to English (depends on: [en/ structure, Level 3 modularization])
-  - Acceptance criteria: All 3 Level 3 files translated
-  - Test strategy: Advanced terminology validation
-
-- [ ] Translate appendix to English (depends on: [en/ structure, appendix modularization])
-  - Acceptance criteria: All appendix files translated
-  - Test strategy: Reference material accuracy check
-
-- [ ] Create English README.md with language switcher (depends on: [All English translations])
-  - Acceptance criteria: Complete English TOC, links to Korean version
-  - Test strategy: Bilingual user can switch between versions seamlessly
-
-**Exit Criteria**: 
-- Complete English version parallel to Korean
-- Language switcher in both versions
-- Technical terms consistently translated
-- 100% content parity between languages
-
-**Delivers**: Bilingual guide accessible to international staff
-
----
-
-### Phase 3: Enhanced Learning
-**Goal**: Add interactive elements and visual aids
-
-**Entry Criteria**: Phase 2 complete, bilingual content exists
-
-**Tasks**:
-- [ ] Create Level 1 exercise templates (depends on: [Template Library structure])
-  - Acceptance criteria: email_draft_template.md in both languages
-  - Test strategy: Users can complete Workbook 1 using template
-
-- [ ] Create Level 2 exercise templates (depends on: [Template Library structure])
-  - Acceptance criteria: plan_2024.md, memo_2025.txt with sample content
-  - Test strategy: Users can complete Workbook 2 with 80% less setup time
-
-- [ ] Create Level 3 exercise templates (depends on: [Template Library structure])
-  - Acceptance criteria: meeting_note_template.txt with realistic sample
-  - Test strategy: Users can complete Workbook 3 end-to-end
-
-- [ ] Design Mermaid diagrams for key workflows (depends on: [Content Modularization])
-  - Acceptance criteria: 5+ diagrams (Copilot Edits flow, Agent workflow, etc.)
-  - Test strategy: Diagrams render correctly, clarify complex concepts
-
-- [ ] Add progress tracking checkboxes (depends on: [Content Modularization])
-  - Acceptance criteria: Each section has checklist, README shows completion %
-  - Test strategy: Checkboxes work in GitHub and VS Code preview
-
-- [ ] Create self-assessment quizzes (depends on: [Content Modularization])
-  - Acceptance criteria: 3 quizzes (one per level) with 5-10 questions each
-  - Test strategy: Answers validate learning objectives, questions cover key concepts
-
-**Exit Criteria**: 
-- All workbooks have ready-to-use templates
-- Key concepts illustrated with diagrams
-- Users can track learning progress
-- Self-assessment available for each level
-
-**Delivers**: Interactive, engaging learning experience
-
----
-
-### Phase 4: AI Agent Integration
-**Goal**: Integrate with Task Master for guided learning paths
-
-**Entry Criteria**: Phase 3 complete, interactive content ready
-
-**Tasks**:
-- [ ] Create basic learning path PRD (depends on: [Learning Path PRDs structure, Content complete])
-  - Acceptance criteria: basic-track.prd.md parseable by Task Master, covers Level 1 objectives
-  - Test strategy: `task-master parse-prd` creates valid task graph
-
-- [ ] Create advanced learning path PRD (depends on: [Learning Path PRDs structure, Content complete])
-  - Acceptance criteria: advanced-track.prd.md covers Levels 2-3
-  - Test strategy: Task Master can generate subtasks, dependencies correct
-
-- [ ] Document Task Master integration workflow (depends on: [Learning Path PRDs created])
-  - Acceptance criteria: Instructions in AGENTS.md for using learning paths
-  - Test strategy: New user can start guided learning in < 5 minutes
-
-- [ ] Create progress sync mechanism (depends on: [Progress Tracking, Task Master Integration])
-  - Acceptance criteria: Checkbox completion updates Task Master status
-  - Test strategy: Manual test of round-trip sync
-
-- [ ] Create exercise automation script (depends on: [Exercise Templates, Task Master Integration])
-  - Acceptance criteria: Script generates personalized exercises based on user context
-  - Test strategy: Script produces valid template files for 3 different user profiles
-
-**Exit Criteria**: 
-- Task Master can parse and track learning paths
-- Users can follow AI-guided progression through material
-- Exercises personalized to user context
-- Progress automatically synced
-
-**Delivers**: AI-assisted learning with automated progression tracking
-
----
-
-### Phase 5: Maintenance Automation
-**Goal**: Streamline future updates and contributions
-
-**Entry Criteria**: Phase 4 complete, full system operational
-
-**Tasks**:
-- [ ] Create structure validation script (depends on: [Documentation Standards, Repository Structure])
-  - Acceptance criteria: Script checks directory structure, file naming, TOC accuracy
-  - Test strategy: Script catches missing files, broken links, style violations
-
-- [ ] Create translation sync checker (depends on: [I18n Structure, English Translation])
-  - Acceptance criteria: Script detects content drift between ko/ and en/
-  - Test strategy: Intentionally modify one language, script reports differences
-
-- [ ] Set up GitHub Actions workflow (depends on: [Validation Scripts])
-  - Acceptance criteria: CI runs validation on every PR, blocks invalid changes
-  - Test strategy: Submit PR with broken link, CI catches it
-
-- [ ] Document versioning strategy (depends on: [Version Control Strategy])
-  - Acceptance criteria: Semantic versioning rules, changelog format defined
-  - Test strategy: Create test release following process
-
-- [ ] Create feature update template (depends on: [Documentation Standards, Content Review Process])
-  - Acceptance criteria: Template for documenting new Copilot features
-  - Test strategy: Use template to document hypothetical new feature
-
-**Exit Criteria**: 
-- Automated validation catches errors before merge
-- Translation drift automatically detected
-- Clear process for adding new content
-- Versioning strategy documented and tested
-
-**Delivers**: Maintainable system ready for long-term evolution
-
-</implementation-roadmap>
-
----
-
-<test-strategy>
-
-## Test Pyramid
-
-```
-        /\
-       /E2E\       ← 10% (Full learning path completion by real users)
-      /------\
-     /Integration\ ← 30% (Multi-file workflows, language switching)
-    /------------\
-   /  Unit Tests  \ ← 60% (Link validation, format checking, template generation)
-  /----------------\
-```
-
-## Coverage Requirements
-- Link coverage: 100% (all internal links must resolve)
-- Translation coverage: 100% (all Korean content has English equivalent)
-- Template coverage: 100% (every workbook has template)
-- Diagram coverage: 80% (key workflows visualized)
-
-## Critical Test Scenarios
-
-### Content Structure Module
-**Happy path**:
-- User navigates from README to Level 1 → 2 → 3 following links
-- Expected: Seamless navigation, no broken links, clear progression
-
-**Edge cases**:
-- User jumps directly to Level 3 without prerequisites
-- Expected: Prerequisites clearly stated, links back to foundation content
-
-**Error cases**:
-- Broken link in TOC
-- Expected: Validation script catches before deployment
-
-**Integration points**:
-- README TOC links to all content files
-- Expected: Clicking any TOC entry opens correct file at correct heading
-
-### Internationalization Module
-**Happy path**:
-- User starts in Korean, switches to English, completes same exercise
-- Expected: Identical content structure, equivalent examples
-
-**Edge cases**:
-- Technical term has no direct English equivalent
-- Expected: Term explained in both languages, glossary entry created
-
-**Error cases**:
-- Korean content updated, English not synced
-- Expected: Sync checker detects drift, alerts maintainer
-
-**Integration points**:
-- Language switcher works from any page
-- Expected: Switching maintains current position in guide (Level 1 → Level 1)
-
-### Exercise System Module
-**Happy path**:
-- User downloads template, follows workbook, completes exercise
-- Expected: Template has clear instructions, sample data works, success criteria met
-
-**Edge cases**:
-- User has non-English VS Code UI
-- Expected: Screenshots include UI labels, instructions don't assume English UI
-
-**Error cases**:
-- Template file missing or corrupted
-- Expected: Validation catches missing templates, provides fallback instructions
-
-**Integration points**:
-- Workbook references template, template matches workbook steps
-- Expected: User never confused about which file to use
-
-### AI Integration Module
-**Happy path**:
-- User runs `task-master parse-prd learning-paths/basic-track.prd.md`
-- Expected: Valid task graph created, user can follow `task-master next`
-
-**Edge cases**:
-- User has no Task Master installed
-- Expected: Clear installation instructions, graceful fallback to manual checklists
-
-**Error cases**:
-- PRD has circular dependency
-- Expected: Task Master validation catches, suggests fix
-
-**Integration points**:
-- Progress checkboxes sync with Task Master status
-- Expected: Checking box marks task done, Task Master moves to next
-
-## Test Generation Guidelines
-
-For validation scripts:
-- Use `remark-cli` for markdown linting
-- Implement custom link checker that follows relative paths
-- Check translation parity by comparing file structure
-- Validate Mermaid syntax before deployment
-
-For user testing:
-- Recruit 3 users per persona (9 total)
-- Observe workbook completion without assistance
-- Measure time to complete each level
-- Collect feedback on clarity and usefulness
-
-For CI/CD:
-- Run on every PR: link validation, style check, translation sync
-- Run on release: full integration test including Task Master parsing
-- Performance: validation must complete in < 60 seconds
-
-</test-strategy>
-
----
-
-<architecture>
-
-## System Components
-
-**Documentation System**:
-- Static markdown files hosted on GitHub
-- Viewable in VS Code, GitHub web UI, or any markdown viewer
-- No build step required for basic usage
-
-**Internationalization**:
-- Parallel directory structure (ko/, en/)
-- Manual translation workflow with AI assistance
-- Automated sync checking via scripts
-
-**Exercise System**:
-- Template files in `templates/` directory
-- Users copy templates to working directory
-- Self-contained exercises with sample data
-
-**AI Integration**:
-- Task Master MCP server for learning path tracking
-- PRD files define guided learning sequences
-- Optional integration (guide works standalone)
-
-**Validation**:
-- Node.js scripts for automated checking
-- GitHub Actions for CI/CD
-- Pre-commit hooks for contributors
-
-## Data Models
-
-**Guide Section**:
-```markdown
-# [Level X: Name] Section Title
-
-## Learning Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-
-## Content
-[Instructional content]
-
-## Workbook Exercise
-[Hands-on practice]
-
-## Success Criteria
-[How to know you've mastered this]
-```
-
-**Exercise Template**:
-```markdown
-# Exercise: [Name]
-
-## Prerequisites
-- Tools needed
-- Prior knowledge
-
-## Instructions
-1. Step-by-step guide
-
-## Sample Data
-[Example content to work with]
-
-## Expected Result
-[What success looks like]
-```
-
-**Learning Path PRD** (Task Master format):
-```markdown
-# Learning Path: [Track Name]
-
-## Capability Tree
-### Capability: [Level 1 Skills]
-#### Feature: [Specific skill]
-- Description: [What to learn]
-- Inputs: [Prerequisites]
-- Outputs: [Outcomes]
-
-## Dependency Chain
-Phase 0: Foundation Skills
-- Setup VS Code: No dependencies
-Phase 1: Basic Skills
-- Chat Interface: Depends on [Setup VS Code]
-```
-
-## Technology Stack
-
-**Primary Language**: Markdown (GitHub Flavored)
-**Diagrams**: Mermaid
-**Scripting**: Node.js (for validation)
-**CI/CD**: GitHub Actions
-**Version Control**: Git + GitHub
-**AI Assistants**: GitHub Copilot, Task Master, Gemini CLI
-
-**Decision: Markdown over HTML/Website**
-- **Rationale**: Native to VS Code (primary tool), easy to edit, works offline, no build step
-- **Trade-offs**: Less interactive than web app, limited styling
-- **Alternatives considered**: GitBook (too heavy), Hugo (unnecessary complexity), Notion (not in-editor)
-
-**Decision: Manual translation workflow**
-- **Rationale**: AI translation good enough for technical docs, human review ensures accuracy
-- **Trade-offs**: Not real-time sync, requires manual process
-- **Alternatives considered**: i18n framework (overkill for 2 languages), translation service (expensive)
-
-**Decision: Task Master for learning paths**
-- **Rationale**: Already used in project, natural fit for dependency-based learning
-- **Trade-offs**: Requires Task Master installation (optional), not visual
-- **Alternatives considered**: Custom tracker (reinventing wheel), Trello (not integrated)
-
-</architecture>
-
----
-
-<risks>
-
-## Technical Risks
-
-**Risk**: Translation quality issues
-- **Impact**: High - Poor translations confuse users
-- **Likelihood**: Medium - AI translation is good but not perfect
-- **Mitigation**: Native speaker review of all translations, glossary of technical terms
-- **Fallback**: Community contributions for corrections, errata page
-
-**Risk**: Markdown link breakage after restructuring
-- **Impact**: High - Users can't navigate
-- **Likelihood**: Medium - Many links to update
-- **Mitigation**: Automated link checker in CI, comprehensive testing before release
-- **Fallback**: Keep old structure in archive branch temporarily
-
-**Risk**: Task Master integration complexity
-- **Impact**: Medium - Learning paths might not parse correctly
-- **Likelihood**: Low - PRD format is well-defined
-- **Mitigation**: Test PRDs with Task Master during development, provide examples
-- **Fallback**: Document manual checklist approach as alternative
-
-**Risk**: Screenshot maintenance burden
-- **Impact**: Low - Screenshots become outdated as VS Code UI changes
-- **Likelihood**: High - VS Code updates frequently
-- **Mitigation**: Use diagrams over screenshots where possible, version screenshots
-- **Fallback**: Supplement with text descriptions that don't depend on exact UI
-
-## Dependency Risks
-
-**Risk**: GitHub Copilot feature changes
-- **Impact**: High - Guide content becomes incorrect
-- **Likelihood**: Medium - Features evolve over time
-- **Mitigation**: Track Copilot changelog, fast update process, version guide with Copilot version
-- **Fallback**: Add "last updated" dates, encourage community issue reports
-
-**Risk**: Task Master API changes
-- **Impact**: Low - Learning path PRDs might break
-- **Likelihood**: Low - Task Master has stable API
-- **Mitigation**: Pin to Task Master version in docs, test on major updates
-- **Fallback**: Learning paths are optional feature, core guide unaffected
-
-## Scope Risks
-
-**Risk**: Scope creep - adding too many languages
-- **Impact**: Medium - Maintenance burden grows exponentially
-- **Likelihood**: Medium - Users might request Chinese, Japanese, etc.
-- **Mitigation**: Start with ko/en only, document process for community-contributed languages
-- **Fallback**: Accept community translations in separate branches, official support for ko/en only
-
-**Risk**: Feature overload - trying to cover every Copilot feature
-- **Impact**: Medium - Guide becomes overwhelming
-- **Likelihood**: Medium - Temptation to document everything
-- **Mitigation**: Focus on 80/20 - features most useful for admin staff, appendix for advanced topics
-- **Fallback**: Link to official Copilot docs for comprehensive reference
-
-**Risk**: Exercise complexity mismatch
-- **Impact**: Medium - Users give up if too hard/bored if too easy
-- **Likelihood**: Medium - Diverse skill levels
-- **Mitigation**: User testing with all personas, clear difficulty indicators, optional bonus exercises
-- **Fallback**: Provide multiple exercise variants at different difficulty levels
-
-</risks>
-
----
-
-<appendix>
-
-## References
-
-- **GitHub Copilot Documentation**: https://docs.github.com/en/copilot
-- **Task Master AI**: https://github.com/Task-Master-AI/task-master-ai
-- **Microsoft RPG Paper**: "Repository-Level Prompt Generation for Large Language Models of Code"
-- **Korean Technical Writing Guide**: 국립국어원 기술문서 작성 지침
-- **Markdown Spec**: CommonMark Specification
-
-## Glossary
-
-- **PRD**: Product Requirements Document - structured spec for software features
-- **RPG**: Repository Planning Graph - methodology for dependency-aware project planning
-- **TDD**: Test-Driven Development - write tests before implementation
-- **MCP**: Model Context Protocol - standard for AI assistant integrations
-- **Workbook**: Hands-on exercise section where users practice skills
-- **행정직원**: Administrative staff (Korean)
-- **실무자**: Professional/practitioner (Korean)
-- **전문가**: Expert/specialist (Korean)
-
-## Open Questions
-
-1. **Video content**: Should we add video walkthroughs for each workbook? (Useful but high maintenance)
-2. **Community forum**: Should we enable GitHub Discussions for Q&A? (Builds community but requires moderation)
-3. **Certification**: Should we offer completion certificates? (Motivating but requires validation system)
-4. **Mobile app**: Would a companion mobile app for progress tracking be valuable? (Convenient but significant dev effort)
-5. **Translation automation**: Should we auto-translate new content and flag for human review? (Faster updates but quality concerns)
-
-</appendix>
-
----
-
-<task-master-integration>
-
-# How Task Master Uses This PRD
-
-When you run `task-master parse-prd .taskmaster/docs/improvement_prd.md`, the parser will:
-
-1. **Extract capabilities** (7 main tasks):
-   - Content Structure Management
-   - Internationalization System
-   - Interactive Learning System
-   - Documentation Standards
-   - AI Agent Integration
-   - Visual Enhancement
-   - Maintenance Workflow
-
-2. **Extract features** (25 subtasks):
-   - Each feature becomes a subtask under its capability
-   - E.g., "Duplicate Detection and Removal" under "Content Structure Management"
-
-3. **Parse dependencies**:
-   - Foundation Layer tasks have no dependencies
-   - Content Layer depends on Foundation
-   - I18n Layer depends on Content Layer
-   - Enhancement depends on I18n
-   - Integration depends on Enhancement
-   - Maintenance depends on Integration
-
-4. **Order by phases** (5 development phases):
-   - Phase 0: Foundation (3 tasks - highest priority)
-   - Phase 1: Content Modularization (5 tasks)
-   - Phase 2: Internationalization (6 tasks)
-   - Phase 3: Enhanced Learning (6 tasks)
-   - Phase 4: AI Agent Integration (5 tasks)
-   - Phase 5: Maintenance Automation (5 tasks)
-
-5. **Generate task graph**:
-   - 30 total tasks in dependency order
-   - Can be executed sequentially or in parallel where dependencies allow
-   - Each task has clear acceptance criteria and test strategy
-
-## Usage Instructions
-
-```bash
-# Initialize and parse this PRD
-cd /Users/truestone/Dropbox/repo/University/Github_Copilot_Guide
-task-master parse-prd .taskmaster/docs/improvement_prd.md --research
-
-# Analyze complexity
-task-master analyze-complexity --research
-
-# Expand tasks into subtasks if needed
-task-master expand --all --research
-
-# Start working
-task-master next
-task-master show <id>
-# ... implement ...
-task-master set-status --id=<id> --status=done
-```
-
-## Why This Structure Works
-
-**Dependency awareness**: Foundation must be solid before building content layers
-**Parallelization**: Within each phase, tasks can often be done concurrently (e.g., translating different levels)
-**Progressive delivery**: Each phase delivers usable value (Phase 1 delivers better structure, Phase 2 adds English, etc.)
-**Clear success criteria**: Every task has testable acceptance criteria
-**Maintainability**: Structure makes it easy to add features or update content later
-
-</task-master-integration>
+# Product Requirements Document: University Copilot Guide Finalization
+
+## 1. Project Overview
+The goal of this phase is to consolidate all previous work—including legacy files, staging content, and the current documentation structure—into a **single, comprehensive, easy-to-read file** (one for English, one for Korean) specifically designed for university administrative staff who may not be familiar with computers or complex file structures.
+
+## 2. Objectives
+- **Audience-Centric Design:** Tailor the final output for non-technical administrative staff, ensuring clarity and accessibility.
+- **Consolidation:** Merge content from `legacy/`, `staging/`, `docs/`, and root-level Markdown files.
+- **Single-File Output:** Generate one comprehensive Markdown file per language in a `dist/` folder:
+  - `dist/University_Copilot_Guide_Complete_EN.md`
+  - `dist/University_Copilot_Guide_Complete_KO.md`
+- **Visual Enrichment:** Add Mermaid diagrams and SVG visualizations throughout to enhance understanding.
+- **Standardization:** Ensure consistent formatting, friendly tone, and clear navigation within the single file.
+- **Cleanup:** Remove `docs/`, `legacy/`, `staging/`, and root-level content files after migration is verified.
+
+## 3. Scope of Work
+
+### 3.1. Content Analysis & Integration
+
+#### Source File Inventory (Priority Order)
+- **Source 1 (HIGHEST PRIORITY): Current Documentation (`docs/en/` and `docs/ko/`)**
+  - Extract all content from level-1, level-2, level-3, and appendix folders.
+  - Integrate workbook exercises inline within relevant sections.
+  - This is the primary source - defer to this content in case of conflicts.
+- **Source 2 (HIGH PRIORITY): Staging (`staging/refined_content.md`)**
+  - Integrate refined content improvements into the main narrative.
+  - Use to enhance Source 1 content where improvements exist.
+- **Source 3 (MEDIUM PRIORITY): Legacy (`legacy/`)**
+  - Extract relevant "Admin" specific workflows and merge into a dedicated "Administrative Workflows" section.
+  - Only use content NOT already covered in Sources 1-2.
+- **Source 4 (MEDIUM PRIORITY): Root Files**
+  - Incorporate content from `University_Copilot_Guide_for_Beginners.md` and `University_Copilot_Guide_Admin.md`.
+  - Fill gaps not covered by Sources 1-3.
+- **Source 5 (SUPPLEMENTARY): Templates (`templates/exercises/`)**
+  - Integrate exercise templates as inline examples within the single file.
+  
+#### Content Priority Hierarchy (Conflict Resolution)
+When duplicate or conflicting content exists:
+1. Use `docs/` version (most structured)
+2. Enhance with `staging/` improvements
+3. Add unique sections from `legacy/` Admin guides
+4. Fill remaining gaps with root-level files
+5. Supplement with template exercises
+
+#### Pre-Migration Verification
+- Verify all source files exist before beginning migration
+- Create content map/inventory showing which sections come from which sources
+- Identify duplicate content and mark primary source
+
+### 3.2. Structural Organization (Final Output)
+
+**Output Location:** `dist/` folder (to be created)
+
+**Internal Structure of Each Single File:**
+1. **Title Page & Table of Contents** (Auto-generated with clickable links)
+2. **Introduction** (Targeted at Admins: "Why use Copilot?")
+3. **Level 1: Basics** (Setup & Fundamentals - simplified)
+   - 01. Initial Setup
+   - 02. Core Concepts
+   - 03. Hands-on Exercises (integrated from workbook-1)
+4. **Level 2: Practical Applications** (Drafting Emails, Reports, Plans)
+   - 04. Prompt Engineering
+   - 05. Copilot Edits
+   - 06. Practical Exercises (integrated from workbook-2)
+5. **Level 3: Advanced Usage** (Agents, Data Visualization)
+   - 07. AI Agents & Instructions
+   - 08. Data Visualization
+   - 09. Advanced Exercises (integrated from workbook-3)
+6. **Administrative Guide** (Specific workflows for university administrative staff)
+   - Drafting official emails and memos
+   - Creating annual reports and budgets
+   - Processing meeting minutes
+   - Managing schedules and notifications
+   - Data entry and record keeping tasks
+   - Common troubleshooting scenarios
+7. **Appendix**
+   - Scenarios
+   - Prompt Dictionary
+8. **Version & Update History**
+
+### 3.3. Visual Enhancement Strategy
+
+#### Diagram Requirements by Section (Minimum 10-15 total)
+Each visual should be created using Mermaid (for flowcharts/diagrams) or SVG (for custom graphics).
+
+**Level 1: Basics (3-4 visuals)**
+1. **Setup Flow**: Mermaid flowchart showing installation → authentication → first use
+2. **Copilot Architecture**: SVG diagram showing user ↔ Copilot ↔ AI model relationship
+3. **Interface Overview**: Annotated screenshot/diagram of Copilot UI components
+4. **First Prompt Example**: Visual workflow of typing prompt → receiving response
+
+**Level 2: Practical Applications (3-4 visuals)**
+5. **Prompt Engineering Cycle**: Flowchart showing iterative refinement process
+6. **Good vs. Bad Prompts**: Side-by-side comparison diagram
+7. **Copilot Edits Workflow**: Step-by-step visual of using edit mode
+8. **Document Generation Process**: Mermaid sequence diagram
+
+**Level 3: Advanced Usage (3-4 visuals)**
+9. **Agent Instruction Flow**: How custom instructions modify Copilot behavior
+10. **Data Visualization Pipeline**: Input data → Copilot → Chart/Graph output
+11. **Workspace Context**: Diagram showing how Copilot uses project files
+12. **Multi-file Editing**: Visual showing simultaneous file operations
+
+**Administrative Guide (2-3 visuals)**
+13. **Admin Task Workflow**: Common university admin tasks with Copilot
+14. **Email/Report Templates**: Visual examples of before/after
+15. **Meeting Notes Processing**: Flowchart for converting notes to action items
+
+**Technical Requirements**:
+- All Mermaid diagrams embedded directly in Markdown (```mermaid blocks)
+- SVG files stored in `dist/images/` with Korean-language versions in `dist/images/ko/`
+- Use simple, clear visual language appropriate for non-technical users
+- Include alt-text for accessibility
+- Test rendering in common Markdown viewers (VS Code, GitHub, Obsidian)
+
+### 3.4. Implementation Tasks
+1. **Pre-Migration Backup:** Create archive of current state before any deletions
+2. **Content Audit:** Review all source files and create content map
+3. **Content Refinement:** Rewrite technical jargon to be accessible to administrative staff
+4. **Visual Creation:** Design and integrate Mermaid/SVG diagrams
+5. **Merge & Compile:** Concatenate all content into single-file format with smooth transitions
+6. **TOC Generation:** Create auto-linked table of contents
+7. **Asset Management:** Organize images in `dist/images/` with correct relative paths
+8. **Localization QA:** Verify EN/KO content parity
+9. **Review & Polish:** Verify document flow and accessibility
+10. **Verification:** Confirm all content migrated successfully
+11. **Cleanup:** Remove `docs/`, `legacy/`, `staging/`, and redundant root files only after verification
+
+## 4. Success Metrics
+- Two single, cohesive Markdown files exist in `dist/` folder
+- Each file contains 10-15+ Mermaid/SVG visualizations
+- Content is understandable by non-technical staff
+- No duplicate content; all legacy value is captured
+- Automatic table of contents with working internal links
+- File is easily convertible to PDF with proper image rendering
+- Project root is clean, containing only configuration files
+
+## 5. Constraints
+- The final file must be standard Markdown with Mermaid support
+- Maintain exact bilingual parity (EN and KO versions must mirror each other)
+- All images must use relative paths within `dist/` folder
+- File size should remain reasonable for email/sharing (< 5MB per file)
+- **DATA LOSS PREVENTION:** Archive existing `docs/`, `legacy/`, `staging/` folders to `archive/` before deletion
+- No deletion of source files until final output is verified and approved
+- All source files must be verified to exist before starting migration
+
+## 6. Deliverables
+1. `dist/University_Copilot_Guide_Complete_EN.md` (Complete English guide)
+2. `dist/University_Copilot_Guide_Complete_KO.md` (Complete Korean guide)
+3. `dist/images/` (Folder containing all visual assets)
+4. `dist/images/ko/` (Korean-specific visual assets with translated labels)
+5. `archive/` (Backup of migrated source folders before deletion)
+6. Clean project structure with obsolete files removed
+
+## 7. Localization Strategy
+
+### Bilingual Content Approach
+- **Content Parity**: Both EN and KO versions must contain identical information
+- **Visual Localization**: Diagrams with text labels must have Korean versions
+- **Cultural Adaptation**: Examples and scenarios should be appropriate for Korean university context
+- **File Naming**: Clear EN/KO suffixes for all assets
+
+### Translation Quality Assurance
+- Use existing Korean translations from `docs/ko/` as baseline
+- Verify terminology consistency across all Korean content
+- Ensure technical terms are properly localized or explained
+- Review tone and formality appropriate for Korean academic staff
+
+### Maintenance Strategy
+- Document which sections require manual translation updates
+- Create checklist for keeping EN/KO versions synchronized
+- Note any EN-only or KO-only content (if necessary) with clear justification

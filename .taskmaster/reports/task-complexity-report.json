@@ -1,93 +1,93 @@
 {
 	"meta": {
-		"generatedAt": "2025-11-22T08:43:39.125Z",
+		"generatedAt": "2025-11-22T14:21:44.800Z",
 		"tasksAnalyzed": 10,
 		"totalTasks": 10,
 		"analysisCount": 10,
 		"thresholdScore": 5,
-		"projectName": "Taskmaster",
-		"usedResearch": false
+		"projectName": "Task Master",
+		"usedResearch": true
 	},
 	"complexityAnalysis": [
 		{
-			"taskId": 1,
-			"taskTitle": "기반 디렉토리 구조 설정 및 문서 표준 가이드 작성",
+			"taskId": 11,
+			"taskTitle": "Environment Setup and Pre-Migration Backup",
 			"complexityScore": 2,
 			"recommendedSubtasks": 0,
 			"expansionPrompt": "",
-			"reasoning": "단순한 파일 시스템 조작과 정적 마크다운 파일 생성 작업으로, 기술적 난이도가 낮고 의존성이 없는 기초 작업입니다."
+			"reasoning": "This is a straightforward filesystem operation involving directory creation and file copying. It requires basic shell commands or a simple script. The complexity is low as it does not involve logic changes or content parsing, just safe duplication of existing assets."
 		},
 		{
-			"taskId": 2,
-			"taskTitle": "기존 콘텐츠 중복 제거 및 정제",
-			"complexityScore": 4,
-			"recommendedSubtasks": 2,
-			"expansionPrompt": "레거시 파일의 방대한 내용을 분석하여 중복을 식별하는 단계와, 이를 실제로 병합하고 정제하는 단계를 분리하여 서브태스크를 생성해주세요.",
-			"reasoning": "레거시 파일(legacy/University_Copilot_Guide_Admin.md)의 크기가 클 것으로 예상되며, 문맥을 파악하여 중복을 제거하는 작업은 자동화가 어렵고 수동 검증이 필요하여 시간이 소요됩니다."
-		},
-		{
-			"taskId": 3,
-			"taskTitle": "한국어 콘텐츠 모듈화 및 파일 분리",
-			"complexityScore": 5,
+			"taskId": 12,
+			"taskTitle": "Content Inventory and Source Mapping",
+			"complexityScore": 6,
 			"recommendedSubtasks": 3,
-			"expansionPrompt": "콘텐츠 분리 작업을 'Level 1 기초', 'Level 2 심화', 'Level 3 및 부록'의 세 단계로 나누어 점진적으로 마이그레이션하도록 서브태스크를 구성해주세요.",
-			"reasoning": "단일 파일을 다수의 모듈로 쪼개는 리팩토링 작업으로, 파일 간의 논리적 흐름을 유지해야 하며 작업량이 많아 실수할 가능성이 존재합니다."
+			"expansionPrompt": "Create a detailed mapping strategy. Subtasks: 1. Inventory existing `docs/` structure and map to PRD sections. 2. Analyze `staging/` and `legacy/` for unique content requiring integration. 3. Generate the final `content_map.json`.",
+			"reasoning": "This task requires deep analysis of multiple source directories (`docs`, `staging`, `legacy`) which may have overlapping or conflicting content. Creating a precise JSON map is critical for the subsequent automation steps, making this a moderately complex analytical task."
 		},
 		{
-			"taskId": 4,
-			"taskTitle": "마스터 목차(TOC) 생성 및 네비게이션 구축",
-			"complexityScore": 3,
-			"recommendedSubtasks": 0,
-			"expansionPrompt": "",
-			"reasoning": "상대 경로를 이용한 하이퍼링크 연결 작업으로, 반복적이지만 로직이 복잡하지는 않습니다."
-		},
-		{
-			"taskId": 5,
-			"taskTitle": "국제화(I18n) 시스템 구축 및 영문 번역",
+			"taskId": 13,
+			"taskTitle": "English Content Consolidation (Drafting)",
 			"complexityScore": 7,
 			"recommendedSubtasks": 4,
-			"expansionPrompt": "영문 디렉토리 미러링 구축 작업을 시작으로, 각 난이도 레벨(Level 1, 2, 3) 별로 번역 및 검수를 진행하도록 작업을 세분화해주세요.",
-			"reasoning": "단순 번역을 넘어 한국어 디렉토리 구조와 1:1로 대응되는 구조를 유지해야 하며, 기술 용어의 일관성을 유지해야 하므로 작업 복잡도와 양이 상당합니다."
+			"expansionPrompt": "Break down the consolidation process. Subtasks: 1. Develop a script to concatenate files based on `content_map.json`. 2. Implement logic to resolve content conflicts (staging vs docs). 3. Normalise markdown headers programmatically. 4. Manually review and refine the stitched document.",
+			"reasoning": "Merging content from heterogeneous sources while normalizing headers and resolving conflicts is technically challenging. It requires robust script logic to handle inconsistent formatting across legacy and new files, pushing the complexity higher."
 		},
 		{
-			"taskId": 6,
-			"taskTitle": "실습 템플릿 라이브러리 및 예제 파일 생성",
+			"taskId": 14,
+			"taskTitle": "Korean Content Consolidation (Drafting)",
+			"complexityScore": 8,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Plan the localization consolidation. Subtasks: 1. Replicate the English consolidation logic for Korean sources. 2. Identify and flag missing translations (gap analysis). 3. Integrate existing root-level KO files. 4. Perform terminology consistency check.",
+			"reasoning": "This inherits the complexity of the English consolidation but adds the difficulty of handling missing translations ('gap analysis'). Ensuring parity when source structures might differ (e.g., missing `staging` files for KO) adds significant logical complexity."
+		},
+		{
+			"taskId": 15,
+			"taskTitle": "Visual Enhancement: Basics and Practical Levels",
+			"complexityScore": 4,
+			"recommendedSubtasks": 2,
+			"expansionPrompt": "Detail the diagram creation. Subtasks: 1. Design and code Mermaid diagrams for English sections. 2. Duplicate and translate diagram labels for Korean sections.",
+			"reasoning": "The complexity is moderate. While Mermaid syntax is standard, ensuring the diagrams accurately reflect the text content requires cognitive effort. The technical implementation is simple, but the design aspect raises the score slightly."
+		},
+		{
+			"taskId": 16,
+			"taskTitle": "Visual Enhancement: Advanced and Admin Levels",
+			"complexityScore": 4,
+			"recommendedSubtasks": 2,
+			"expansionPrompt": "Detail the advanced diagram creation. Subtasks: 1. Design Mermaid workflows for complex Admin/Advanced processes. 2. Localize diagrams for the Korean version.",
+			"reasoning": "Similar to Task 15, but potentially more complex domain logic to visualize (e.g., API flows or Admin workflows). The technical task remains creating and embedding code blocks."
+		},
+		{
+			"taskId": 17,
+			"taskTitle": "Administrative Guide Section Refinement",
+			"complexityScore": 5,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Outline the refinement process. Subtasks: 1. Audit current Admin content for technical jargon. 2. Draft 'Good vs Bad' prompt examples for admin scenarios. 3. Rewrite workflow instructions for clarity.",
+			"reasoning": "This is a content-heavy task requiring domain understanding and writing skills rather than coding complex logic. Refactoring technical content for a non-technical audience is time-consuming and requires careful editorial judgment."
+		},
+		{
+			"taskId": 18,
+			"taskTitle": "Formatting, Navigation, and TOC Generation",
 			"complexityScore": 3,
 			"recommendedSubtasks": 0,
 			"expansionPrompt": "",
-			"reasoning": "독립적인 예제 파일들을 생성하는 것으로, 기존 코드에 영향을 주지 않는 그린필드 작업이라 비교적 간단합니다."
+			"reasoning": "Standard markdown maintenance. Most modern editors or pre-processors handle TOC generation automatically. Fixing relative links and anchors is tedious but low-complexity work."
 		},
 		{
-			"taskId": 7,
-			"taskTitle": "시각 자료 강화 (Mermaid 다이어그램 및 스크린샷)",
-			"complexityScore": 4,
+			"taskId": 19,
+			"taskTitle": "Localization QA and Parity Verification",
+			"complexityScore": 5,
 			"recommendedSubtasks": 2,
-			"expansionPrompt": "논리적 흐름을 코드로 작성해야 하는 Mermaid 다이어그램 작성 작업과, UI 캡처 및 자산 관리가 필요한 스크린샷 작업을 분리해주세요.",
-			"reasoning": "텍스트 기반의 설명글을 시각적 도표(Mermaid)로 변환하는 것은 내용을 깊게 이해해야 가능하며, 반응형 이미지 처리에 대한 고려가 필요합니다."
+			"expansionPrompt": "Structure the QA process. Subtasks: 1. Conduct a section-by-section structural audit (EN vs KO). 2. Verify asset localization (images/diagrams).",
+			"reasoning": "QA is critical and requires attention to detail. The complexity comes from the manual effort required to cross-reference two large documents and ensuring that 'parity' doesn't just mean identical structure, but also accurate context."
 		},
 		{
-			"taskId": 8,
-			"taskTitle": "학습 진도 추적 및 자가 진단 퀴즈 구현",
-			"complexityScore": 4,
+			"taskId": 20,
+			"taskTitle": "Project Cleanup and Final Delivery",
+			"complexityScore": 2,
 			"recommendedSubtasks": 0,
 			"expansionPrompt": "",
-			"reasoning": "기존 문서에 체크박스와 텍스트를 추가하는 마크다운 편집 작업 위주이므로 기술적 난이도는 평이합니다."
-		},
-		{
-			"taskId": 9,
-			"taskTitle": "Task Master AI 통합 및 학습 경로 PRD 작성",
-			"complexityScore": 6,
-			"recommendedSubtasks": 2,
-			"expansionPrompt": "기초(Basic) 트랙과 심화(Advanced) 트랙의 PRD 작성을 분리하고, Task Master 설정 파일 구성을 별도로 다루도록 서브태스크를 나눠주세요.",
-			"reasoning": "자연어가 아닌 기계 판독 가능한(Machine-readable) 형태의 구조화된 문서(PRD, JSON)를 작성해야 하며, Task Master의 스키마를 이해하고 적용해야 하므로 난이도가 있습니다."
-		},
-		{
-			"taskId": 10,
-			"taskTitle": "유지보수 자동화 스크립트 및 CI 파이프라인 구축",
-			"complexityScore": 8,
-			"recommendedSubtasks": 3,
-			"expansionPrompt": "Node.js 검증 스크립트(파일명, 링크 검사) 작성, 목차 자동 생성 로직 구현, 그리고 이를 GitHub Actions 워크플로우에 통합하는 단계로 나누어주세요.",
-			"reasoning": "실제 프로그래밍(Node.js)과 DevOps 설정(GitHub Actions)이 필요한 유일한 '엔지니어링' 작업으로, 파일 시스템 재귀 탐색이나 링크 유효성 검사 로직 구현 등 기술적 복잡도가 가장 높습니다."
+			"reasoning": "A final cleanup task. Low complexity as it involves deleting files and verifying directory structures. The risk is high (data loss), but the technical difficulty is low provided backups exist."
 		}
 	]
 }
