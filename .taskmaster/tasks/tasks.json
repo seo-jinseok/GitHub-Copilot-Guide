@@ -9,7 +9,7 @@
         "testStrategy": "Run a script to compare checksums (MD5/SHA) of files in source directories vs. `archive/` to ensure exact duplication.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -17,8 +17,9 @@
             "description": "Create the output directory hierarchy for the final build artifacts.",
             "dependencies": [],
             "details": "Create the `dist/` root directory. Inside it, create `dist/images/` and `dist/images/ko/` to house English and Korean image assets respectively, ensuring the target environment is ready for content generation.",
-            "status": "pending",
-            "testStrategy": "Verify directories exist using `ls -d dist/images/ko`."
+            "status": "done",
+            "testStrategy": "Verify directories exist using `ls -d dist/images/ko`.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -28,8 +29,9 @@
               1
             ],
             "details": "Create the `archive/` directory at the project root. This will serve as the destination for the raw copy of all source materials before any consolidation scripts are run.",
-            "status": "pending",
-            "testStrategy": "Verify `archive/` directory exists."
+            "status": "done",
+            "testStrategy": "Verify `archive/` directory exists.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -39,8 +41,9 @@
               2
             ],
             "details": "Copy the directories `docs/`, `legacy/`, `staging/`, and `templates/` into `archive/`. Ensure that file metadata and directory structures are preserved recursively (e.g., using `cp -r` or similar).",
-            "status": "pending",
-            "testStrategy": "Check that `archive/docs`, `archive/legacy`, etc. exist and contain files."
+            "status": "done",
+            "testStrategy": "Check that `archive/docs`, `archive/legacy`, etc. exist and contain files.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -50,8 +53,9 @@
               2
             ],
             "details": "Copy `University_Copilot_Guide_for_Beginners.md` and `University_Copilot_Guide_Admin.md` from the project root into `archive/`. These are critical source inputs for the consolidation process.",
-            "status": "pending",
-            "testStrategy": "Verify the specific markdown files exist inside the `archive/` folder."
+            "status": "done",
+            "testStrategy": "Verify the specific markdown files exist inside the `archive/` folder.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -62,10 +66,14 @@
               4
             ],
             "details": "Run a verification step (e.g., using `diff -r` or comparing file counts/checksums) to ensure that the contents of `archive/` are identical to the source locations (`docs/`, `legacy/`, etc.). Report any discrepancies.",
-            "status": "pending",
-            "testStrategy": "Execute a checksum comparison script or command line diff; expect zero output or specific success message."
+            "status": "done",
+            "testStrategy": "Execute a checksum comparison script or command line diff; expect zero output or specific success message.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 2,
+        "recommendedSubtasks": 0,
+        "expansionPrompt": ""
       },
       {
         "id": 12,
@@ -75,9 +83,9 @@
         "testStrategy": "Manual review of `content_map.json` against PRD Section 3.2 to ensure every target section has a defined source.",
         "priority": "high",
         "dependencies": [
-          11
+          "11"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -85,8 +93,9 @@
             "description": "Analyze the primary documentation directories to establish the base content structure against the PRD sections.",
             "dependencies": [],
             "details": "Recursively scan `docs/en/` and `docs/ko/` directories. Identify file paths corresponding to Introduction, Basics (Level 1), Practical (Level 2), and Advanced (Level 3) sections. Record the primary H1 header for each file to facilitate mapping to the PRD outline.",
-            "status": "pending",
-            "testStrategy": "Create a preliminary list of files and verify that they cover PRD Sections 1 through 3 without gaps."
+            "status": "done",
+            "testStrategy": "Create a preliminary list of files and verify that they cover PRD Sections 1 through 3 without gaps.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -95,9 +104,10 @@
             "dependencies": [
               1
             ],
-            "details": "Parse `staging/refined_content.md` to identify specific sections that supersede core docs. Scan `legacy/` specifically for Admin workflows not present in `docs/`. Catalog `templates/exercises/` for inclusion in the Workbook/Appendix section.",
-            "status": "pending",
-            "testStrategy": "Produce a diff report listing which staging sections override docs and which legacy files are unique."
+            "details": "Parse `staging/refined_content.md` to identify specific sections that supersede core docs. Scan `legacy/` specifically for Admin workflows not present in `docs/`. Catalog `templates/exercises/` for inclusion in the Workbook/Appendix section.\n<info added on 2025-11-22T14:39:27.028Z>\n{\n  \"subtask_update\": \"Completed comparison of root vs legacy Admin guides and cataloged template files.\\n\\nAnalysis Findings:\\n1. Root `University_Copilot_Guide_Admin.md` contains duplicate Level 2 content (lines 171-237 duplicate 104-169). Legacy version is cleaner.\\n   - Resolution: Remove lines 171-237 from root file.\\n2. Template Mapping for Workbooks:\\n   - `email_draft_template.md` → Workbook 1 (Level 1)\\n   - `plan_2024.md` and `memo_2025.txt` → Workbook 2 (Level 2)\\n   - `meeting_note_template.txt` → Workbook 3 (Level 3)\\n3. Content Priority Established:\\n   - Primary: `University_Copilot_Guide_for_Beginners.md`\\n   - Secondary: `University_Copilot_Guide_Admin.md`\\n   - Reference: `legacy/University_Copilot_Guide_Admin.md`\\n\\nNext: Update `content_map.json` with specific line numbers and embedding strategy.\"\n}\n</info added on 2025-11-22T14:39:27.028Z>",
+            "status": "done",
+            "testStrategy": "Produce a diff report listing which staging sections override docs and which legacy files are unique.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -108,66 +118,78 @@
               2
             ],
             "details": "Construct a JSON object with keys for Introduction, Basics, Practical, Advanced, Admin, and Appendix. Populate values with source paths, enforcing the priority logic (Staging > Docs > Legacy) and output the file to the root directory.",
-            "status": "pending",
-            "testStrategy": "Validate `content_map.json` against a schema validator and ensure every PRD section key resolves to a valid existing file path."
+            "status": "done",
+            "testStrategy": "Validate `content_map.json` against a schema validator and ensure every PRD section key resolves to a valid existing file path.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Create a detailed mapping strategy. Subtasks: 1. Inventory existing `docs/` structure and map to PRD sections. 2. Analyze `staging/` and `legacy/` for unique content requiring integration. 3. Generate the final `content_map.json`."
       },
       {
         "id": 13,
         "title": "English Content Consolidation (Drafting)",
-        "description": "Merge English content sources into a single Markdown file following the defined structure.",
-        "details": "1. Create `dist/University_Copilot_Guide_Complete_EN.md`.\n2. Concatenate content in order: Title/TOC placeholder -> Introduction -> Level 1 (docs/en + staging) -> Level 2 (docs/en + staging) -> Level 3 (docs/en + staging) -> Admin Guide (legacy + root) -> Appendix.\n3. Resolve conflicts by prioritizing `docs/` then `staging/` then `legacy/`.\n4. Integrate exercises from `templates/exercises/` inline where appropriate.\n5. Normalize header levels (ensure top level is H1, sections are H2, etc.).",
-        "testStrategy": "Check file existence. Verify all section headers from PRD Section 3.2 exist in the generated file. Check for broken formatting or unresolved merge conflicts.",
-        "priority": "high",
+        "description": "Create the final English documentation by translating the consolidated Korean guide, replacing the previous plan of merging empty English skeletons.",
+        "status": "in-progress",
         "dependencies": [
-          12
+          "12",
+          "14"
         ],
-        "status": "pending",
+        "priority": "high",
+        "details": "1. Primary Source: `dist/University_Copilot_Guide_Complete_KO.md` (Output of Task 14), which consolidates the actual content from `University_Copilot_Guide_for_Beginners.md`.\n2. Destination: Create `dist/University_Copilot_Guide_Complete_EN.md`.\n3. Strategy: Perform a full translation of the Korean consolidated file into English. Do NOT use `docs/en/` files as they are confirmed to be empty navigation skeletons.\n4. Structure: Preserve the exact Markdown hierarchy (H1-H3), image references, and code blocks from the Korean source.\n5. Terminology: Ensure specific Copilot terms are localized correctly to standard English usage.",
+        "testStrategy": "Verify `dist/University_Copilot_Guide_Complete_EN.md` exists. Perform a structural comparison against the Korean source (section counts, headers). Check for readability and correct rendering of code blocks and exercises.",
         "subtasks": [
           {
             "id": 1,
-            "title": "Develop Content Concatenation Script",
-            "description": "Develop a script to read the content map and merge the referenced English source files into a single destination file.",
+            "title": "Prepare Translation Source",
+            "description": "Validate the consolidated Korean guide availability and structure before translation.",
             "dependencies": [],
-            "details": "Create a script (e.g., `build_docs.py`) that loads `content_map.json`. Iterate through the English sections. Read the file content from paths like `docs/en/` or `staging/`. Append them in the specific order defined in the PRD to `dist/University_Copilot_Guide_Complete_EN.md`. Ensure UTF-8 encoding is used.",
-            "status": "pending",
-            "testStrategy": "Run the script and verify file creation. Check that the file size corresponds roughly to the sum of input files and that the content order matches the map."
+            "details": "Wait for Task 14 to generate `dist/University_Copilot_Guide_Complete_KO.md`. Verify the file is complete, UTF-8 encoded, and contains all expected sections (Intro, Basics, Practical, Advanced, Admin) derived from `University_Copilot_Guide_for_Beginners.md`. Confirm `docs/en/` skeletons are ignored.",
+            "status": "done",
+            "testStrategy": "Check for the existence of the KO source file and pass basic integrity checks (size > 0, headers present).",
+            "parentId": "undefined"
           },
           {
             "id": 2,
-            "title": "Implement Priority and Conflict Logic",
-            "description": "Update the build script to resolve content conflicts between legacy, staging, and docs folders according to priority rules.",
+            "title": "Execute English Translation",
+            "description": "Translate the consolidated Korean content into English.",
             "dependencies": [
               1
             ],
-            "details": "Modify the file reading loop. When multiple sources exist for a section, check priorities: `docs/` > `staging/` > `legacy/`. Implement the injection logic for `templates/exercises/` to ensure exercises are placed inline at specific markers rather than appended at the end.",
-            "status": "pending",
-            "testStrategy": "Verify that specific unique strings from `docs/` appear in the final output while unique strings from conflicting `legacy/` files do not. Confirm exercises appear in correct locations."
+            "details": "Translate text from `dist/University_Copilot_Guide_Complete_KO.md` to `dist/University_Copilot_Guide_Complete_EN.md`. Ensure that 'Prompt', 'Context Window', and other technical terms are used correctly. Preserve all Markdown syntax, including tables and code blocks, exactly as they appear in the source.",
+            "status": "done",
+            "testStrategy": "Review a sample of the translated output to ensure text is English and formatting tags remain valid Markdown.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
-            "title": "Normalize Markdown Headers",
-            "description": "Implement a normalization function to adjust header levels in the merged document for a consistent hierarchy.",
+            "title": "Normalize and Validate Structure",
+            "description": "Ensure the translated document maintains the correct header hierarchy and formatting.",
             "dependencies": [
               2
             ],
-            "details": "Parse the content lines or AST. Ensure the Document Title is the only H1. Convert section roots (e.g., 'Level 1: Basics') to H2. Shift headers inside imported content modules down by one or two levels (e.g., H1 in source becomes H3 in master) to maintain structure.",
-            "status": "pending",
-            "testStrategy": "Use a markdown linter or manual inspection to verify that the header structure follows H1 -> H2 -> H3 and that there are no duplicate H1 tags or skipped header levels."
+            "details": "Post-process the translated file. Verify that the Header levels (H1, H2, H3) align 1:1 with the Korean source. Fix any broken image links or malformed tables that may have occurred during the translation process.",
+            "status": "done",
+            "testStrategy": "Use a Markdown linter to check for syntax errors. Visually compare the Table of Contents of the EN version against the KO version.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
             "title": "Manual Review and Content Refinement",
-            "description": "Perform a human review of the generated draft to fix formatting glitches, awkward transitions, or missing context.",
+            "description": "Perform a human review of the generated draft to fix formatting glitches and awkward phrasing.",
             "dependencies": [
               3
             ],
-            "details": "Review `dist/University_Copilot_Guide_Complete_EN.md`. Look for broken image links, table rendering issues, or markdown syntax errors introduced during concatenation. Make manual edits or refine the script if errors are repetitive. Ensure spacing between sections is adequate.",
-            "status": "pending",
-            "testStrategy": "Visually inspect the rendered Markdown in a viewer (e.g., VS Code or GitHub preview) to ensure readability, layout integrity, and that no raw code blocks are broken."
+            "details": "Review `dist/University_Copilot_Guide_Complete_EN.md`. Smooth out any awkward machine-translated phrasing. Ensure exercises from `templates/exercises/` (if referenced) are clear and actionable in English. Verify diagram descriptions are translated.\n<info added on 2025-11-22T15:13:44.054Z>\n{\n  \"subtask_update\": \"Manual review of `dist/University_Copilot_Guide_Complete_EN.md` completed.\\n\\nVerified Sections:\\n- Introduction (Level 1): Professional tone, clear setup.\\n- Practical (Level 2): R.C.O formula and prompt techniques clear.\\n- Expert (Level 3): Agent instructions and data viz examples verified.\\n- Workbook & Appendix: Templates actionable, scenario library structured.\\n- Technical: Mermaid diagrams translated, Quizzes functional.\\n\\nFixed Issues:\\n- Line 597: Changed 'button this up' to 'get this started off right' (idiom correction).\\n\\nQuality Assessment:\\n- Professional tone and consistent terminology (Copilot, VS Code) maintained.\\n- No awkward machine translation detected.\\n- Parallel structure with Korean version preserved.\\n\\nDocument ready for final commit.\"\n}\n</info added on 2025-11-22T15:13:44.054Z>",
+            "status": "in-progress",
+            "testStrategy": "Read through the guide as a user to ensure flow and clarity. Verify no Korean text remains in the body content.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Break down the consolidation process. Subtasks: 1. Develop a script to concatenate files based on `content_map.json`. 2. Implement logic to resolve content conflicts (staging vs docs). 3. Normalise markdown headers programmatically. 4. Manually review and refine the stitched document."
       },
       {
         "id": 14,
@@ -176,10 +198,8 @@
         "details": "1. Create `dist/University_Copilot_Guide_Complete_KO.md`.\n2. Follow the same structure as Task 13 but using `docs/ko/` sources.\n3. For `staging/` or `legacy/` content that might lack KO translations, flag sections with a `[NEEDS TRANSLATION]` marker or use existing root-level KO files if available.\n4. Ensure terminology consistency (e.g., 'Copilot', 'Prompt' usage).",
         "testStrategy": "Side-by-side comparison of EN and KO files to ensure section counts and header structures match exactly.",
         "priority": "high",
-        "dependencies": [
-          13
-        ],
-        "status": "pending",
+        "dependencies": [],
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -187,8 +207,9 @@
             "description": "Create the initial Korean draft by adapting the English consolidation script to target Korean source directories.",
             "dependencies": [],
             "details": "Adapt the automation logic from Task 13 to read primarily from `docs/ko/`. Concatenate content in the PRD-defined order (Intro -> Levels 1-3 -> Admin -> Appendix) and output the result to `dist/University_Copilot_Guide_Complete_KO.md`. Ensure header normalization applies to the Korean text.",
-            "status": "pending",
-            "testStrategy": "Verify that `dist/University_Copilot_Guide_Complete_KO.md` is created and contains the base content from `docs/ko/`."
+            "status": "done",
+            "testStrategy": "Verify that `dist/University_Copilot_Guide_Complete_KO.md` is created and contains the base content from `docs/ko/`.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -198,8 +219,9 @@
               1
             ],
             "details": "Iterate through the sections defined in `content_map.json`. Where a corresponding Korean source file is missing (particularly in `staging/`), insert a placeholder section with the header and a body text of `[NEEDS TRANSLATION]` to maintain structural parity with the English file.",
-            "status": "pending",
-            "testStrategy": "Grep the output file for `[NEEDS TRANSLATION]` markers and verify they align with known missing source files compared to the EN version."
+            "status": "done",
+            "testStrategy": "Grep the output file for `[NEEDS TRANSLATION]` markers and verify they align with known missing source files compared to the EN version.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -209,8 +231,9 @@
               2
             ],
             "details": "Scan `legacy/` and the project root for specific Korean markdown files that cover Admin workflows or other outlying sections. Map these files to the corresponding gaps identified in the previous step and overwrite the `[NEEDS TRANSLATION]` placeholders with this content.",
-            "status": "pending",
-            "testStrategy": "Manual inspection of the Admin and Legacy sections in the generated Markdown file to ensure Korean text is present instead of placeholders."
+            "status": "done",
+            "testStrategy": "Manual inspection of the Admin and Legacy sections in the generated Markdown file to ensure Korean text is present instead of placeholders.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -220,10 +243,15 @@
               3
             ],
             "details": "Run a search-and-replace or validation script on `dist/University_Copilot_Guide_Complete_KO.md`. Ensure terms like 'Copilot' and 'Prompt' match the approved glossary (e.g., keeping 'Copilot' in English vs transliteration). specific focus on spacing between English and Korean characters.",
-            "status": "pending",
-            "testStrategy": "Search the final document for banned terminology variations and verify that key terms match the project glossary."
+            "status": "done",
+            "testStrategy": "Search the final document for banned terminology variations and verify that key terms match the project glossary.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 8,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Plan the localization consolidation. Subtasks: 1. Replicate the English consolidation logic for Korean sources. 2. Identify and flag missing translations (gap analysis). 3. Integrate existing root-level KO files. 4. Perform terminology consistency check.",
+        "updatedAt": "2025-11-22T14:43:51.273Z"
       },
       {
         "id": 15,
@@ -233,8 +261,8 @@
         "testStrategy": "Render the Markdown files in a Mermaid-compatible viewer (e.g., VS Code Preview) to verify diagrams render correctly without syntax errors.",
         "priority": "medium",
         "dependencies": [
-          13,
-          14
+          "13",
+          "14"
         ],
         "status": "pending",
         "subtasks": [
@@ -245,7 +273,8 @@
             "dependencies": [],
             "details": "Develop Mermaid syntax for: 1. Setup Flow (Flowchart), 2. First Prompt Example (Sequence/Flow), 3. Prompt Engineering Cycle (Flowchart), and 4. Document Generation Process (Sequence). Insert these code blocks into the appropriate sections of the Level 1 and Level 2 English Markdown files.",
             "status": "pending",
-            "testStrategy": "Render the Markdown files in VS Code or a Mermaid Live Editor to verify syntax correctness and logical flow."
+            "testStrategy": "Render the Markdown files in VS Code or a Mermaid Live Editor to verify syntax correctness and logical flow.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -256,9 +285,13 @@
             ],
             "details": "Duplicate the approved English Mermaid blocks into the Korean Level 1 and Level 2 files. Translate all text labels within the diagrams (nodes, edges, notes) into natural Korean, ensuring terminology matches the surrounding text.",
             "status": "pending",
-            "testStrategy": "Preview the generated diagrams to ensure Korean characters render correctly (no font issues) and translation context is accurate."
+            "testStrategy": "Preview the generated diagrams to ensure Korean characters render correctly (no font issues) and translation context is accurate.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 2,
+        "expansionPrompt": "Detail the diagram creation. Subtasks: 1. Design and code Mermaid diagrams for English sections. 2. Duplicate and translate diagram labels for Korean sections."
       },
       {
         "id": 16,
@@ -268,7 +301,7 @@
         "testStrategy": "Render verification in VS Code or GitHub preview. Verify text labels are legible and correct in both languages.",
         "priority": "medium",
         "dependencies": [
-          15
+          "15"
         ],
         "status": "pending",
         "subtasks": [
@@ -279,7 +312,8 @@
             "dependencies": [],
             "details": "Create diagrams for: Agent Instruction Flow, Data Visualization Pipeline, Admin Task Workflow, and Meeting Notes Processing. Use Flowchart and Sequence diagram types where appropriate. Insert these code blocks into the corresponding EN markdown files in the dist folder.",
             "status": "pending",
-            "testStrategy": "Render verification in VS Code Markdown Preview to check for syntax errors and visual clarity of the complex flows."
+            "testStrategy": "Render verification in VS Code Markdown Preview to check for syntax errors and visual clarity of the complex flows.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -290,9 +324,13 @@
             ],
             "details": "Copy the Mermaid blocks generated for the English version into the Korean markdown files. Translate all readable text (node labels, decision points, descriptions) into Korean while maintaining the original logic structure. Ensure layout remains stable with Korean text width.",
             "status": "pending",
-            "testStrategy": "Check Korean character rendering in a standard browser preview or GitHub to ensure no encoding issues exist."
+            "testStrategy": "Check Korean character rendering in a standard browser preview or GitHub to ensure no encoding issues exist.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 2,
+        "expansionPrompt": "Detail the advanced diagram creation. Subtasks: 1. Design Mermaid workflows for complex Admin/Advanced processes. 2. Localize diagrams for the Korean version."
       },
       {
         "id": 17,
@@ -302,8 +340,8 @@
         "testStrategy": "Read-through by a proxy for a non-technical user. Verify that instructions are actionable and free of unexplained technical terms.",
         "priority": "medium",
         "dependencies": [
-          13,
-          14
+          "13",
+          "14"
         ],
         "status": "pending",
         "subtasks": [
@@ -314,7 +352,8 @@
             "dependencies": [],
             "details": "Scan the current documentation for technical terms (e.g., 'tokens', 'inference', 'JSON output') that may confuse university staff. Create a mapping of these terms to user-friendly alternatives or rewrite sentences to avoid them entirely while maintaining accuracy.",
             "status": "pending",
-            "testStrategy": "Peer review by a non-technical team member to flag any remaining confusing terms."
+            "testStrategy": "Peer review by a non-technical team member to flag any remaining confusing terms.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -325,7 +364,8 @@
             ],
             "details": "Develop specific comparison examples for key tasks: 1. Drafting a department-wide email, 2. Summarizing meeting minutes, and 3. Compiling annual report data. Clearly annotate why the 'Good' version is better (e.g., specificity, context provision).",
             "status": "pending",
-            "testStrategy": "Run the 'Good' and 'Bad' prompts through the model to verify that the output difference justifies the example."
+            "testStrategy": "Run the 'Good' and 'Bad' prompts through the model to verify that the output difference justifies the example.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -337,9 +377,13 @@
             ],
             "details": "Refactor the sections for 'Email Drafting', 'Annual Reports', and 'Meeting Minutes'. Ensure each workflow uses a numbered list format. Integrate the 'Good vs Bad' examples drafted in the previous subtask directly into these workflow descriptions to illustrate best practices.",
             "status": "pending",
-            "testStrategy": "Perform a manual walk-through of the 'Meeting Minutes' workflow to ensure instructions are logical and complete without external knowledge."
+            "testStrategy": "Perform a manual walk-through of the 'Meeting Minutes' workflow to ensure instructions are logical and complete without external knowledge.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Outline the refinement process. Subtasks: 1. Audit current Admin content for technical jargon. 2. Draft 'Good vs Bad' prompt examples for admin scenarios. 3. Rewrite workflow instructions for clarity."
       },
       {
         "id": 18,
@@ -349,9 +393,9 @@
         "testStrategy": "Click every link in the TOC to ensure it jumps to the correct section. Check that no broken image links exist.",
         "priority": "medium",
         "dependencies": [
-          15,
-          16,
-          17
+          "15",
+          "16",
+          "17"
         ],
         "status": "pending",
         "subtasks": [
@@ -362,7 +406,8 @@
             "dependencies": [],
             "details": "Locate `dist/University_Copilot_Guide_Complete_EN.md`. Find the placeholder or the position immediately after the Title Page. detailed in Task 13. Parse all H1, H2, and H3 headers. Generate a standard Markdown list with internal anchor links (e.g., `[Section Title](#section-title-slug)`) and insert it into the document.",
             "status": "pending",
-            "testStrategy": "Open the Markdown file in a viewer (e.g., VS Code Preview or GitHub) and verify that clicking TOC entries scrolls to the correct section."
+            "testStrategy": "Open the Markdown file in a viewer (e.g., VS Code Preview or GitHub) and verify that clicking TOC entries scrolls to the correct section.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -373,7 +418,8 @@
             ],
             "details": "Locate `dist/University_Copilot_Guide_Complete_KO.md`. Similar to the English version, parse H1, H2, and H3 headers. Ensure that the slug generation handles Korean characters correctly (URL encoding or standard Markdown anchor behavior for non-ASCII text) so links remain clickable.",
             "status": "pending",
-            "testStrategy": "Verify in a Markdown viewer that TOC links containing Korean characters correctly navigate to their respective headers."
+            "testStrategy": "Verify in a Markdown viewer that TOC links containing Korean characters correctly navigate to their respective headers.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -382,7 +428,8 @@
             "dependencies": [],
             "details": "Scan both `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md`. Regex replace existing image paths (e.g., `../images/`, `assets/`) to use the relative path `./images/` or `images/` assuming the Markdown files sit in `dist/` and images are in `dist/images/`. Ensure localized images in the KO version point to `images/ko/` if applicable.",
             "status": "pending",
-            "testStrategy": "Render the Markdown files and visually confirm all images load. Check specifically for broken link icons."
+            "testStrategy": "Render the Markdown files and visually confirm all images load. Check specifically for broken link icons.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -391,7 +438,8 @@
             "dependencies": [],
             "details": "Review both consolidated files. Remove inline HTML styles (like `<span style=...>`) unless strictly necessary for complex tables. Standardize list indentation (2 or 4 spaces) and ensure there is a blank line before and after code blocks. Ensure headers are preceded by two blank lines for readability.",
             "status": "pending",
-            "testStrategy": "Lint the Markdown files using a tool like markdownlint or manually check visual consistency in a previewer."
+            "testStrategy": "Lint the Markdown files using a tool like markdownlint or manually check visual consistency in a previewer.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -403,9 +451,13 @@
             ],
             "details": "At the bottom of both EN and KO consolidated files, append an H2 header 'Version History' (or '버전 기록'). Create a table with columns: Version, Date, Author, and Change Log. Populate the initial row with the current version details (e.g., v1.0, current date, 'Initial Consolidated Release').",
             "status": "pending",
-            "testStrategy": "Verify the section exists at the very end of the document and the table renders correctly."
+            "testStrategy": "Verify the section exists at the very end of the document and the table renders correctly.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 3,
+        "recommendedSubtasks": 0,
+        "expansionPrompt": ""
       },
       {
         "id": 19,
@@ -415,7 +467,7 @@
         "testStrategy": "Manual audit checklist comparing section-by-section. Verify total line counts are roughly proportional (accounting for language density).",
         "priority": "medium",
         "dependencies": [
-          18
+          "18"
         ],
         "status": "pending",
         "subtasks": [
@@ -426,7 +478,8 @@
             "dependencies": [],
             "details": "1. Open `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md` side-by-side.\n2. Verify that every H1, H2, and H3 header in the English version has a corresponding translated header in the Korean version.\n3. Check that the sequence of sections is identical.\n4. Ensure that code blocks and examples are present in corresponding locations.\n5. Document any missing sections or structural mismatches.",
             "status": "pending",
-            "testStrategy": "Create a header inventory list from the English document and check off each item against the Korean document. Discrepancies must be zero."
+            "testStrategy": "Create a header inventory list from the English document and check off each item against the Korean document. Discrepancies must be zero.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -437,9 +490,13 @@
             ],
             "details": "1. Verify that the `dist/images/ko/` directory contains localized versions of all diagrams that contain text.\n2. specific check: Ensure diagrams in KO have Korean labels replacing English text.\n3. Scan `dist/University_Copilot_Guide_Complete_KO.md` to confirm that image references point to `images/ko/` where necessary, rather than the English assets.\n4. Verify that file names and folder paths in code examples are localized or appropriate for the Korean context.",
             "status": "pending",
-            "testStrategy": "Run a grep search for image links in the Korean MD file to verify paths. Visually inspect all images in `dist/images/ko/` for correct text translation."
+            "testStrategy": "Run a grep search for image links in the Korean MD file to verify paths. Visually inspect all images in `dist/images/ko/` for correct text translation.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 2,
+        "expansionPrompt": "Structure the QA process. Subtasks: 1. Conduct a section-by-section structural audit (EN vs KO). 2. Verify asset localization (images/diagrams)."
       },
       {
         "id": 20,
@@ -449,7 +506,7 @@
         "testStrategy": "Run `ls -R` to verify directory structure. Ensure no source files remain in root. Verify `dist/` files still open and render correctly after cleanup.",
         "priority": "low",
         "dependencies": [
-          19
+          "19"
         ],
         "status": "pending",
         "subtasks": [
@@ -460,7 +517,8 @@
             "dependencies": [],
             "details": "Compare the contents of `docs/`, `legacy/`, `staging/`, and `templates/` against the existing contents of `archive/`. If any files are missing in `archive/`, copy them over to a timestamped subfolder within `archive/` (e.g., `archive/pre_cleanup_backup/`) to prevent data loss.",
             "status": "pending",
-            "testStrategy": "Run a script or command (diff -r or similar) to verify that all files in source directories exist within the archive path."
+            "testStrategy": "Run a script or command (diff -r or similar) to verify that all files in source directories exist within the archive path.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -471,7 +529,8 @@
             ],
             "details": "Execute removal commands for `docs/`, `legacy/`, `staging/`, and `templates/`. Ensure that no processes have these files open. This step should only proceed after the archive integrity check (Subtask 1) passes successfully.",
             "status": "pending",
-            "testStrategy": "Run `ls -d docs/ legacy/ staging/ templates/` and verify that the command returns 'No such file or directory' for all listed paths."
+            "testStrategy": "Run `ls -d docs/ legacy/ staging/ templates/` and verify that the command returns 'No such file or directory' for all listed paths.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -482,7 +541,8 @@
             ],
             "details": "Identify and delete specific root-level files such as `University_Copilot_Guide_for_Beginners.md` and `University_Copilot_Guide_Advanced.md`. Ensure that `README.md` is NOT deleted during this process. Only files explicitly identified as obsolete source content should be removed.",
             "status": "pending",
-            "testStrategy": "Run `ls *.md` in the root directory. The output should ideally only list `README.md` (and potentially `CONTRIBUTING.md` or `LICENSE` if they exist)."
+            "testStrategy": "Run `ls *.md` in the root directory. The output should ideally only list `README.md` (and potentially `CONTRIBUTING.md` or `LICENSE` if they exist).",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -493,7 +553,8 @@
             ],
             "details": "Edit `README.md` to remove references to the deleted source folders. Add clear links to the final artifacts in `dist/` (e.g., `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md`). Add a note explaining the `archive/` directory structure.",
             "status": "pending",
-            "testStrategy": "Manually review `README.md` rendering. Click the links to `dist/` files to verify they are valid and accessible."
+            "testStrategy": "Manually review `README.md` rendering. Click the links to `dist/` files to verify they are valid and accessible.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -504,15 +565,26 @@
             ],
             "details": "Perform a final audit of the directory structure. The root should only contain `dist/`, `archive/`, `README.md`, and project configuration files (like `.gitignore`, `package.json`). Verify that the files in `dist/` are the complete, consolidated versions generated in previous tasks.",
             "status": "pending",
-            "testStrategy": "Run `tree -L 1` (or equivalent) to confirm directory hierarchy. Open the markdown files in `dist/` to ensure they are not corrupted."
+            "testStrategy": "Run `tree -L 1` (or equivalent) to confirm directory hierarchy. Open the markdown files in `dist/` to ensure they are not corrupted.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 2,
+        "recommendedSubtasks": 0,
+        "expansionPrompt": ""
       }
     ],
     "metadata": {
-      "created": "2025-11-22T08:41:00.047Z",
-      "updated": "2025-11-22T14:20:47.048Z",
-      "description": "Tasks for master context"
+      "version": "1.0.0",
+      "lastModified": "2025-11-22T14:43:51.273Z",
+      "taskCount": 10,
+      "completedCount": 2,
+      "tags": [
+        "master"
+      ],
+      "created": "2025-11-22T15:04:48.193Z",
+      "description": "Tasks for master context",
+      "updated": "2025-11-22T15:12:01.803Z"
     }
   }
 }
