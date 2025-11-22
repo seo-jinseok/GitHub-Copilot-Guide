@@ -94,9 +94,6 @@ sequenceDiagram
 1.  **Visual Studio Code 설치:** [code.visualstudio.com](https://code.visualstudio.com)에서 다운로드 및 설치.
 2.  **GitHub Copilot 확장 프로그램:**
     *   VS Code 왼쪽 '블록 아이콘(Extensions)' 클릭 → `GitHub Copilot` 검색 및 설치.
-    
-        ![Copilot 설치](../../../images/01-copilot-install.png)
-        
     *   **중요:** 2025년 버전부터는 `Copilot Chat`이 통합되어 별도 설치가 필요 없습니다.
 3.  **로그인:** 우측 하단 알림창 또는 왼쪽 프로필 아이콘을 눌러 GitHub 계정으로 로그인합니다.
 
