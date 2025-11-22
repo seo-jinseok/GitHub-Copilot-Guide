@@ -401,7 +401,7 @@
           "16",
           "17"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -431,7 +431,7 @@
             "description": "Standardize all image paths to point to the distribution image directory.",
             "dependencies": [],
             "details": "Scan both `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md`. Regex replace existing image paths (e.g., `../images/`, `assets/`) to use the relative path `./images/` or `images/` assuming the Markdown files sit in `dist/` and images are in `dist/images/`. Ensure localized images in the KO version point to `images/ko/` if applicable.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Render the Markdown files and visually confirm all images load. Check specifically for broken link icons.",
             "parentId": "undefined"
           },
@@ -441,7 +441,7 @@
             "description": "Apply consistent spacing and remove unnecessary HTML tags.",
             "dependencies": [],
             "details": "Review both consolidated files. Remove inline HTML styles (like `<span style=...>`) unless strictly necessary for complex tables. Standardize list indentation (2 or 4 spaces) and ensure there is a blank line before and after code blocks. Ensure headers are preceded by two blank lines for readability.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Lint the Markdown files using a tool like markdownlint or manually check visual consistency in a previewer.",
             "parentId": "undefined"
           },
@@ -454,7 +454,7 @@
               2
             ],
             "details": "At the bottom of both EN and KO consolidated files, append an H2 header 'Version History' (or '버전 기록'). Create a table with columns: Version, Date, Author, and Change Log. Populate the initial row with the current version details (e.g., v1.0, current date, 'Initial Consolidated Release').",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the section exists at the very end of the document and the table renders correctly.",
             "parentId": "undefined"
           }
@@ -473,7 +473,7 @@
         "dependencies": [
           "18"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -481,7 +481,7 @@
             "description": "Perform a detailed structural comparison between the consolidated English and Korean Markdown files to ensure complete synchronization of content hierarchy.",
             "dependencies": [],
             "details": "1. Open `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md` side-by-side.\n2. Verify that every H1, H2, and H3 header in the English version has a corresponding translated header in the Korean version.\n3. Check that the sequence of sections is identical.\n4. Ensure that code blocks and examples are present in corresponding locations.\n5. Document any missing sections or structural mismatches.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Create a header inventory list from the English document and check off each item against the Korean document. Discrepancies must be zero.",
             "parentId": "undefined"
           },
@@ -493,7 +493,7 @@
               1
             ],
             "details": "1. Verify that the `dist/images/ko/` directory contains localized versions of all diagrams that contain text.\n2. specific check: Ensure diagrams in KO have Korean labels replacing English text.\n3. Scan `dist/University_Copilot_Guide_Complete_KO.md` to confirm that image references point to `images/ko/` where necessary, rather than the English assets.\n4. Verify that file names and folder paths in code examples are localized or appropriate for the Korean context.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run a grep search for image links in the Korean MD file to verify paths. Visually inspect all images in `dist/images/ko/` for correct text translation.",
             "parentId": "undefined"
           }
@@ -588,7 +588,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:34:30.427Z"
+      "updated": "2025-11-22T15:43:09.256Z"
     }
   }
 }
