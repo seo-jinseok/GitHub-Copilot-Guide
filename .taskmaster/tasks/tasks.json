@@ -131,7 +131,7 @@
         "id": 13,
         "title": "English Content Consolidation (Drafting)",
         "description": "Create the final English documentation by translating the consolidated Korean guide, replacing the previous plan of merging empty English skeletons.",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [
           "12",
           "14"
@@ -588,7 +588,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:31:18.798Z"
+      "updated": "2025-11-22T15:31:26.032Z"
     }
   }
 }
