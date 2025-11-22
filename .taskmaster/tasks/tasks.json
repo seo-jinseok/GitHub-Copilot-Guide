@@ -9,7 +9,7 @@
         "testStrategy": "디렉토리 구조가 `structural-decomposition` 명세와 일치하는지 확인. 스타일 가이드에 따라 작성된 샘플 문서가 린트 규칙을 통과하는지 검토.",
         "priority": "high",
         "dependencies": [],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -28,7 +28,7 @@
               1
             ],
             "details": "루트 디렉토리에 존재하는 기존 가이드 파일(예: `University_Copilot_Guide_Admin.md`)을 `legacy/University_Copilot_Guide_Admin.md`로 이동시킵니다. 이동 후 원본 파일이 루트에 남지 않았는지 확인합니다.",
-            "status": "in-progress",
+            "status": "done",
             "testStrategy": "파일 이동 후 `legacy` 폴더 내에 파일이 존재하고, 루트에는 없는지 파일 시스템 검사를 수행합니다."
           },
           {
@@ -39,7 +39,7 @@
               1
             ],
             "details": "`STYLE_GUIDE.md` 파일을 생성하여 Markdown 문법 표준, 헤더(Header) 계층 구조, 이모지 사용 규칙, 코드 블록 포맷팅 규칙을 상세히 기술합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "작성된 마크다운 파일이 린트 규칙(markdownlint)을 준수하는지 검사하고 가독성을 확인합니다."
           },
           {
@@ -51,7 +51,7 @@
               3
             ],
             "details": "`CONTRIBUTING.md` 파일을 생성하여 Issue 생성 규칙, PR(Pull Request) 템플릿 안내, 번역 기여 워크플로우 및 커밋 메시지 컨벤션을 정의합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "문서 내의 링크가 유효한지 확인하고, 기여 프로세스가 명확한지 동료 리뷰를 수행합니다."
           },
           {
@@ -64,7 +64,7 @@
               4
             ],
             "details": "루트 `README.md`를 수정하여 프로젝트 개요를 업데이트하고, 새로 생성된 `docs/ko`, `docs/en`, `STYLE_GUIDE.md`, `CONTRIBUTING.md`로 연결되는 링크 목록을 제공합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "README.md의 모든 하이퍼링크가 올바른 대상 파일/디렉토리를 가리키는지 클릭 테스트를 수행합니다."
           }
         ]
@@ -79,7 +79,7 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -87,7 +87,7 @@
             "description": "레거시 문서의 4-6 섹션을 정밀 분석하여 중복된 Level 2 콘텐츠를 식별하고, 이를 어떻게 병합할지 구체적인 계획을 정의합니다.",
             "dependencies": [],
             "details": "legacy/University_Copilot_Guide_Admin.md 파일을 라인별로 검토하여 반복되는 주제와 텍스트 블록을 찾습니다. 삭제할 섹션과 통합할 섹션을 명확히 구분하여 작업 목록을 작성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "분석 결과에 나열된 중복 의심 구간이 실제 원본 파일에 존재하는지 교차 검증하고, 병합 논리에 모순이 없는지 리뷰합니다."
           },
           {
@@ -98,7 +98,7 @@
               1
             ],
             "details": "식별된 중복 섹션을 하나의 논리적 흐름으로 재작성하고 최신 내용으로 통일합니다. 깨진 내부 링크를 수정하고 스타일 가이드를 적용한 후, 결과물을 staging/refined_content.md 파일로 생성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "텍스트 비교 도구를 사용해 중복 문단 제거 여부를 확인하고, 생성된 스테이징 파일이 Markdown 린트 규칙을 준수하는지 테스트합니다."
           }
         ]
@@ -113,7 +113,7 @@
         "dependencies": [
           2
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -121,7 +121,7 @@
             "description": "정제된 스테이징 파일에서 기초 설정, 핵심 개념, 워크북 섹션을 추출하여 Level 1 디렉토리로 분리합니다.",
             "dependencies": [],
             "details": "1. `docs/ko/level-1-basics/` 디렉토리에 `01-setup.md`, `02-fundamentals.md`, `03-workbook.md` 파일을 생성합니다. 2. 각 파일 상단에 `title`, `level`, `order`를 포함한 YAML 프론트매터(메타데이터)를 작성합니다. 3. 기존 통합 문서의 초기 섹션 내용을 각 해당 파일로 이동시키고 서식을 정리합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "생성된 3개 파일의 마크다운 린트 검사를 수행하고, YAML 헤더가 올바른 형식을 갖추었는지 파서로 확인합니다."
           },
           {
@@ -132,7 +132,7 @@
               1
             ],
             "details": "1. `docs/ko/level-2-practical/` 디렉토리에 04번부터 06번까지의 파일을 생성합니다(예: `04-advanced-prompts.md`). 2. 정제된 콘텐츠 중 중급 난이도 섹션을 이동시킵니다. 3. Level 1 파일을 참조하는 내부 링크를 상대 경로(`../level-1-basics/`)에 맞게 일괄 수정하여 연결성을 유지합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Level 2 파일 내에서 Level 1 문서를 가리키는 상대 경로 링크를 클릭하여 정상적으로 이동하는지 검증합니다."
           },
           {
@@ -143,7 +143,7 @@
               2
             ],
             "details": "1. `docs/ko/level-3-expert/`에 07~09 파일을, `docs/ko/appendix/`에 시나리오, 프롬프트 사전, 트러블슈팅 파일을 생성합니다. 2. 부록 자료를 분리한 후, 본문(Level 1~3)에서 부록을 참조하는 모든 링크를 업데이트합니다. 3. 분리 작업이 완료된 후 기존 레거시 파일을 보관소로 이동시킵니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "전체 모듈에 대해 깨진 링크(Dead Link) 검사를 수행하고, 부록 문서들이 본문에서 올바르게 참조되는지 확인합니다."
           }
         ]
@@ -158,7 +158,7 @@
         "dependencies": [
           3
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -166,7 +166,7 @@
             "description": "문서의 진입점이 될 메인 README 파일을 생성하고 프로젝트 소개와 기본 구조를 잡습니다.",
             "dependencies": [],
             "details": "docs/ko/README.md 파일을 새로 생성합니다. 프로젝트 타이틀(# Github Copilot 가이드)과 간단한 소개글을 작성하고, 스타일 가이드에 맞춘 헤더 구조를 초기화합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "docs/ko/README.md 파일이 존재하고 마크다운 뷰어에서 정상적으로 렌더링되는지 확인합니다."
           },
           {
@@ -177,7 +177,7 @@
               1
             ],
             "details": "README.md 내에 ## 목차 섹션을 만들고, Level 1(기초), Level 2(심화), Level 3(마스터), Appendix 등으로 구분된 리스트를 작성합니다. 각 항목은 상대 경로(예: ./level-1/01_intro.md)를 사용하여 해당 파일로 링크합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "모든 목차 링크가 404 에러 없이 올바른 대상 파일을 가리키는지 클릭 테스트를 수행합니다."
           },
           {
@@ -188,7 +188,7 @@
               2
             ],
             "details": "목차의 각 리스트 아이템 앞에 GitHub Markdown 체크박스 문법(- [ ])을 적용합니다. 이를 통해 사용자가 README 상에서 자신의 학습 진행 상황을 시각적으로 확인할 수 있게 합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "GitHub 또는 호환되는 마크다운 뷰어에서 체크박스가 렌더링되고 클릭(상태 변경)이 가능한지 확인합니다."
           },
           {
@@ -199,7 +199,7 @@
               2
             ],
             "details": "각 분리된 마크다운 파일(Level 1~3, Appendix 등)의 맨 위에 `[🏠 목차로 돌아가기](../README.md)` 및 `[🇺🇸 English](../en/README.md)` 링크가 포함된 표준 헤더 블록을 삽입합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "하위 문서에서 '목차로 돌아가기' 링크 클릭 시 docs/ko/README.md로 정확히 이동하는지 검증합니다."
           },
           {
@@ -210,7 +210,7 @@
               4
             ],
             "details": "파일 이름 순서에 따라 논리적 흐름을 파악한 후, 각 파일 하단에 `[< 이전 글](relative_path) | [다음 글 >](relative_path)` 형식의 네비게이션 바를 작성합니다. 첫 글과 마지막 글은 각각 한쪽 링크만 표시합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "첫 번째 챕터부터 마지막 챕터까지 '다음 글' 링크만으로 끊김 없이 순회할 수 있는지 네비게이션 흐름을 테스트합니다."
           }
         ]
@@ -225,7 +225,7 @@
         "dependencies": [
           3
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -233,7 +233,7 @@
             "description": "한국어 문서(docs/ko)와 동일한 디렉토리 및 파일 구조를 docs/en 하위에 생성하여 번역 작업을 준비합니다.",
             "dependencies": [],
             "details": "docs/ko 폴더의 트리 구조를 분석하여 docs/en 하위에 동일하게 생성합니다. 이미지 경로 등은 공통 리소스를 참조하도록 설정하고, 번역 대상 파일들은 우선 원본을 복제하거나 빈 파일로 생성하여 경로를 확보합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "스크립트를 실행하여 docs/ko와 docs/en의 디렉토리 구조 및 파일명이 1:1로 매칭되는지 자동 검증합니다."
           },
           {
@@ -244,7 +244,7 @@
               1
             ],
             "details": "docs/en/intro.md 및 docs/en/level-1/ 하위의 모든 문서를 번역합니다. 문맥상 중요한 'Task Master', 'Copilot' 등의 고유 명사는 그대로 유지하거나 스타일 가이드를 따릅니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "번역된 문서를 Markdown 린터로 검사하고, AI 번역 도구 또는 교차 검증을 통해 문장의 자연스러움을 확인합니다."
           },
           {
@@ -255,7 +255,7 @@
               1
             ],
             "details": "docs/en/level-2/, docs/en/level-3/, docs/en/appendix/ 하위 문서를 번역합니다. 특히 코드 블록 내의 한글 주석을 영문으로 변환하고, 기술 용어(Terminology)의 일관성을 유지하는 데 집중합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "기술 용어 일관성 체크리스트를 사용하여 주요 키워드가 통일되었는지 검수하고, 코드 스니펫 내 주석이 모두 영문화되었는지 확인합니다."
           },
           {
@@ -267,7 +267,7 @@
               3
             ],
             "details": "모든 마크다운 파일(.md) 최상단에 '[KR] | [EN]' 형태의 상호 전환 링크를 삽입합니다. docs/en/README.md 파일을 생성하여 영문 버전의 진입점과 목차(TOC)를 구성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "모든 문서의 상단 언어 전환 링크를 클릭하여 404 오류 없이 대응되는 문서로 이동하는지 전수 테스트합니다."
           }
         ]
@@ -282,7 +282,7 @@
         "dependencies": [
           3
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -290,7 +290,7 @@
             "description": "실습 예제 파일들을 레벨별로 체계적으로 관리하기 위한 디렉토리 계층 구조를 생성합니다.",
             "dependencies": [],
             "details": "프로젝트 루트의 `templates` 디렉토리 내에 `exercises` 폴더를 만들고, 그 하위에 `level-1`, `level-2`, `level-3` 디렉토리를 각각 생성합니다. 빈 폴더 유지를 위해 .gitkeep 파일도 추가합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "`ls -R templates/exercises` 명령어로 level-1, level-2, level-3 디렉토리가 모두 존재하는지 확인합니다."
           },
           {
@@ -301,7 +301,7 @@
               1
             ],
             "details": "`templates/exercises/level-1/email_draft_template.md` 파일을 생성합니다. 파일 내부에 수신자, 참조, 이메일 목적(상황 설정), 포함해야 할 핵심 키워드 섹션을 미리 정의하고, Copilot에게 작성을 요청하는 주석 가이드를 포함합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "파일이 생성되었는지 확인하고, 마크다운 뷰어에서 구조가 깨지지 않고 렌더링되는지 검토합니다."
           },
           {
@@ -312,7 +312,7 @@
               1
             ],
             "details": "`templates/exercises/level-2/plan_2024.md` 파일을 생성합니다. 분기별 목표(Quarterly Goals)와 OKR 테이블 구조를 미리 작성해두고, Copilot을 이용해 세부 전략을 채워넣는 실습 지시사항을 주석으로 추가합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "파일 내에 '목표' 섹션과 '세부 전략' 섹션이 명확히 구분되어 있는지 확인합니다."
           },
           {
@@ -323,7 +323,7 @@
               1
             ],
             "details": "`templates/exercises/level-2/memo_2025.txt` 파일을 생성합니다. 줄글 형태의 브레인스토밍 아이디어와 날짜들이 섞인 더미 데이터를 넣고, 이를 정제된 메모로 변환하는 실습을 위한 가이드를 상단에 배치합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "텍스트 파일이 UTF-8 인코딩으로 저장되었는지 확인하고, 샘플 데이터가 충분한 분량(최소 5줄 이상)인지 확인합니다."
           },
           {
@@ -334,7 +334,7 @@
               1
             ],
             "details": "`templates/exercises/level-3/meeting_note_template.txt` 파일을 생성합니다. 가상의 프로젝트 킥오프 미팅 대화록(Script)을 포함시키고, 하단에 요약 및 할 일 목록(Action Items)을 생성하도록 유도하는 프롬프트 주석을 작성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "가상 대화록에 최소 2명 이상의 화자가 등장하는지, 대화 내용이 요약 실습에 적합한지 확인합니다."
           }
         ]
@@ -349,7 +349,7 @@
         "dependencies": [
           3
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -357,7 +357,7 @@
             "description": "복잡한 워크플로우와 에이전트 상호작용 과정을 Mermaid 문법을 사용하여 다이어그램으로 시각화하고 문서에 통합합니다.",
             "dependencies": [],
             "details": "1. Copilot Edits의 작업 분기 처리 로직을 Flowchart 형태로 작성하여 논리적 흐름 시각화\n2. 에이전트와 사용자 간의 요청 및 응답 프로세스를 Sequence Diagram으로 구현\n3. 작성된 Mermaid 코드를 마크다운 파일 내 적절한 위치에 삽입하고 구문 오류 점검",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "GitHub 렌더링 미리보기를 통해 다이어그램의 노드와 연결선이 의도대로 표시되는지 확인하고, 다크/라이트 모드에서 텍스트 가시성을 테스트합니다."
           },
           {
@@ -368,7 +368,7 @@
               1
             ],
             "details": "1. `docs/images/` 디렉토리 구조 정비 및 현재 문서에서 사용되지 않는 레거시 이미지 제거\n2. 주요 기능(채팅 인터페이스, 결과 뷰 등) 고해상도 스크린샷 캡처 및 명명 규칙 통일\n3. 마크다운 또는 HTML img 태그를 사용하여 모바일 환경에서도 이미지가 뷰포트를 넘치지 않도록 max-width 스타일 적용",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "다양한 해상도(데스크톱, 태블릿, 모바일)에서 이미지가 레이아웃을 깨뜨리지 않고 적절한 비율로 리사이징되는지 브라우저 개발자 도구로 검증합니다."
           }
         ]
@@ -384,7 +384,7 @@
           4,
           6
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -392,7 +392,7 @@
             "description": "각 섹션 또는 모듈의 완료 여부를 표시할 마크다운 체크박스의 위치와 형식을 결정하고 템플릿에 반영합니다.",
             "dependencies": [],
             "details": "기존 문서 구조를 분석하여 헤더 바로 아래 혹은 챕터 시작 부분에 `- [ ] 학습 완료` 형태의 체크박스를 배치할지, 별도의 요약 테이블을 만들지 결정합니다. 일관성을 위해 STYLE_GUIDE.md에 해당 규칙을 추가합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "STYLE_GUIDE.md에 체크박스 배치 규칙이 명시되었는지 확인하고, 샘플 문서에 적용하여 렌더링 상태를 점검합니다."
           },
           {
@@ -403,7 +403,7 @@
               1
             ],
             "details": "docs/ko/level-1/ 디렉토리 내의 파일들을 순회하며 각 주요 헤더 옆이나 아래에 체크박스를 삽입합니다. 문서 마지막에는 해당 챕터의 핵심 내용을 체크할 수 있는 요약 리스트를 추가합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Level 1 문서들을 마크다운 뷰어로 열었을 때 체크박스가 정상적으로 렌더링되고 클릭 가능한지 확인합니다."
           },
           {
@@ -414,7 +414,7 @@
               2
             ],
             "details": "각 챕터별 핵심 개념(예: Copilot 기본 단축키, 제안 수락 방법 등)을 묻는 3-5개의 질문과 접기/펼치기(`details` 태그)를 활용한 정답 해설을 작성하여 문서 하단에 배치합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "퀴즈의 질문이 명확한지, 정답이 `details` 태그 내에 숨겨져 있다가 클릭 시 보이는지 확인합니다."
           },
           {
@@ -425,7 +425,7 @@
               3
             ],
             "details": "docs/ko/level-2/ 및 docs/ko/level-3/ 디렉토리 내 파일들에 대해 2번, 3번 서브태스크와 동일한 작업을 수행합니다. 프롬프트 엔지니어링, 컨텍스트 관리 등 심화 주제에 맞는 퀴즈를 작성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "고급 주제에 대한 퀴즈 내용의 정확성을 검증하고, 모든 레벨 파일에 일관된 형식이 적용되었는지 확인합니다."
           },
           {
@@ -436,7 +436,7 @@
               4
             ],
             "details": "docs/ko/PROGRESS.md 파일을 생성하여 각 레벨 및 챕터로 연결되는 링크와 해당 섹션의 완료 여부를 체크할 수 있는 전체 체크리스트를 계층 구조로 작성합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "PROGRESS.md 파일에서 각 챕터로의 링크가 유효한지 확인하고, 전체 체크리스트의 구조가 학습 로드맵과 일치하는지 대조합니다."
           }
         ]
@@ -452,7 +452,7 @@
           3,
           6
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -460,7 +460,7 @@
             "description": "기초(Basic) 및 심화(Advanced) 트랙의 학습 목표를 정의하는 기계 판독 가능한 PRD 파일을 작성합니다.",
             "dependencies": [],
             "details": "1. `learning-paths/basic-track.prd.md` 파일에 Level 1 목표 및 Capability 정의\n2. `learning-paths/advanced-track.prd.md` 파일에 Level 2-3 목표 및 Feature 정의\n3. 각 파일 내 Task Master 스키마(Capability/Feature 구조) 준수 여부 확인",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "작성된 PRD 파일이 마크다운 린트 규칙을 통과하는지 확인하고, 정의된 학습 목표 계층 구조가 논리적으로 올바른지 수동 검토."
           },
           {
@@ -471,7 +471,7 @@
               1
             ],
             "details": "1. `.taskmaster/config.json` 파일을 생성하여 각 트랙 PRD 파일의 경로 매핑\n2. AI 에이전트가 파싱할 때 참조할 메타데이터 및 규칙 설정\n3. 의존성 그래프 생성 로직과 설정 파일 간의 정합성 확인",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "`task-master parse-prd` 명령어를 실행하여 설정 파일 로드 오류가 없는지 확인하고, 의존성 그래프가 예상대로 출력되는지 검증."
           }
         ]
@@ -487,7 +487,7 @@
           5,
           9
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -495,7 +495,7 @@
             "description": "프로젝트 내 파일명 규칙 준수 여부와 마크다운 문서 내 내부 하이퍼링크의 유효성을 자동으로 검사하는 Node.js 스크립트를 작성합니다.",
             "dependencies": [],
             "details": "`scripts/validate-structure.js` 파일을 생성합니다. Node.js의 `fs` 모듈을 사용하여 `docs/` 디렉토리를 재귀적으로 탐색하고, 파일명에 공백이나 특수문자(허용된 것 제외)가 있는지 검사합니다. 또한 모든 `.md` 파일을 파싱하여 `[text](link)` 형태의 상대 경로가 실제로 존재하는 파일을 가리키는지 확인하는 로직을 구현합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "의도적으로 존재하지 않는 경로를 참조하는 링크와 잘못된 파일명을 가진 더미 파일을 생성한 뒤, 스크립트 실행 시 오류 코드(exit 1)와 함께 정확한 에러 메시지가 출력되는지 테스트합니다."
           },
           {
@@ -504,7 +504,7 @@
             "description": "문서의 헤더 구조를 기반으로 목차를 자동으로 생성하거나, 기존 목차의 최신 상태를 유지하는 `scripts/generate-toc.js` 스크립트를 개발합니다.",
             "dependencies": [],
             "details": "마크다운 파일 내의 H2(`##`), H3(`###`) 태그를 정규식으로 추출하여 계층형 리스트를 구성합니다. 문서 내에 `<!-- TOC -->`와 같은 주석 마커가 있는 경우, 해당 위치에 생성된 목차를 주입하거나 기존 내용과 비교하여 업데이트가 필요한지 판단하는 기능을 구현합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "헤더 구조가 다른 샘플 마크다운 파일을 대상으로 스크립트를 실행하여, 생성된 목차가 실제 헤더 계층과 일치하는지 텍스트 비교를 통해 검증합니다."
           },
           {
@@ -516,7 +516,7 @@
               2
             ],
             "details": "`.github/workflows/validate.yml` 파일을 작성합니다. Node.js 환경을 셋업하고 앞서 작성한 `validate-structure.js`와 `generate-toc.js`를 순차적으로 실행하도록 구성합니다. 추가적으로 `docs/ko`와 `docs/en` 간의 파일 구조가 일치하는지 확인하는 번역 동기화 체크 로직을 워크플로우 단계에 포함시킵니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "GitHub 저장소에서 규칙을 위반하는 PR을 생성하여 Action이 실패(Block)하는지 확인하고, 스크립트가 60초 이내에 수행 완료되는지 실행 시간을 모니터링합니다."
           }
         ]
@@ -524,7 +524,7 @@
     ],
     "metadata": {
       "created": "2025-11-22T08:41:00.047Z",
-      "updated": "2025-11-22T08:52:50.385Z",
+      "updated": "2025-11-22T09:49:49.319Z",
       "description": "Tasks for master context"
     }
   }

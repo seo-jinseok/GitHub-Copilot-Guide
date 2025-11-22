@@ -1,0 +1,43 @@
+name: 'Documentation Validator'
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout repository'
+        uses: actions/checkout@v3
+
+      - name: 'Set up Node.js'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 'Validate File Structure and Links'
+        run: node scripts/validate-structure.js
+
+      - name: 'Check Translation Synchronization'
+        run: |
+          echo "Checking for file structure parity between /docs/ko and /docs/en..."
+          # Generate a list of relative paths for md files in ko
+          KO_FILES=$(find docs/ko -type f -name "*.md" | sed 's|^docs/ko/||' | sort)
+
+          # Generate a list of relative paths for md files in en
+          EN_FILES=$(find docs/en -type f -name "*.md" | sed 's|^docs/en/||' | sort)
+
+          # Compare the two lists
+          diff <(echo "$KO_FILES") <(echo "$EN_FILES")
+
+          if [ $? -ne 0 ]; then
+            echo "Error: Directory structures for 'ko' and 'en' do not match."
+            exit 1
+          else
+            echo "Translation file structure is synchronized."
+          fi
