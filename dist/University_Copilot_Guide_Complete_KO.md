@@ -106,9 +106,9 @@ graph LR
     C --> C2[데이터 시각화]
     C --> C3[회의록 자동화 실습]
     
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style C fill:#ffe1f5
+    style A fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fff4e1,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#ffe1f5,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **예상 학습 시간**:
@@ -155,7 +155,7 @@ graph LR
 **웹 기반 AI의 작업 흐름:**
 
 ```mermaid
-graph TD
+graph LR
     A[브라우저에서 ChatGPT 열기] --> B[프롬프트 작성 및 입력]
     B --> C[AI 응답 생성 대기]
     C --> D[전체 텍스트 복사]
@@ -170,15 +170,15 @@ graph TD
     K --> L[다시 저장]
     L --> M[완료]
     
-    style H fill:#ffcccc
-    style B fill:#ffe6cc
-    style K fill:#ffcccc
+    style H fill:#ffcccc,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#ffe6cc,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#ffcccc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **VS Code + Copilot의 작업 흐름:**
 
 ```mermaid
-graph TD
+graph LR
     A[VS Code에서 프로젝트 폴더 열기] --> B[5개 파일 동시 확인]
     B --> C[첫 번째 파일에서 Copilot 호출]
     C --> D[AI가 폴더 맥락 자동 파악]
@@ -191,9 +191,9 @@ graph TD
     I --> J[변경 이력 자동 기록]
     J --> K[완료]
     
-    style D fill:#ccffcc
-    style E fill:#ccffcc
-    style H fill:#ccffcc
+    style D fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style H fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ### 핵심 차이점 3가지
@@ -227,11 +227,11 @@ graph LR
         B3 -.-> B4
     end
     
-    style A1 fill:#ffe6cc
-    style B1 fill:#ccffcc
-    style B2 fill:#ccffcc
-    style B3 fill:#ccffcc
-    style B4 fill:#ccffcc
+    style A1 fill:#ffe6cc,stroke:#333,stroke-width:2px,color:#000
+    style B1 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B2 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B3 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B4 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **실제 예시:**
@@ -294,7 +294,7 @@ graph LR
 #### 🎯 도구 선택 가이드
 
 ```mermaid
-graph TD
+graph LR
     A[어떤 작업을 하시나요?] --> B{파일 개수는?}
     B -->|1개| C{한 번에 완성?}
     B -->|2개 이상| D[VS Code + Copilot 추천]
@@ -310,8 +310,8 @@ graph TD
     I -->|자주| J[VS Code로 저장 후<br/>Copilot 활용 고려]
     I -->|거의 없음| K[✅ ChatGPT/Claude]
     
-    style G fill:#ccffcc
-    style K fill:#ccffcc
+    style G fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ### 💡 실전 활용 팁
@@ -343,21 +343,21 @@ AI와 제대로 협업하려면, 똑똑한 '메모장'이 하나 필요합니다
 #### 1.1 설치 및 세팅 (2025년 최신)
 
 ```mermaid
-sequenceDiagram
-    participant User as 사용자
-    participant Web as VS Code 웹사이트
-    participant VSCode as VS Code
-    participant GitHub as GitHub 계정
-    
-    User->>Web: 1. code.visualstudio.com 방문
-    Web->>User: VS Code 설치 파일 다운로드
-    User->>VSCode: 2. VS Code 실행
-    VSCode->>User: Extensions 메뉴 열기
-    User->>VSCode: 3. "GitHub Copilot" 검색 및 설치
-    VSCode->>User: 로그인 요청
-    User->>GitHub: 4. GitHub 계정으로 로그인
-    GitHub->>VSCode: 인증 완료
-    VSCode->>User: Copilot 사용 준비 완료!
+graph LR
+    User[사용자] -->|1. 방문| Web[VS Code 웹사이트]
+    Web -->|설치파일| User
+    User -->|2. 실행| VSCode[VS Code]
+    VSCode -->|메뉴 열기| User
+    User -->|3. 설치| VSCode
+    VSCode -->|로그인 요청| User
+    User -->|4. 로그인| GitHub[GitHub 계정]
+    GitHub -->|인증| VSCode
+    VSCode -->|준비 완료| User
+
+    style User fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style Web fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style VSCode fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style GitHub fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **단계별 설명**:
@@ -398,7 +398,7 @@ sequenceDiagram
 Copilot을 쓰는 방법은 크게 두 가지입니다. 이 두 가지만 구분해도 상위 10%입니다.
 
 ```mermaid
-graph TD
+graph LR
     A[GitHub Copilot 기능] --> B[대화형 Chat]
     A --> C[자동완성 Ghost Text]
     
@@ -410,8 +410,8 @@ graph TD
     C --> C2["⌨️ 수락: Tab 키"]
     C --> C3["🎯 용도:<br/>- 다음 문장 예측<br/>- 표 자동 채우기<br/>- 반복 패턴 완성"]
     
-    style B fill:#e1f5ff
-    style C fill:#fff4e1
+    style B fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff4e1,stroke:#333,stroke-width:2px,color:#000
     style B3 text-align:left
     style C3 text-align:left
 ```
@@ -562,10 +562,10 @@ flowchart LR
     C --> D[Output<br/>출력 형식]
     D --> E[AI 응답]
     
-    style B fill:#e1f5ff,stroke:#0288d1
-    style C fill:#fff9c4,stroke:#fbc02d
-    style D fill:#f3e5f5,stroke:#8e24aa
-    style E fill:#c8e6c9,stroke:#388e3c
+    style B fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#f3e5f5,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#c8e6c9,stroke:#333,stroke-width:2px,color:#000
 ```
 **예시:** "너는 베테랑 행정가야(Role) + 교육부 감사 대비(Context) + 표로 정리(Output) → 명확한 결과"
 
@@ -604,12 +604,19 @@ AI의 말투를 조절할 수 있습니다.
 4.  Copilot이 수정 계획을 보여줍니다. **'확인(Accept)'**을 누르면 파일이 실제로 수정됩니다.
 
 ```mermaid
-graph TD
+graph LR
     A[1. Edits 모드로 변경] --> B[2. 파일 선택 (#)];
     B --> C[3. 수정 명령 내리기];
     C --> D{4. 수정 계획 검토};
     D -- 수락 --> E[5. 파일 자동 수정 완료];
     D -- 거절 --> F[취소];
+
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 #### 5.2 언제 쓰나요?
@@ -640,9 +647,9 @@ flowchart LR
     Input --> Process
     Process --> Output
     
-    style Input fill:#e3f2fd,stroke:#1976d2
-    style Process fill:#fff3e0,stroke:#f57c00
-    style Output fill:#e8f5e9,stroke:#2e7d32
+    style Input fill:#e3f2fd,stroke:#333,stroke-width:2px,color:#000
+    style Process fill:#fff3e0,stroke:#333,stroke-width:2px,color:#000
+    style Output fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
 ```
 **효율:** 파일 3개 × 5분 = 15분 작업 → **1분으로 단축**
 
@@ -901,13 +908,14 @@ Copilot이 수정한 내용을 보여줄 겁니다.
 *   `@vscode`: VS Code 사용법을 알려주는 비서
 
 ```mermaid
-sequenceDiagram
-    participant User
-    participant Copilot
-    User->>Copilot: `@`를 눌러 에이전트 호출 (@workspace)
-    User->>Copilot: 프롬프트 입력 ("A문서 요약해줘")
-    Copilot->>Copilot: 작업 수행 (문서 분석)
-    Copilot-->>User: 결과 반환 (요약 텍스트)
+graph LR
+    User[User] -->|1. @workspace 호출| Copilot
+    User -->|2. 프롬프트 입력| Copilot
+    Copilot -->|3. 문서 분석| Copilot
+    Copilot -->|4. 결과 반환| User
+
+    style User fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style Copilot fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ---
@@ -940,6 +948,11 @@ graph LR
     A[기안 작성] --> B{팀장 승인?};
     B -- Yes --> C[처장 전결];
     B -- No --> D[반려];
+
+    style A fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 #### 8.2 데이터 분석 (Data Analysis)
@@ -947,19 +960,19 @@ graph LR
 > "이 엑셀 파일(`survey.xlsx`)에서 만족도가 가장 낮은 항목 3개를 뽑고, 그 이유를 요약해줘."
 
 ```mermaid
-sequenceDiagram
-    participant U as 사용자
-    participant C as Copilot Chat
-    participant F as 데이터 파일
-    participant A as 분석 엔진
-    
-    U->>C: survey.xlsx 파일 업로드
-    C->>F: 파일 내용 읽기
-    F-->>C: 데이터 전송
-    U->>C: "만족도 낮은 항목 3개 분석"
-    C->>A: 데이터 분석 요청
-    A-->>C: 통계 결과 + 인사이트
-    C-->>U: 표/차트 + 해석 제공
+graph LR
+    U[사용자] -->|1. 파일 업로드| C[Copilot Chat]
+    C -->|2. 읽기| F[데이터 파일]
+    F -->|3. 데이터| C
+    U -->|4. 분석 요청| C
+    C -->|5. 분석| A[분석 엔진]
+    A -->|6. 결과| C
+    C -->|7. 제공| U
+
+    style U fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style A fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 **워크플로우:** 파일 업로드 → 자연어 질문 → Copilot이 자동 분석 → 표/차트 결과 제공
 
@@ -1056,23 +1069,33 @@ Copilot의 출력에 다음이 포함되어 있는지 확인하세요:
 > **성공 확인:** 1분 안에 표와 차트가 포함된 완벽한 보고서가 생성되었나요? 이제 여러분은 **'AI 행정 마스터'**입니다!
 
 ```mermaid
-sequenceDiagram
-    participant U as 사용자
-    participant W as @workspace
-    participant F as meeting_note.txt
-    participant AI as Copilot AI
+graph LR
+    U[사용자] --> W[@workspace];
+    W --> F[meeting_note.txt];
+    F --> W;
+    U --> W;
+    W --> AI[Copilot AI];
+    AI --> AI;
+    AI --> AI;
+    AI --> AI;
+    AI --> U;
     
-    U->>W: 회의록 파일 참조
-    W->>F: 파일 내용 읽기
-    F-->>W: 회의 내용 전달
-    U->>W: "표 + 차트 보고서 작성"
-    W->>AI: 구조화 요청
-    AI-->>AI: 주요 안건 추출
-    AI-->>AI: 일정 데이터 정리
-    AI-->>AI: 간트 차트 생성
-    AI-->>U: 📊 완성된 보고서 출력
+    U -- "회의록 파일 참조" --> W;
+    W -- "파일 내용 읽기" --> F;
+    F -- "회의 내용 전달" --> W;
+    U -- ""표 + 차트 보고서 작성"" --> W;
+    W -- "구조화 요청" --> AI;
+    AI -- "주요 안건 추출" --> AI;
+    AI -- "일정 데이터 정리" --> AI;
+    AI -- "간트 차트 생성" --> AI;
+    AI -- "📊 완성된 보고서 출력" --> U;
     
     Note over U,AI: 변환 시간: 약 30초
+
+    style U fill:#e6f3ff,stroke:#333333,stroke-width:2px,color:#000000
+    style W fill:#fff9c4,stroke:#333333,stroke-width:2px,color:#000000
+    style F fill:#e8f5e9,stroke:#333333,stroke-width:2px,color:#000000
+    style AI fill:#ffebee,stroke:#333333,stroke-width:2px,color:#000000
 ```
 **자동화 결과:** 회의 메모 → 표 정리 → 간트 차트 → 보고서 완성 (30초)
 
@@ -1103,7 +1126,7 @@ sequenceDiagram
 | **행사 기획** | 식순, 준비물 리스트 엑셀에 수기 작성 | "신입생 오리엔테이션 식순과 체크리스트를 표로 만들어줘." |
 
 ```mermaid
-graph TD
+graph LR
     subgraph Before["⏰ 기존 방식 (수작업)"]
         B1[규정집 검색] --> B2[5개 PDF 열기]
         B2 --> B3[Ctrl+F 반복]
@@ -1117,10 +1140,10 @@ graph TD
         A3 --> A4[3분 소요]
     end
     
-    style Before fill:#ffebee,stroke:#c62828
-    style After fill:#e8f5e9,stroke:#2e7d32
-    style B5 fill:#ffcdd2
-    style A4 fill:#a5d6a7
+    style Before fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
+    style After fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style B5 fill:#ffcdd2,stroke:#333,stroke-width:2px,color:#000
+    style A4 fill:#a5d6a7,stroke:#333,stroke-width:2px,color:#000
 ```
 **시간 절감:** 규정 검색 예시 기준 약 **90% 시간 단축** (30분 → 3분)
 
@@ -1134,7 +1157,7 @@ graph TD
 *   **아이디어:** "우리 대학 홍보 슬로건 10개만 제안해줘. (키워드: 혁신, 미래, 글로벌)"
 
 ```mermaid
-graph TD
+graph LR
     Start{작업 목적?} --> Summary[요약/정리]
     Start --> Create[문서 작성]
     Start --> Fix[오류 수정]
@@ -1147,11 +1170,11 @@ graph TD
     Fix --> F1["'오탈자 찾아 교정'"]
     Analyze --> A1["'만족도 낮은 항목 3개'"]
     
-    style Start fill:#e3f2fd,stroke:#1976d2
-    style Summary fill:#fff3e0,stroke:#f57c00
-    style Create fill:#f3e5f5,stroke:#7b1fa2
-    style Fix fill:#fce4ec,stroke:#c2185b
-    style Analyze fill:#e0f2f1,stroke:#00796b
+    style Start fill:#e3f2fd,stroke:#333,stroke-width:2px,color:#000
+    style Summary fill:#fff3e0,stroke:#333,stroke-width:2px,color:#000
+    style Create fill:#f3e5f5,stroke:#333,stroke-width:2px,color:#000
+    style Fix fill:#fce4ec,stroke:#333,stroke-width:2px,color:#000
+    style Analyze fill:#e0f2f1,stroke:#333,stroke-width:2px,color:#000
 ```
 **사용 팁:** 목적 먼저 정하기 → 형식 지정 → 구체적 요구사항 추가
 
@@ -1289,10 +1312,10 @@ graph LR
         G4 --> G5[5분]
     end
     
-    style Bad fill:#ffebee,stroke:#c62828
-    style Good fill:#e8f5e9,stroke:#2e7d32
-    style B6 fill:#ffcdd2
-    style G5 fill:#a5d6a7
+    style Bad fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
+    style Good fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style B6 fill:#ffcdd2,stroke:#333,stroke-width:2px,color:#000
+    style G5 fill:#a5d6a7,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **핵심 포인트:** 상세한 프롬프트를 작성하는 데 2분을 추가로 투자하면 수정 및 수동 교정에서 15분 이상을 절약할 수 있습니다.
