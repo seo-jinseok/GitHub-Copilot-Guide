@@ -256,10 +256,10 @@ Copilot will suggest your name or title in gray text. Press `Tab` to complete it
 
 ## [Level 2: Practical] Increasing Work Speed 10x
 
-### 4. Prompt Engineering: Making AI Understand You Perfectly
+### 4. Writing Good Instructions: Making AI Understand You Perfectly
 - [ ] Learning Complete
 
-Getting AI to do work well is also a skill. This is called 'prompt engineering'. It's not difficult. Just remember 3 things: **Role, Context, Output**.
+Getting AI to do work well is also a skill. This is sometimes called 'prompt engineering', but simply put, it's about **writing clear instructions**. It's not difficult. Just remember 3 things: **Role, Context, Output**.
 
 #### 4.1 The R.C.O Formula
 *   **Role:** "You are a veteran administrator with 10 years of experience."
@@ -394,7 +394,7 @@ Practice Instructions:
 
 ## 1. Q1 2024 Goals
 - **Goal:** Establish AI utilization education program for new students
-- **Key Results (OKR):**
+- **Key Results (Objectives and Key Results - OKR):**
     | Key Result | Starting Value | Target Value | Achievement Rate |
     | :--- | :--- | :--- | :--- |
     | Freshman orientation satisfaction | 0% | 90% | |
@@ -480,9 +480,9 @@ Create a `.github/copilot-instructions.md` file in your project folder and write
 > 2. Amounts should be rounded down to the nearest thousand won.
 > 3. Student personal information should be masked (***).
 
-#### 7.2 AI Personas (Agents)
+#### 7.2 AI Personas (AI Assistants)
 **[2025 New Feature]**
-Press `@` in the chat window to call various experts.
+Press `@` in the chat window to call various specialized AI helpers (called "agents").
 *   `@workspace`: An assistant who knows all documents on your computer
 *   `@terminal`: An assistant who types complex commands for you
 *   `@vscode`: An assistant who teaches you how to use VS Code
@@ -513,8 +513,8 @@ sequenceDiagram
 ### 8. Data & Visualization: Analyzing and Drawing Without Excel
 - [ ] Learning Complete
 
-#### 8.1 Drawing Charts with Text (Mermaid)
-Don't waste time drawing shapes in PowerPoint. Write text and it becomes a picture.
+#### 8.1 Drawing Charts with Text (Mermaid Diagrams)
+Don't waste time drawing shapes in PowerPoint. Using a simple diagram tool called "Mermaid", you can write text and it automatically becomes a picture.
 
 **[Practice] Drawing a Workflow**
 Try copying and pasting the code below.
@@ -590,7 +590,7 @@ Senior Park: "Yes, vendor selection is complete, and we are about to sign a cont
 
 Assistant Choi: "After the legal review, we need to submit a budget execution proposal by next week. I will draft it and deliver it to Senior Park by next Wednesday (12/6)."
 
-Team Leader Kim: "Good. And most importantly. There are many opinions that the User Requirements Document (RFP) is still insufficient. Especially the student complaint part is weak. Assistant Choi, please consult with the Student Affairs Office and reinforce this by next Friday (12/8)."
+Team Leader Kim: "Good. And most importantly. There are many opinions that the User Requirements Document (Request for Proposal - RFP) is still insufficient. Especially the student complaint part is weak. Assistant Choi, please consult with the Student Affairs Office and reinforce this by next Friday (12/8)."
 
 Senior Park: "Understood. So I'll summarize that I'm in charge of the contract, and Assistant Choi is in charge of the proposal and requirements reinforcement."
 
