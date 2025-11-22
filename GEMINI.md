@@ -2,6 +2,9 @@
 
 > **Note:** This file works alongside `AGENTS.md` (generic AI agent instructions). AGENTS.md contains the core Task Master commands and workflows for all AI agents. This file contains only Gemini CLI-specific features and integrations.
 
+## Output Language
+All Output Language : Always respond in Korean (한국어). Even if the user asks in English or the context is technical, provide explanations in Korean unless explicitly requested otherwise.
+
 ## MCP Configuration for Gemini CLI
 
 Configure Task Master MCP server in `~/.gemini/settings.json`:
