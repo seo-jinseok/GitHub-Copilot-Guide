@@ -6,21 +6,82 @@
 
 ## Table of Contents
 
-- **[Level 1: Introduction](#level-1-introduction-first-steps-as-an-ai-administrator)**
+- [📊 Learning Path Guide](#-learning-path-guide)
+
+### **[Level 1: Introduction - First Steps as an AI Administrator](#level-1-introduction-first-steps-as-an-ai-administrator)**
   - [1. Setup: Creating Your Digital Office](#1-setup-creating-your-digital-office)
+    - [1.1 Installation and Setup (2025 Latest)](#11-installation-and-setup-2025-latest)
+    - [1.2 Understanding the Screen Layout](#12-understanding-the-screen-layout)
+  - [✅ Key Takeaways](#-key-takeaways)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz)
   - [2. Fundamentals: Distinguishing Chat from Autocomplete](#2-fundamentals-distinguishing-chat-from-autocomplete)
+    - [2.1 Interactive (Chat): "Do This for Me"](#21-interactive-chat-do-this-for-me)
+    - [2.2 Autocomplete (Ghost Text): "Read My Mind"](#22-autocomplete-ghost-text-read-my-mind)
+  - [✅ Key Takeaways](#-key-takeaways-1)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-1)
   - [3. Workbook 1: Finishing an English Email in 3 Minutes](#3-workbook-1-finishing-an-english-email-in-3-minutes)
-- **[Level 2: Practical](#level-2-practical-increasing-work-speed-10x)**
-  - [4. Prompt Engineering: Making AI Understand You Perfectly](#4-prompt-engineering-making-ai-understand-you-perfectly)
+    - [Step 1: Download Template File](#step-1-download-template-file)
+    - [Step 2: Open File in VS Code](#step-2-open-file-in-vs-code)
+    - [Step 3: Describe the Situation (Chat)](#step-3-describe-the-situation-chat)
+    - [Step 4: Check and Edit Results](#step-4-check-and-edit-results)
+    - [Step 5: Experience Autocomplete](#step-5-experience-autocomplete)
+  - [✅ Key Takeaways](#-key-takeaways-2)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-2)
+
+### **[Level 2: Practical - Increasing Work Speed 10x](#level-2-practical-increasing-work-speed-10x)**
+  - [4. Writing Good Instructions: Making AI Understand You Perfectly](#4-writing-good-instructions-making-ai-understand-you-perfectly)
+    - [4.1 The R.C.O Formula](#41-the-rco-formula)
+    - [4.2 Adjusting Tone and Manner](#42-adjusting-tone-and-manner)
+  - [✅ Key Takeaways](#-key-takeaways-3)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-3)
   - [5. Copilot Edits: Modifying Multiple Files at Once](#5-copilot-edits-modifying-multiple-files-at-once)
+    - [5.1 How to Use](#51-how-to-use)
+    - [5.2 When to Use?](#52-when-to-use)
+  - [✅ Key Takeaways](#-key-takeaways-4)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-4)
+  - [5.5 Workbook 2.5: Compiling Annual Report Data](#55-workbook-25-compiling-annual-report-data)
+    - [Step 1: Prepare Your Raw Data](#step-1-prepare-your-raw-data)
+    - [Step 2: Write a Detailed Prompt](#step-2-write-a-detailed-prompt)
+    - [Step 3: Request Table + Trend Analysis](#step-3-request-table--trend-analysis)
+    - [Step 4: Review and Verify Calculations](#step-4-review-and-verify-calculations)
+    - [Step 5: Export to Excel Format](#step-5-export-to-excel-format)
+  - [✅ Key Takeaways](#-key-takeaways-5)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-5)
   - [6. Workbook 2: Remodeling Last Year's Report into This Year's Version](#6-workbook-2-remodeling-last-years-report-into-this-years-version)
-- **[Level 3: Expert](#level-3-expert-operating-your-own-ai-assistant-team)**
+    - [Step 1: Get Your Materials Ready](#step-1-get-your-materials-ready)
+    - [Step 2: Summon Copilot Edits](#step-2-summon-copilot-edits)
+    - [Step 3: Give the Command](#step-3-give-the-command)
+    - [Step 4: Review and Approve](#step-4-review-and-approve)
+  - [✅ Key Takeaways](#-key-takeaways-6)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-6)
+
+### **[Level 3: Expert - Operating Your Own AI Assistant Team](#level-3-expert-operating-your-own-ai-assistant-team)**
   - [7. Agents & Instructions: Creating Department-Specific AI](#7-agents--instructions-creating-department-specific-ai)
+    - [7.1 Custom Instructions (.github/copilot-instructions.md)](#71-custom-instructions-githubcopilot-instructionsmd)
+    - [7.2 AI Personas (AI Assistants)](#72-ai-personas-ai-assistants)
+  - [✅ Key Takeaways](#-key-takeaways-7)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-7)
   - [8. Data & Visualization: Analyzing and Drawing Without Excel](#8-data--visualization-analyzing-and-drawing-without-excel)
+    - [8.1 Drawing Charts with Text (Mermaid Diagrams)](#81-drawing-charts-with-text-mermaid-diagrams)
+    - [8.2 Data Analysis](#82-data-analysis)
+  - [✅ Key Takeaways](#-key-takeaways-8)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-8)
   - [9. Workbook 3: Meeting Minutes Automation and Visualization Reports](#9-workbook-3-meeting-minutes-automation-and-visualization-reports)
-- **[Appendix](#appendix)**
-  - [A. Practical Scenario Library](#a-practical-scenario-library-before--after)
+    - [Step 1: Prepare Meeting Notes](#step-1-prepare-meeting-notes)
+    - [Step 2: Write a Structured Prompt](#step-2-write-a-structured-prompt)
+    - [Step 3: Review Generated Output](#step-3-review-generated-output)
+  - [✅ Key Takeaways](#-key-takeaways-9)
+  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-9)
+
+### **[Appendix](#appendix)**
+  - [A. Practical Scenario Library (Before & After)](#a-practical-scenario-library-before--after)
   - [B. Prompt Dictionary for Administrative Staff](#b-prompt-dictionary-for-administrative-staff)
+  - [C. Good vs Bad Prompt Examples](#c-good-vs-bad-prompt-examples)
+    - [💡 The R.C.O. Formula for Good Prompts](#-the-rco-formula-for-good-prompts)
+    - [Example 1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)
+    - [Example 2: Meeting Minutes Summarization](#example-2-meeting-minutes-summarization)
+    - [Example 3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)
+    - [📊 Impact Comparison](#-impact-comparison)
 
 ---
 
