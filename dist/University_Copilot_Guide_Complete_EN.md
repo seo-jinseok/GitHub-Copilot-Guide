@@ -454,6 +454,8 @@ When you're writing in the editor, it shows the next content in gray text.
 
 Now let's not just look, but actually do it. Let's write an email requesting renewal of an agreement with an overseas university.
 
+💡 **Efficiency Tip**: ChatGPT 5-7 min → VS Code 3 min = **40-50% time saved!**
+
 > 💡 **Before You Start:** Want to learn how to write effective prompts for email drafting? See **[Appendix C.1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)** for "Good vs Bad" examples that show the difference between vague and clear instructions.
 
 ### [Step 1] Download Template File
@@ -533,6 +535,9 @@ Copilot will suggest your name or title in gray text. Press `Tab` to complete it
 <summary>Q2. When you type `Sincerely,` at the end of an email and Copilot suggests your name, which feature is this an example of?</summary>
 **A2.** This is an example of the **Autocomplete (Ghost Text)** feature.
 </details>
+
+🎯 **Why VS Code?**
+By working directly on the file in VS Code, you can edit and refine the email without switching between ChatGPT and your text editor. This eliminates the copy-paste workflow, allowing you to iterate faster and save the final result instantly. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
 
@@ -657,6 +662,8 @@ flowchart LR
 
 University administrators often need to compile enrollment statistics, budget data, or performance metrics for annual reports. Let's learn how to structure data efficiently using Copilot.
 
+💡 **Efficiency Tip**: ChatGPT 10 min → VS Code 4 min = **60% time saved!**
+
 > 💡 **Before You Start:** Want to see how to write effective prompts for data compilation? Check **[Appendix C.3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)** for "Good vs Bad" examples.
 
 #### [Step 1] Prepare Your Raw Data
@@ -765,12 +772,17 @@ Always double-check:
 **A2.** AI can make mathematical errors, especially with complex percentage calculations. Always double-check totals and percentages before using in official reports.
 </details>
 
+🎯 **Why VS Code?**
+When working with data files directly in VS Code, you can edit raw data and see formatted tables immediately without switching tools. This eliminates the double-copy workflow (ChatGPT → file → table), allowing you to refine data structures in real-time. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
+
 ---
 
 ### 6. Workbook 2: Remodeling Last Year's Report into This Year's Version
 - [ ] Learning Complete
 
 There's an excellent business plan that a senior colleague wrote last year. Let's create this year's version based on it.
+
+💡 **Efficiency Tip**: ChatGPT 8 min → VS Code 4 min = **50% time saved!**
 
 ### [Step 1] Get Your Materials Ready
 1.  Prepare last year's business plan file (`plan_2024.md`). Download and use the template below.
@@ -905,6 +917,9 @@ sequenceDiagram
 **A1.** The `.github/copilot-instructions.md` file in the project root.
 </details>
 
+🎯 **Why VS Code?**
+By opening multiple files simultaneously and using Copilot Edits for batch modifications, you can update all related files at once without switching between documents or making repetitive edit requests. In ChatGPT, you'd need to copy-paste each document separately for modifications, but in VS Code, you can update all relevant files in your workspace in one go. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
+
 ---
 
 ### 8. Data & Visualization: Analyzing and Drawing Without Excel
@@ -959,6 +974,8 @@ sequenceDiagram
 
 ### 9. Workbook 3: Meeting Minutes Automation and Visualization Reports
 - [ ] Learning Complete
+
+> 💡 **Efficiency Tip:** Similar workflows in ChatGPT take about **15 minutes** (upload file → request summary → request table → request chart → copy results), but using **VS Code + `@workspace` takes only 5 minutes = 70% time saved!**
 
 This is the final challenge. Let's turn meeting notes into a nice report.
 
@@ -1065,6 +1082,9 @@ sequenceDiagram
 <summary>Q1. When you want to create a visualization report based on meeting minutes files on your computer, which agent is most effective to call?</summary>
 **A1.** The `@workspace` agent.
 </details>
+
+🎯 **Why VS Code?**
+With the `@workspace` agent, you can reference multiple files and generate tables and charts (Mermaid diagrams) all within a single environment. In ChatGPT, you'd need to manually upload files, copy-paste chart code to separate viewers, and reassemble everything—but VS Code handles file references, content extraction, and visualization rendering automatically in one integrated workflow. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
 
