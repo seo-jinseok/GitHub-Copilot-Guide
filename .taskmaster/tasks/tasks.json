@@ -409,7 +409,7 @@
             "description": "Inject a clickable Table of Contents into the English consolidated guide.",
             "dependencies": [],
             "details": "Locate `dist/University_Copilot_Guide_Complete_EN.md`. Find the placeholder or the position immediately after the Title Page. detailed in Task 13. Parse all H1, H2, and H3 headers. Generate a standard Markdown list with internal anchor links (e.g., `[Section Title](#section-title-slug)`) and insert it into the document.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Open the Markdown file in a viewer (e.g., VS Code Preview or GitHub) and verify that clicking TOC entries scrolls to the correct section.",
             "parentId": "undefined"
           },
@@ -421,7 +421,7 @@
               1
             ],
             "details": "Locate `dist/University_Copilot_Guide_Complete_KO.md`. Similar to the English version, parse H1, H2, and H3 headers. Ensure that the slug generation handles Korean characters correctly (URL encoding or standard Markdown anchor behavior for non-ASCII text) so links remain clickable.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify in a Markdown viewer that TOC links containing Korean characters correctly navigate to their respective headers.",
             "parentId": "undefined"
           },
@@ -588,7 +588,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:31:26.032Z"
+      "updated": "2025-11-22T15:34:30.427Z"
     }
   }
 }
