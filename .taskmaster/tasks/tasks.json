@@ -576,6 +576,72 @@
         "complexity": 2,
         "recommendedSubtasks": 0,
         "expansionPrompt": ""
+      },
+      {
+        "id": 21,
+        "title": "Final Verification and Consistency Check",
+        "description": "Perform a comprehensive final audit of the distribution files, focusing on Mermaid diagram rendering, Korean honorifics consistency, style guide compliance, and link integrity.",
+        "details": "1. **Mermaid Diagram Validation**: Verify that all diagrams (target count: 12-14) render correctly in GitHub's markdown preview. Specifically check the 4 new diagrams created in Task 16 (Agent Instruction, Data Viz, Admin Task, Meeting Notes) and ensuring text labels in Korean diagrams are fully visible and not truncated.\n2. **Korean Tone Check**: Audit `dist/University_Copilot_Guide_Complete_KO.md`, specifically reviewing the new 'Admin Guide' and diagram explanation sections. Ensure consistent use of formal honorifics ('하십시오' style) and polite endings ('해요') to match the professional academic tone established in `legacy/` content.\n3. **Style Guide Compliance**: Verify emoji usage aligns with `STYLE_GUIDE.md`. Check that 💡 (Tips), 📁 (Files), ✏️ (Exercises), and 🎯 (Goals) are used consistently for their intended semantic purpose.\n4. **Link Integrity**: Test all internal anchor links, especially in the Table of Contents generated in Task 18. Ensure all `[Link](#header)` references point to valid existing headers within the `dist/` files.\n5. **Parallel Structure**: Verify that `dist/University_Copilot_Guide_Complete_EN.md` and `dist/University_Copilot_Guide_Complete_KO.md` maintain a 1:1 structural mapping for headers and major content blocks.",
+        "testStrategy": "1. Render files in GitHub Web Interface to confirm Mermaid syntax validity. 2. Execute a grep search for broken link patterns. 3. Perform a side-by-side scroll comparison of EN and KO files in VS Code to verify structural parity. 4. Manual reading of the Korean Admin section to validate honorific consistency.",
+        "status": "pending",
+        "dependencies": [
+          20
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 22,
+        "title": "Add \"Why VS Code + Copilot?\" Explanatory Section (Korean)",
+        "description": "Create a comprehensive 200-line section explaining VS Code advantages over ChatGPT/Claude/Gemini, inserted after line 125 in the Korean guide. Include comparison table, real scenario, and 4 Mermaid diagrams.",
+        "details": "**Insertion Location**: Line 126 (after `---` divider, before Level 1)\n\n**Content Components**:\n1. **Header**: \"🤔 왜 ChatGPT가 아닌 VS Code + Copilot인가요?\"\n2. **Comparison Table**: Web-based AI vs VS Code workflow differences\n3. **Real Scenario**: 5-department course registration notice writing task\n4. **4 Mermaid Diagrams**:\n   - Diagram 1: Web AI workflow (repetitive copy-paste)\n   - Diagram 2: VS Code workflow (efficient direct editing)\n   - Diagram 3: Context awareness comparison\n   - Diagram 4: Tool selection decision flowchart\n5. **3 Key Differences**: Folder context, direct editing, consistency automation\n6. **When to Use ChatGPT**: Guidelines table\n\n**Tone Requirements** (from AGENTS.md):\n- Use polite honorifics: 하십시오 or 해요 style\n- Encouraging partner tone (not just tool explanation)\n- Avoid technical jargon (target: non-technical admin staff)\n- Use correct university terminology\n\n**Emoji Usage** (from STYLE_GUIDE.md):\n- 💡 Tips/ideas\n- 📁 Folder/context concepts\n- ✏️ Direct editing features\n- 🎯 Consistency/goals\n\n**Expected Output**: ~200 lines of Korean content ready for insertion",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 23,
+        "title": "Translate \"Why VS Code?\" Section to English",
+        "description": "Create parallel English translation of the Korean \"Why VS Code?\" section, maintaining identical structure and inserting at line 125 of the English guide.",
+        "details": "**Dependencies**: Must wait for Korean section (Task 22) completion\n\n**Insertion Location**: Line 126 in `dist/University_Copilot_Guide_Complete_EN.md`\n\n**Translation Requirements**:\n1. Maintain exact parallel structure to Korean version\n2. Translate all 4 Mermaid diagram labels to English\n3. Professional but approachable tone\n4. Clear, simple language (avoid complex technical terms)\n5. Preserve emoji usage exactly as in Korean version\n\n**Content to Translate**:\n- Comparison table headers and cells\n- 5-department scenario narrative\n- 4 Mermaid diagram node labels and descriptions\n- 3 key differences explanations\n- Tool selection guidelines table\n\n**Quality Checks**:\n- Header hierarchy matches Korean (H2, H3 levels)\n- Table columns aligned properly\n- Mermaid syntax renders correctly with English labels\n- Internal anchor links work if referenced elsewhere\n\n**Expected Output**: ~200 lines English content mirroring Korean structure",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          22
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 24,
+        "title": "Add Efficiency Annotations to Workbook Exercises",
+        "description": "Enhance 9 existing workbook exercises with efficiency callouts explaining time-saved benefits and \"Why VS Code?\" context notes. Add 60-80 lines total across both Korean and English guides.",
+        "details": "**Target Sections**: All Workbook exercises in Level 1-3 (approximately 9 exercises total)\n\n**Annotation Components for Each Exercise**:\n1. **💡 Efficiency Callout** (before exercise):\n   - Korean: \"⏱️ 예상 절약 시간: [X]% 단축\"\n   - English: \"⏱️ Time Saved: [X]% faster\"\n   - Calculate realistic percentage based on copy-paste vs direct-edit workflow\n\n2. **🎯 \"Why VS Code?\" Note** (after exercise):\n   - Korean: \"왜 VS Code에서 하나요?\"\n   - English: \"Why in VS Code?\"\n   - Brief 2-3 sentence explanation of direct-editing advantage\n   - Link back to main \"Why VS Code?\" section using anchor: `(자세한 내용은 [여기](#왜-chatgpt가-아닌-vs-code--copilot인가요))`\n\n**Example Annotation Pattern**:\n```markdown\n💡 **효율성 팁**: ChatGPT에서 복사-붙여넣기로 작업하면 5분 걸리지만, VS Code에서는 직접 수정으로 2분이면 충분합니다. **60% 시간 절약!**\n\n[existing exercise content]\n\n🎯 **왜 VS Code에서 하나요?**\n파일을 직접 열어서 Copilot과 대화하면, 복사-붙여넣기 없이 바로 결과가 반영됩니다. 여러 파일 작업 시 차이가 더욱 커집니다.\n```\n\n**Exercises to Enhance** (estimate 9 total):\n- Level 1: Email draft, Basic prompt practice (~3 exercises)\n- Level 2: Meeting notes, Annual plan, Memo writing (~3 exercises)\n- Level 3: Agent instructions, Data viz, Complex workflows (~3 exercises)\n\n**Expected Output**:\n- ~30-40 lines Korean annotations\n- ~30-40 lines English annotations\n- Total: 60-80 lines added across both guides",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          22,
+          23
+        ],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 25,
+        "title": "Final Verification: Diagrams, Tone, and Structure",
+        "description": "Comprehensive verification of 4 new Mermaid diagrams, Korean honorifics consistency, emoji usage compliance, and English-Korean parallel structure after all enhancements are complete.",
+        "details": "**Verification Checklist**:\n\n### 1. Mermaid Diagram Rendering (4 new diagrams)\n- [ ] Diagram 1 (Web AI workflow) renders in GitHub preview - no syntax errors\n- [ ] Diagram 2 (VS Code workflow) renders correctly - labels visible\n- [ ] Diagram 3 (Context awareness) renders correctly - arrows clear\n- [ ] Diagram 4 (Tool selection flowchart) renders correctly - decision nodes work\n- [ ] Korean diagram labels not truncated or garbled\n- [ ] English diagram labels grammatically correct\n- [ ] **Total diagram count**: 12-14 diagrams (8-10 existing + 4 new)\n\n### 2. Korean Honorifics Consistency\n- [ ] \"Why VS Code?\" section uses 하십시오/해요 style consistently\n- [ ] Workbook annotations match surrounding text tone\n- [ ] No informal 해 or 해라 endings in new content\n- [ ] University terminology correct: 수강신청 (not 수업신청), 단과대학 (not 학부)\n\n### 3. Emoji Usage Compliance (STYLE_GUIDE.md)\n- [ ] 💡 used for tips/efficiency callouts only\n- [ ] 📁 used for folder/context concepts\n- [ ] ✏️ used for direct-editing features\n- [ ] 🎯 used for consistency/goal explanations\n- [ ] ⚠️ used appropriately for warnings (if any)\n- [ ] No unauthorized emojis added\n\n### 4. Link Integrity\n- [ ] Anchor link from workbook annotations to \"Why VS Code?\" section works (Korean)\n- [ ] Anchor link from workbook annotations to \"Why VS Code?\" section works (English)\n- [ ] All internal `[Link](#header)` references valid\n- [ ] No broken `#` anchors in Table of Contents\n\n### 5. English-Korean Parallel Structure\n- [ ] \"Why VS Code?\" section: Same H2/H3 hierarchy in both languages\n- [ ] Comparison table: Same column structure in EN/KO\n- [ ] Scenario narrative: Parallel paragraph structure\n- [ ] Workbook annotations: Same placement in corresponding exercises\n- [ ] Total line count difference < 10% (accounting for language density)\n\n### 6. Content Quality\n- [ ] \"Why VS Code?\" explanations clear to non-technical staff\n- [ ] Time-saved percentages realistic (not exaggerated)\n- [ ] No technical jargon unexplained\n- [ ] 5-department scenario relatable to university admin context\n\n**Testing Method**:\n1. Render both guides in GitHub web interface\n2. Click all anchor links manually\n3. Read Korean sections aloud to verify tone\n4. Side-by-side scroll comparison in VS Code split view\n\n**Success Criteria**: All checklist items pass before marking task complete",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [
+          22,
+          23,
+          24
+        ],
+        "priority": "high",
+        "subtasks": []
       }
     ],
     "metadata": {
@@ -588,7 +654,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:49:59.048Z"
+      "updated": "2025-11-22T16:25:50.513Z"
     }
   }
 }
