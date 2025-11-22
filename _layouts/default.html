@@ -42,27 +42,47 @@
   <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
 
   <!-- Mermaid JS -->
+  <!-- Mermaid JS -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: false }); // We will manually run it after transforming tags
+    mermaid.initialize({ startOnLoad: false });
 
     document.addEventListener('DOMContentLoaded', async () => {
-      // Find all code blocks with 'language-mermaid' class
-      const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid, div.language-mermaid pre code');
+      // Select all elements that might contain mermaid code
+      // Jekyll often puts the class 'language-mermaid' on a parent div
+      const elements = document.querySelectorAll('.language-mermaid');
 
-      for (const block of mermaidBlocks) {
+      for (const element of elements) {
+        // We want the text content, but we need to be careful about what element we have
+        let content = element.textContent;
+
+        // If it's a div.language-mermaid, it might contain a pre/code block
+        // We want to replace the ENTIRE container (the div.language-mermaid)
+
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = content;
+
+        // Replace the element with the new mermaid div
+        element.parentNode.replaceChild(div, element);
+      }
+
+      // Also check for the pattern where class is on code tag but not parent
+      const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
+      for (const block of codeBlocks) {
+        // Check if we already handled this via parent
+        if (block.closest('.mermaid')) continue;
+
         const content = block.textContent;
         const div = document.createElement('div');
         div.className = 'mermaid';
         div.textContent = content;
 
-        // Replace the parent 'pre' or 'div.highlighter-rouge' with the new mermaid div
         const pre = block.closest('pre');
         const container = pre.closest('div.highlighter-rouge') || pre;
         container.parentNode.replaceChild(div, container);
       }
 
-      // Run mermaid on the new divs
       await mermaid.run({
         querySelector: '.mermaid'
       });
