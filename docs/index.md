@@ -9,6 +9,12 @@ Welcome to the University Copilot Guide repository. Please select your language 
 
 ---
 
+## 🌍 Common Resources (공통 리소스)
+
+*   **[🇰🇷 웹에서 만나는 GitHub Copilot (VS Code 없이 사용하기)](./common/ko/copilot_web.md)**
+
+---
+
 ## 🔜 Coming Soon
 
 *   👨‍🏫 For Professors (교수자용)
