@@ -9,7 +9,7 @@
         "testStrategy": "디렉토리 구조가 `structural-decomposition` 명세와 일치하는지 확인. 스타일 가이드에 따라 작성된 샘플 문서가 린트 규칙을 통과하는지 검토.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -17,7 +17,7 @@
             "description": "문서 국제화 및 모듈화를 지원하기 위해 정의된 폴더 구조를 생성합니다.",
             "dependencies": [],
             "details": "프로젝트 루트에 `docs/ko`, `docs/en`, `templates`, `images`, `scripts`, `learning-paths`, `legacy` 디렉토리를 생성합니다. `.gitkeep` 파일을 추가하여 빈 디렉토리가 git에 추적되도록 합니다.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "디렉토리 생성 후 `ls -R` 명령어로 구조가 명세와 일치하는지 확인합니다."
           },
           {
@@ -28,7 +28,7 @@
               1
             ],
             "details": "루트 디렉토리에 존재하는 기존 가이드 파일(예: `University_Copilot_Guide_Admin.md`)을 `legacy/University_Copilot_Guide_Admin.md`로 이동시킵니다. 이동 후 원본 파일이 루트에 남지 않았는지 확인합니다.",
-            "status": "pending",
+            "status": "in-progress",
             "testStrategy": "파일 이동 후 `legacy` 폴더 내에 파일이 존재하고, 루트에는 없는지 파일 시스템 검사를 수행합니다."
           },
           {
@@ -524,7 +524,7 @@
     ],
     "metadata": {
       "created": "2025-11-22T08:41:00.047Z",
-      "updated": "2025-11-22T08:41:00.047Z",
+      "updated": "2025-11-22T08:52:50.385Z",
       "description": "Tasks for master context"
     }
   }
