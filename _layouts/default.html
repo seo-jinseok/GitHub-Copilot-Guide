@@ -42,50 +42,68 @@
   <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
 
   <!-- Mermaid JS -->
-  <!-- Mermaid JS -->
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: false });
+  <!-- Mermaid JS - Traditional UMD approach -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    console.log('Mermaid script loaded');
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      // Select all elements that might contain mermaid code
-      // Jekyll often puts the class 'language-mermaid' on a parent div
-      const elements = document.querySelectorAll('.language-mermaid');
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM loaded, searching for Mermaid blocks...');
 
-      for (const element of elements) {
-        // We want the text content, but we need to be careful about what element we have
-        let content = element.textContent;
+      // Find all potential mermaid code blocks
+      const selectors = [
+        'pre code.language-mermaid',
+        'code.language-mermaid',
+        '.language-mermaid',
+        'div.language-mermaid',
+        'pre.language-mermaid'
+      ];
 
-        // If it's a div.language-mermaid, it might contain a pre/code block
-        // We want to replace the ENTIRE container (the div.language-mermaid)
+      let found = false;
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        console.log(`Found ${elements.length} elements with selector: ${selector}`);
 
-        const div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = content;
+        elements.forEach((element, index) => {
+          found = true;
+          console.log(`Processing element ${index} from ${selector}`);
 
-        // Replace the element with the new mermaid div
-        element.parentNode.replaceChild(div, element);
-      }
+          // Get the text content
+          const content = element.textContent;
+          console.log(`Content length: ${content.length}`);
 
-      // Also check for the pattern where class is on code tag but not parent
-      const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
-      for (const block of codeBlocks) {
-        // Check if we already handled this via parent
-        if (block.closest('.mermaid')) continue;
+          // Create new mermaid div
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = content;
 
-        const content = block.textContent;
-        const div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = content;
+          // Find the container to replace
+          let container = element;
+          if (element.tagName === 'CODE') {
+            const pre = element.closest('pre');
+            if (pre) container = pre;
+          }
 
-        const pre = block.closest('pre');
-        const container = pre.closest('div.highlighter-rouge') || pre;
-        container.parentNode.replaceChild(div, container);
-      }
+          // Check for highlighter-rouge wrapper
+          const wrapper = container.closest('div.highlighter-rouge, div.highlight');
+          if (wrapper) container = wrapper;
 
-      await mermaid.run({
-        querySelector: '.mermaid'
+          // Replace it
+          console.log(`Replacing ${container.tagName}`);
+          container.parentNode.replaceChild(div, container);
+        });
       });
+
+      if (found) {
+        console.log('Initializing Mermaid...');
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: 'default'
+        });
+        mermaid.contentLoaded();
+      } else {
+        console.warn('No Mermaid code blocks found!');
+      }
     });
   </script>
 </body>
