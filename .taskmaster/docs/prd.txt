@@ -19,7 +19,7 @@ The current "University GitHub Copilot Guide for Administrative Staff" (v3.0) ha
 
 **Primary Personas:**
 
-1. **Administrative Novice (초보자)**:
+1. **Administrative Novice (초보자)**: 
    - Never used AI tools before
    - Basic computer literacy
    - Workflow: Email, Word documents, Excel spreadsheets
@@ -450,7 +450,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: All directories created as per structural-decomposition
   - Test strategy: Verify structure matches specification
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - Zero duplicate sections
 - Clear directory structure established
 - Style guide and contribution guide published
@@ -486,7 +486,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: Interactive TOC with links to all sections, progress tracking checkboxes
   - Test strategy: All links work, TOC accurately reflects structure
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - Monolithic file split into 13+ focused files
 - Master README provides clear navigation
 - All internal links updated and working
@@ -526,7 +526,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: Complete English TOC, links to Korean version
   - Test strategy: Bilingual user can switch between versions seamlessly
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - Complete English version parallel to Korean
 - Language switcher in both versions
 - Technical terms consistently translated
@@ -566,7 +566,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: 3 quizzes (one per level) with 5-10 questions each
   - Test strategy: Answers validate learning objectives, questions cover key concepts
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - All workbooks have ready-to-use templates
 - Key concepts illustrated with diagrams
 - Users can track learning progress
@@ -602,7 +602,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: Script generates personalized exercises based on user context
   - Test strategy: Script produces valid template files for 3 different user profiles
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - Task Master can parse and track learning paths
 - Users can follow AI-guided progression through material
 - Exercises personalized to user context
@@ -638,7 +638,7 @@ Depends on having complete system ready for ongoing updates.
   - Acceptance criteria: Template for documenting new Copilot features
   - Test strategy: Use template to document hypothetical new feature
 
-**Exit Criteria**:
+**Exit Criteria**: 
 - Automated validation catches errors before merge
 - Translation drift automatically detected
 - Clear process for adding new content
