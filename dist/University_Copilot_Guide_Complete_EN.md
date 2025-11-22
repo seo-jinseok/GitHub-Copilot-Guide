@@ -184,6 +184,8 @@ When you're writing in the editor, it shows the next content in gray text.
 
 Now let's not just look, but actually do it. Let's write an email requesting renewal of an agreement with an overseas university.
 
+> 💡 **Before You Start:** Want to learn how to write effective prompts for email drafting? See **[Appendix C.1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)** for "Good vs Bad" examples that show the difference between vague and clear instructions.
+
 ### [Step 1] Download Template File
 Copy the template below and save it as a file named `email_draft.md`.
 
@@ -230,6 +232,16 @@ Copy the English that Copilot wrote and paste it into the `[Email Body]` section
 ### [Step 5] Experience Autocomplete
 Try typing `Sincerely,` at the end of the email and press Enter.
 Copilot will suggest your name or title in gray text. Press `Tab` to complete it.
+
+> ⚠️ **Common Mistakes to Avoid**
+> 
+> When drafting emails with Copilot, avoid these pitfalls:
+> - **Too Vague:** "Write an email about the agreement" → Missing who, what, when details
+> - **No Role Specified:** Not mentioning you're International Exchange Team staff → Generic tone
+> - **Missing Output Requirements:** Not specifying "formal business English" → Casual writing style
+> - **Forgetting Context:** Not mentioning "renewal" and "sister university" → Wrong email purpose
+> 
+> 💡 **Pro Tip:** Always use the R.C.O. formula (Role, Context, Output) for better results. See [Appendix C.1](#example-1-department-wide-email-drafting) for detailed examples.
 
 > [!NOTE]
 > **Success Check:** Did you finish the email draft in 3 minutes? If so, you've passed Level 1!
@@ -366,6 +378,121 @@ flowchart LR
 <details>
 <summary>Q1. What feature is most useful when you want to change the year in multiple files at once or add specific wording to all documents?</summary>
 **A1.** The Copilot Edits feature.
+</details>
+
+---
+
+### 5.5 Workbook 2.5: Compiling Annual Report Data
+- [ ] Learning Complete
+
+University administrators often need to compile enrollment statistics, budget data, or performance metrics for annual reports. Let's learn how to structure data efficiently using Copilot.
+
+> 💡 **Before You Start:** Want to see how to write effective prompts for data compilation? Check **[Appendix C.3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)** for "Good vs Bad" examples.
+
+#### [Step 1] Prepare Your Raw Data
+
+Create a file called `enrollment_data.md` with the following sample data:
+
+```markdown
+# Enrollment Data 2022-2024
+
+Student enrollment numbers by college for annual report compilation.
+
+## Raw Data
+2022 Engineering: 1,245 students
+2022 Business: 890 students
+2022 Humanities: 672 students
+2022 Natural Sciences: 534 students
+
+2023 Engineering: 1,298 students
+2023 Business: 923 students
+2023 Humanities: 645 students
+2023 Natural Sciences: 567 students
+
+2024 Engineering: 1,356 students
+2024 Business: 981 students
+2024 Humanities: 638 students
+2024 Natural Sciences: 589 students
+
+Total Budget: 2022=$45M, 2023=$48M, 2024=$52M
+```
+
+#### [Step 2] Write a Detailed Prompt
+
+Open Copilot Chat (`Ctrl/Cmd + Alt + I`) and enter the following structured prompt:
+
+> **Input:**
+> 
+> "I am a planning department staff member preparing the annual report. Using the enrollment data above, please create a summary table with the following specifications:
+> 
+> **Role:** Planning department administrator compiling statistics
+> **Context:** Need year-over-year enrollment comparison for executive presentation
+> **Output Requirements:**
+> 1. Create a markdown table with columns: College Name | 2022 | 2023 | 2024 | 3-Year Change (%)
+> 2. Calculate percentage change from 2022 to 2024 for each college
+> 3. Add a 'Total' row at the bottom with sum of all colleges
+> 4. Below the table, write 2-3 sentences analyzing the enrollment trend
+> 5. Format should be Excel-compatible (copy-paste ready)"
+
+#### [Step 3] Request Table + Trend Analysis
+
+Copilot will generate a properly formatted table like this:
+
+| College Name | 2022 | 2023 | 2024 | 3-Year Change (%) |
+|:-------------|-----:|-----:|-----:|------------------:|
+| Engineering | 1,245 | 1,298 | 1,356 | +8.9% |
+| Business | 890 | 923 | 981 | +10.2% |
+| Humanities | 672 | 645 | 638 | -5.1% |
+| Natural Sciences | 534 | 567 | 589 | +10.3% |
+| **Total** | **3,341** | **3,433** | **3,564** | **+6.7%** |
+
+**Trend Analysis:** Overall enrollment increased 6.7% over three years, with strongest growth in Natural Sciences (+10.3%) and Business (+10.2%). Humanities showed a decline of 5.1%, requiring strategic review.
+
+#### [Step 4] Review and Verify Calculations
+
+Always double-check:
+- ✅ Percentages calculated correctly
+- ✅ Totals match sum of columns
+- ✅ Year labels aligned with data
+- ✅ Trend analysis mentions key insights
+
+> ⚠️ **Common Mistakes to Avoid**
+> 
+> - **Vague Request:** "Organize this data for the report" → No specifications on format or analysis
+> - **Missing Structure:** Not specifying table columns → Inconsistent output format
+> - **No Context:** Not mentioning "executive presentation" → Overly detailed analysis
+> - **Forgetting Verification:** Accepting output without checking calculations → Data accuracy errors
+> 
+> 💡 **Pro Tip:** Always request "Excel-compatible format" if you need to paste into spreadsheets. See [Appendix C.3](#example-3-annual-report-data-compilation) for more examples.
+
+#### [Step 5] Export to Excel Format
+
+1. Copy the generated markdown table
+2. Open Excel or Google Sheets
+3. Paste directly (Ctrl/Cmd + V)
+4. The table structure will automatically convert to cells
+
+> [!NOTE]
+> **Success Check:** Did Copilot generate an accurate table with trend analysis in under 2 minutes? If so, you've mastered data compilation!
+
+---
+## ✅ Key Takeaways
+- Structured prompts with Role, Context, and Output specifications produce well-formatted data tables
+- Always specify calculation requirements (percentages, totals, trends) upfront to avoid multiple revisions
+- Request "Excel-compatible format" when output needs to be transferred to spreadsheet software
+- Verify all calculations before using in official reports
+
+---
+### ✍️ Self-Assessment Quiz
+
+<details>
+<summary>Q1. When requesting data compilation, what three elements should you include in your prompt to get accurate results?</summary>
+**A1.** **Role** (who you are), **Context** (what the data is for), and **Output** (specific format and calculations needed).
+</details>
+<br/>
+<details>
+<summary>Q2. Why should you always verify Copilot's calculations in data tables?</summary>
+**A2.** AI can make mathematical errors, especially with complex percentage calculations. Always double-check totals and percentages before using in official reports.
 </details>
 
 ---
@@ -565,6 +692,18 @@ sequenceDiagram
 
 This is the final challenge. Let's turn meeting notes into a nice report.
 
+> 💡 **Before You Start:** Want to learn how to structure meeting minutes prompts effectively? See **[Appendix C.2: Meeting Minutes Summarization](#example-2-meeting-minutes-summarization)** for "Good vs Bad" examples that demonstrate clear vs vague instructions.
+
+> ⚠️ **Prompt Structuring Tips**
+> 
+> For effective meeting minutes processing:
+> - **Specify Audience:** Mention who will read this (e.g., "for Vice President review")
+> - **Define Sections:** List exactly what sections you need (summary, action items, timeline)
+> - **Set Format:** Specify table structure, word limits, or chart requirements
+> - **Mention Tone:** "Formal reporting style" vs "casual team update"
+> 
+> 💡 **Pro Tip:** Use the R.C.O. formula here too - Role (meeting coordinator), Context (executive review), Output (3-line summary + action table). See [Appendix C.2](#example-2-meeting-minutes-summarization) for detailed examples.
+
 ### [Step 1] Prepare Meeting Notes
 Prepare roughly written meeting notes (`meeting_note_template.txt`). Download and use the template below.
 
@@ -597,16 +736,33 @@ Senior Park: "Understood. So I'll summarize that I'm in charge of the contract, 
 Team Leader Kim: "Yes, let's do that. We need to get this started off right. Everyone, thank you."
 ```
 
-### [Step 2] Request Report Creation
-> **Input:**
-> "@workspace Based on `meeting_note.txt`, write a 'Weekly Work Report'.
-> 1. Organize the main agenda in a table.
-> 2. Draw the future schedule as a Mermaid Gantt chart.
-> 3. Make the overall tone dry for 'reporting purposes'."
+### [Step 2] Write a Structured Prompt
 
-### [Step 3] Check Results
-Did you get a perfect report with tables and charts?
-You are now an **'AI Administration Master'**.
+Open Copilot Chat and reference the file using `@workspace`. Use this structured prompt format:
+
+> **Input:**
+> 
+> "@workspace Based on `meeting_note.txt`, I need to create a 'Weekly Work Report' for executive review.
+> 
+> **Role:** Administrative coordinator preparing meeting summary
+> **Context:** Vice President needs concise update on system construction project kickoff
+> **Output Requirements:**
+> 1. Write a 3-line executive summary of key decisions
+> 2. Create an action items table with columns: Task | Person in Charge | Deadline | Status
+> 3. Generate a Mermaid Gantt chart showing project timeline
+> 4. Use formal 'reporting' tone throughout
+> 5. Total length should not exceed 300 words"
+
+### [Step 3] Review Generated Output
+
+Check that Copilot's output includes:
+- ✅ **Executive Summary:** 3 concise sentences covering main decisions
+- ✅ **Action Items Table:** All tasks with assignees and deadlines
+- ✅ **Gantt Chart:** Mermaid syntax rendering project timeline
+- ✅ **Appropriate Tone:** Formal language suitable for executive review
+
+> [!NOTE]
+> **Success Check:** Did you get a complete report with tables and charts in under 1 minute? You are now an **'AI Administration Master'**!
 
 ```mermaid
 sequenceDiagram
