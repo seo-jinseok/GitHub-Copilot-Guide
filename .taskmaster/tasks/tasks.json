@@ -343,7 +343,7 @@
           "13",
           "14"
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -364,7 +364,7 @@
               1
             ],
             "details": "Develop specific comparison examples for key tasks: 1. Drafting a department-wide email, 2. Summarizing meeting minutes, and 3. Compiling annual report data. Clearly annotate why the 'Good' version is better (e.g., specificity, context provision).",
-            "status": "in-progress",
+            "status": "done",
             "testStrategy": "Run the 'Good' and 'Bad' prompts through the model to verify that the output difference justifies the example.",
             "parentId": "undefined",
             "updatedAt": "2025-11-22T15:21:52.830Z"
@@ -588,7 +588,7 @@
       ],
       "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:31:03.551Z"
+      "updated": "2025-11-22T15:31:18.798Z"
     }
   }
 }
