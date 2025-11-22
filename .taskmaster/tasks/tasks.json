@@ -182,7 +182,7 @@
               3
             ],
             "details": "Review `dist/University_Copilot_Guide_Complete_EN.md`. Smooth out any awkward machine-translated phrasing. Ensure exercises from `templates/exercises/` (if referenced) are clear and actionable in English. Verify diagram descriptions are translated.\n<info added on 2025-11-22T15:13:44.054Z>\n{\n  \"subtask_update\": \"Manual review of `dist/University_Copilot_Guide_Complete_EN.md` completed.\\n\\nVerified Sections:\\n- Introduction (Level 1): Professional tone, clear setup.\\n- Practical (Level 2): R.C.O formula and prompt techniques clear.\\n- Expert (Level 3): Agent instructions and data viz examples verified.\\n- Workbook & Appendix: Templates actionable, scenario library structured.\\n- Technical: Mermaid diagrams translated, Quizzes functional.\\n\\nFixed Issues:\\n- Line 597: Changed 'button this up' to 'get this started off right' (idiom correction).\\n\\nQuality Assessment:\\n- Professional tone and consistent terminology (Copilot, VS Code) maintained.\\n- No awkward machine translation detected.\\n- Parallel structure with Korean version preserved.\\n\\nDocument ready for final commit.\"\n}\n</info added on 2025-11-22T15:13:44.054Z>",
-            "status": "in-progress",
+            "status": "done",
             "testStrategy": "Read through the guide as a user to ensure flow and clarity. Verify no Korean text remains in the body content.",
             "parentId": "undefined"
           }
@@ -343,7 +343,7 @@
           "13",
           "14"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -351,9 +351,10 @@
             "description": "Review the existing 'Administrative Guide' section within the `dist/` files to identify and replace technical terminology with plain English.",
             "dependencies": [],
             "details": "Scan the current documentation for technical terms (e.g., 'tokens', 'inference', 'JSON output') that may confuse university staff. Create a mapping of these terms to user-friendly alternatives or rewrite sentences to avoid them entirely while maintaining accuracy.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Peer review by a non-technical team member to flag any remaining confusing terms.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2025-11-22T15:21:40.240Z"
           },
           {
             "id": 2,
@@ -363,9 +364,10 @@
               1
             ],
             "details": "Develop specific comparison examples for key tasks: 1. Drafting a department-wide email, 2. Summarizing meeting minutes, and 3. Compiling annual report data. Clearly annotate why the 'Good' version is better (e.g., specificity, context provision).",
-            "status": "pending",
+            "status": "in-progress",
             "testStrategy": "Run the 'Good' and 'Bad' prompts through the model to verify that the output difference justifies the example.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2025-11-22T15:21:52.830Z"
           },
           {
             "id": 3,
@@ -376,14 +378,16 @@
               2
             ],
             "details": "Refactor the sections for 'Email Drafting', 'Annual Reports', and 'Meeting Minutes'. Ensure each workflow uses a numbered list format. Integrate the 'Good vs Bad' examples drafted in the previous subtask directly into these workflow descriptions to illustrate best practices.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Perform a manual walk-through of the 'Meeting Minutes' workflow to ensure instructions are logical and complete without external knowledge.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2025-11-22T15:23:55.748Z"
           }
         ],
         "complexity": 5,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "Outline the refinement process. Subtasks: 1. Audit current Admin content for technical jargon. 2. Draft 'Good vs Bad' prompt examples for admin scenarios. 3. Rewrite workflow instructions for clarity."
+        "expansionPrompt": "Outline the refinement process. Subtasks: 1. Audit current Admin content for technical jargon. 2. Draft 'Good vs Bad' prompt examples for admin scenarios. 3. Rewrite workflow instructions for clarity.",
+        "updatedAt": "2025-11-22T15:23:55.748Z"
       },
       {
         "id": 18,
@@ -576,15 +580,15 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2025-11-22T14:43:51.273Z",
+      "lastModified": "2025-11-22T15:23:55.749Z",
       "taskCount": 10,
-      "completedCount": 2,
+      "completedCount": 5,
       "tags": [
         "master"
       ],
-      "created": "2025-11-22T15:04:48.193Z",
+      "created": "2025-11-22T15:24:31.557Z",
       "description": "Tasks for master context",
-      "updated": "2025-11-22T15:16:58.261Z"
+      "updated": "2025-11-22T15:31:03.551Z"
     }
   }
 }
