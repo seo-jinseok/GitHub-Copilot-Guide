@@ -12,6 +12,7 @@
   - [1. Setup: Creating Your Digital Office](#1-setup-creating-your-digital-office)
     - [1.1 Installation and Setup (2025 Latest)](#11-installation-and-setup-2025-latest)
     - [1.2 Understanding the Screen Layout](#12-understanding-the-screen-layout)
+    - [1.5 The 3 Core Principles of Using Generative AI](#15-the-3-core-principles-of-using-generative-ai)
   - [✅ Key Takeaways](#-key-takeaways)
   - [✍️ Self-Assessment Quiz](#-self-assessment-quiz)
   - [2. Fundamentals: Distinguishing Chat from Autocomplete](#2-fundamentals-distinguishing-chat-from-autocomplete)
@@ -106,9 +107,9 @@ graph LR
     C --> C2[Data Visualization]
     C --> C3[Meeting Minutes Automation Practice]
     
-    style A fill:#e1f5ff
-    style B fill:#fff4e1
-    style C fill:#ffe1f5
+    style A fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fff4e1,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#ffe1f5,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **Expected Learning Time**:
@@ -155,7 +156,7 @@ You need to create course registration notices for each college – similar but 
 **Web-based AI Workflow:**
 
 ```mermaid
-graph TD
+graph LR
     A[Open ChatGPT in browser] --> B[Write and enter prompt]
     B --> C[Wait for AI response]
     C --> D[Copy entire text]
@@ -166,19 +167,19 @@ graph TD
     H -->|Yes| B
     H -->|No| I[Changes needed]
     I --> J[Reopen 5 files]
-    J --> K[Edit each file individually]
+    I --> K[Edit each file individually]
     K --> L[Save again]
     L --> M[Complete]
     
-    style H fill:#ffcccc
-    style B fill:#ffe6cc
-    style K fill:#ffcccc
+    style H fill:#ffcccc,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#ffe6cc,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#ffcccc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **VS Code + Copilot Workflow:**
 
 ```mermaid
-graph TD
+graph LR
     A[Open project folder in VS Code] --> B[View 5 files simultaneously]
     B --> C[Call Copilot in first file]
     C --> D[AI automatically understands folder context]
@@ -191,9 +192,9 @@ graph TD
     I --> J[Change history auto-recorded]
     J --> K[Complete]
     
-    style D fill:#ccffcc
-    style E fill:#ccffcc
-    style H fill:#ccffcc
+    style D fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style H fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ### 3 Key Differences
@@ -227,11 +228,11 @@ graph LR
         B3 -.-> B4
     end
     
-    style A1 fill:#ffe6cc
-    style B1 fill:#ccffcc
-    style B2 fill:#ccffcc
-    style B3 fill:#ccffcc
-    style B4 fill:#ccffcc
+    style A1 fill:#ffe6cc,stroke:#333,stroke-width:2px,color:#000
+    style B1 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B2 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B3 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style B4 fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **Real Example:**
@@ -294,7 +295,7 @@ These two tools aren't competitors. **Using them together based on the situation
 #### 🎯 Tool Selection Guide
 
 ```mermaid
-graph TD
+graph LR
     A[What task are you doing?] --> B{How many files?}
     B -->|1 file| C{One-time completion?}
     B -->|2+ files| D[VS Code + Copilot recommended]
@@ -310,8 +311,8 @@ graph TD
     I -->|Frequently| J[Save in VS Code and<br/>consider using Copilot]
     I -->|Rarely| K[✅ ChatGPT/Claude]
     
-    style G fill:#ccffcc
-    style K fill:#ccffcc
+    style G fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
+    style K fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ### 💡 Practical Usage Tips
@@ -333,6 +334,36 @@ VS Code: Batch edit common content across all pages
 
 ---
 
+## [Level 0: Preparation] AI Anxiety Clinic - Clearing Misunderstandings Before We Start
+
+Before we begin, let's address the three most common fears that administrative staff have.
+
+### 1. 🔒 "Does AI steal my data?" (Security)
+> **"Is it safe to upload university documents to AI?"**
+
+Many people worry because of news about "personal data leaks." However, the **Enterprise version** we use is different.
+*   **Free Version (Public):** Uses user data for training to get smarter. (Do NOT input sensitive data ❌)
+*   **Enterprise Version (Copilot):** **Does NOT train on your data.** Input data is encrypted, processed, and immediately discarded. (Safe to input ✅)
+*   **Conclusion:** The account provided by the university is safe. However, it's a good habit to mask sensitive personal information like resident registration numbers (***).
+
+### 2. 🤥 "AI lies." (Accuracy)
+> **"Can I trust what AI writes?"**
+
+No, you shouldn't trust it blindly. Think of AI as a **"smart intern who works well but sometimes says silly things."**
+*   **AI's Role:** Drafting, suggesting ideas, simple repetitive tasks (80% of the work)
+*   **Your Role:** Fact-checking, final review, taking responsibility (The remaining 20%)
+*   **Conclusion:** AI is not a "truth vending machine" but a "collaboration partner." The final decision-maker is still you.
+
+### 3. 🤖 "Will I be replaced?" (Job Security)
+> **"If AI does all my work, will I become obsolete?"**
+
+Calculators didn't replace mathematicians, and Excel didn't replace accountants.
+*   **What disappears:** "Boring repetitive tasks" like copy-pasting, simple summarizing, and finding typos.
+*   **What remains:** "High-value work" like planning, communication, judgment, and decision-making.
+*   **Conclusion:** AI won't replace you. Instead, **"Administrators who use AI well will replace those who don't."** Use this guide to become that "AI-savvy administrator."
+
+---
+
 ## [Level 1: Introduction] First Steps as an AI Administrator
 
 ### 1. Setup: Creating Your Digital Office
@@ -343,21 +374,21 @@ To properly collaborate with AI, you need a smart 'notepad'. We will use a free 
 #### 1.1 Installation and Setup (2025 Latest)
 
 ```mermaid
-sequenceDiagram
-    participant User as User
-    participant Web as VS Code Website
-    participant VSCode as VS Code
-    participant GitHub as GitHub Account
-    
-    User->>Web: 1. Visit code.visualstudio.com
-    Web->>User: Download VS Code installer
-    User->>VSCode: 2. Launch VS Code
-    VSCode->>User: Open Extensions menu
-    User->>VSCode: 3. Search and install "GitHub Copilot"
-    VSCode->>User: Login request
-    User->>GitHub: 4. Login with GitHub account
-    GitHub->>VSCode: Authentication complete
-    VSCode->>User: Copilot ready to use!
+graph LR
+    User[User] -->|1. Visit| Web[VS Code Website]
+    Web -->|Installer| User
+    User -->|2. Launch| VSCode[VS Code]
+    VSCode -->|Open Menu| User
+    User -->|3. Install| VSCode
+    VSCode -->|Login Request| User
+    User -->|4. Login| GitHub[GitHub Account]
+    GitHub -->|Auth Complete| VSCode
+    VSCode -->|Ready| User
+
+    style User fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style Web fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style VSCode fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style GitHub fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **Step-by-Step Instructions**:
@@ -392,13 +423,62 @@ sequenceDiagram
 
 ---
 
+### 1.5 The 3 Core Principles of Using Generative AI
+- [ ] Learning Complete
+
+Before learning how to use the tools, you must first establish the right **'mindset'** for working with AI. Adhering to these 3 principles alone can reduce the failure rate of AI adoption by 90%.
+
+#### Principle 1: Delegation - "Who Does What?"
+AI is not omnipotent. Think of it as a **"smart intern with no social experience."**
+
+| Category | 🤖 Tasks for AI (80%) | 👤 Tasks for Humans (20%) |
+| :--- | :--- | :--- |
+| **Nature** | Drafting, summarizing, translating, data formatting | Final decision making, taking responsibility, sensitive communication |
+| **Example** | "Summarize last month's meeting minutes in 3 lines" | "Deciding whether to report this agenda to the President" |
+| **Example** | "Convert this table to Excel format" | "Writing a polite refusal email regarding budget cuts" |
+
+> [!TIP]
+> **Judgment Criteria:** "Can I take responsibility for this output?" If you cannot take responsibility, you must review it yourself even if you delegate it to AI.
+
+#### Principle 2: Verification - "Trust but Verify"
+The most common mistake beginners make is **"copy-pasting AI answers exactly as they are."** This is a shortcut to disaster.
+
+**Human-in-the-Loop Workflow:**
+```mermaid
+graph LR
+    A[Task Instruction] --> B(🤖 AI Generation);
+    B --> C{👤 Human Verification};
+    C -- Pass --> D[Final Completion];
+    C -- Error Found --> E[Correction Instruction];
+    E --> B;
+    
+    style C fill:#fff9c4,stroke:#ff9800,stroke-width:2px
+```
+
+*   **Check Numbers:** Always verify budgets, dates, and phone numbers against the original source.
+*   **Check URLs:** Actually click on links provided by AI. (They might be fake)
+*   **Fact Check:** When AI says "According to university regulations...", look up the actual regulation book.
+
+#### Principle 3: Consistency - "Speaking with One Voice"
+When multiple people work on a large project (e.g., University Innovation Support Project Plan), or when working alone over several days, terminology and tone can become inconsistent.
+
+*   **Problem Situation:**
+    *   Page 1: "Enrolled Student" / Page 10: "Attendee" / Page 50: "Learner"
+    *   Page 1: "We will do..." (Formal) / Page 20: "To do..." (Bullet points)
+*   **Solution:**
+    *   **Define Terms:** Before starting, instruct AI: "Unify 'student' as 'enrolled student' in this document."
+    *   **Unify Tone:** Request: "Write in the same tone as the previous document."
+    *   **Use VS Code:** If you put multiple files in one folder (project) and work, Copilot understands the entire context and maintains consistency.
+
+---
+
 ### 2. Fundamentals: Distinguishing Chat from Autocomplete
 - [ ] Learning Complete
 
 There are two main ways to use Copilot. If you can distinguish between these two, you're in the top 10%.
 
 ```mermaid
-graph TD
+graph LR
     A[GitHub Copilot Features] --> B[Interactive Chat]
     A --> C[Autocomplete Ghost Text]
     
@@ -410,8 +490,8 @@ graph TD
     C --> C2["⌨️ Accept: Tab Key"]
     C --> C3["🎯 Use:<br/>- Next Sentence Prediction<br/>- Auto-fill Tables<br/>- Complete Repetitive Patterns"]
     
-    style B fill:#e1f5ff
-    style C fill:#fff4e1
+    style B fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff4e1,stroke:#333,stroke-width:2px,color:#000
     style B3 text-align:left
     style C3 text-align:left
 ```
@@ -560,10 +640,10 @@ flowchart LR
     C --> D[Output<br/>Output Format]
     D --> E[AI Response]
     
-    style B fill:#e1f5ff,stroke:#0288d1
-    style C fill:#fff9c4,stroke:#fbc02d
-    style D fill:#f3e5f5,stroke:#8e24aa
-    style E fill:#c8e6c9,stroke:#388e3c
+    style B fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#f3e5f5,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#c8e6c9,stroke:#333,stroke-width:2px,color:#000
 ```
 **Example:** "You are a veteran administrator (Role) + Preparing for Ministry of Education audit (Context) + Organize in a table (Output) → Clear result"
 
@@ -602,12 +682,19 @@ Until now, we've been copying and pasting from the chat window, right? Now you c
 4.  Copilot shows the modification plan. Press **'Accept'** to actually modify the files.
 
 ```mermaid
-graph TD
+graph LR
     A[1. Switch to Edits mode] --> B[2. Select files (#)];
     B --> C[3. Give modification command];
     C --> D{4. Review modification plan};
     D -- Accept --> E[5. Files automatically modified];
     D -- Reject --> F[Cancel];
+
+    style A fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style E fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 #### 5.2 When to Use?
@@ -638,9 +725,9 @@ flowchart LR
     Input --> Process
     Process --> Output
     
-    style Input fill:#e3f2fd,stroke:#1976d2
-    style Process fill:#fff3e0,stroke:#f57c00
-    style Output fill:#e8f5e9,stroke:#2e7d32
+    style Input fill:#e3f2fd,stroke:#333,stroke-width:2px,color:#000
+    style Process fill:#fff3e0,stroke:#333,stroke-width:2px,color:#000
+    style Output fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
 ```
 **Efficiency:** 3 files × 5 minutes = 15 minute task → **Reduced to 1 minute**
 
@@ -892,18 +979,19 @@ Create a `.github/copilot-instructions.md` file in your project folder and write
 #### 7.2 AI Personas (AI Assistants)
 **[2025 New Feature]**
 Press `@` in the chat window to call various specialized AI helpers (called "agents").
-*   `@workspace`: An assistant who knows all documents on your computer
+*   `@workspace`: An assistant who knows all documents in your **current project folder**
 *   `@terminal`: An assistant who types complex commands for you
 *   `@vscode`: An assistant who teaches you how to use VS Code
 
 ```mermaid
-sequenceDiagram
-    participant User
-    participant Copilot
-    User->>Copilot: Press `@` to call agent (@workspace)
-    User->>Copilot: Enter prompt ("Summarize document A")
-    Copilot->>Copilot: Perform task (analyze document)
-    Copilot-->>User: Return result (summary text)
+graph LR
+    User[User] -->|1. Call @workspace| Copilot
+    User -->|2. Enter Prompt| Copilot
+    Copilot -->|3. Analyze Docs| Copilot
+    Copilot -->|4. Return Result| User
+
+    style User fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style Copilot fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
 ```
 
 ---
@@ -936,6 +1024,11 @@ graph LR
     A[Draft Document] --> B{Team Leader Approval?};
     B -- Yes --> C[Director's Decision];
     B -- No --> D[Rejection];
+
+    style A fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
+    style B fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style D fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 
 #### 8.2 Data Analysis
@@ -943,19 +1036,19 @@ Open an Excel file and ask in the chat window, and it will analyze for you.
 > "From this Excel file (`survey.xlsx`), pick the 3 items with the lowest satisfaction and summarize the reasons."
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant C as Copilot Chat
-    participant F as Data File
-    participant A as Analysis Engine
-    
-    U->>C: Upload survey.xlsx file
-    C->>F: Read file contents
-    F-->>C: Send data
-    U->>C: "Analyze 3 lowest satisfaction items"
-    C->>A: Request data analysis
-    A-->>C: Statistical results + insights
-    C-->>U: Provide table/chart + interpretation
+graph LR
+    U[User] -->|1. Upload| C[Copilot Chat]
+    C -->|2. Read| F[Data File]
+    F -->|3. Data| C
+    U -->|4. Request| C
+    C -->|5. Analyze| A[Analysis Engine]
+    A -->|6. Result| C
+    C -->|7. Provide| U
+
+    style U fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style C fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style A fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 **Workflow:** Upload file → Ask in natural language → Copilot automatically analyzes → Provides table/chart results
 
@@ -1052,23 +1145,31 @@ Check that Copilot's output includes:
 > **Success Check:** Did you get a complete report with tables and charts in under 1 minute? You are now an **'AI Administration Master'**!
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant W as @workspace
-    participant F as meeting_note.txt
-    participant AI as Copilot AI
+graph LR
+    U[User] --> W[@workspace];
+    W --> F[meeting_note.txt];
+    F --> W;
+    U --> W;
+    W --> AI[Copilot AI];
+    AI --> AI;
+    AI --> AI;
+    AI --> AI;
+    AI --> U;
     
-    U->>W: Reference meeting minutes file
-    W->>F: Read file contents
-    F-->>W: Deliver meeting contents
-    U->>W: "Create table + chart report"
-    W->>AI: Request structuring
-    AI-->>AI: Extract main agenda
-    AI-->>AI: Organize schedule data
-    AI-->>AI: Generate Gantt chart
-    AI-->>U: 📊 Output completed report
-    
-    Note over U,AI: Conversion time: About 30 seconds
+    U -- "Ref meeting file" --> W;
+    W -- "Read contents" --> F;
+    F -- "Deliver contents" --> W;
+    U -- "Create report" --> W;
+    W -- "Structure" --> AI;
+    AI -- "Extract agenda" --> AI;
+    AI -- "Organize data" --> AI;
+    AI -- "Generate chart" --> AI;
+    AI -- "Output report" --> U;
+
+    style U fill:#e6f3ff,stroke:#333,stroke-width:2px,color:#000
+    style W fill:#fff9c4,stroke:#333,stroke-width:2px,color:#000
+    style F fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style AI fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
 ```
 **Automation Result:** Meeting notes → Table organization → Gantt chart → Report completion (30 seconds)
 
@@ -1099,7 +1200,7 @@ With the `@workspace` agent, you can reference multiple files and generate table
 | **Event Planning** | Manually write program and preparation list in Excel | "Create a program and checklist table for freshman orientation." |
 
 ```mermaid
-graph TD
+graph LR
     subgraph Before["⏰ Existing Method (Manual)"]
         B1[Search Regulations] --> B2[Open 5 PDFs]
         B2 --> B3[Repeat Ctrl+F]
@@ -1113,10 +1214,10 @@ graph TD
         A3 --> A4[3 Minutes Required]
     end
     
-    style Before fill:#ffebee,stroke:#c62828
-    style After fill:#e8f5e9,stroke:#2e7d32
-    style B5 fill:#ffcdd2
-    style A4 fill:#a5d6a7
+    style Before fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
+    style After fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style B5 fill:#ffcdd2,stroke:#333,stroke-width:2px,color:#000
+    style A4 fill:#a5d6a7,stroke:#333,stroke-width:2px,color:#000
 ```
 **Time Savings:** Based on regulation search example, approximately **90% time reduction** (30 minutes → 3 minutes)
 
@@ -1130,7 +1231,7 @@ graph TD
 *   **Ideas:** "Suggest 10 promotional slogans for our university. (Keywords: innovation, future, global)"
 
 ```mermaid
-graph TD
+graph LR
     Start{Task Purpose?} --> Summary[Summary/Organization]
     Start --> Create[Document Writing]
     Start --> Fix[Error Correction]
@@ -1143,11 +1244,11 @@ graph TD
     Fix --> F1["'Find and correct typos'"]
     Analyze --> A1["'3 lowest satisfaction items'"]
     
-    style Start fill:#e3f2fd,stroke:#1976d2
-    style Summary fill:#fff3e0,stroke:#f57c00
-    style Create fill:#f3e5f5,stroke:#7b1fa2
-    style Fix fill:#fce4ec,stroke:#c2185b
-    style Analyze fill:#e0f2f1,stroke:#00796b
+    style Start fill:#e3f2fd,stroke:#333,stroke-width:2px,color:#000
+    style Summary fill:#fff3e0,stroke:#333,stroke-width:2px,color:#000
+    style Create fill:#f3e5f5,stroke:#333,stroke-width:2px,color:#000
+    style Fix fill:#fce4ec,stroke:#333,stroke-width:2px,color:#000
+    style Analyze fill:#e0f2f1,stroke:#333,stroke-width:2px,color:#000
 ```
 **Usage Tip:** Determine purpose first → Specify format → Add specific requirements
 
@@ -1285,10 +1386,10 @@ graph LR
         G4 --> G5[5 Minutes]
     end
     
-    style Bad fill:#ffebee,stroke:#c62828
-    style Good fill:#e8f5e9,stroke:#2e7d32
-    style B6 fill:#ffcdd2
-    style G5 fill:#a5d6a7
+    style Bad fill:#ffebee,stroke:#333,stroke-width:2px,color:#000
+    style Good fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    style B6 fill:#ffcdd2,stroke:#333,stroke-width:2px,color:#000
+    style G5 fill:#a5d6a7,stroke:#333,stroke-width:2px,color:#000
 ```
 
 **Key Takeaway:** Spending 2 extra minutes writing a detailed prompt saves 15+ minutes in revisions and manual corrections.
