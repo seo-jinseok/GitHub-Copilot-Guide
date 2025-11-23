@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
-  <link rel="stylesheet" href="{{ " /assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  {% assign style_url = "/assets/css/style.css?v=" %}
+  <link rel="stylesheet" href="{{ style_url | append: site.github.build_revision | relative_url }}">
 
   <!-- Custom styles for Mermaid diagrams and modal -->
   <style>
