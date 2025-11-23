@@ -194,7 +194,8 @@ graph LR
 > - [ ] **English Certificate of Employment** (Professor) or **English Certificate of Enrollment** (Student)
 >   - Available from automated certificate machines (instant issuance)
 >   - ⚠️ Korean certificates are NOT accepted!
-> - [ ] **Smartphone** (For Microsoft Authenticator app installation)
+> - [ ] **Smartphone** (Microsoft Authenticator app installation and login required)
+>   - Install the app and log in with your Microsoft account in advance
 > - [ ] **School Email Address** check
 >   - DEU Examples: `@deu.ac.kr`, `@g.deu.ac.kr`, `@office.deu.ac.kr` are all accepted
 > - [ ] **Camera or Scanned File** (Prepare certificate as JPG file)
