@@ -44,8 +44,11 @@
 
     .diagram-modal-content {
       position: relative;
-      max-width: 95vw;
-      max-height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 95vw;
+      height: 95vh;
       padding: 20px;
     }
 
@@ -65,15 +68,12 @@
     }
 
     .diagram-modal svg {
-      max-width: 95vw;
-      max-height: 95vh;
-      width: 100%;
-      height: auto;
       display: block;
       margin: auto;
       background: white;
       padding: 20px;
       border-radius: 8px;
+      box-sizing: border-box;
     }
 
     /* Add border and shadow to content images for better visibility */
@@ -226,19 +226,57 @@
               if (svg) {
                 const svgClone = svg.cloneNode(true);
 
-                // Remove restrictive attributes to allow scaling
+                // 브라우저 뷰포트 크기 계산 (패딩과 여백 고려)
+                const viewportWidth = window.innerWidth * 0.95;  // 95vw
+                const viewportHeight = window.innerHeight * 0.95; // 95vh
+                const padding = 40; // 좌우 패딩 합계
+
+                const availableWidth = viewportWidth - padding;
+                const availableHeight = viewportHeight - padding;
+
+                // SVG의 viewBox 또는 원본 크기 가져오기
+                let svgWidth, svgHeight;
+                const viewBox = svgClone.getAttribute('viewBox');
+
+                if (viewBox) {
+                  const [, , vbWidth, vbHeight] = viewBox.split(' ').map(Number);
+                  svgWidth = vbWidth;
+                  svgHeight = vbHeight;
+                } else {
+                  svgWidth = parseFloat(svgClone.getAttribute('width')) || 800;
+                  svgHeight = parseFloat(svgClone.getAttribute('height')) || 600;
+                }
+
+                // 비율 계산하여 최대 크기 결정
+                const svgRatio = svgWidth / svgHeight;
+                const viewportRatio = availableWidth / availableHeight;
+
+                let finalWidth, finalHeight;
+
+                if (svgRatio > viewportRatio) {
+                  // SVG가 더 넓음 - 너비를 기준으로 조정
+                  finalWidth = availableWidth;
+                  finalHeight = availableWidth / svgRatio;
+                } else {
+                  // SVG가 더 높음 - 높이를 기준으로 조정
+                  finalHeight = availableHeight;
+                  finalWidth = availableHeight * svgRatio;
+                }
+
+                // 모든 크기 관련 속성 제거 후 새로 설정
                 svgClone.removeAttribute('style');
                 svgClone.removeAttribute('width');
                 svgClone.removeAttribute('height');
 
-                // Ensure it fills the container
-                svgClone.style.width = '100%';
-                svgClone.style.height = 'auto';
-                svgClone.style.maxWidth = '100%';
+                // 계산된 크기로 설정
+                svgClone.style.width = Math.floor(finalWidth) + 'px';
+                svgClone.style.height = Math.floor(finalHeight) + 'px';
 
                 modalContent.innerHTML = '';
                 modalContent.appendChild(svgClone);
                 modal.classList.add('active');
+
+                console.log(`SVG scaled: ${svgWidth}x${svgHeight} -> ${Math.floor(finalWidth)}x${Math.floor(finalHeight)}`);
               }
             });
           });
