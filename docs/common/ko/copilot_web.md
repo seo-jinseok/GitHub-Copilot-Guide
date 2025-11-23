@@ -384,6 +384,7 @@ graph LR
 - 📧 **이메일로 승인 결과** 통보
 - ✅ 승인되면 즉시 [github.com/copilot](https://github.com/copilot)에서 사용 가능!
 
+<img src="../../images/copilot_web/13 - GitHub Copilot in Web Browser.png" alt="웹브라우저에서의 GitHub Copilot" style="width:80%; max-width:600px; display:block; margin:20px auto;" />
 ---
 
 ### ❓ 인증 관련 자주 묻는 질문
