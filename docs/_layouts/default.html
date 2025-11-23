@@ -567,30 +567,45 @@
       
       let isKorean = currentPath.includes('/ko/');
       let isEnglish = currentPath.includes('/en/');
+      let isIndexPage = currentPath.endsWith('/') || currentPath.endsWith('/index.html');
       
-      if (!isKorean && !isEnglish) {
-        if (currentPath.endsWith('/') || currentPath.endsWith('/index.html')) {
-          langToggle.classList.add('disabled');
-          langText.textContent = '—';
-          return;
-        }
+      // On index page, default to Korean
+      if (!isKorean && !isEnglish && isIndexPage) {
         isKorean = true;
-      }
-      
-      if (isKorean) {
         langText.textContent = 'EN';
-      } else {
+      } else if (isKorean) {
+        langText.textContent = 'EN';
+      } else if (isEnglish) {
         langText.textContent = 'KO';
+      } else {
+        // Default to Korean for other pages
+        isKorean = true;
+        langText.textContent = 'EN';
       }
       
       langToggle.addEventListener('click', function(e) {
         e.preventDefault();
         
         let newPath;
-        if (isKorean) {
-          newPath = currentPath.replace('/ko/', '/en/');
+        
+        // Special handling for index page
+        if (isIndexPage) {
+          if (isKorean) {
+            // TODO: Create English version of index
+            alert('영문 랜딩 페이지는 준비중입니다.\nEnglish landing page is coming soon.');
+            return;
+          } else {
+            // Go back to Korean index
+            const basePath = currentPath.replace(/index\.html$/, '');
+            newPath = basePath;
+          }
         } else {
-          newPath = currentPath.replace('/en/', '/ko/');
+          // Regular page language toggle
+          if (isKorean) {
+            newPath = currentPath.replace('/ko/', '/en/');
+          } else {
+            newPath = currentPath.replace('/en/', '/ko/');
+          }
         }
         
         window.location.href = newPath;
