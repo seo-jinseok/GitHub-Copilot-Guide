@@ -5,14 +5,16 @@ parent: Common
 nav_order: 10
 ---
 
-# 🌐 GitHub Copilot on the Web (Use Without VS Code)
+[🏠 Home](../../index.md) | [🌐 Web Guide](./copilot_web.md) | [💻 VS Code Guide](../../index.md#2부-vs-code로-전문가처럼-쓰기-설치-)
+
+# 🌐 GitHub Copilot Pro on the Web (Free)
 
 > **💡 Who is this document for?**  
 > - Professors and students new to programming
-> - Those who want to use AI immediately without complex installation
+> - Those who want to use AI immediately **without installing VS Code**
 > - Those who've used ChatGPT but are looking for more powerful AI tools
 
-Many people think **GitHub Copilot** is 'only for programmers'. But that's not true at all! GitHub Copilot is a **world-class AI chat service** that you can use directly in your web browser.
+Many people think **GitHub Copilot** is 'only for programmers'. But that's not true at all! GitHub Copilot is a **world-class AI chat service** that you can use directly in your web browser **without installing VS Code**.
 
 Especially for **university students and professors**, it's provided **completely free**, and you can use the latest AI models from **OpenAI, Anthropic, and Google** all in one place.
 
@@ -46,7 +48,7 @@ Free users have a limit on total conversations **regardless of model type**.
 
 - **Monthly usage limit:** **Total 50 requests** (chat and agent mode combined)
 - **Available AIs:** GPT-4o, Claude 3.5 Sonnet, etc. (some latest models may be restricted)
-- **Note:** Even when using models labeled "0x", free users **consume 1 request from their 50-request limit**.
+- **Note:** For free users, even standard models (usually "0x") are displayed as **"1x"** and **consume 1 request from their 50-request limit**.
 - **Reset:** The 1st of every month (9:00 AM KST) batch renewal
   > (Example: Even if you join on January 29, 50 requests will be recharged on February 1st! 🎉)
 
@@ -88,14 +90,16 @@ The highest-performance models use **300 credits provided monthly**.
 
 ### 🧐 What Do "0x" and "1x" Mean?
 
-This is the most confusing part! The meaning **completely changes depending on "your status (free vs university)"**.
+This is the most confusing part! The **displayed number and meaning** completely change depending on **"your status (free vs university)"**.
 
-| Category | When Using **0x (Standard)** Models | When Using **1x (Premium)** Models |
+| Category | **Standard Models** (GPT-4o, etc.) | **Premium Models** (Claude 3.5, etc.) |
 |----------|-------------------------------------|-------------------------------------|
-| **Free Users** | **1 request deducted** from my limit (50) 😭 | **1 request deducted** from my limit (50) 😭 |
-| **University Members** | **No deduction (completely free/unlimited)** 🎉 | **1 credit deducted** (within 300/month limit) |
+| **Free Users** | **Displayed as "1x"**<br/>**1 request deducted** from limit (50) 😭 | **Displayed as "1x"**<br/>**1 request deducted** from limit (50) 😭 |
+| **University Members** | **Displayed as "0x"**<br/>**No deduction (Unlimited)** 🎉 | **Displayed as "1x"**<br/>**1 credit deducted** (within 300/month) |
 
-> **🎁 Conclusion:** If you're a university member, **"0x models are free, 1x models use 300 monthly tickets"** is the most accurate understanding!
+> **🎁 Conclusion:**
+> - **Free Users:** All models are displayed as **1x** and consume requests.
+> - **University Members:** **0x models are free (unlimited)**, **1x models use 300 monthly tickets**!
 
 ---
 
@@ -181,44 +185,271 @@ graph LR
 
 ### 📝 How to Apply Right Now
 
-#### Step 1: Create GitHub Account
-1. Access [GitHub.com](https://github.com)
-2. Click "Sign up"
-3. **Recommended to sign up with school email address** (e.g., hong@snu.ac.kr)
+> **⚠️ Before You Start!**
+> 
+> Preparing the following items before starting the verification process will make it much easier:
+> 
+> - [ ] **English Certificate of Employment** (Professor) or **English Certificate of Enrollment** (Student)
+>   - Must be issued by the administration office (usually takes 1-2 days)
+>   - ⚠️ Korean certificates are NOT accepted!
+> - [ ] **Smartphone** (For Microsoft Authenticator app installation)
+> - [ ] **School Email Address** check
+>   - DEU Examples: `@deu.ac.kr`, `@g.deu.ac.kr`, `@office.deu.ac.kr` are all accepted
+> - [ ] **Camera or Scanned File** (Prepare certificate as JPG file)
 
-#### Step 2: Apply for Education Benefits
+---
 
-```mermaid
-flowchart TD
-    A[Log in to GitHub.com] --> B[Visit Education Benefits page]
-    B --> C{My status?}
-    C -->|Student| D[Apply for Student Developer Pack]
-    C -->|Professor| E[Apply for Teacher Benefits]
-    D --> F[Submit documents<br/>Student ID or enrollment certificate]
-    E --> G[Submit documents<br/>Employment certificate or<br/>school professor introduction page]
-    F --> H[Wait for approval<br/>Usually 1-3 days]
-    G --> H
-    H --> I[Approved!<br/>Use immediately at<br/>github.com/copilot]
-    
-    style I fill:#90EE90
-```
+## 📋 Step-by-Step Verification Guide
 
-**Student Application:**
-1. Access [GitHub Education Benefits](https://education.github.com/benefits) page
-2. Click "Get student benefits"
-3. Upload school name, student ID photo, or enrollment certificate
-4. Approval within 1-3 days (sometimes within hours!)
+The entire process takes about **15-20 minutes**, and approval takes **1-3 days**.
 
-**Professor Application:**
-1. Access [GitHub Education Benefits](https://education.github.com/benefits) page
-2. Click "Get teacher benefits"
-3. Submit link to professor introduction page on school website or employment certificate
-4. Approval within 1-3 days
+---
 
-> **💡 Tip:** Approval is much faster if you sign up with your school email!
+### **Step 1: GitHub Sign Up** (5 mins)
 
-#### Step 3: Start Using Copilot!
-Once approved, you can immediately use all AIs for free at [https://github.com/copilot](https://github.com/copilot)!
+#### 1-1. Access GitHub.com
+
+Go to [https://github.com](https://github.com) in your web browser.
+
+![GitHub Home Screen](../../images/copilot_web/01%20-%20github.com%20%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A9%E1%86%A8%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+
+Click the **"Sign up"** button at the top right of the screen.
+
+---
+
+#### 1-2. Enter Email Address
+
+![Sign Up Screen](../../images/copilot_web/02%20-%20github%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+
+Enter your **school email address**.
+
+**Dong-Eui University Examples:**
+- `hong@deu.ac.kr` (Faculty/Staff)
+- `hong@g.deu.ac.kr` (Student)
+- `hong@office.deu.ac.kr` (Some departments)
+
+> **💡 Tip:** Signing up with a school email makes Education verification much faster later!
+
+Set your password and username, then proceed.
+
+---
+
+#### 1-3. Email Verification
+
+![Email Verification Screen](../../images/copilot_web/03%20-%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%AE%E1%84%89%E1%85%A9%20%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+
+A **launch code** will be sent to the email you entered. Check the "Enter code" box on the screen.
+
+![Check Email Code](../../images/copilot_web/04%20-%20github%E1%84%85%E1%85%A9%E1%84%87%E1%85%AE%E1%84%90%E1%85%A5%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3%20%E1%84%83%E1%85%A9%E1%84%8E%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+
+Check your email inbox for the mail from GitHub and copy the **8-digit (or 6-digit) number code**.
+
+![Enter Code](../../images/copilot_web/05%20-%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8%20%E1%84%92%E1%85%AE%20%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+
+Enter the copied code to complete email verification.
+
+> **⚠️ Note:** For security, a **sign-in screen** may appear again after verification. Don't panic, just log in with the ID and password you just set.
+
+---
+
+### **Step 2: Two-Factor Authentication (2FA)** (5-10 mins)
+
+> **⚠️ Important:** To apply for GitHub Education, you MUST enable **Two-Factor Authentication (2FA)**.  
+> Follow these steps carefully as this might be new to many users!
+
+#### 2-1. Access Settings Menu
+
+![Access Settings](../../images/copilot_web/06%20-%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AE%20%E1%84%8B%E1%85%AE%E1%84%8E%E1%85%B3%E1%84%A8%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%8A%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+
+After logging in, click the **circular profile icon in the top right corner**. Find and select **"Settings"** at the bottom of the dropdown menu.
+
+---
+
+#### 2-2. Enable 2FA
+
+![2FA Screen](../../images/copilot_web/07%20-%20Settings%20-%20Password%20and%20authentication%20%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20%E1%84%92%E1%85%AE%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB%20-%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%20Enagle%20two-factor%20authentication%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20-%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%20%E1%84%89%E1%85%B3%E1%84%86%E1%85%A1%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AB%20Microsoft%20Authenticator%20%E1%84%8B%E1%85%A2%E1%86%B8%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC.png)
+
+Once in Settings, proceed as follows:
+
+1. Click **"Password and authentication"** in the "Access" section of the left sidebar.
+2. Click the green **"Enable two-factor authentication"** button in the "Two-factor authentication" section.
+3. Select **"Set up using an app"** on the method selection screen. (This is the easiest and recommended way)
+
+---
+
+#### 2-3. Install Microsoft Authenticator App
+
+You need to **install the app on your smartphone**:
+
+**iPhone Users:**
+1. Search for "Microsoft Authenticator" in App Store
+2. Download and install
+3. Open app, select "Add account" → "Work or school account"
+
+**Android Users:**
+1. Search for "Microsoft Authenticator" in Google Play Store
+2. Download and install
+3. Open app, select "Add account" → "Work or school account"
+
+**Scan QR Code:**
+- Scan the **QR code** displayed on the GitHub screen with your smartphone app
+- Your GitHub account will be added to the app, and a **6-digit number** will appear
+- Enter this number on the GitHub screen to complete!
+
+> **🔒 Security Tip:** If Recovery codes appear, make sure to **save them in a safe place**!  
+> This is the only way to recover your account if you lose your phone.
+
+---
+
+### **Step 3: Join GitHub Education** (5 mins)
+
+#### 3-1. Access Education Page
+
+![GitHub Education Page](../../images/copilot_web/08%20-%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A2%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20github.com:education%20%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A9%E1%86%A8%20-%20Join%20GitHub%20Education%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+
+While logged in, go to [https://github.com/education](https://github.com/education) and click the **"Join GitHub Education"** button in the center.
+
+---
+
+#### 3-2. Start Application
+
+![Start Application](../../images/copilot_web/09%20-%20%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B3%E1%86%B7%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20Start%20an%20application%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+
+On the next screen, find and click the **"Start an application"** button to begin the process.
+
+---
+
+### **Step 4: Verify Status & School** (3 mins)
+
+#### 4-1. Select Teacher or Student
+
+![Select Status](../../images/copilot_web/10%20-%20Teacher%20%E1%84%82%E1%85%A9%E1%84%82%E1%85%B3%E1%86%AB%20Student%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%20-%20Select%20this%20school%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8.png)
+
+1. Select your status in **"Select your academic status"**.
+   - **Student**
+   - **Teacher** (Professor/Instructor)
+2. If you logged in with a school email, your school name will appear automatically. Click **"Select this school"** below the school name.
+   - If not displayed, search for your school's English name.
+
+---
+
+#### 4-2. Share Location
+
+![Share Location](../../images/copilot_web/11%20-%20Share%20Location%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20-%20Continue%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+
+1. Click the **"Share location"** button to verify you are near campus. Allow browser location permission if prompted.
+2. Once the map appears and confirms you are near the school, the **"Continue"** button will become active. Click it to proceed.
+
+> **🔒 Privacy:** Location data is used temporarily only to verify you are actually at the school and is not made public.
+
+---
+
+### **Step 5: Upload Proof** (1-2 mins)
+
+#### 5-1. Upload Document
+
+![Upload Proof](../../images/copilot_web/12%20-%20%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%84%85%E1%85%B2%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%84%E1%85%A9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3(jpg).png)
+
+This is the **"Upload proof of your academic status"** screen.
+
+**Student:**
+- **English Certificate of Enrollment**
+- Or **Student ID photo** (School name and your name must be clearly visible)
+
+**Professor:**
+- **English Certificate of Employment**
+- Or **Link to professor introduction page on school website**
+
+**How to Upload (Select Proof Type):**
+1. **"Take a picture"**: Take a photo of the document immediately with your phone or laptop camera.
+2. **"Upload a picture"**: Upload a pre-taken photo file (JPG, PNG, etc.).
+
+> **⚠️ Important:**
+> - You MUST use **English documents** (Korean ones are rejected).
+> - File format: JPG, PNG, PDF allowed.
+> - File size: Max 10MB.
+> - All text must be **clearly legible**.
+
+---
+
+#### 5-2. Application Complete!
+
+Enter all info and click **"Submit"** to finish!
+
+**Now just wait for approval:**
+- ⏱️ **Usually takes 1-3 days**
+- 📧 **Result sent via email**
+- ✅ Once approved, use immediately at [github.com/copilot](https://github.com/copilot)!
+
+---
+
+### ❓ Frequently Asked Questions (FAQ)
+
+#### Q1: Do I have to use Microsoft Authenticator?
+
+**A:** There are other ways for 2FA:
+- ✅ **Microsoft Authenticator** (Most recommended)
+- ✅ **Google Authenticator** (Alternative)
+- ✅ **SMS Authentication** (Receive code via phone number)
+- ⚠️ However, using the app is the safest and most convenient!
+
+---
+
+#### Q2: Are Korean certificates really not accepted?
+
+**A:** Yes, you **MUST use English certificates**.
+- GitHub Education targets students worldwide, so only English documents are processed.
+- Ask the administration office for an "English Certificate of Enrollment" or "English Certificate of Employment".
+- Usually issued within 1-2 days.
+
+---
+
+#### Q3: Which email address should I use?
+
+**A:** Use your **official school email**:
+
+**Dong-Eui University Examples:**
+- ✅ `@deu.ac.kr` (Faculty/Staff)
+- ✅ `@g.deu.ac.kr` (Student)
+- ✅ `@office.deu.ac.kr` (Some departments)
+- ❌ Personal emails like Gmail, Naver may cause slow approval or rejection.
+
+**Other Universities:**
+- Check your school's email domain (e.g., @snu.ac.kr, @yonsei.ac.kr, etc.)
+
+---
+
+#### Q4: What if my application is rejected?
+
+**A:** Check the following and **re-apply**:
+1. Is the certificate in **English**?
+2. Is all text in the certificate **clearly legible**?
+3. Did you sign up with a **school email**?
+4. Are the **school name and your name** clearly visible?
+
+You can re-apply after **24 hours**.
+
+---
+
+#### Q5: Can administrative staff use it for free?
+
+**A:** **Unfortunately, no.**
+- ✅ **Students** (Enrolled)
+- ✅ **Professors/Instructors** (Teaching)
+- ❌ **Administrative Staff** (No free benefit)
+- ⚠️ **Researchers**: Only possible if you have student status or are teaching.
+
+Administrative staff need the university to purchase a separate Organization license.
+
+---
+
+#### Q6: How long can I use it after approval?
+
+**A:** It's **free as long as you maintain your status**!
+- **Students:** Until graduation (usually requires re-verification every year)
+- **Professors:** While employed
+
+You may be asked to **re-verify** every year or two; just submit your certificate again then.
 
 ---
 
