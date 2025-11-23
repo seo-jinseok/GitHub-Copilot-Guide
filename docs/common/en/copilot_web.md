@@ -192,7 +192,7 @@ graph LR
 > Preparing the following items before starting the verification process will make it much easier:
 > 
 > - [ ] **English Certificate of Employment** (Professor) or **English Certificate of Enrollment** (Student)
->   - Must be issued by the administration office (usually takes 1-2 days)
+>   - Available from automated certificate machines (instant issuance)
 >   - ⚠️ Korean certificates are NOT accepted!
 > - [ ] **Smartphone** (For Microsoft Authenticator app installation)
 > - [ ] **School Email Address** check
