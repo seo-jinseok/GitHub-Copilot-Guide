@@ -266,7 +266,7 @@ graph LR
 
 #### 2-2. 2단계 인증 활성화
 
-![2단계 인증 화면](../../images/copilot_web/07 - Settings - Password and authentication 메뉴 클릭 후 화면 - 이후 Enagle two-factor authentication 버튼 클릭 - 이후 스마트폰 Microsoft Authenticator 앱 설치 실행.png)
+<img src="../../images/copilot_web/07 - Settings - Password and authentication 메뉴 클릭 후 화면 - 이후 Enagle two-factor authentication 버튼 클릭 - 이후 스마트폰 Microsoft Authenticator 앱 설치 실행.png" alt="2단계 인증 화면" style="width:80%; max-width:960px; display:block; margin:20px auto;" />
 
 설정 화면에 진입했다면 다음 순서대로 진행합니다:
 
