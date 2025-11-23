@@ -75,6 +75,21 @@
       padding: 20px;
       border-radius: 8px;
     }
+
+    /* Add border and shadow to content images for better visibility */
+    section img {
+      border: 1px solid #e1e4e8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      max-width: 100%;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Exclude Mermaid diagrams from the general image styling if they are rendered as svgs or divs, 
+       but if they are images, they might need it. 
+       However, usually Mermaid is a div or svg. 
+       Let's be specific to images inside the content section. */
   </style>
 
   <!--[if lt IE 9]>
