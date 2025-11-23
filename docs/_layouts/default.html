@@ -23,6 +23,10 @@
       height: 100%;
     }
 
+    :root {
+      --header-offset: 140px;
+    }
+
     body {
       margin: 0 !important;
       padding: 0 !important;
@@ -38,12 +42,12 @@
       flex: 1 0 auto;
       display: flex;
       flex-direction: column;
-      min-height: calc(100vh - 140px);
+      min-height: calc(100vh - var(--header-offset));
       width: 100% !important;
       max-width: none !important;
       margin: 0 !important;
       padding: 0 !important;
-      padding-top: 140px !important; /* Offset for fixed header */
+      padding-top: var(--header-offset);
       position: static !important;
     }
 
@@ -267,10 +271,10 @@
     /* === FOOTER STYLES === */
     .site-footer {
       flex-shrink: 0;
+      margin-top: auto;
       background: #2c3e50;
       color: #ecf0f1;
       padding: 40px 20px 20px;
-      margin-top: 0;
       width: 100%;
     }
 
@@ -407,9 +411,8 @@
 
     /* === RESPONSIVE DESIGN === */
     @media (max-width: 768px) {
-      .wrapper {
-        padding-top: 180px !important;
-        min-height: calc(100vh - 180px);
+      :root {
+        --header-offset: 180px;
       }
 
       .header-container {
@@ -565,6 +568,21 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    function updateHeaderOffset() {
+      const root = document.documentElement;
+      const header = document.querySelector('.site-header');
+      if (!root || !header) return;
+      const headerHeight = header.offsetHeight;
+      root.style.setProperty('--header-offset', headerHeight + 'px');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateHeaderOffset();
+      window.addEventListener('resize', updateHeaderOffset);
+    });
+  </script>
 
   <!-- Language Toggle Script -->
   <script>
