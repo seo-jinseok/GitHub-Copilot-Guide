@@ -213,7 +213,7 @@ The entire process takes about **15-20 minutes**, and approval takes **1-3 days*
 
 Go to [https://github.com](https://github.com) in your web browser.
 
-![GitHub Home Screen](../../images/copilot_web/01%20-%20github.com%20%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A9%E1%86%A8%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+![GitHub Home Screen](../../images/copilot_web/01 - github.com 접속 화면.png)
 
 Click the **"Sign up"** button at the top right of the screen.
 
@@ -221,7 +221,7 @@ Click the **"Sign up"** button at the top right of the screen.
 
 #### 1-2. Enter Email Address
 
-![Sign Up Screen](../../images/copilot_web/02%20-%20github%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+![Sign Up Screen](../../images/copilot_web/02 - github 회원가입 화면.png)
 
 Enter your **school email address**.
 
@@ -238,15 +238,15 @@ Set your password and username, then proceed.
 
 #### 1-3. Email Verification
 
-![Email Verification Screen](../../images/copilot_web/03%20-%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%8C%E1%85%AE%E1%84%89%E1%85%A9%20%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+![Email Verification Screen](../../images/copilot_web/03 - 이메일 주소 확인 화면.png)
 
 A **launch code** will be sent to the email you entered. Check the "Enter code" box on the screen.
 
-![Check Email Code](../../images/copilot_web/04%20-%20github%E1%84%85%E1%85%A9%E1%84%87%E1%85%AE%E1%84%90%E1%85%A5%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3%20%E1%84%83%E1%85%A9%E1%84%8E%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+![Check Email Code](../../images/copilot_web/04 - github로부터 코드 도착 이메일 확인 화면.png)
 
 Check your email inbox for the mail from GitHub and copy the **8-digit (or 6-digit) number code**.
 
-![Enter Code](../../images/copilot_web/05%20-%20%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3%20%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A7%E1%86%A8%20%E1%84%92%E1%85%AE%20%E1%84%83%E1%85%A1%E1%84%89%E1%85%B5%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB.png)
+![Enter Code](../../images/copilot_web/05 - 코드 입력 후 다시 로그인 화면.png)
 
 Enter the copied code to complete email verification.
 
@@ -261,7 +261,7 @@ Enter the copied code to complete email verification.
 
 #### 2-1. Access Settings Menu
 
-![Access Settings](../../images/copilot_web/06%20-%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%92%E1%85%AE%20%E1%84%8B%E1%85%AE%E1%84%8E%E1%85%B3%E1%84%A8%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%8A%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8F%E1%85%A9%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+![Access Settings](../../images/copilot_web/06 - 로그인 후 우측 상단 구석에 있는 아이콘 클릭.png)
 
 After logging in, click the **circular profile icon in the top right corner**. Find and select **"Settings"** at the bottom of the dropdown menu.
 
@@ -269,7 +269,7 @@ After logging in, click the **circular profile icon in the top right corner**. F
 
 #### 2-2. Enable 2FA
 
-![2FA Screen](../../images/copilot_web/07%20-%20Settings%20-%20Password%20and%20authentication%20%E1%84%86%E1%85%A6%E1%84%82%E1%85%B2%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20%E1%84%92%E1%85%AE%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB%20-%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%20Enagle%20two-factor%20authentication%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20-%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%20%E1%84%89%E1%85%B3%E1%84%86%E1%85%A1%E1%84%90%E1%85%B3%E1%84%91%E1%85%A9%E1%86%AB%20Microsoft%20Authenticator%20%E1%84%8B%E1%85%A2%E1%86%B8%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC.png)
+![2FA Screen](../../images/copilot_web/07 - Settings - Password and authentication 메뉴 클릭 후 화면 - 이후 Enagle two-factor authentication 버튼 클릭 - 이후 스마트폰 Microsoft Authenticator 앱 설치 실행.png)
 
 Once in Settings, proceed as follows:
 
@@ -307,7 +307,7 @@ You need to **install the app on your smartphone**:
 
 #### 3-1. Access Education Page
 
-![GitHub Education Page](../../images/copilot_web/08%20-%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB%20%E1%84%89%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A2%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20github.com:education%20%E1%84%8C%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A9%E1%86%A8%20-%20Join%20GitHub%20Education%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+![GitHub Education Page](../../images/copilot_web/08 - 로그인 상태에서 github.com:education 접속 - Join GitHub Education 버튼 클릭.png)
 
 While logged in, go to [https://github.com/education](https://github.com/education) and click the **"Join GitHub Education"** button in the center.
 
@@ -315,7 +315,7 @@ While logged in, go to [https://github.com/education](https://github.com/educati
 
 #### 3-2. Start Application
 
-![Start Application](../../images/copilot_web/09%20-%20%E1%84%83%E1%85%A1%E1%84%8B%E1%85%B3%E1%86%B7%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20Start%20an%20application%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+![Start Application](../../images/copilot_web/09 - 다음 화면에서 Start an application 버튼 클릭.png)
 
 On the next screen, find and click the **"Start an application"** button to begin the process.
 
@@ -325,7 +325,7 @@ On the next screen, find and click the **"Start an application"** button to begi
 
 #### 4-1. Select Teacher or Student
 
-![Select Status](../../images/copilot_web/10%20-%20Teacher%20%E1%84%82%E1%85%A9%E1%84%82%E1%85%B3%E1%86%AB%20Student%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%20-%20Select%20this%20school%20%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8.png)
+![Select Status](../../images/copilot_web/10 - Teacher 또는 Student 선택 - Select this school 선택.png)
 
 1. Select your status in **"Select your academic status"**.
    - **Student**
@@ -337,7 +337,7 @@ On the next screen, find and click the **"Start an application"** button to begi
 
 #### 4-2. Share Location
 
-![Share Location](../../images/copilot_web/11%20-%20Share%20Location%20%E1%84%87%E1%85%A5%E1%84%90%E1%85%B3%E1%86%AB%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%20-%20Continue%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8.png)
+![Share Location](../../images/copilot_web/11 - Share Location 버튼 클릭 - Continue 클릭.png)
 
 1. Click the **"Share location"** button to verify you are near campus. Allow browser location permission if prompted.
 2. Once the map appears and confirms you are near the school, the **"Continue"** button will become active. Click it to proceed.
@@ -350,7 +350,7 @@ On the next screen, find and click the **"Start an application"** button to begi
 
 #### 5-1. Upload Document
 
-![Upload Proof](../../images/copilot_web/12%20-%20%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%86%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A5%E1%84%85%E1%85%B2%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%84%E1%85%A9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3(jpg).png)
+![Upload Proof](../../images/copilot_web/12 - 증명서류 촬영 또는 업로드(jpg).png)
 
 This is the **"Upload proof of your academic status"** screen.
 
