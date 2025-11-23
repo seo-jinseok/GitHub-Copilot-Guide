@@ -26,7 +26,6 @@
     body {
       margin: 0 !important;
       padding: 0 !important;
-      padding-top: 140px !important; /* Space for fixed header + nav */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -41,6 +40,7 @@
       max-width: none !important;
       margin: 0 !important;
       padding: 0 !important;
+      padding-top: 140px !important; /* Offset for fixed header */
       position: static !important;
     }
 
@@ -403,7 +403,7 @@
 
     /* === RESPONSIVE DESIGN === */
     @media (max-width: 768px) {
-      body {
+      .wrapper {
         padding-top: 180px !important;
       }
 
