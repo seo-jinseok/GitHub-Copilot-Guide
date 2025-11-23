@@ -5,8 +5,8 @@ Welcome to the University Copilot Guide repository. Please select your language 
 
 ## 🎓 행정직원용 (For Administrators)
 
-*   **[🇰🇷 한국어 가이드 (Korean Guide)](./admin/ko/)**
-*   **[🇺🇸 영어 가이드 (English Guide)](./admin/en/)**
+*   **[🇰🇷 한국어 가이드](./admin/ko/)**
+*   **[🇺🇸 English Guide](./admin/en/)**
 
 ---
 
