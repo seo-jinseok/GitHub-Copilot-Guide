@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ " /assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
   <!-- Custom styles for Mermaid diagrams and modal -->
   <style>
@@ -64,9 +64,9 @@
     }
 
     .diagram-modal svg {
-      max-width: 90vw;
-      max-height: 90vh;
-      width: auto;
+      max-width: 95vw;
+      max-height: 95vh;
+      width: 100%;
       height: auto;
       display: block;
       margin: auto;
@@ -84,7 +84,7 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <h1><a href="{{ " /" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
       <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -107,7 +107,7 @@
       </p>
     </footer>
   </div>
-  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
 
   <!-- Mermaid JS - Content-based detection -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -209,8 +209,16 @@
               const svg = diagram.querySelector('svg');
               if (svg) {
                 const svgClone = svg.cloneNode(true);
-                svgClone.setAttribute('width', '100%');
-                svgClone.setAttribute('height', '100%');
+
+                // Remove restrictive attributes to allow scaling
+                svgClone.removeAttribute('style');
+                svgClone.removeAttribute('width');
+                svgClone.removeAttribute('height');
+
+                // Ensure it fills the container
+                svgClone.style.width = '100%';
+                svgClone.style.height = 'auto';
+                svgClone.style.maxWidth = '100%';
 
                 modalContent.innerHTML = '';
                 modalContent.appendChild(svgClone);
