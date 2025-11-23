@@ -12,8 +12,8 @@ Welcome to the University Copilot Guide repository. Please select your language 
 
 ## 🌍 공통 리소스 (Common Resources)
 
-*   **[🇰🇷 웹에서 만나는 GitHub Copilot - 한국어 (GitHub Copilot on the Web - Korean)](./common/ko/copilot_web.md)**
-*   **[🇺🇸 GitHub Copilot on the Web - English (웹에서 만나는 GitHub Copilot - 영어)](./common/en/copilot_web.md)**
+*   **[🇰🇷 웹에서 만나는 GitHub Copilot (VS Code 없이 사용하기)](./common/ko/copilot_web.md)**
+*   **[🇺🇸 GitHub Copilot on the Web (Use Without VS Code)](./common/en/copilot_web.md)**
 
 ---
 
