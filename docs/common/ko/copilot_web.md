@@ -210,7 +210,7 @@ graph LR
 
 웹 브라우저에서 [https://github.com](https://github.com)에 접속합니다.
 
-![GitHub 첫 화면](../../images/copilot_web/01 - github.com 접속 화면.png)
+<img src="../../images/copilot_web/01 - github.com 접속 화면.png" alt="GitHub 첫 화면" style="width:80%; max-width:960px; display:block; margin:20px auto;" />
 
 화면 우측 상단의 **"Sign up"** 버튼을 클릭합니다.
 
@@ -218,7 +218,7 @@ graph LR
 
 #### 1-2. 이메일 주소 입력
 
-![회원가입 화면](../../images/copilot_web/02 - github 회원가입 화면.png)
+<img src="../../images/copilot_web/02 - github 회원가입 화면.png" alt="회원가입 화면" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 **학교 이메일 주소**를 입력하세요. 
 
@@ -235,15 +235,15 @@ graph LR
 
 #### 1-3. 이메일 인증
 
-![이메일 확인 화면](../../images/copilot_web/03 - 이메일 주소 확인 화면.png)
+<img src="../../images/copilot_web/03 - 이메일 주소 확인 화면.png" alt="이메일 확인 화면" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 입력한 이메일로 **인증 코드(Launch code)**가 전송됩니다. 화면에 보이는 "Enter code" 입력창을 확인하세요.
 
-![이메일에서 코드 확인](../../images/copilot_web/04 - github로부터 코드 도착 이메일 확인 화면.png)
+<img src="../../images/copilot_web/04 - github로부터 코드 도착 이메일 확인 화면.png" alt="이메일에서 코드 확인" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 이메일 수신함에서 GitHub가 보낸 메일을 확인하여 **8자리(또는 6자리) 숫자 코드**를 복사합니다.
 
-![코드 입력](../../images/copilot_web/05 - 코드 입력 후 다시 로그인 화면.png)
+<img src="../../images/copilot_web/05 - 코드 입력 후 다시 로그인 화면.png" alt="코드 입력" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 복사한 코드를 입력하면 이메일 인증이 완료됩니다.
 
@@ -322,7 +322,7 @@ graph LR
 
 #### 4-1. Teacher 또는 Student 선택
 
-![신분 선택](../../images/copilot_web/10 - Teacher 또는 Student 선택 - Select this school 선택.png)
+<img src="../../images/copilot_web/10 - Teacher 또는 Student 선택 - Select this school 선택.png" alt="신분 선택" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 1. **"Select your academic status"** 항목에서 본인의 신분을 선택합니다.
    - **Student**: 학생
@@ -334,7 +334,7 @@ graph LR
 
 #### 4-2. 위치 공유
 
-![위치 공유](../../images/copilot_web/11 - Share Location 버튼 클릭 - Continue 클릭.png)
+<img src="../../images/copilot_web/11 - Share Location 버튼 클릭 - Continue 클릭.png" alt="위치 공유" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 1. 학교 위치 확인을 위해 **"Share location"** 버튼을 클릭합니다. 브라우저의 위치 정보 권한 요청이 뜨면 '허용'을 눌러주세요.
 2. 지도가 표시되고 학교 근처임이 확인되면 하단의 **"Continue"** 버튼이 활성화됩니다. 클릭하여 다음 단계로 이동합니다.
@@ -347,7 +347,7 @@ graph LR
 
 #### 5-1. 증명서 업로드
 
-![증명서 업로드](../../images/copilot_web/12 - 증명서류 촬영 또는 업로드(jpg).png)
+<img src="../../images/copilot_web/12 - 증명서류 촬영 또는 업로드(jpg).png" alt="증명서 업로드" style="width:50%; max-width:600px; display:block; margin:20px auto;" />
 
 **"Upload proof of your academic status"** 화면입니다.
 
