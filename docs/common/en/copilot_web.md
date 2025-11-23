@@ -5,7 +5,7 @@ parent: Common
 nav_order: 10
 ---
 
-[🏠 Home](../../index.md) | [🌐 Web Guide](./copilot_web.md) | [💻 VS Code Guide](../../index.md#2부-vs-code로-전문가처럼-쓰기-설치-)
+[🏠 Home](../../index.md) | [🌐 Web Guide](./copilot_web.md) | [💻 VS Code Guide](../../index.md#use-like-a-pro-with-vs-code-install-required)
 
 # 🌐 GitHub Copilot Pro on the Web (Free)
 
@@ -22,7 +22,7 @@ This guide, written as of **November 2025**, will show you everything about usin
 
 ---
 
-## 1. 🚀 Get Started Immediately Without Installation
+## 🚀 Get Started Immediately Without Installation
 
 No complex installation process required. If you have a web browser (Chrome, Safari, Edge, etc.), you can use it right now.
 
@@ -38,7 +38,9 @@ No complex installation process required. If you have a web browser (Chrome, Saf
 
 This web interface is not just a simple chat window. It contains the most powerful AI features provided by **Microsoft**, and can be used for **various tasks** such as report writing, data analysis ideas, and email drafting.
 
-## 2. 🧠 Which AI Can You Use? (Choosing Models)
+---
+
+## 🧠 Which AI Can You Use? (Choosing Models)
 
 The biggest advantage of GitHub Copilot's web version is that **you can choose from the world's best AIs**. Click the model selection menu at the top left of the chat window, and you can switch AIs as if choosing "which expert should I get help from?"
 
@@ -134,9 +136,9 @@ graph TD
 > **💡 Tip:** Usually use **GPT-4o or Grok (unlimited)**, and only use **Claude Sonnet 4.5** or **Gemini 2.5 Pro** for really important documents or difficult questions!
 
 
-## 3. 🎓 University Members Use It For Free!
+## 🎓 University Members Use It For Free!
 
-Normally, these high-performance AIs are paid services costing **$10/month (about ₩14,000)**. However, if you're **affiliated with a university, you can use them completely free**!
+Normally, these high-performance AIs are paid services costing **$10/month**. However, if you're **affiliated with a university, you can use them completely free**!
 
 ### ✅ Who Can Use It For Free?
 
@@ -383,76 +385,6 @@ Enter all info and click **"Submit"** to finish!
 
 ---
 
-### ❓ Frequently Asked Questions (FAQ)
-
-#### Q1: Do I have to use Microsoft Authenticator?
-
-**A:** There are other ways for 2FA:
-- ✅ **Microsoft Authenticator** (Most recommended)
-- ✅ **Google Authenticator** (Alternative)
-- ✅ **SMS Authentication** (Receive code via phone number)
-- ⚠️ However, using the app is the safest and most convenient!
-
----
-
-#### Q2: Are Korean certificates really not accepted?
-
-**A:** Yes, you **MUST use English certificates**.
-- GitHub Education targets students worldwide, so only English documents are processed.
-- Ask the administration office for an "English Certificate of Enrollment" or "English Certificate of Employment".
-- Usually issued within 1-2 days.
-
----
-
-#### Q3: Which email address should I use?
-
-**A:** Use your **official school email**:
-
-**Dong-Eui University Examples:**
-- ✅ `@deu.ac.kr` (Faculty/Staff)
-- ✅ `@g.deu.ac.kr` (Student)
-- ✅ `@office.deu.ac.kr` (Some departments)
-- ❌ Personal emails like Gmail, Naver may cause slow approval or rejection.
-
-**Other Universities:**
-- Check your school's email domain (e.g., @snu.ac.kr, @yonsei.ac.kr, etc.)
-
----
-
-#### Q4: What if my application is rejected?
-
-**A:** Check the following and **re-apply**:
-1. Is the certificate in **English**?
-2. Is all text in the certificate **clearly legible**?
-3. Did you sign up with a **school email**?
-4. Are the **school name and your name** clearly visible?
-
-You can re-apply after **24 hours**.
-
----
-
-#### Q5: Can administrative staff use it for free?
-
-**A:** **Unfortunately, no.**
-- ✅ **Students** (Enrolled)
-- ✅ **Professors/Instructors** (Teaching)
-- ❌ **Administrative Staff** (No free benefit)
-- ⚠️ **Researchers**: Only possible if you have student status or are teaching.
-
-Administrative staff need the university to purchase a separate Organization license.
-
----
-
-#### Q6: How long can I use it after approval?
-
-**A:** It's **free as long as you maintain your status**!
-- **Students:** Until graduation (usually requires re-verification every year)
-- **Professors:** While employed
-
-You may be asked to **re-verify** every year or two; just submit your certificate again then.
-
----
-
 ## 4. 💬 How to Actually Use It?
 
 Here are practical scenarios that non-majors can easily utilize.
@@ -536,9 +468,9 @@ Please include detailed comments for explanation.
 
 ### Q1: Do I have to ask questions only in English?
 
-**A:** No! **It understands Korean questions perfectly**. 
+**A:** No! **It understands multiple languages including Korean**. 
+- English question → English answer ✅
 - Korean question → Korean answer ✅
-- Korean question → Request English answer ✅
 - English question → Request Korean answer ✅
 
 **Example:**
@@ -634,7 +566,7 @@ and also create an English version"
 
 **Safe Question Examples:**
 ```
-❌ "How should I handle student Hong Gil-dong's (010-1234-5678) grades?"
+❌ "How should I handle student John Doe's (010-1234-5678) grades?"
 ✅ "What's the general procedure when receiving a grade correction request?"
 ```
 
@@ -659,5 +591,3 @@ and also create an English version"
 3. Start chatting with AI at [github.com/copilot](https://github.com/copilot)!
 
 The world's best AIs are here to help with your work. 🚀
-
-
