@@ -5,8 +5,6 @@ parent: Common
 nav_order: 10
 ---
 
-[🏠 홈](../../index.md) | [🌐 웹 가이드](./copilot_web.md) | [💻 VS Code 가이드](../../index.md#2부-vs-code로-전문가처럼-쓰기-설치-)
-
 # 🌐 GitHub Copilot Pro를 무료로 웹에서 사용하기
 
 > **💡 이 문서는 누구를 위한 것인가요?**  
