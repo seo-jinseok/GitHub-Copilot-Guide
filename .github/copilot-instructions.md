@@ -12,7 +12,7 @@ Please follow these instructions for all interactions in this workspace.
 - **Dates**: Always use `YYYY. MM. DD.` format (e.g., 2025. 11. 21.).
 - **Currency**: Use commas for thousands and append '원' (e.g., 10,000,000원).
 - **Lists**: Use bullet points for readability whenever possible.
-- **Bilingual Text**: Korean first, newline, then English in parentheses (e.g., `사용자 경험\n(User Experience)`).
+- **Bilingual Text**: Korean first, newline, then English in parentheses. English text must follow the same style (header level, bold, etc.) as the Korean text. (e.g., `## 사용자 경험\n## (User Experience)`).
 
 ## 3. Privacy & Security
 - **Personal Info**: NEVER output real resident registration numbers, phone numbers, or student IDs.

@@ -60,11 +60,11 @@ When merging content from multiple sources, follow this priority order:
   - ✅ Success/completion
   - ❌ Failures/errors
   - 📝 Notes/additional info
-- Bilingual text: Korean first, newline, then English in parentheses
+- Bilingual text: Korean first, newline, then English in parentheses. English text must follow the same style (header level, bold, etc.) as the Korean text.
   - Example:
     ```
-    사용자 경험
-    (User Experience)
+    ## 사용자 경험
+    ## (User Experience)
     ```
 
 **Learning Progress Checkboxes**:
