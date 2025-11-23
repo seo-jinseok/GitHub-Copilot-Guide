@@ -1,4 +1,5 @@
-# 기여 가이드 (Contributing Guide)
+# 기여 가이드
+(Contributing Guide)
 
 이 프로젝트에 기여해주셔서 감사합니다. 아래 가이드라인을 따라주시면 원활한 협업에 큰 도움이 됩니다.
 

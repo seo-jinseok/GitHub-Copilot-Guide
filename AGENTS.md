@@ -60,6 +60,12 @@ When merging content from multiple sources, follow this priority order:
   - ✅ Success/completion
   - ❌ Failures/errors
   - 📝 Notes/additional info
+- Bilingual text: Korean first, newline, then English in parentheses
+  - Example:
+    ```
+    사용자 경험
+    (User Experience)
+    ```
 
 **Learning Progress Checkboxes**:
 - Use `- [ ]` format in TOCs for learner tracking
