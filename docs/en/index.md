@@ -1,6 +1,6 @@
 ---
 layout: default
-lang: ko
+lang: en
 ---
 
 <style>
@@ -279,17 +279,17 @@ lang: ko
 <!-- Hero Section -->
 <div class="hero-section">
   <div class="hero-logo">
-    <img src="images/ci/deu.svg" alt="동의대학교 로고" onerror="this.style.display='none'">
+    <img src="../images/ci/deu.svg" alt="Dong-Eui University Logo" onerror="this.style.display='none'">
   </div>
-  <h1 class="hero-title">GitHub Copilot 완전 정복</h1>
+  <h1 class="hero-title">Mastering GitHub Copilot</h1>
   <p class="hero-subtitle">
-    동의대학교 구성원을 위한 AI 코딩 도우미 활용 가이드<br>
-    설치부터 전문가 활용까지, 모든 것을 배워보세요
+    AI Coding Assistant Guide for Dong-Eui University Members<br>
+    Learn everything from installation to expert usage
   </p>
   <div class="hero-badges">
-    <span class="hero-badge">✅ 무료로 시작</span>
-    <span class="hero-badge">🚀 빠른 학습</span>
-    <span class="hero-badge">💼 실무 적용</span>
+    <span class="hero-badge">✅ Start for Free</span>
+    <span class="hero-badge">🚀 Fast Learning</span>
+    <span class="hero-badge">💼 Practical Application</span>
   </div>
 </div>
 
@@ -297,71 +297,71 @@ lang: ko
 <div class="features-grid">
   <div class="feature-card">
     <span class="feature-icon">🌐</span>
-    <h2 class="feature-title">웹에서 바로 시작</h2>
+    <h2 class="feature-title">Start on the Web</h2>
     <p class="feature-description">
-      복잡한 설치 없이 웹 브라우저에서 바로 GitHub Copilot을 무료로 체험해보세요
+      Experience GitHub Copilot for free in your web browser without complex installation
     </p>
-    <a href="./common/ko/copilot_web.html" class="feature-cta">지금 시작하기 →</a>
+    <a href="../common/en/copilot_web.html" class="feature-cta">Start Now →</a>
   </div>
 
   <div class="feature-card">
     <span class="feature-icon">💻</span>
-    <h2 class="feature-title">VS Code로 전문가처럼</h2>
+    <h2 class="feature-title">Pro with VS Code</h2>
     <p class="feature-description">
-      VS Code를 설치하고 각 직무에 맞는 전문적인 활용법을 배워보세요
+      Install VS Code and learn professional usage tailored to your role
     </p>
-    <a href="#roles" class="feature-cta">직무별 가이드 보기 →</a>
+    <a href="#roles" class="feature-cta">View Role Guides →</a>
   </div>
 
   <div class="feature-card">
     <span class="feature-icon">📚</span>
-    <h2 class="feature-title">단계별 학습 과정</h2>
+    <h2 class="feature-title">Step-by-Step Learning</h2>
     <p class="feature-description">
-      초보자부터 전문가까지, 체계적인 커리큘럼으로 실력을 향상시키세요
+      Improve your skills with a systematic curriculum from beginner to expert
     </p>
-    <a href="./common/ko/copilot_web.html" class="feature-cta">학습 시작 →</a>
+    <a href="../common/en/copilot_web.html" class="feature-cta">Start Learning →</a>
   </div>
 </div>
 
 <!-- Roles Section -->
 <div class="roles-section" id="roles">
-  <h2 class="roles-title">직무별 맞춤 가이드</h2>
-  <p class="roles-subtitle">당신의 역할에 맞는 가이드를 선택하세요</p>
+  <h2 class="roles-title">Customized Guides by Role</h2>
+  <p class="roles-subtitle">Choose the guide that fits your role</p>
   
   <div class="roles-grid">
     <div class="role-card">
       <span class="role-icon">👔</span>
-      <h3 class="role-title">행정직원</h3>
+      <h3 class="role-title">Admin Staff</h3>
       <div class="role-links">
-        <a href="./admin/ko/" class="role-link">🇰🇷 한국어 가이드</a>
-        <a href="./admin/en/" class="role-link">🇺🇸 English Guide</a>
+        <a href="../admin/ko/" class="role-link">🇰🇷 Korean Guide</a>
+        <a href="../admin/en/" class="role-link">🇺🇸 English Guide</a>
       </div>
     </div>
 
     <div class="role-card">
       <span class="role-icon">👨‍🏫</span>
-      <h3 class="role-title">교수자</h3>
+      <h3 class="role-title">Professor</h3>
       <div class="role-links">
-        <a href="./professor/ko/" class="role-link">🇰🇷 한국어 가이드</a>
-        <span class="role-link disabled">🇺🇸 준비중</span>
+        <a href="../professor/ko/" class="role-link">🇰🇷 Korean Guide</a>
+        <span class="role-link disabled">🇺🇸 Coming Soon</span>
       </div>
     </div>
 
     <div class="role-card">
       <span class="role-icon">🎓</span>
-      <h3 class="role-title">학생</h3>
+      <h3 class="role-title">Student</h3>
       <div class="role-links">
-        <a href="./student/ko/" class="role-link">🇰🇷 한국어 가이드</a>
-        <span class="role-link disabled">🇺🇸 준비중</span>
+        <a href="../student/ko/" class="role-link">🇰🇷 Korean Guide</a>
+        <span class="role-link disabled">🇺🇸 Coming Soon</span>
       </div>
     </div>
 
     <div class="role-card">
       <span class="role-icon">🧪</span>
-      <h3 class="role-title">연구자</h3>
+      <h3 class="role-title">Researcher</h3>
       <div class="role-links">
-        <a href="./researcher/ko/" class="role-link">🇰🇷 한국어 가이드</a>
-        <span class="role-link disabled">🇺🇸 준비중</span>
+        <a href="../researcher/ko/" class="role-link">🇰🇷 Korean Guide</a>
+        <span class="role-link disabled">🇺🇸 Coming Soon</span>
       </div>
     </div>
   </div>
@@ -369,9 +369,9 @@ lang: ko
 
 <!-- CTA Section -->
 <div class="cta-section">
-  <h2 class="cta-title">지금 바로 시작하세요!</h2>
+  <h2 class="cta-title">Start Right Now!</h2>
   <p class="cta-description">
-    설치가 필요 없는 웹 버전으로 GitHub Copilot을 5분 안에 체험해보세요
+    Experience GitHub Copilot in 5 minutes with the web version, no installation required
   </p>
-  <a href="./common/ko/copilot_web.html" class="cta-button">무료로 시작하기 🚀</a>
+  <a href="../common/en/copilot_web.html" class="cta-button">Start for Free 🚀</a>
 </div>

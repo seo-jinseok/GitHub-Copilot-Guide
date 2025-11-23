@@ -83,18 +83,9 @@
       opacity: 0.9;
     }
 
-    .logo-shield {
-      width: 40px;
+    .logo-img {
       height: 40px;
-      background: white;
-      border-radius: 4px 4px 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
-      color: #003DA5;
-      clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+      width: auto;
     }
 
     .logo-text {
@@ -449,7 +440,7 @@
       <div class="header-container">
         <div class="header-left">
           <a href="https://www.deu.ac.kr" class="deu-logo" target="_blank" rel="noopener">
-            <div class="logo-shield">T</div>
+            <img src="{{ '/images/ci/deu.svg' | relative_url }}" alt="DEU Logo" class="logo-img">
             <span class="logo-text">동의대학교</span>
           </a>
         </div>
@@ -591,13 +582,21 @@
         // Special handling for index page
         if (isIndexPage) {
           if (isKorean) {
-            // TODO: Create English version of index
-            alert('영문 랜딩 페이지는 준비중입니다.\nEnglish landing page is coming soon.');
-            return;
+            // Switch to English index
+            if (currentPath.endsWith('index.html')) {
+              newPath = currentPath.replace('index.html', 'en/index.html');
+            } else if (currentPath.endsWith('/')) {
+              newPath = currentPath + 'en/';
+            } else {
+              newPath = currentPath + '/en/';
+            }
           } else {
             // Go back to Korean index
-            const basePath = currentPath.replace(/index\.html$/, '');
-            newPath = basePath;
+            if (currentPath.includes('/en/')) {
+              newPath = currentPath.replace('/en/', '/');
+            } else {
+              newPath = currentPath; // Should not happen if isEnglish is true
+            }
           }
         } else {
           // Regular page language toggle
