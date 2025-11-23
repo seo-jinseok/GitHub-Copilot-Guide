@@ -17,6 +17,7 @@
 
 ---
 
+## 2부: VS Code로 전문가처럼 쓰기 (설치 ✅)
 (Use like a Pro with VS Code (Install Required))
 
 VS Code를 설치하고 각 직무에 맞는 전문적인 활용법을 배워보세요.
@@ -37,7 +38,6 @@ VS Code를 설치하고 각 직무에 맞는 전문적인 활용법을 배워보
 *   **[🇰🇷 한국어 가이드](./student/ko/)**
 *   (English Guide Coming Soon)
 
-### 🧪 연구자용
 
 ### 🧪 연구자용 (For Researchers)
 *   **[🇰🇷 한국어 가이드](./researcher/ko/)**
