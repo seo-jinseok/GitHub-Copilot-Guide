@@ -1,11 +1,15 @@
 ---
 layout: default
-title: 웹에서 만나는 GitHub Copilot
+title: GitHub Copilot Pro를 무료로 웹에서 사용하기
 parent: Common
 nav_order: 10
 ---
 
+[[🏠 홈]](../../index.html) · [[🌐 웹 가이드]](./copilot_web.html) · [[💻 VS Code 가이드]](../../admin/ko/)
+
 # 🌐 GitHub Copilot Pro를 무료로 웹에서 사용하기
+
+> **VS Code 설치 없이, 브라우저만 있으면 됩니다.**
 
 > **💡 이 문서는 누구를 위한 것인가요?**  
 > - 프로그래밍을 처음 접하시는 교수님, 학생분들
