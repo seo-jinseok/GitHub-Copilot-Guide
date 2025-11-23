@@ -134,13 +134,24 @@
           mermaidDiagrams.forEach((diagram, index) => {
             const svg = diagram.querySelector('svg');
             if (svg) {
-              // Convert SVG to data URI for GLightbox
-              const svgData = new XMLSerializer().serializeToString(svg);
-              const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
-              const url = URL.createObjectURL(svgBlob);
+              // Clone SVG and ensure it has proper dimensions
+              const svgClone = svg.cloneNode(true);
+              const svgWidth = svg.getAttribute('width') || svg.getBBox().width;
+              const svgHeight = svg.getAttribute('height') || svg.getBBox().height;
 
-              // Wrap in clickable div
-              diagram.setAttribute('data-glightbox', `href: ${url}`);
+              svgClone.setAttribute('width', '100%');
+              svgClone.setAttribute('height', '100%');
+              svgClone.style.maxWidth = '90vw';
+              svgClone.style.maxHeight = '90vh';
+
+              // Create data URI with proper encoding
+              const svgData = new XMLSerializer().serializeToString(svgClone);
+              const encodedSvg = encodeURIComponent(svgData);
+              const dataUri = `data:image/svg+xml,${encodedSvg}`;
+
+              // Set GLightbox attributes with correct format
+              diagram.setAttribute('data-glightbox', `type: image`);
+              diagram.setAttribute('href', dataUri);
               diagram.setAttribute('data-gallery', 'mermaid-diagrams');
               diagram.setAttribute('title', `Diagram ${index + 1} - Click to zoom`);
             }
@@ -151,7 +162,10 @@
             selector: '.mermaid',
             touchNavigation: true,
             loop: false,
-            autoplayVideos: false
+            autoplayVideos: false,
+            svg: {
+              inline: true
+            }
           });
 
           console.log('GLightbox initialized for Mermaid diagrams!');
