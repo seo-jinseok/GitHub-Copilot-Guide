@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: " en-US" }}">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="{{ " /assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+  <!-- GLightbox for Mermaid diagram zoom -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
+
+  <!-- Custom styles for Mermaid diagrams -->
+  <style>
+    .mermaid {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .mermaid:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
+    }
+  </style>
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -16,7 +34,7 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <h1><a href="{{ " /" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
       <p>{{ site.description | default: site.github.project_tagline }}</p>
 
@@ -39,7 +57,10 @@
       </p>
     </footer>
   </div>
-  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
+
+  <!-- GLightbox JS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
 
   <!-- Mermaid JS - Content-based detection -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -104,6 +125,37 @@
         });
         mermaid.contentLoaded();
         console.log('Mermaid initialized!');
+
+        // Add GLightbox for diagram zoom functionality
+        setTimeout(() => {
+          const mermaidDiagrams = document.querySelectorAll('.mermaid');
+          console.log(`Setting up GLightbox for ${mermaidDiagrams.length} diagrams`);
+
+          mermaidDiagrams.forEach((diagram, index) => {
+            const svg = diagram.querySelector('svg');
+            if (svg) {
+              // Convert SVG to data URI for GLightbox
+              const svgData = new XMLSerializer().serializeToString(svg);
+              const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+              const url = URL.createObjectURL(svgBlob);
+
+              // Wrap in clickable div
+              diagram.setAttribute('data-glightbox', `href: ${url}`);
+              diagram.setAttribute('data-gallery', 'mermaid-diagrams');
+              diagram.setAttribute('title', `Diagram ${index + 1} - Click to zoom`);
+            }
+          });
+
+          // Initialize GLightbox
+          const lightbox = GLightbox({
+            selector: '.mermaid',
+            touchNavigation: true,
+            loop: false,
+            autoplayVideos: false
+          });
+
+          console.log('GLightbox initialized for Mermaid diagrams!');
+        }, 500); // Wait for Mermaid to fully render
       } else {
         console.warn('No Mermaid diagrams found!');
       }
