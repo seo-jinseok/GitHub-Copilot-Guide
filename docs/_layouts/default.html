@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ page.lang | default: 'ko' }}">
 
 <head>
   <meta charset="UTF-8">
@@ -10,8 +10,201 @@
   {% assign style_url = "/assets/css/style.css?v=" %}
   <link rel="stylesheet" href="{{ style_url | append: site.github.build_revision | relative_url }}">
 
-  <!-- Custom styles for Mermaid diagrams and modal -->
+  <!-- Custom styles -->
   <style>
+    /* Reset body and wrapper for full-width layout */
+    body {
+      margin: 0;
+      padding: 0;
+      padding-top: 70px; /* Space for fixed header */
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* === HEADER STYLES === */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #003DA5 0%, #0051D5 100%); /* DEU Blue gradient */
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      padding: 12px 0;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .deu-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo-shield {
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #003DA5;
+      position: relative;
+      clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
+    }
+
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-toggle {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .lang-toggle:hover {
+      background: white;
+      color: #003DA5;
+      transform: scale(1.05);
+    }
+
+    .lang-toggle.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* === CONTENT SECTION === */
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      min-height: calc(100vh - 250px);
+    }
+
+    /* === FOOTER STYLES === */
+    .site-footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 40px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h4 {
+      color: #3498db;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+      margin: 8px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section a {
+      color: #ecf0f1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-section a:hover {
+      color: #3498db;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #95a5a6;
+    }
+
+    .build-info {
+      margin-top: 10px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    /* === MERMAID DIAGRAM STYLES === */
     .mermaid {
       cursor: pointer;
       transition: all 0.3s ease;
@@ -23,7 +216,7 @@
       transform: scale(1.02);
     }
 
-    /* Simple Modal Styles */
+    /* === MODAL STYLES === */
     .diagram-modal {
       display: none !important;
       position: fixed !important;
@@ -76,7 +269,7 @@
       box-sizing: border-box;
     }
 
-    /* Add border and shadow to content images for better visibility */
+    /* Content image styles */
     section img {
       border: 1px solid #e1e4e8;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -86,44 +279,150 @@
       margin: 20px auto;
     }
 
-    /* Exclude Mermaid diagrams from the general image styling if they are rendered as svgs or divs, 
-       but if they are images, they might need it. 
-       However, usually Mermaid is a div or svg. 
-       Let's be specific to images inside the content section. */
+    /* === RESPONSIVE DESIGN === */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-center {
+        order: -1;
+        width: 100%;
+      }
+
+      .site-title {
+        font-size: 16px;
+      }
+
+      .logo-text {
+        font-size: 16px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 </head>
 
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <a href="https://www.deu.ac.kr" class="deu-logo" target="_blank" rel="noopener">
+          <div class="logo-shield">T</div>
+          <span class="logo-text">동의대학교</span>
+        </a>
+      </div>
+      
+      <div class="header-center">
+        <h1 class="site-title">{{ site.title | default: site.github.repository_name }}</h1>
+      </div>
+      
+      <div class="header-right">
+        <a href="#" id="langToggle" class="lang-toggle" title="Switch Language">
+          <span id="langText">EN</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <div class="wrapper">
-    <header>
-      <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-
-      <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-      {% if site.github.is_project_page %}
-      <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{
-            site.github.repository_name }}</small></a></p>
-      {% endif %}
-
-      {% if site.github.is_user_page %}
-      <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-      {% endif %}
-    </header>
+    <!-- MAIN CONTENT -->
     <section>
-
       {{ content }}
-
     </section>
-    <footer>
-      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
-      </p>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h4>프로젝트 정보 (About)</h4>
+            <p>{{ site.description | default: site.github.project_tagline }}</p>
+            <p>동의대학교 교직원을 위한 GitHub Copilot 활용 가이드</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>라이선스 (License)</h4>
+            <p>교육용 가이드</p>
+            <p>© 2025 동의대학교<br>(Dong-Eui University)</p>
+          </div>
+          
+          <div class="footer-section">
+            <h4>링크 (Links)</h4>
+            <ul>
+              {% if site.github.is_project_page %}
+              <li><a href="{{ site.github.repository_url }}" target="_blank">📦 GitHub 저장소</a></li>
+              {% endif %}
+              <li><a href="https://www.deu.ac.kr" target="_blank">🏫 동의대학교</a></li>
+              <li><a href="https://github.com/features/copilot" target="_blank">💡 GitHub Copilot</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>Hosted on GitHub Pages &mdash; Theme based on <a href="https://github.com/orderedlist/minimal">Minimal</a></p>
+          <p class="build-info">🔨 Last built: {{ site.time | date: "%Y-%m-%d %H:%M %Z" }} | Version: {{ site.time | date: "%Y.%m.%d" }}</p>
+        </div>
+      </div>
     </footer>
   </div>
-  <script src="{{ " /assets/js/scale.fix.js" | relative_url }}"></script>
+
+  <!-- Language Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const langToggle = document.getElementById('langToggle');
+      const langText = document.getElementById('langText');
+      const currentPath = window.location.pathname;
+      
+      // Detect current language from URL
+      let isKorean = currentPath.includes('/ko/');
+      let isEnglish = currentPath.includes('/en/');
+      
+      // If on index page or other pages without /ko/ or /en/
+      if (!isKorean && !isEnglish) {
+        // Check if index page (both languages present)
+        if (currentPath.endsWith('/') || currentPath.endsWith('/index.html')) {
+          langToggle.classList.add('disabled');
+          langText.textContent = '—';
+          return;
+        }
+        // Default to Korean for other pages
+        isKorean = true;
+      }
+      
+      // Set button text based on current language
+      if (isKorean) {
+        langText.textContent = 'EN';
+      } else {
+        langText.textContent = 'KO';
+      }
+      
+      // Handle language toggle
+      langToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        let newPath;
+        if (isKorean) {
+          // Switch to English
+          newPath = currentPath.replace('/ko/', '/en/');
+        } else {
+          // Switch to Korean
+          newPath = currentPath.replace('/en/', '/ko/');
+        }
+        
+        // Navigate to new language version
+        window.location.href = newPath;
+      });
+    });
+  </script>
 
   <!-- Mermaid JS - Content-based detection -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -133,47 +432,29 @@
     document.addEventListener('DOMContentLoaded', function () {
       console.log('DOM loaded, searching for Mermaid blocks...');
 
-      // Mermaid diagram keywords
       const mermaidKeywords = [
-        'graph',
-        'flowchart',
-        'sequenceDiagram',
-        'classDiagram',
-        'stateDiagram',
-        'erDiagram',
-        'journey',
-        'gantt',
-        'pie',
-        'gitGraph'
+        'graph', 'flowchart', 'sequenceDiagram', 'classDiagram',
+        'stateDiagram', 'erDiagram', 'journey', 'gantt', 'pie', 'gitGraph'
       ];
 
-      // Find all code blocks
       const codeBlocks = document.querySelectorAll('pre code');
       console.log(`Found ${codeBlocks.length} total code blocks`);
 
       let mermaidCount = 0;
       codeBlocks.forEach((block, index) => {
         const content = block.textContent.trim();
-
-        // Check if content starts with any Mermaid keyword
-        const isMermaid = mermaidKeywords.some(keyword =>
-          content.startsWith(keyword)
-        );
+        const isMermaid = mermaidKeywords.some(keyword => content.startsWith(keyword));
 
         if (isMermaid) {
           mermaidCount++;
-          console.log(`Block ${index} is Mermaid! First 50 chars: ${content.substring(0, 50)}`);
+          console.log(`Block ${index} is Mermaid!`);
 
-          // Create mermaid div
           const div = document.createElement('div');
           div.className = 'mermaid';
           div.textContent = content;
 
-          // Find container to replace
           const pre = block.closest('pre');
           const container = pre.closest('div.highlighter-rouge, div.highlight') || pre;
-
-          console.log(`Replacing ${container.tagName}`);
           container.parentNode.replaceChild(div, container);
         }
       });
@@ -181,20 +462,11 @@
       console.log(`Found ${mermaidCount} Mermaid diagrams`);
 
       if (mermaidCount > 0) {
-        console.log('Initializing Mermaid...');
-        mermaid.initialize({
-          startOnLoad: true,
-          theme: 'default'
-        });
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
         mermaid.contentLoaded();
-        console.log('Mermaid initialized!');
 
-        // Add simple modal for diagram zoom
         setTimeout(() => {
           const mermaidDiagrams = document.querySelectorAll('.mermaid');
-          console.log(`Setting up modal for ${mermaidDiagrams.length} diagrams`);
-
-          // Create modal HTML
           const modal = document.createElement('div');
           modal.className = 'diagram-modal';
           modal.innerHTML = `
@@ -206,38 +478,27 @@
           const modalContent = modal.querySelector('.diagram-modal-content');
           const closeBtn = modal.querySelector('.diagram-modal-close');
 
-          // Close modal on click
           closeBtn.onclick = () => modal.classList.remove('active');
-          modal.onclick = (e) => {
-            if (e.target === modal) modal.classList.remove('active');
-          };
-
-          // ESC key to close
+          modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('active'); };
           document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
               modal.classList.remove('active');
             }
           });
 
-          // Add click handlers to diagrams
           mermaidDiagrams.forEach((diagram) => {
             diagram.addEventListener('click', () => {
               const svg = diagram.querySelector('svg');
               if (svg) {
                 const svgClone = svg.cloneNode(true);
-
-                // 브라우저 뷰포트 크기 계산 (패딩과 여백 고려)
-                const viewportWidth = window.innerWidth * 0.95;  // 95vw
-                const viewportHeight = window.innerHeight * 0.95; // 95vh
-                const padding = 40; // 좌우 패딩 합계
-
+                const viewportWidth = window.innerWidth * 0.95;
+                const viewportHeight = window.innerHeight * 0.95;
+                const padding = 40;
                 const availableWidth = viewportWidth - padding;
                 const availableHeight = viewportHeight - padding;
 
-                // SVG의 viewBox 또는 원본 크기 가져오기
                 let svgWidth, svgHeight;
                 const viewBox = svgClone.getAttribute('viewBox');
-
                 if (viewBox) {
                   const [, , vbWidth, vbHeight] = viewBox.split(' ').map(Number);
                   svgWidth = vbWidth;
@@ -247,28 +508,21 @@
                   svgHeight = parseFloat(svgClone.getAttribute('height')) || 600;
                 }
 
-                // 비율 계산하여 최대 크기 결정
                 const svgRatio = svgWidth / svgHeight;
                 const viewportRatio = availableWidth / availableHeight;
-
                 let finalWidth, finalHeight;
 
                 if (svgRatio > viewportRatio) {
-                  // SVG가 더 넓음 - 너비를 기준으로 조정
                   finalWidth = availableWidth;
                   finalHeight = availableWidth / svgRatio;
                 } else {
-                  // SVG가 더 높음 - 높이를 기준으로 조정
                   finalHeight = availableHeight;
                   finalWidth = availableHeight * svgRatio;
                 }
 
-                // 모든 크기 관련 속성 제거 후 새로 설정
                 svgClone.removeAttribute('style');
                 svgClone.removeAttribute('width');
                 svgClone.removeAttribute('height');
-
-                // 계산된 크기로 설정
                 svgClone.style.width = Math.floor(finalWidth) + 'px';
                 svgClone.style.height = Math.floor(finalHeight) + 'px';
 
@@ -281,10 +535,8 @@
             });
           });
 
-          console.log('Simple modal initialized for Mermaid diagrams!');
-        }, 500); // Wait for Mermaid to fully render
-      } else {
-        console.warn('No Mermaid diagrams found!');
+          console.log('Modal initialized for Mermaid diagrams!');
+        }, 500);
       }
     });
   </script>
