@@ -5,14 +5,16 @@ parent: Common
 nav_order: 10
 ---
 
-# 🌐 웹에서 만나는 GitHub Copilot (VS Code 없이 사용하기)
+[🏠 홈](../../index.md) | [🌐 웹 가이드](./copilot_web.md) | [💻 VS Code 가이드](../../index.md#2부-vs-code로-전문가처럼-쓰기-설치-)
+
+# 🌐 GitHub Copilot Pro를 무료로 웹에서 사용하기
 
 > **💡 이 문서는 누구를 위한 것인가요?**  
 > - 프로그래밍을 처음 접하시는 교수님, 학생분들
-> - 복잡한 설치 과정 없이 바로 AI를 사용하고 싶은 분들
+> - **VS Code 설치 없이** 바로 AI를 사용하고 싶은 분들
 > - ChatGPT를 써봤지만 더 강력한 AI 도구를 찾는 분들
 
-많은 분들이 **GitHub Copilot**을 '프로그래머를 위한 도구'로만 알고 계십니다. 하지만 전혀 그렇지 않습니다! GitHub Copilot은 웹 브라우저에서 바로 사용할 수 있는 **세계 최고 수준의 AI 채팅 서비스**입니다.
+많은 분들이 **GitHub Copilot**을 '프로그래머를 위한 도구'로만 알고 계십니다. 하지만 전혀 그렇지 않습니다! GitHub Copilot은 **VS Code 설치 없이** 웹 브라우저에서 바로 사용할 수 있는 **세계 최고 수준의 AI 채팅 서비스**입니다.
 
 특히 **대학 소속 학생과 교수님**에게는 **완전 무료**로 제공되며, **OpenAI, Anthropic, Google**의 최신 AI 모델을 한곳에서 모두 사용할 수 있습니다.
 
