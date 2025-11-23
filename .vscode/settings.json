@@ -1,5 +1,9 @@
 {
     "markdown.styles": [
         ".vscode/markdown-light.css"
-    ]
+    ],
+    "[html]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnPaste": false
+    }
 }
