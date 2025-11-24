@@ -5,7 +5,7 @@ parent: Professor
 nav_order: 1
 ---
 
-[[🏠 홈]](../../index.md) · [[🌐 웹 가이드]](../../common/ko/copilot_web.md) · [[💻 VS Code 가이드]](../../admin/ko/)
+[[🏠 홈]](../../../index.md) · [[🌐 웹 가이드]](../../common/ko/copilot_web.md) · [[💻 VS Code 가이드]](../../admin/ko/)
 
 # 교수자를 위한 GitHub Copilot 완전 정복 (All-in-One 가이드)
 # (Professor's Guide to GitHub Copilot Mastery - All-in-One)
@@ -68,7 +68,7 @@ nav_order: 1
     - [7.1 맞춤형 지침](#71-맞춤형-지침-githubcopilot-instructionsmd)
     - [7.2 학문 분야별 AI Instructions 템플릿](#72-학문-분야별-ai-instructions-템플릿)
   - [8. LMS 통합 및 협업 워크플로우](#8-lms-통합-및-협업-워크플로우)
-  - [(8. LMS Integration and Collaboration Workflows)](#8-lms-통합-및-협업-워크플로우)
+  - [(8. LMS Integration and Collaboration Workflow)](#8-lms-통합-및-협업-워크플로우)
     - [8.1 Canvas LMS](#81-canvas-lms-연계)
     - [8.2 Blackboard](#82-blackboard-연계)
     - [8.3 Moodle](#83-moodle-연계)
@@ -76,10 +76,11 @@ nav_order: 1
     - [8.5 Git 기반 공동 연구 워크플로우](#85-git-기반-공동-연구-워크플로우-선택-학습)
   - [9. Data & Visualization: 학생 성적 분석](#9-data--visualization-학생-성적-분석과-시각화)
   - [(9. Data & Visualization: Student Performance Analysis)](#9-data--visualization-학생-성적-분석과-시각화)
-  - [9. Workbook 3: 연구 계획서 자동 구조화](#9-workbook-3-연구-계획서-자동-구조화)
-  - [(9. Workbook 3: Auto-structuring Research Proposals)](#9-workbook-3-연구-계획서-자동-구조화)
+  - [10. Workbook 3: 연구 계획서 자동 구조화](#10-workbook-3-연구-계획서-자동-구조화)
+  - [(10. Workbook 3: Auto-structuring Research Proposals)](#10-workbook-3-연구-계획서-자동-구조화)
 
 ### **[부록 (Appendices)]**
+
 ### **[(Appendices)]**
 
   - [A. 교수자를 위한 실전 시나리오](#a-교수자를-위한-실전-시나리오)
@@ -1191,8 +1192,8 @@ Format: Summary within 50 characters + details (Conventional Commits style)
 
 - [ ] 학습 완료 (Learning completed)
 
-#### 8.1 텍스트로 차트 그리기 (Mermaid)
-#### (8.1 Creating Charts with Text - Mermaid)
+#### 9.1 텍스트로 차트 그리기 (Mermaid)
+#### (9.1 Creating Charts with Text - Mermaid)
 
 학생 학습 과정을 다이어그램으로 표현:
 
@@ -1212,8 +1213,9 @@ graph LR
 
 ---
 
-### 9. Workbook 3: 연구 계획서 자동 구조화
-### (9. Workbook 3: Auto-structuring Research Proposals)
+### 10. Workbook 3: 연구 계획서 자동 구조화
+### (10. Workbook 3: Auto-structuring Research Proposals)
+
 - [ ] 학습 완료 (Learning completed)
 
 연구 아이디어 메모를 체계적인 연구 계획서로 변환해봅시다.
