@@ -5,7 +5,7 @@ parent: Professor
 nav_order: 1
 ---
 
-[[🏠 홈]](../../index.html) · [[🌐 웹 가이드]](../../common/ko/copilot_web.html) · [[💻 VS Code 가이드]](../../admin/ko/)
+[[🏠 홈]](../../index.md) · [[🌐 웹 가이드]](../../common/ko/copilot_web.md) · [[💻 VS Code 가이드]](../../admin/ko/)
 
 # 교수자를 위한 GitHub Copilot 완전 정복 (All-in-One 가이드)
 # (Professor's Guide to GitHub Copilot Mastery - All-in-One)
@@ -72,11 +72,12 @@ nav_order: 1
     - [8.1 Canvas LMS](#81-canvas-lms-연계)
     - [8.2 Blackboard](#82-blackboard-연계)
     - [8.3 Moodle](#83-moodle-연계)
-    - [8.4 Git 기반 논문 공동 집필](#84-git-기반-논문-공동-집필-선택-고급)
+    - [8.4 LMS 공통 활용 팁](#84-lms-공통-활용-팁)
+    - [8.5 Git 기반 공동 연구 워크플로우](#85-git-기반-공동-연구-워크플로우-선택-학습)
   - [9. Data & Visualization: 학생 성적 분석](#9-data--visualization-학생-성적-분석과-시각화)
   - [(9. Data & Visualization: Student Performance Analysis)](#9-data--visualization-학생-성적-분석과-시각화)
-  - [10. Workbook 3: 연구 계획서 자동 구조화](#10-workbook-3-연구-계획서-자동-구조화)
-  - [(10. Workbook 3: Auto-structuring Research Proposals)](#10-workbook-3-연구-계획서-자동-구조화)
+  - [9. Workbook 3: 연구 계획서 자동 구조화](#9-workbook-3-연구-계획서-자동-구조화)
+  - [(9. Workbook 3: Auto-structuring Research Proposals)](#9-workbook-3-연구-계획서-자동-구조화)
 
 ### **[부록 (Appendices)]**
 ### **[(Appendices)]**
