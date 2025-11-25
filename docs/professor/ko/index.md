@@ -5,7 +5,7 @@ parent: Professor
 nav_order: 1
 ---
 
-[[🏠 홈]](../../../index.md) · [[🌐 웹 가이드]](../../common/ko/copilot_web.md) · [[💻 VS Code 가이드]](../../admin/ko/)
+[[홈]](../../../index.md) · [[웹 가이드]](../../common/ko/copilot_web.md) · [[VS Code 가이드]](../../admin/ko/)
 
 # 교수자를 위한 GitHub Copilot 완전 정복 (All-in-One 가이드)
 # (Professor's Guide to GitHub Copilot Mastery - All-in-One)
@@ -19,8 +19,8 @@ nav_order: 1
 ## 목차 (Table of Contents)
 ## (Table of Contents)
 
-- [📊 학습 경로 안내](#-학습-경로-안내)
-- [(Learning Path Guide)](#-학습-경로-안내)
+- [학습 경로 안내](#학습-경로-안내)
+- [(Learning Path Guide)](#학습-경로-안내)
 
 ### **[Level 0: 준비] AI 불안 해소**
 ### **[(Level 0: Preparation) AI Anxiety Relief]**
@@ -98,8 +98,8 @@ nav_order: 1
 
 ---
 
-## 📊 학습 경로 안내
-## (📊 Learning Path Guide)
+## 학습 경로 안내
+## (Learning Path Guide)
 
 이 가이드는 3단계 학습 경로로 구성되어 있습니다:
 
@@ -135,8 +135,8 @@ graph LR
 
 ---
 
-## 🤔 왜 ChatGPT가 아닌 VS Code + Copilot인가요?
-## (🤔 Why VS Code + Copilot Instead of ChatGPT?)
+## 왜 ChatGPT가 아닌 VS Code + Copilot인가?
+## (Why VS Code + Copilot Instead of ChatGPT?)
 
 ### 이미 ChatGPT를 사용 중인데, 왜 배워야 하나요?
 ### (Already Using ChatGPT - Why Learn This?)
@@ -152,8 +152,8 @@ ChatGPT, Claude, Gemini는 훌륭한 도구입니다. 하지만 **여러 강의 
 ### 실제 교육 시나리오로 비교해봅시다
 ### (Let's Compare with Real Teaching Scenarios)
 
-#### 📊 시나리오: 5개 강의의 주차별 학습 목표 작성
-#### (📊 Scenario: Writing Weekly Learning Objectives for 5 Courses)
+#### 시나리오: 5개 강의의 주차별 학습 목표 작성
+#### (Scenario: Writing Weekly Learning Objectives for 5 Courses)
 
 각 강의마다 비슷하지만 조금씩 다른 주차별 학습 목표를 작성해야 하는 상황입니다.
 
@@ -170,38 +170,38 @@ ChatGPT, Claude, Gemini는 훌륭한 도구입니다. 하지만 **여러 강의 
 ## [Level 0: 준비] AI 불안 해소 - 시작하기 전 오해 풀기
 ## ([Level 0: Preparation] AI Anxiety Relief - Clearing Misconceptions)
 
-### 1. 🔒 "내 연구 자료가 유출되나요?" (보안)
-### (1. 🔒 "Will My Research Data Be Leaked?" - Security)
+### 1. "내 연구 자료가 유출되나요?" (보안)
+### (1. "Will My Research Data Be Leaked?" - Security)
 
 많은 교수님들이 연구 데이터의 보안을 걱정하십니다. 하지만 **기업용(Enterprise) 버전**은 다릅니다.
 
 (Many professors worry about research data security. However, the **Enterprise version** is different.)
 
-- **무료 버전(일반용):** 사용자의 데이터를 학습에 사용 (입력 금지 ❌)
-- (Free version: Uses user data for training - Do not input ❌)
-- **기업용 버전(Copilot):** 사용자의 데이터를 절대 학습하지 않습니다. 암호화 처리 후 즉시 폐기 (입력 가능 ✅)
-- (Enterprise version: Never trains on user data. Encrypted and immediately discarded - Safe to input ✅)
+- **무료 버전(일반용):** 사용자의 데이터를 학습에 사용 (입력 금지)
+- (Free version: Uses user data for training - Do not input)
+- **기업용 버전(Copilot):** 사용자의 데이터를 절대 학습하지 않습니다. 암호화 처리 후 즉시 폐기 (입력 가능)
+- (Enterprise version: Never trains on user data. Encrypted and immediately discarded - Safe to input)
 
-### 2. ⚠️ "AI 생성 콘텐츠와 연구윤리" (학술적 정직성)
+### 2. "AI 생성 콘텐츠와 연구윤리" (학술적 정직성)
 
-### (2. ⚠️ "AI-Generated Content and Research Ethics" - Academic Integrity)
+### (2. "AI-Generated Content and Research Ethics" - Academic Integrity)
 
 AI 도구 사용 시 반드시 지켜야 할 연구윤리 원칙이 있습니다.
 
 (There are essential research ethics principles to follow when using AI tools.)
 
-#### 🚫 절대 금지 사항
+#### 절대 금지 사항
 
-#### (🚫 Strictly Prohibited)
+#### (Strictly Prohibited)
 
 - **AI 생성 콘텐츠를 그대로 제출하지 마세요**: AI가 생성한 논문, 보고서, 연구 계획서를 본인 저작물로 제출하는 것은 표절입니다.
 - (Never submit AI-generated content as-is: Submitting AI-generated papers, reports, or proposals as your own work is plagiarism)
 - **학생 과제 평가 시 주의**: AI로 작성 가능한 과제는 학생도 AI를 사용할 수 있습니다. 평가 방식을 재고하세요.
 - (Caution in student assessment: If an assignment can be AI-generated, students can also use AI. Reconsider your evaluation method)
 
-#### ✅ 권장 사용 방법
+#### 권장 사용 방법
 
-#### (✅ Recommended Usage)
+#### (Recommended Usage)
 
 - **초안 작성 도우미**: AI로 아이디어를 브레인스토밍하고, 본인이 직접 검토·수정·보완
 - (Drafting assistant: Brainstorm ideas with AI, then personally review, revise, and supplement)
@@ -210,9 +210,9 @@ AI 도구 사용 시 반드시 지켜야 할 연구윤리 원칙이 있습니다
 - **명시적 인용**: AI 도구를 사용했다면 각주나 방법론에 명시 (예: "본 문서는 GitHub Copilot을 보조 도구로 활용하여 작성되었습니다.")
 - (Explicit citation: If AI tools were used, indicate in footnotes or methodology - e.g., "This document was prepared with GitHub Copilot as an auxiliary tool")
 
-#### 📝 학생의 AI 사용 감지 FAQ
+#### 학생의 AI 사용 감지 FAQ
 
-#### (📝 FAQ: Detecting Student AI Usage)
+#### (FAQ: Detecting Student AI Usage)
 
 **Q: "학생이 AI를 사용했는지 어떻게 알 수 있나요?"**
 
@@ -225,26 +225,26 @@ AI 도구 사용 시 반드시 지켜야 할 연구윤리 원칙이 있습니다
 - **구두 발표 추가**: 과제 내용에 대한 즉석 질문이나 발표를 통해 이해도를 확인하세요.
 - (Add oral presentations: Verify understanding through impromptu questions or presentations on assignment content)
 
-### 3. 🔐 "학생 데이터 프라이버시" (개인정보 보호)
+### 3. "학생 데이터 프라이버시" (개인정보 보호)
 
-### (3. 🔐 "Student Data Privacy" - Personal Information Protection)
+### (3. "Student Data Privacy" - Personal Information Protection)
 
 학생 정보를 AI 도구에 입력할 때는 법적 의무를 준수해야 합니다.
 
 (When inputting student information into AI tools, you must comply with legal obligations.)
 
-#### 📋 준수해야 할 법률
+#### 준수해야 할 법률
 
-#### (📋 Laws to Comply With)
+#### (Laws to Comply With)
 
 - **미국 FERPA**: 학생 교육 기록의 프라이버시 보호 (Family Educational Rights and Privacy Act)
 - (US FERPA: Protects privacy of student education records)
 - **한국 개인정보보호법**: 학생의 성명, 학번, 성적 등은 민감 정보로 분류
 - (Korean Personal Information Protection Act: Student names, IDs, grades are classified as sensitive information)
 
-#### ✅ 안전한 사용법
+#### 안전한 사용법
 
-#### (✅ Safe Usage Guidelines)
+#### (Safe Usage Guidelines)
 
 - **익명화 필수**: 학생 이름 대신 "학생A", "학생B" 또는 "학번 마스킹(202X****)" 사용
 - (Anonymization required: Use "Student A", "Student B" or masked IDs "202X****" instead of names)
@@ -256,10 +256,10 @@ AI 도구 사용 시 반드시 지켜야 할 연구윤리 원칙이 있습니다
 ```mermaid
 graph TD
     A[학생 데이터 입력 전<br/>Before Inputting Student Data] --> B{개인 식별 가능?<br/>Personally Identifiable?}
-    B -->|예 Yes| C[❌ 입력 금지<br/>Do Not Input]
+    B -->|예 Yes| C[입력 금지<br/>Do Not Input]
     B -->|아니오 No| D{민감 정보 포함?<br/>Contains Sensitive Info?}
     D -->|예 Yes| E[익명화 후 입력<br/>Anonymize Then Input]
-    D -->|아니오 No| F[✅ 입력 가능<br/>Safe to Input]
+    D -->|아니오 No| F[입력 가능<br/>Safe to Input]
     
     C --> G[대안: 가상 예시 사용<br/>Alternative: Use Fictional Examples]
     E --> H[예: 학생A, 학번 마스킹<br/>Example: Student A, Masked ID]
@@ -426,7 +426,7 @@ Output format:
 3. 데이터 표와 그래프의 적절성
 4. 오차 분석 및 한계점 언급
 
-각 항목에 대해 ✅ 잘함 / ⚠️ 개선 필요로 평가하고, 
+각 항목에 대해 '잘함' / '개선 필요'로 평가하고, 
 개선이 필요한 부분은 구체적인 수정 제안을 해주세요.
 
 [학생 보고서 내용 붙여넣기]
@@ -441,7 +441,7 @@ Analyze from these perspectives:
 3. Appropriateness of data tables and graphs
 4. Error analysis and limitation discussion
 
-Evaluate each item as ✅ Good / ⚠️ Needs Improvement,
+Evaluate each item as 'Good' / 'Needs Improvement',
 and provide specific revision suggestions for areas needing improvement.
 
 [Paste student report content]
@@ -1033,7 +1033,7 @@ graph LR
    - SpeedGrader "Comment" 필드에 붙여넣기
    - 점수 입력 후 "Submit" 클릭
 
-**💡 팁 (Tips)**:
+**팁 (Tips)**:
 - Canvas의 "Rubric" 기능과 병행 사용하세요 (Use alongside Canvas "Rubric" feature)
 - 30명 이상 학생의 경우 Copilot Edits로 일괄 생성 후 개별 조정 (For 30+ students, batch generate with Copilot Edits then adjust individually)
 
@@ -1181,7 +1181,7 @@ Changes:
 Format: Summary within 50 characters + details (Conventional Commits style)
 ```
 
-**⚠️ 주의사항 (Cautions)**:
+**주의사항 (Cautions)**:
 - Git은 학습 곡선이 있습니다. 공동 저자 모두가 동의한 경우에만 사용하세요.
 - (Git has a learning curve. Use only when all co-authors agree)
 - 간단한 수정은 여전히 Word가 편리합니다.

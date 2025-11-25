@@ -6,87 +6,87 @@
 
 ## Table of Contents
 
-- [📊 Learning Path Guide](#-learning-path-guide)
+- [Learning Path Guide](#learning-path-guide)
 
 ### **[Level 1: Introduction - First Steps as an AI Administrator](#level-1-introduction-first-steps-as-an-ai-administrator)**
   - [1. Setup: Creating Your Digital Office](#1-setup-creating-your-digital-office)
     - [1.1 Installation and Setup (2025 Latest)](#11-installation-and-setup-2025-latest)
     - [1.2 Understanding the Screen Layout](#12-understanding-the-screen-layout)
     - [1.5 The 3 Core Principles of Using Generative AI](#15-the-3-core-principles-of-using-generative-ai)
-  - [✅ Key Takeaways](#-key-takeaways)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz)
+  - [Key Takeaways](#key-takeaways)
+  - [Self-Assessment Quiz](#self-assessment-quiz)
   - [2. Fundamentals: Distinguishing Chat from Autocomplete](#2-fundamentals-distinguishing-chat-from-autocomplete)
     - [2.1 Interactive (Chat): "Do This for Me"](#21-interactive-chat-do-this-for-me)
     - [2.2 Autocomplete (Ghost Text): "Read My Mind"](#22-autocomplete-ghost-text-read-my-mind)
-  - [✅ Key Takeaways](#-key-takeaways-1)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-1)
+  - [Key Takeaways](#key-takeaways-1)
+  - [Self-Assessment Quiz](#self-assessment-quiz-1)
   - [3. Workbook 1: Finishing an English Email in 3 Minutes](#3-workbook-1-finishing-an-english-email-in-3-minutes)
     - [Step 1: Download Template File](#step-1-download-template-file)
     - [Step 2: Open File in VS Code](#step-2-open-file-in-vs-code)
     - [Step 3: Describe the Situation (Chat)](#step-3-describe-the-situation-chat)
     - [Step 4: Check and Edit Results](#step-4-check-and-edit-results)
     - [Step 5: Experience Autocomplete](#step-5-experience-autocomplete)
-  - [✅ Key Takeaways](#-key-takeaways-2)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-2)
+  - [Key Takeaways](#key-takeaways-2)
+  - [Self-Assessment Quiz](#self-assessment-quiz-2)
 
 ### **[Level 2: Practical - Increasing Work Speed 10x](#level-2-practical-increasing-work-speed-10x)**
   - [4. Writing Good Instructions: Making AI Understand You Perfectly](#4-writing-good-instructions-making-ai-understand-you-perfectly)
     - [4.1 The R.C.O Formula](#41-the-rco-formula)
     - [4.2 Adjusting Tone and Manner](#42-adjusting-tone-and-manner)
-  - [✅ Key Takeaways](#-key-takeaways-3)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-3)
+  - [Key Takeaways](#key-takeaways-3)
+  - [Self-Assessment Quiz](#self-assessment-quiz-3)
   - [5. Copilot Edits: Modifying Multiple Files at Once](#5-copilot-edits-modifying-multiple-files-at-once)
     - [5.1 How to Use](#51-how-to-use)
     - [5.2 When to Use?](#52-when-to-use)
-  - [✅ Key Takeaways](#-key-takeaways-4)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-4)
+  - [Key Takeaways](#key-takeaways-4)
+  - [Self-Assessment Quiz](#self-assessment-quiz-4)
   - [5.5 Workbook 2.5: Compiling Annual Report Data](#55-workbook-25-compiling-annual-report-data)
     - [Step 1: Prepare Your Raw Data](#step-1-prepare-your-raw-data)
     - [Step 2: Write a Detailed Prompt](#step-2-write-a-detailed-prompt)
     - [Step 3: Request Table + Trend Analysis](#step-3-request-table--trend-analysis)
     - [Step 4: Review and Verify Calculations](#step-4-review-and-verify-calculations)
     - [Step 5: Export to Excel Format](#step-5-export-to-excel-format)
-  - [✅ Key Takeaways](#-key-takeaways-5)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-5)
+  - [Key Takeaways](#key-takeaways-5)
+  - [Self-Assessment Quiz](#self-assessment-quiz-5)
   - [6. Workbook 2: Remodeling Last Year's Report into This Year's Version](#6-workbook-2-remodeling-last-years-report-into-this-years-version)
     - [Step 1: Get Your Materials Ready](#step-1-get-your-materials-ready)
     - [Step 2: Summon Copilot Edits](#step-2-summon-copilot-edits)
     - [Step 3: Give the Command](#step-3-give-the-command)
     - [Step 4: Review and Approve](#step-4-review-and-approve)
-  - [✅ Key Takeaways](#-key-takeaways-6)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-6)
+  - [Key Takeaways](#key-takeaways-6)
+  - [Self-Assessment Quiz](#self-assessment-quiz-6)
 
 ### **[Level 3: Expert - Operating Your Own AI Assistant Team](#level-3-expert-operating-your-own-ai-assistant-team)**
   - [7. Agents & Instructions: Creating Department-Specific AI](#7-agents--instructions-creating-department-specific-ai)
     - [7.1 Custom Instructions (.github/copilot-instructions.md)](#71-custom-instructions-githubcopilot-instructionsmd)
     - [7.2 AI Personas (AI Assistants)](#72-ai-personas-ai-assistants)
-  - [✅ Key Takeaways](#-key-takeaways-7)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-7)
+  - [Key Takeaways](#key-takeaways-7)
+  - [Self-Assessment Quiz](#self-assessment-quiz-7)
   - [8. Data & Visualization: Analyzing and Drawing Without Excel](#8-data--visualization-analyzing-and-drawing-without-excel)
     - [8.1 Drawing Charts with Text (Mermaid Diagrams)](#81-drawing-charts-with-text-mermaid-diagrams)
     - [8.2 Data Analysis](#82-data-analysis)
-  - [✅ Key Takeaways](#-key-takeaways-8)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-8)
+  - [Key Takeaways](#key-takeaways-8)
+  - [Self-Assessment Quiz](#self-assessment-quiz-8)
   - [9. Workbook 3: Meeting Minutes Automation and Visualization Reports](#9-workbook-3-meeting-minutes-automation-and-visualization-reports)
     - [Step 1: Prepare Meeting Notes](#step-1-prepare-meeting-notes)
     - [Step 2: Write a Structured Prompt](#step-2-write-a-structured-prompt)
     - [Step 3: Review Generated Output](#step-3-review-generated-output)
-  - [✅ Key Takeaways](#-key-takeaways-9)
-  - [✍️ Self-Assessment Quiz](#-self-assessment-quiz-9)
+  - [Key Takeaways](#key-takeaways-9)
+  - [Self-Assessment Quiz](#self-assessment-quiz-9)
 
 ### **[Appendix](#appendix)**
   - [A. Practical Scenario Library (Before & After)](#a-practical-scenario-library-before--after)
   - [B. Prompt Dictionary for Administrative Staff](#b-prompt-dictionary-for-administrative-staff)
   - [C. Good vs Bad Prompt Examples](#c-good-vs-bad-prompt-examples)
-    - [💡 The R.C.O. Formula for Good Prompts](#-the-rco-formula-for-good-prompts)
+    - [The R.C.O. Formula for Good Prompts](#the-rco-formula-for-good-prompts)
     - [Example 1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)
     - [Example 2: Meeting Minutes Summarization](#example-2-meeting-minutes-summarization)
     - [Example 3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)
-    - [📊 Impact Comparison](#-impact-comparison)
+    - [Impact Comparison](#impact-comparison)
 
 ---
 
-## 📊 Learning Path Guide
+## Learning Path Guide
 
 This guide is structured as a 3-level learning path:
 
@@ -125,7 +125,7 @@ graph LR
 
 ---
 
-## 🤔 Why VS Code + Copilot Instead of ChatGPT?
+## Why VS Code + Copilot Instead of ChatGPT?
 
 ### I'm Already Using ChatGPT/Claude – Why Learn Another Tool?
 
@@ -137,7 +137,7 @@ Let's start with a simple comparison.
 
 ### Let's Compare with a Real Work Scenario
 
-#### 📊 Scenario: Creating Course Registration Notices for 5 Departments
+#### Scenario: Creating Course Registration Notices for 5 Departments
 
 You need to create course registration notices for each college – similar but slightly different documents. Let's compare two approaches.
 
@@ -147,11 +147,11 @@ You need to create course registration notices for each college – similar but 
 | **2. Work** | • Generate first department content<br>• Copy entire text<br>• Paste into Word/HWP<br>• Save file<br>• **Repeat 5 times** | • Call Copilot in first file<br>• Auto-apply to remaining 4 files<br>• Check real-time preview |
 | **3. Revision** | • Discover common changes needed<br>• Reopen 5 files<br>• Edit one by one<br>• Save again | • Select all and batch edit<br>• Copilot learns pattern and suggests<br>• Apply at once |
 | **4. Completion** | • Confirm file locations<br>• Manual version control | • Auto-save complete<br>• Change history auto-recorded |
-| **⏱️ Time Required** | **~25 minutes** | **~10 minutes (60% savings)** |
+| **Time Required** | **~25 minutes** | **~10 minutes (60% savings)** |
 | **Repetitive Tasks** | Copy-paste repeated 5 times | Set once, auto-apply |
 | **Edit Flexibility** | Each file needs individual editing | Pattern-based batch editing |
 
-#### 🔄 Workflow Comparison
+#### Workflow Comparison
 
 **Web-based AI Workflow:**
 
@@ -199,7 +199,7 @@ graph LR
 
 ### 3 Key Differences
 
-#### 1. 📁 Folder-Based Context Understanding
+#### 1. Folder-Based Context Understanding
 
 **Web-based AI:**
 - Understands only what you type in the chat window
@@ -241,7 +241,7 @@ When creating notices for 5 departments:
 - **Web AI**: "Create course registration notice for College of Humanities" → copy → "Create course registration notice for College of Social Sciences" → copy (repeat)
 - **VS Code**: "Create these 5 files in the same format" → done at once
 
-#### 2. ✏️ Direct Editing vs Copy-Paste
+#### 2. Direct Editing vs Copy-Paste
 
 **Web-based AI:**
 - AI generates → copy → paste into another program → save
@@ -253,9 +253,9 @@ When creating notices for 5 departments:
 - See changes in real-time
 - Format and structure remain intact
 
-💡 **Tip**: In VS Code, you can instantly repeat "edit-check-edit-check" cycles, resulting in higher quality output.
+**Tip**: In VS Code, you can instantly repeat "edit-check-edit-check" cycles, resulting in higher quality output.
 
-#### 3. 🎯 Automatic Consistency Maintenance
+#### 3. Automatic Consistency Maintenance
 
 **Scenario**: After writing all 5 notices, you need to change "Registration Period" from "March 4–8, 2025" to "March 11–15, 2025"
 
@@ -266,8 +266,8 @@ When creating notices for 5 departments:
 3. Open third file → manual edit → save
 4. Open fourth file → manual edit → save
 5. Open fifth file → manual edit → save
-⏱️ Time: ~10 minutes
-⚠️ Error risk: Might miss one or edit incorrectly
+Time: ~10 minutes
+Error risk: Might miss one or edit incorrectly
 ```
 
 **VS Code + Copilot:**
@@ -275,8 +275,8 @@ When creating notices for 5 departments:
 1. Select all files (Ctrl+Shift+F)
 2. Search "March 4–8, 2025"
 3. Batch replace with "March 11–15, 2025"
-⏱️ Time: ~30 seconds
-✅ Accuracy: All files edited identically
+Time: ~30 seconds
+Accuracy: All files edited identically
 ```
 
 ### So When Should I Use ChatGPT?
@@ -285,14 +285,14 @@ These two tools aren't competitors. **Using them together based on the situation
 
 | Task Type | Recommended Tool | Reason |
 |-----------|-----------------|--------|
-| 💭 Quick Q&A | ChatGPT/Claude | • Instant answers<br>• Conversational interface is convenient<br>• No file work needed |
-| 📝 Single document | ChatGPT/Claude | • One-time completion task<br>• Copy-paste is sufficient |
-| 📁 Multiple files | VS Code + Copilot | • 5+ similar files<br>• Folder structure-based work<br>• When consistency is critical |
-| 🔄 Batch document edits | VS Code + Copilot | • Changing common content across files<br>• Pattern-based editing<br>• When version control needed |
-| 💡 Idea brainstorming | ChatGPT/Claude | • Free-flowing conversation<br>• Multiple perspectives<br>• Creative suggestions |
-| 📊 Template-based repetitive tasks | VS Code + Copilot | • Repeating same format<br>• Automatable tasks<br>• When mass generation needed |
+| Quick Q&A | ChatGPT/Claude | • Instant answers<br>• Conversational interface is convenient<br>• No file work needed |
+| Single document | ChatGPT/Claude | • One-time completion task<br>• Copy-paste is sufficient |
+| Multiple files | VS Code + Copilot | • 5+ similar files<br>• Folder structure-based work<br>• When consistency is critical |
+| Batch document edits | VS Code + Copilot | • Changing common content across files<br>• Pattern-based editing<br>• When version control needed |
+| Idea brainstorming | ChatGPT/Claude | • Free-flowing conversation<br>• Multiple perspectives<br>• Creative suggestions |
+| Template-based repetitive tasks | VS Code + Copilot | • Repeating same format<br>• Automatable tasks<br>• When mass generation needed |
 
-#### 🎯 Tool Selection Guide
+#### Tool Selection Guide
 
 ```mermaid
 graph LR
@@ -304,18 +304,18 @@ graph LR
     C -->|No, frequent edits| D
     
     D --> F{Is consistency important?}
-    F -->|Yes| G[✅ VS Code + Copilot]
+    F -->|Yes| G[VS Code + Copilot]
     F -->|No| H[Either works<br/>Choose preferred tool]
     
     E --> I{Need future edits?}
     I -->|Frequently| J[Save in VS Code and<br/>consider using Copilot]
-    I -->|Rarely| K[✅ ChatGPT/Claude]
+    I -->|Rarely| K[ChatGPT/Claude]
     
     style G fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
     style K fill:#ccffcc,stroke:#333,stroke-width:2px,color:#000
 ```
 
-### 💡 Practical Usage Tips
+### Practical Usage Tips
 
 **Use them together like this:**
 
@@ -338,15 +338,15 @@ VS Code: Batch edit common content across all pages
 
 Before we begin, let's address the three most common fears that administrative staff have.
 
-### 1. 🔒 "Does AI steal my data?" (Security)
+### 1. Security Concerns
 > **"Is it safe to upload university documents to AI?"**
 
 Many people worry because of news about "personal data leaks." However, the **Enterprise version** we use is different.
-*   **Free Version (Public):** Uses user data for training to get smarter. (Do NOT input sensitive data ❌)
-*   **Enterprise Version (Copilot):** **Does NOT train on your data.** Input data is encrypted, processed, and immediately discarded. (Safe to input ✅)
+*   **Free Version (Public):** Uses user data for training to get smarter. (Do NOT input sensitive data)
+*   **Enterprise Version (Copilot):** **Does NOT train on your data.** Input data is encrypted, processed, and immediately discarded. (Safe to input)
 *   **Conclusion:** The account provided by the university is safe. However, it's a good habit to mask sensitive personal information like resident registration numbers (***).
 
-### 2. 🤥 "AI lies." (Accuracy)
+### 2. Accuracy Concerns
 > **"Can I trust what AI writes?"**
 
 No, you shouldn't trust it blindly. Think of AI as a **"smart intern who works well but sometimes says silly things."**
@@ -354,7 +354,7 @@ No, you shouldn't trust it blindly. Think of AI as a **"smart intern who works w
 *   **Your Role:** Fact-checking, final review, taking responsibility (The remaining 20%)
 *   **Conclusion:** AI is not a "truth vending machine" but a "collaboration partner." The final decision-maker is still you.
 
-### 3. 🤖 "Will I be replaced?" (Job Security)
+### 3. Job Security Concerns
 > **"If AI does all my work, will I become obsolete?"**
 
 Calculators didn't replace mathematicians, and Excel didn't replace accountants.
@@ -404,12 +404,12 @@ graph LR
 *   **Secondary Sidebar:** The right area where the Copilot chat window opens (open and close with `Ctrl/Cmd + Alt + I`)
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - You can build an AI development environment by installing VS Code and the GitHub Copilot extension.
 - Copilot's main features are divided into sidebar chat and in-editor autocomplete (Ghost Text).
 
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 
 <details>
 <summary>Q1. What is the shortcut key to open the Copilot Chat sidebar in VS Code?</summary>
@@ -431,7 +431,7 @@ Before learning how to use the tools, you must first establish the right **'mind
 #### Principle 1: Delegation - "Who Does What?"
 AI is not omnipotent. Think of it as a **"smart intern with no social experience."**
 
-| Category | 🤖 Tasks for AI (80%) | 👤 Tasks for Humans (20%) |
+| Category | Tasks for AI (80%) | Tasks for Humans (20%) |
 | :--- | :--- | :--- |
 | **Nature** | Drafting, summarizing, translating, data formatting | Final decision making, taking responsibility, sensitive communication |
 | **Example** | "Summarize last month's meeting minutes in 3 lines" | "Deciding whether to report this agenda to the President" |
@@ -446,8 +446,8 @@ The most common mistake beginners make is **"copy-pasting AI answers exactly as 
 **Human-in-the-Loop Workflow:**
 ```mermaid
 graph LR
-    A[Task Instruction] --> B(🤖 AI Generation);
-    B --> C{👤 Human Verification};
+    A[Task Instruction] --> B(AI Generation);
+    B --> C{Human Verification};
     C -- Pass --> D[Final Completion];
     C -- Error Found --> E[Correction Instruction];
     E --> B;
@@ -482,13 +482,13 @@ graph LR
     A[GitHub Copilot Features] --> B[Interactive Chat]
     A --> C[Autocomplete Ghost Text]
     
-    B --> B1["📍 Location: Sidebar Chat Window"]
-    B --> B2["⌨️ Shortcut: Ctrl/Cmd + Alt + I"]
-    B --> B3["🎯 Use:<br/>- Q&A/Summary<br/>- Draft Generation<br/>- Complex Requests"]
+    B --> B1["Location: Sidebar Chat Window"]
+    B --> B2["Shortcut: Ctrl/Cmd + Alt + I"]
+    B --> B3["Use:<br/>- Q&A/Summary<br/>- Draft Generation<br/>- Complex Requests"]
     
-    C --> C1["📍 Location: Inside Editor"]
-    C --> C2["⌨️ Accept: Tab Key"]
-    C --> C3["🎯 Use:<br/>- Next Sentence Prediction<br/>- Auto-fill Tables<br/>- Complete Repetitive Patterns"]
+    C --> C1["Location: Inside Editor"]
+    C --> C2["Accept: Tab Key"]
+    C --> C3["Use:<br/>- Next Sentence Prediction<br/>- Auto-fill Tables<br/>- Complete Repetitive Patterns"]
     
     style B fill:#e1f5ff,stroke:#333,stroke-width:2px,color:#000
     style C fill:#fff4e1,stroke:#333,stroke-width:2px,color:#000
@@ -510,12 +510,12 @@ When you're writing in the editor, it shows the next content in gray text.
 > **Administrator's Tip:** When creating a report outline, **autocomplete** is convenient, and when filling in the report content, **chat** is more convenient.
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - **Chat (`Ctrl/Cmd + Alt + I`)**: Use for complex and creative tasks such as questions, summaries, and draft generation.
 - **Autocomplete (`Tab` key)**: Use to quickly complete documents by receiving suggestions for the next content that fits the code or context.
 
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 
 <details>
 <summary>Q1. Which Copilot feature is more suitable when summarizing long texts or creating a new draft from scratch?</summary>
@@ -534,9 +534,9 @@ When you're writing in the editor, it shows the next content in gray text.
 
 Now let's not just look, but actually do it. Let's write an email requesting renewal of an agreement with an overseas university.
 
-💡 **Efficiency Tip**: ChatGPT 5-7 min → VS Code 3 min = **40-50% time saved!**
+**Efficiency Tip**: ChatGPT 5-7 min → VS Code 3 min = **40-50% time saved!**
 
-> 💡 **Before You Start:** Want to learn how to write effective prompts for email drafting? See **[Appendix C.1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)** for "Good vs Bad" examples that show the difference between vague and clear instructions.
+> **Before You Start:** Want to learn how to write effective prompts for email drafting? See **[Appendix C.1: Department-Wide Email Drafting](#example-1-department-wide-email-drafting)** for "Good vs Bad" examples that show the difference between vague and clear instructions.
 
 ### [Step 1] Download Template File
 Copy the template below and save it as a file named `email_draft.md`.
@@ -585,7 +585,7 @@ Copy the English that Copilot wrote and paste it into the `[Email Body]` section
 Try typing `Sincerely,` at the end of the email and press Enter.
 Copilot will suggest your name or title in gray text. Press `Tab` to complete it.
 
-> ⚠️ **Common Mistakes to Avoid**
+> **Common Mistakes to Avoid**
 > 
 > When drafting emails with Copilot, avoid these pitfalls:
 > - **Too Vague:** "Write an email about the agreement" → Missing who, what, when details
@@ -593,18 +593,18 @@ Copilot will suggest your name or title in gray text. Press `Tab` to complete it
 > - **Missing Output Requirements:** Not specifying "formal business English" → Casual writing style
 > - **Forgetting Context:** Not mentioning "renewal" and "sister university" → Wrong email purpose
 > 
-> 💡 **Pro Tip:** Always use the R.C.O. formula (Role, Context, Output) for better results. See [Appendix C.1](#example-1-department-wide-email-drafting) for detailed examples.
+> **Pro Tip:** Always use the R.C.O. formula (Role, Context, Output) for better results. See [Appendix C.1](#example-1-department-wide-email-drafting) for detailed examples.
 
 > [!NOTE]
 > **Success Check:** Did you finish the email draft in 3 minutes? If so, you've passed Level 1!
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - By providing a clear role, context, and desired output format, you can quickly generate high-quality drafts (e.g., English emails) with Copilot Chat.
 - The autocomplete feature reduces repetitive tasks by suggesting names or titles when writing common phrases like `Sincerely,`.
 
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 
 <details>
 <summary>Q1. What are the 3 key elements you should provide to get more accurate results from Copilot? (Hint: R.C.O)</summary>
@@ -616,7 +616,7 @@ Copilot will suggest your name or title in gray text. Press `Tab` to complete it
 **A2.** This is an example of the **Autocomplete (Ghost Text)** feature.
 </details>
 
-🎯 **Why VS Code?**
+**Why VS Code?**
 By working directly on the file in VS Code, you can edit and refine the email without switching between ChatGPT and your text editor. This eliminates the copy-paste workflow, allowing you to iterate faster and save the final result instantly. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
@@ -654,12 +654,12 @@ You can adjust AI's tone.
 *   "Summarize only the key points in outline format." (For executive reports)
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - Using the R.C.O (Role, Context, Output) formula allows you to clearly and effectively instruct AI on tasks.
 - You can control the style of results by specifying tone and manner such as "dryly," "kindly," or "in outline format."
 
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 
 <details>
 <summary>Q1. What are the 3 elements of the R.C.O formula to remember when instructing AI?</summary>
@@ -717,9 +717,9 @@ flowchart LR
     end
     
     subgraph Output["Output: Modification Complete"]
-        O1[✅ Official1_Edited]
-        O2[✅ Official2_Edited]
-        O3[✅ Report_Edited]
+        O1[Official1_Edited]
+        O2[Official2_Edited]
+        O3[Report_Edited]
     end
     
     Input --> Process
@@ -732,11 +732,11 @@ flowchart LR
 **Efficiency:** 3 files × 5 minutes = 15 minute task → **Reduced to 1 minute**
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - The Copilot Edits feature is a powerful function that modifies the content of multiple files at once.
 - You can activate Edits mode in the chat window and reference files with the `#` key to give commands.
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 <details>
 <summary>Q1. What feature is most useful when you want to change the year in multiple files at once or add specific wording to all documents?</summary>
 **A1.** The Copilot Edits feature.
@@ -749,9 +749,9 @@ flowchart LR
 
 University administrators often need to compile enrollment statistics, budget data, or performance metrics for annual reports. Let's learn how to structure data efficiently using Copilot.
 
-💡 **Efficiency Tip**: ChatGPT 10 min → VS Code 4 min = **60% time saved!**
+**Efficiency Tip**: ChatGPT 10 min → VS Code 4 min = **60% time saved!**
 
-> 💡 **Before You Start:** Want to see how to write effective prompts for data compilation? Check **[Appendix C.3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)** for "Good vs Bad" examples.
+> **Before You Start:** Want to see how to write effective prompts for data compilation? Check **[Appendix C.3: Annual Report Data Compilation](#example-3-annual-report-data-compilation)** for "Good vs Bad" examples.
 
 #### [Step 1] Prepare Your Raw Data
 
@@ -815,19 +815,19 @@ Copilot will generate a properly formatted table like this:
 #### [Step 4] Review and Verify Calculations
 
 Always double-check:
-- ✅ Percentages calculated correctly
-- ✅ Totals match sum of columns
-- ✅ Year labels aligned with data
-- ✅ Trend analysis mentions key insights
+- Percentages calculated correctly
+- Totals match sum of columns
+- Year labels aligned with data
+- Trend analysis mentions key insights
 
-> ⚠️ **Common Mistakes to Avoid**
+> **Common Mistakes to Avoid**
 > 
 > - **Vague Request:** "Organize this data for the report" → No specifications on format or analysis
 > - **Missing Structure:** Not specifying table columns → Inconsistent output format
 > - **No Context:** Not mentioning "executive presentation" → Overly detailed analysis
 > - **Forgetting Verification:** Accepting output without checking calculations → Data accuracy errors
 > 
-> 💡 **Pro Tip:** Always request "Excel-compatible format" if you need to paste into spreadsheets. See [Appendix C.3](#example-3-annual-report-data-compilation) for more examples.
+> **Pro Tip:** Always request "Excel-compatible format" if you need to paste into spreadsheets. See [Appendix C.3](#example-3-annual-report-data-compilation) for more examples.
 
 #### [Step 5] Export to Excel Format
 
@@ -840,14 +840,14 @@ Always double-check:
 > **Success Check:** Did Copilot generate an accurate table with trend analysis in under 2 minutes? If so, you've mastered data compilation!
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - Structured prompts with Role, Context, and Output specifications produce well-formatted data tables
 - Always specify calculation requirements (percentages, totals, trends) upfront to avoid multiple revisions
 - Request "Excel-compatible format" when output needs to be transferred to spreadsheet software
 - Verify all calculations before using in official reports
 
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 
 <details>
 <summary>Q1. When requesting data compilation, what three elements should you include in your prompt to get accurate results?</summary>
@@ -859,7 +859,7 @@ Always double-check:
 **A2.** AI can make mathematical errors, especially with complex percentage calculations. Always double-check totals and percentages before using in official reports.
 </details>
 
-🎯 **Why VS Code?**
+**Why VS Code?**
 When working with data files directly in VS Code, you can edit raw data and see formatted tables immediately without switching tools. This eliminates the double-copy workflow (ChatGPT → file → table), allowing you to refine data structures in real-time. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
@@ -869,13 +869,13 @@ When working with data files directly in VS Code, you can edit raw data and see 
 
 There's an excellent business plan that a senior colleague wrote last year. Let's create this year's version based on it.
 
-💡 **Efficiency Tip**: ChatGPT 8 min → VS Code 4 min = **50% time saved!**
+**Efficiency Tip**: ChatGPT 8 min → VS Code 4 min = **50% time saved!**
 
 ### [Step 1] Get Your Materials Ready
 1.  Prepare last year's business plan file (`plan_2024.md`). Download and use the template below.
 2.  Prepare a memo (`memo_2025.txt`) containing this year's key initiatives. Download and use the template below.
 
-#### 📥 Template 1: `plan_2024.md` (Last Year's Business Plan)
+#### Template 1: `plan_2024.md` (Last Year's Business Plan)
 
 ```markdown
 # 2024 Business Plan (Draft)
@@ -907,7 +907,7 @@ Practice Instructions:
 <!-- Q3, Q4 goals below ... -->
 ```
 
-#### 📥 Template 2: `memo_2025.txt` (This Year's Key Initiatives Memo)
+#### Template 2: `memo_2025.txt` (This Year's Key Initiatives Memo)
 
 ```text
 # 2025 Key Initiatives (Brainstorming Memo)
@@ -948,11 +948,11 @@ If the content is correct, press **'Accept'** to save.
 > **Success Check:** Did you finish the 'copy-paste' and 'edit' work that would take 1 hour in 5 minutes? Congratulations. You've now mastered the 'practical level'.
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - You can leave complex tasks to Copilot that involve referencing existing documents and additional requirements (memos) together to restructure new documents.
 - Simple calculations and numerical changes such as date updates and budget increase calculations can also be automated through prompts.
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 <details>
 <summary>Q1. The practice of giving last year's business plan and this year's change memo together to create this year's business plan is an example of using which feature?</summary>
 **A1.** This is an advanced use case of the Copilot Edits feature that references and modifies multiple files.
@@ -995,17 +995,17 @@ graph LR
 ```
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - Through the `.github/copilot-instructions.md` file, you can predefine AI behavior rules across the project.
 - Using the `@` symbol, you can call AI agents specialized for specific purposes, such as `@workspace` and `@terminal`.
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 <details>
 <summary>Q1. Which file should you modify to have Copilot always follow specific rules (e.g., date format) in all documents of a project?</summary>
 **A1.** The `.github/copilot-instructions.md` file in the project root.
 </details>
 
-🎯 **Why VS Code?**
+**Why VS Code?**
 By opening multiple files simultaneously and using Copilot Edits for batch modifications, you can update all related files at once without switching between documents or making repetitive edit requests. In ChatGPT, you'd need to copy-paste each document separately for modifications, but in VS Code, you can update all relevant files in your workspace in one go. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
@@ -1053,11 +1053,11 @@ graph LR
 **Workflow:** Upload file → Ask in natural language → Copilot automatically analyzes → Provides table/chart results
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - Using Mermaid syntax, you can draw various diagrams such as flowcharts and Gantt charts with text alone.
 - You can reference data files (e.g., .xlsx, .csv) in Copilot Chat and ask in natural language to perform data analysis and summarization.
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 <details>
 <summary>Q1. What syntax can you use to draw workflow diagrams directly in a Markdown document without PowerPoint?</summary>
 **A1.** Mermaid syntax.
@@ -1068,13 +1068,13 @@ graph LR
 ### 9. Workbook 3: Meeting Minutes Automation and Visualization Reports
 - [ ] Learning Complete
 
-> 💡 **Efficiency Tip:** Similar workflows in ChatGPT take about **15 minutes** (upload file → request summary → request table → request chart → copy results), but using **VS Code + `@workspace` takes only 5 minutes = 70% time saved!**
+> **Efficiency Tip:** Similar workflows in ChatGPT take about **15 minutes** (upload file → request summary → request table → request chart → copy results), but using **VS Code + `@workspace` takes only 5 minutes = 70% time saved!**
 
 This is the final challenge. Let's turn meeting notes into a nice report.
 
-> 💡 **Before You Start:** Want to learn how to structure meeting minutes prompts effectively? See **[Appendix C.2: Meeting Minutes Summarization](#example-2-meeting-minutes-summarization)** for "Good vs Bad" examples that demonstrate clear vs vague instructions.
+> **Before You Start:** Want to learn how to structure meeting minutes prompts effectively? See **[Appendix C.2: Meeting Minutes Summarization](#example-2-meeting-minutes-summarization)** for "Good vs Bad" examples that demonstrate clear vs vague instructions.
 
-> ⚠️ **Prompt Structuring Tips**
+> **Prompt Structuring Tips**
 > 
 > For effective meeting minutes processing:
 > - **Specify Audience:** Mention who will read this (e.g., "for Vice President review")
@@ -1082,12 +1082,12 @@ This is the final challenge. Let's turn meeting notes into a nice report.
 > - **Set Format:** Specify table structure, word limits, or chart requirements
 > - **Mention Tone:** "Formal reporting style" vs "casual team update"
 > 
-> 💡 **Pro Tip:** Use the R.C.O. formula here too - Role (meeting coordinator), Context (executive review), Output (3-line summary + action table). See [Appendix C.2](#example-2-meeting-minutes-summarization) for detailed examples.
+> **Pro Tip:** Use the R.C.O. formula here too - Role (meeting coordinator), Context (executive review), Output (3-line summary + action table). See [Appendix C.2](#example-2-meeting-minutes-summarization) for detailed examples.
 
 ### [Step 1] Prepare Meeting Notes
 Prepare roughly written meeting notes (`meeting_note_template.txt`). Download and use the template below.
 
-#### 📥 Template: `meeting_note_template.txt` (Meeting Minutes)
+#### Template: `meeting_note_template.txt` (Meeting Minutes)
 
 ```text
 # Level 3 Practice: Meeting Minutes Summary and Action Item Extraction
@@ -1136,10 +1136,10 @@ Open Copilot Chat and reference the file using `@workspace`. Use this structured
 ### [Step 3] Review Generated Output
 
 Check that Copilot's output includes:
-- ✅ **Executive Summary:** 3 concise sentences covering main decisions
-- ✅ **Action Items Table:** All tasks with assignees and deadlines
-- ✅ **Gantt Chart:** Mermaid syntax rendering project timeline
-- ✅ **Appropriate Tone:** Formal language suitable for executive review
+- **Executive Summary:** 3 concise sentences covering main decisions
+- **Action Items Table:** All tasks with assignees and deadlines
+- **Gantt Chart:** Mermaid syntax rendering project timeline
+- **Appropriate Tone:** Formal language suitable for executive review
 
 > [!NOTE]
 > **Success Check:** Did you get a complete report with tables and charts in under 1 minute? You are now an **'AI Administration Master'**!
@@ -1174,17 +1174,17 @@ graph LR
 **Automation Result:** Meeting notes → Table organization → Gantt chart → Report completion (30 seconds)
 
 ---
-## ✅ Key Takeaways
+## Key Takeaways
 - By utilizing the `@workspace` agent, you can perform complex tasks that reference specific files to summarize content and reprocess it into desired forms such as tables or charts.
 - You can automatically convert simple notes or meeting minutes into systematic report formats, greatly reducing document work time.
 ---
-### ✍️ Self-Assessment Quiz
+### Self-Assessment Quiz
 <details>
 <summary>Q1. When you want to create a visualization report based on meeting minutes files on your computer, which agent is most effective to call?</summary>
 **A1.** The `@workspace` agent.
 </details>
 
-🎯 **Why VS Code?**
+**Why VS Code?**
 With the `@workspace` agent, you can reference multiple files and generate tables and charts (Mermaid diagrams) all within a single environment. In ChatGPT, you'd need to manually upload files, copy-paste chart code to separate viewers, and reassemble everything—but VS Code handles file references, content extraction, and visualization rendering automatically in one integrated workflow. (For more details, see [here](#why-vs-code--copilot-instead-of-chatgpt))
 
 ---
@@ -1201,14 +1201,14 @@ With the `@workspace` agent, you can reference multiple files and generate table
 
 ```mermaid
 graph LR
-    subgraph Before["⏰ Existing Method (Manual)"]
+    subgraph Before["Existing Method (Manual)"]
         B1[Search Regulations] --> B2[Open 5 PDFs]
         B2 --> B3[Repeat Ctrl+F]
         B3 --> B4[Manual Organization]
         B4 --> B5[30 Minutes Required]
     end
     
-    subgraph After["✨ AI Usage Method"]
+    subgraph After["AI Usage Method"]
         A1["@workspace Command"] --> A2[Automatic Search]
         A2 --> A3[Generate Summary]
         A3 --> A4[3 Minutes Required]
@@ -1258,7 +1258,7 @@ graph LR
 
 Understanding what makes a good prompt is essential. Below are three real administrative scenarios showing the difference between vague and effective prompts.
 
-### 💡 The R.C.O. Formula for Good Prompts
+### The R.C.O. Formula for Good Prompts
 - **R**ole: Who is the AI helping? (e.g., "You are assisting a university admin staff member...")
 - **C**ontext: What's the situation? (e.g., "Our department is hosting a year-end event...")
 - **O**utput: What format do you need? (e.g., "Write a 200-word email in polite tone...")
@@ -1267,7 +1267,7 @@ Understanding what makes a good prompt is essential. Below are three real admini
 
 ### Example 1: Department-Wide Email Drafting
 
-#### ❌ Bad Prompt (Vague)
+#### Bad Prompt (Vague)
 ```
 Write an email about the event.
 ```
@@ -1277,7 +1277,7 @@ Write an email about the event.
 - No tone guidance: Formal or casual?
 - No format requirements: Length? Key points to include?
 
-#### ✅ Good Prompt (Using R.C.O.)
+#### Good Prompt (Using R.C.O.)
 ```
 You are helping a university General Affairs staff member draft an official email.
 
@@ -1295,7 +1295,7 @@ You are helping a university General Affairs staff member draft an official emai
 
 ### Example 2: Meeting Minutes Summarization
 
-#### ❌ Bad Prompt (Vague)
+#### Bad Prompt (Vague)
 ```
 Summarize this meeting.
 ```
@@ -1305,7 +1305,7 @@ Summarize this meeting.
 - No format: Bullet points? Paragraph? Table?
 - No audience consideration: For participants or executives?
 
-#### ✅ Good Prompt (Using R.C.O.)
+#### Good Prompt (Using R.C.O.)
 ```
 You are helping a university Planning Office staff member summarize a budget meeting.
 
@@ -1329,7 +1329,7 @@ You are helping a university Planning Office staff member summarize a budget mee
 
 ### Example 3: Annual Report Data Compilation
 
-#### ❌ Bad Prompt (Vague)
+#### Bad Prompt (Vague)
 ```
 Organize this data for the report.
 ```
@@ -1339,7 +1339,7 @@ Organize this data for the report.
 - No visualization needs: Tables? Charts? Text?
 - No comparison requirements: Year-over-year? Trends?
 
-#### ✅ Good Prompt (Using R.C.O.)
+#### Good Prompt (Using R.C.O.)
 ```
 You are helping a university Student Affairs staff member compile annual enrollment statistics for the 2024 Academic Report.
 
@@ -1362,16 +1362,16 @@ You are helping a university Student Affairs staff member compile annual enrollm
 
 ---
 
-### 📊 Impact Comparison
+### Impact Comparison
 
 | Prompt Type | Time to Get Useful Result | Revision Cycles Needed | Output Quality |
 |:------------|:--------------------------|:-----------------------|:---------------|
-| ❌ Bad (Vague) | 15-20 minutes | 3-4 revisions | 40-60% usable |
-| ✅ Good (R.C.O.) | 3-5 minutes | 0-1 revisions | 85-95% usable |
+| Bad (Vague) | 15-20 minutes | 3-4 revisions | 40-60% usable |
+| Good (R.C.O.) | 3-5 minutes | 0-1 revisions | 85-95% usable |
 
 ```mermaid
 graph LR
-    subgraph Bad["❌ Vague Prompt Path"]
+    subgraph Bad["Vague Prompt Path"]
         B1[Write Vague Prompt] --> B2[Get Generic Output]
         B2 --> B3[Revise Prompt]
         B3 --> B4[Still Not Right]
@@ -1379,7 +1379,7 @@ graph LR
         B5 --> B6[20+ Minutes]
     end
     
-    subgraph Good["✅ Good Prompt Path"]
+    subgraph Good["Good Prompt Path"]
         G1[Write Detailed Prompt<br/>Using R.C.O.] --> G2[Get Targeted Output]
         G2 --> G3[Minor Tweaks Only]
         G3 --> G4[Ready to Use]
@@ -1415,11 +1415,11 @@ This all-in-one guide consolidates content from multiple source files into a sin
 - **Appendix**: Practical scenarios, prompt dictionary, and quick reference
 
 **Key Features:**
-- 📊 13 Mermaid diagrams for visual learning
-- ✅ Interactive checkboxes for progress tracking
-- 📝 Hands-on workbook exercises with templates
-- 💡 Key Takeaways and self-assessment quizzes
-- 🔗 86-item comprehensive table of contents
+- 13 Mermaid diagrams for visual learning
+- Interactive checkboxes for progress tracking
+- Hands-on workbook exercises with templates
+- Key Takeaways and self-assessment quizzes
+- 86-item comprehensive table of contents
 
 **Content Sources:**
 - Primary: `docs/en/` (structured learning materials)

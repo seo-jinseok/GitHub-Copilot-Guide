@@ -15,9 +15,9 @@ Use it directly in your web browser without installation.
 
 ## Part 2: VS Code-based GitHub Copilot (Role-based Guides)
 
-Professional usage with VS Code extension.
-
-- [**👔 Admin Staff**](../admin/en/)
-- [**👨‍🏫 Professor**](../professor/ko/) (Korean only)
-- [**🎓 Student**](../student/ko/) (Korean only)
-- [**🧪 Researcher**](../researcher/ko/) (Korean only)
+| Role | Guide Link | Status |
+|------|------------|--------|
+| Admin Staff | [Admin Staff Guide](../admin/en/) | Available |
+| Professor | [Professor Guide](../professor/ko/) | Korean only |
+| Student | [Student Guide](../student/ko/) | Korean only |
+| Researcher | [Researcher Guide](../researcher/ko/) | Korean only |
