@@ -1,8 +1,8 @@
 \documentclass[11pt, a4paper]{article}
 
 % --- DOCUMENT VERSION CONTROL ---
-% 날짜를 여기서 한 번만 수정하면 문서 전체에 적용됩니다
-\newcommand{\docversion}{2025년 11월 25일}
+% PDF 빌드 시점의 날짜가 자동으로 반영됩니다
+\newcommand{\docversion}{최종 수정: \today}
 
 % --- UNIVERSAL PREAMBLE BLOCK ---
 \usepackage[a4paper, top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
@@ -167,6 +167,11 @@ GitHub Copilot(깃허브 코파일럿)은 본래 프로그래머를 위한 코�
 \section{AI 모델 선택 가이드 (본 문서 작성일 기준)}
 업무의 성격에 따라 최적화된 모델을 선택하여 효율성을 높일 수 있습니다.
 
+\vspace{0.5em}
+\noindent
+\textit{※ 본 가이드는 일반적인 권장사항이며, 실제 모델 선택은 사용자의 업무 스타일, 선호하는 응답 형식, 업무의 난이도 등 개인별 상황에 따라 달라질 수 있습니다. 다양한 모델을 직접 사용해 보시고, 본인의 업무 환경에 가장 적합한 모델을 찾으시길 권장합니다.}
+\vspace{0.5em}
+
 \subsection{모델별 상세 사양}
 \begin{xltabular}{\textwidth}{@{}l l X@{}}
 \toprule
@@ -174,41 +179,49 @@ GitHub Copilot(깃허브 코파일럿)은 본래 프로그래머를 위한 코�
 \midrule
 \endhead
 
-\textbf{일반} & GPT-5 mini & \textbf{가성비 및 속도 최적화}. GPT-5 수준의 지능을 경량화하여 빠른 응답 속도를 제공합니다. \\
+\textbf{일반} & GPT-5 mini & \textbf{빠른 속도와 이미지 분석}. 일상적인 문의, 문서 작성, 간단한 분석 등 일반적인 업무에 최적화된 모델입니다. 빠른 응답 속도를 제공하며, \textbf{이미지(사진, 도표, 차트) 분석 기능}을 지원합니다. \\
 \addlinespace
-\textbf{일반} & GPT-4.1 & \textbf{안정성}. 이전 세대 플래그십 수준의 안정성과 정교한 지시 이행 능력을 갖춘 중상급 모델입니다. \\
+\textbf{일반} & GPT-4.1 & \textbf{안정적인 범용 작업 + 이미지 분석}. 다양한 업무에 두루 활용할 수 있는 균형잡힌 모델입니다. 일관된 품질의 답변을 제공하며, \textbf{이미지 분석(비전) 기능}도 지원합니다. \\
 \addlinespace
-\textbf{일반} & GPT-4o & \textbf{멀티모달}. 텍스트, 음성, 시각 정보를 초저지연으로 처리하며 비전 인식에 특화되어 있습니다. \\
-\addlinespace
-\textbf{일반} & Claude Haiku 4.5 & \textbf{고속 텍스트 처리}. 단순 요약, 분류 작업 및 실시간 챗봇 백엔드 활용에 적합합니다. \\
+\textbf{일반} & Claude Haiku 4.5 & \textbf{대량 작업 처리}. 많은 양의 문서를 빠르게 처리해야 하거나, 반복적인 작업을 수행할 때 적합합니다. 고급 기능을 갖추었으면서도 신속한 응답이 필요한 상황에서 활용하십시오. \\
 \midrule
-\textbf{프리미엄} & Grok Code Fast 1 & \textbf{코딩/개발 전용}. IDE 통합 워크플로우에 최적화되어 있으며, 초저지연 코드 자동완성 및 디버깅을 지원합니다. \\
+\textbf{프리미엄} & Grok Code Fast 1 & \textbf{프로그래밍 전문}. 소프트웨어 개발 업무에 특화된 모델입니다. 코드 작성, 오류 수정, 프로그램 개선 작업에서 매우 빠른 응답 속도를 제공합니다. (프로그래밍 비전문가에게는 권장하지 않습니다) \\
 \addlinespace
-\textbf{프리미엄} & GPT-5 & \textbf{차세대 플래그십}. 복합 추론 능력과 창의성을 갖춘 범용 최상위 모델로, 심층 문제 해결에 탁월합니다. \\
+\textbf{프리미엄} & GPT-5 & \textbf{고급 문제 해결}. OpenAI의 최신 고성능 모델로, 복잡한 문제를 단계별로 분석하고 해결합니다. 질문의 난이도에 따라 자동으로 적절한 수준의 분석 깊이를 조절하여 답변합니다. \\
 \addlinespace
-\textbf{프리미엄} & GPT-5.1 & \textbf{자율 에이전트}. 환각 현상(Hallucination)을 최소화하고 에이전트 기능을 강화하여 장기 프로젝트 수행에 적합합니다. \\
+\textbf{프리미엄} & GPT-5.1 & \textbf{장기 프로젝트 수행}. 여러 단계로 구성된 복잡한 작업을 체계적으로 수행하는 데 특화되었습니다. 외부 정보 검색, 구조화된 데이터 생성 등 고급 기능을 활용할 수 있으며, 장기간 진행되는 업무에 적합합니다. \\
 \addlinespace
-\textbf{프리미엄} & Claude Sonnet 4.5 & \textbf{고성능 밸런스}. 우수한 논리력과 작문 능력을 갖추었으며, 보고서 작성 및 논리적 분석에 강점이 있습니다. \\
+\textbf{프리미엄} & Claude Sonnet 4 & \textbf{이미지 분석 + 심층 추론}. 성능과 실용성의 균형이 뛰어난 모델입니다. \textbf{이미지 분석(비전) 기능}을 지원하며, 코딩 작업 흐름에 최적화되어 있습니다. \\
 \addlinespace
-\textbf{프리미엄} & Claude Opus 4.1 & \textbf{최상위 추론}. 복잡한 논리 분석, 학술 연구, 미묘한 뉘앙스 표현 및 창의적 글쓰기에 최적화되어 있습니다. \\
+\textbf{프리미엄} & Claude Sonnet 4.5 & \textbf{한국어 문서 작성 최적}. 가장 자연스러운 한국어 문장을 생성하는 모델입니다. 보고서, 기획서, 공문서 작성에 탁월하며, 복잡한 문제 해결 능력도 뛰어납니다. 에이전트 작업에 특화되어 있습니다. \\
 \addlinespace
-\textbf{프리미엄} & Gemini 3 Pro & \textbf{생성형 UI/에이전트}. 자연어를 코드로 변환하는 'Vibe Coding' 및 자율 에이전트 기능이 탑재된 차세대 모델입니다. \\
+\textbf{프리미엄} & Claude Opus 4.1 & \textbf{학술 연구 및 심층 분석}. 가장 높은 수준의 논리적 사고가 필요한 작업에 특화되었습니다. 학술 논문 분석, 연구 계획 수립, 복잡한 정책 검토 등 깊이 있는 사고가 필요한 업무에 활용하십시오. \\
+\addlinespace
+\textbf{프리미엄} & Claude Opus 4.5 & \textbf{최신 최고 성능}. Anthropic의 최신 플래그십 모델로, Claude 시리즈 중 가장 강력한 추론 능력을 제공합니다. 극도로 복잡한 분석이나 창의적 업무에 적합합니다. \\
+\addlinespace
+\textbf{프리미엄} & Gemini 2.5 Pro & \textbf{대용량 문서 분석}. Google의 고성능 모델로, 매우 긴 문서(일반 책 약 10권 분량)를 한 번에 처리할 수 있습니다. 이미지 분석이 가능하지만, GitHub Copilot 웹 환경에서는 영상·음성 파일 업로드가 지원되지 않습니다. \\
+\addlinespace
+\textbf{프리미엄} & Gemini 3 Pro & \textbf{최신 멀티모달 (이미지만 지원)}. Google의 최신 모델로, 뛰어난 추론 능력과 이미지 분석 기능을 제공합니다. 단, \textbf{GitHub Copilot 웹 환경에서는 영상·음성 파일 업로드가 지원되지 않으며}, 이미지 분석만 가능합니다. \\
 \bottomrule
 \end{xltabular}
 
-\subsection{상황별 추천 모델}
+\subsection{업무 상황별 추천 모델}
 \begin{itemize}
-    \item \textbf{심도 있는 추론과 연구가 필요할 때}: GPT-5.1, Claude Opus 4.1
-    \item \textbf{자연스러운 한국어 작문 및 보고서 작성}: Claude Sonnet 4.5
-    \item \textbf{방대한 문서 및 영상 자료 분석}: Gemini 3 Pro (대용량 컨텍스트 처리)
-    \item \textbf{빠른 속도의 대량 데이터 처리}: GPT-5 mini, Claude Haiku 4.5
+    \item \textbf{일상 업무 (이메일 작성, 간단한 질문, 요약 등)}: GPT-5 mini 또는 GPT-4.1 사용을 권장합니다. 빠른 응답이 필요하고 횟수 제한이 없어 부담 없이 활용하실 수 있습니다.
+    \item \textbf{사진·도표 분석 (차트 해석, 문서 스캔, 이미지 속 텍스트 추출)}: GPT-5 mini, GPT-4.1, 또는 Claude Sonnet 4를 사용하십시오. 이 세 모델이 이미지(비전) 분석 기능을 지원합니다.
+    \item \textbf{공식 문서 작성 (보고서, 기획서, 공문)}: Claude Sonnet 4.5를 권장합니다. 가장 자연스럽고 격식 있는 한국어 문장을 생성하며, 수정이 거의 필요 없습니다.
+    \item \textbf{연구 및 심층 분석 (논문 검토, 정책 분석, 복잡한 의사결정)}: Claude Opus 4.1, Claude Opus 4.5, 또는 GPT-5.1을 활용하십시오. 깊이 있는 논리적 분석이 가능합니다.
+    \item \textbf{프로그래밍 개발 (코드 작성, 오류 수정)}: Grok Code Fast 1, Claude Sonnet 4.5, GPT-5.1 중 선택하십시오. (※ 프로그래밍 전문가 대상)
+    \item \textbf{동영상·음성 자료 분석}: \textbf{주의: GitHub Copilot 웹 환경(copilot.github.com)에서는 영상·음성 파일 업로드를 지원하지 않습니다.} 영상·음성 분석이 필요한 경우, Google의 Gemini 네이티브 서비스(gemini.google.com)를 별도로 이용해야 합니다.
+    \item \textbf{대량 문서 처리 (다수의 파일 일괄 분석, 반복 작업)}: Claude Haiku 4.5를 권장합니다. 빠른 속도로 많은 양의 작업을 처리할 수 있습니다.
+    \item \textbf{초대용량 문서 분석 (긴 보고서, 대량 자료)}: Gemini 2.5 Pro 또는 Gemini 3 Pro를 사용하십시오. 일반 책 약 10권 분량의 텍스트를 한 번에 처리할 수 있습니다.
 \end{itemize}
 
 \vspace{2em}
 \hrule
 \vspace{1em}
 
-\section*{면책 조항}
+\section*{유의 사항}
 \small
 본 문서는 작성 시점(\docversion) 기준의 정보를 담고 있으며, GitHub Copilot의 정책, 모델 사양, 기능 등은 지속적으로 변경될 수 있습니다. 일부 정보에 오류가 있거나 최신 내용과 상이할 가능성이 있으므로, 정확하고 최신의 정보는 반드시 GitHub Copilot 공식 페이지(\href{https://github.com/features/copilot}{github.com/features/copilot}) 및 공식 문서(\href{https://docs.github.com/en/copilot}{docs.github.com/copilot})를 통해 확인하시기 바랍니다.
 \end{document}
