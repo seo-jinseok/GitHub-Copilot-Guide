@@ -1,8 +1,26 @@
 \documentclass[11pt, a4paper]{article}
 
 % --- DOCUMENT VERSION CONTROL ---
-% PDF 빌드 시점의 날짜가 자동으로 반영됩니다
-\newcommand{\docversion}{최종 수정: \today}
+% PDF 빌드 시점의 날짜와 시간(KST, UTC+9)이 자동으로 반영됩니다
+\usepackage{datetime2}
+\ExplSyntaxOn
+\int_new:N \g_kst_hour_int
+\int_new:N \g_kst_day_int
+\int_new:N \g_kst_month_int
+\int_new:N \g_kst_year_int
+\int_gset:Nn \g_kst_hour_int { \the\time / 60 + 9 }
+\int_gset:Nn \g_kst_day_int { \the\day }
+\int_gset:Nn \g_kst_month_int { \the\month }
+\int_gset:Nn \g_kst_year_int { \the\year }
+\int_compare:nNnT { \g_kst_hour_int } > { 23 }
+  {
+    \int_gadd:Nn \g_kst_hour_int { -24 }
+    \int_gincr:N \g_kst_day_int
+  }
+\newcommand{\docversion}{최종~수정:~\int_use:N \g_kst_year_int.\int_use:N \g_kst_month_int.\int_use:N \g_kst_day_int
+  \c_space_tl \int_compare:nNnTF { \g_kst_hour_int } < { 10 } {0}{} \int_use:N \g_kst_hour_int
+  : \int_compare:nNnTF { \int_mod:nn {\the\time} {60} } < { 10 } {0}{} \int_eval:n { \int_mod:nn {\the\time} {60} }}
+\ExplSyntaxOff
 \newcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
 
 % --- UNIVERSAL PREAMBLE BLOCK ---
