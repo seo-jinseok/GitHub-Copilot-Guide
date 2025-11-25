@@ -1,13 +1,17 @@
-# Gemini CLI-Specific Instructions
+# Gemini CLI 지침
 
-> **Note:** This file works alongside `AGENTS.md` (generic AI agent instructions). AGENTS.md contains the core Task Master commands and workflows for all AI agents. This file contains only Gemini CLI-specific features and integrations.
+Gemini CLI 전용 설정입니다. 범용 AI 에이전트 지침은 `AGENTS.md`를 참조하십시오.
 
-## Output Language
-All Output Language : Always respond in Korean (한국어). Even if the user asks in English or the context is technical, provide explanations in Korean unless explicitly requested otherwise.
+## 1. 언어 설정
 
-## MCP Configuration for Gemini CLI
+| 항목 | 규칙 |
+|------|------|
+| **출력 언어** | 한국어 (명시적 요청 시에만 영어) |
+| **문체** | 간결하고 전문적인 매뉴얼 톤 |
 
-Configure Task Master MCP server in `~/.gemini/settings.json`:
+## 2. MCP 설정
+
+`~/.gemini/settings.json` 또는 `.gemini/settings.json`에 설정합니다.
 
 ```json
 {
@@ -20,94 +24,56 @@ Configure Task Master MCP server in `~/.gemini/settings.json`:
 }
 ```
 
-**Note:** API keys are configured via `task-master models --setup`, not in MCP configuration.
+API 키는 `task-master models --setup`으로 별도 설정합니다.
 
-## Gemini CLI-Specific Features
+## 3. 세션 관리 명령어
 
-### Session Management
+| 명령어 | 기능 |
+|--------|------|
+| `/chat` | 새 대화 시작 (컨텍스트 유지) |
+| `/checkpoint save <name>` | 세션 상태 저장 |
+| `/checkpoint load <name>` | 저장된 세션 복원 |
+| `/memory show` | 로드된 컨텍스트 조회 |
+| `/stats` | 토큰 사용량 및 API 비용 확인 |
 
-Built-in session commands:
+## 4. 헤드리스 모드
 
-- `/chat` - Start new conversation while keeping context
-- `/checkpoint save <name>` - Save session state
-- `/checkpoint load <name>` - Resume saved session
-- `/memory show` - View loaded context
-
-Both `AGENTS.md` and `GEMINI.md` are auto-loaded on every Gemini CLI session.
-
-### Headless Mode for Automation
-
-Non-interactive mode for scripts:
+스크립트 자동화용 비대화형 모드입니다.
 
 ```bash
-# Simple text response
-gemini -p "What's the next task?"
+# 텍스트 응답
+gemini -p "다음 작업은?"
 
-# JSON output for parsing
-gemini -p "List all pending tasks" --output-format json
+# JSON 출력
+gemini -p "대기 중인 작업 목록" --output-format json
 
-# Stream events for long operations
-gemini -p "Expand all tasks" --output-format stream-json
+# 스트림 출력
+gemini -p "모든 작업 확장" --output-format stream-json
 ```
 
-### Token Usage Monitoring
+## 5. 모델 설정
 
 ```bash
-# In Gemini CLI session
-/stats
-
-# Shows: token usage, API costs, request counts
-```
-
-### Google Search Grounding
-
-Leverage built-in Google Search as an alternative to Perplexity research mode:
-- Best practices research
-- Library documentation
-- Security vulnerability checks
-- Implementation patterns
-
-## Important Differences from Other Agents
-
-### No Slash Commands
-Gemini CLI does not support custom slash commands (unlike Claude Code). Use natural language instead.
-
-### No Tool Allowlist
-Security is managed at the MCP level, not via agent configuration.
-
-### Session Persistence
-Use `/checkpoint` instead of git worktrees for managing multiple work contexts.
-
-### Configuration Files
-- Global: `~/.gemini/settings.json`
-- Project: `.gemini/settings.json`
-- **Not**: `.mcp.json` (that's for Claude Code)
-
-## Recommended Model Configuration
-
-For Gemini CLI users:
-
-```bash
-# Set Gemini as primary model
+# 메인 모델 설정
 task-master models --set-main gemini-2.0-flash-exp
 task-master models --set-fallback gemini-1.5-flash
 
-# Optional: Use Perplexity for research (or rely on Google Search)
+# 리서치 모델 (선택)
 task-master models --set-research perplexity-llama-3.1-sonar-large-128k-online
 ```
 
-## Your Role with Gemini CLI
+## 6. 다른 에이전트와의 차이점
 
-As a Gemini CLI assistant with Task Master:
+| 항목 | Gemini CLI | 기타 (Claude Code 등) |
+|------|------------|----------------------|
+| 슬래시 명령어 | 자연어 사용 | 커스텀 명령어 지원 |
+| 보안 관리 | MCP 레벨 | 에이전트 설정 |
+| 세션 관리 | `/checkpoint` | Git worktree |
+| 설정 파일 | `.gemini/settings.json` | `.mcp.json` |
 
-1. **Use MCP tools naturally** - They integrate transparently in conversation
-2. **Reference files with @** - Leverage Gemini's file inclusion
-3. **Save checkpoints** - Offer to save state after significant progress
-4. **Monitor usage** - Remind users about `/stats` for long sessions
-5. **Use Google Search** - Leverage search grounding for research
+## 7. Google 검색 활용
 
-**Key Principle:** Focus on natural conversation. Task Master MCP tools work seamlessly with Gemini CLI's interface.
-
----
-
-*See AGENTS.md for complete Task Master commands, workflows, and best practices.*
+Gemini CLI의 내장 Google 검색을 활용합니다:
+- 라이브러리 문서 조회
+- 보안 취약점 확인
+- 구현 패턴 검색

@@ -37,39 +37,43 @@ When merging content from multiple sources, follow this priority order:
 
 ### Style & Tone Requirements
 
-**Korean Content (ALL Korean text must follow these rules)**:
-- Use polite honorifics: "하십시오" or "해요" style (from `.github/copilot-instructions.md`)
-- Encouraging tone: Act as helpful partner, not just tool
-- Date format: `YYYY. MM. DD.` (e.g., 2025. 11. 21.)
-- Avoid technical jargon (target audience: non-technical admin staff)
-- Use correct university terminology: '수강신청' not '수업신청', '단과대학' not '학부'
+**문체 원칙**:
+
+| 항목 | 규칙 |
+|------|------|
+| **톤** | 간결하고 전문적인 매뉴얼 톤 |
+| **경어** | '하십시오' 또는 '해요' 체 |
+| **이모지** | 사용하지 않음 |
+| **설명** | 불필요한 서론/결론 최소화, 핵심 정보 중심 |
+
+**Korean Content**:
+
+| 항목 | 규칙 |
+|------|------|
+| 날짜 형식 | `YYYY. MM. DD.` (예: 2025. 11. 21.) |
+| 전문용어 | IT 용어 지양, 쉬운 표현 사용 |
+| 대학 용어 | 정확한 용어 사용 ('수강신청', '단과대학') |
 
 **English Content**:
-- Professional but approachable tone
-- Clear, simple language (avoid complex technical terms)
-- Parallel structure to Korean content where possible
 
-**Markdown Standards** (from `STYLE_GUIDE.md`):
-- One H1 (`#`) per file only
-- Logical header hierarchy: don't skip levels (e.g., `##` → `####`)
-- Code blocks MUST include language identifiers: ` ```bash `, not ` ``` `
-- Lists: Use `-` or `*` with 4-space indentation
-- Emoji usage:
-  - 💡 Tips/ideas
-  - ⚠️ Warnings/caution
-  - ✅ Success/completion
-  - ❌ Failures/errors
-  - 📝 Notes/additional info
-- Bilingual text: Korean first, newline, then English in parentheses. English text must follow the same style (header level, bold, etc.) as the Korean text.
-  - Example:
-    ```
-    ## 사용자 경험
-    ## (User Experience)
-    ```
+| 항목 | 규칙 |
+|------|------|
+| 톤 | Professional, clear language |
+| 구조 | 한국어 콘텐츠와 병렬 구조 유지 |
+
+**Markdown Standards**:
+
+| 항목 | 규칙 |
+|------|------|
+| H1 | 파일당 1회만 사용 |
+| 헤더 계층 | 건너뛰기 금지 (`##` → `####` 금지) |
+| 코드 블록 | 언어 식별자 필수 (` ```bash `) |
+| 목록 | `-` 또는 `*`, 들여쓰기 4칸 |
+| 다국어 병기 | 한국어 먼저, 줄바꿈 후 영어 |
 
 **Learning Progress Checkboxes**:
-- Use `- [ ]` format in TOCs for learner tracking
-- Example: `- [ ] [1. Setup](./level-1-basics/01-setup.md)`
+- 목차에 `- [ ]` 형식 사용
+- 예시: `- [ ] [1. Setup](./level-1-basics/01-setup.md)`
 
 ### Commit Message Convention
 
