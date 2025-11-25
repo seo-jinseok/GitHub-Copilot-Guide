@@ -1,0 +1,214 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- DOCUMENT VERSION CONTROL ---
+% 날짜를 여기서 한 번만 수정하면 문서 전체에 적용됩니다
+\newcommand{\docversion}{2025년 11월 25일}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=3cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fontspec}
+
+% Language setup for Korean
+\usepackage[korean, provide=*]{babel}
+
+% Fonts: Using Noto Serif for body (formal) and Noto Sans for headers
+\babelfont{rm}{Noto Serif CJK KR}
+\babelfont{sf}{Noto Sans CJK KR}
+
+% Essential Packages
+\usepackage{enumitem}
+\usepackage{booktabs}   % Professional tables
+\usepackage{tabularx}   % Auto-width tables
+\usepackage{titlesec}   % Section formatting
+\usepackage{xcolor}     % Colors for visual hierarchy
+\usepackage{fancyhdr}   % Headers and footers
+\usepackage{setspace}   % Line spacing
+\usepackage{longtable}  % For tables that might span pages
+\usepackage{xltabular}  % For flexible width long tables
+\usepackage{kotex}      % Additional Korean support insurance
+\usepackage[hidelinks]{hyperref}
+
+% --- STYLING COMMANDS ---
+
+% Define a formal navy blue for headers
+\definecolor{eduNavy}{RGB}{0, 43, 91}
+
+% Section styling
+\titleformat{\section}
+  {\Large\sffamily\bfseries\color{eduNavy}}
+  {\thesection}{1em}{}
+  [\vspace{-0.5em}\hrule height 1pt]
+
+\titleformat{\subsection}
+  {\large\sffamily\bfseries\color{eduNavy}}
+  {\thesubsection}{1em}{}
+
+% List settings
+\setlist[itemize]{label=\textbullet, leftmargin=1.5em, itemsep=0.2em}
+\setlist[enumerate]{label=\arabic*., leftmargin=1.5em, itemsep=0.2em}
+
+% Line spacing for readability
+\setstretch{1.3}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily 동의대학교 서진석}
+\fancyhead[R]{\small\sffamily \docversion}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Metadata
+\title{\vspace{-2cm} \Huge\sffamily\bfseries GitHub Copilot 웹서비스 활용 가이드 \\ \large\vspace{0.5em} \textmd{대학 구성원을 위한 교육용 라이선스 등록 및 모델 활용 매뉴얼}}
+\author{동의대학교 서진석(jsseo@deu.ac.kr), Sonnet 4.5, Gemini 3 Pro}
+\date{\docversion}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-2cm}
+
+\section{개요}
+\subsection{GitHub Copilot이란?}
+GitHub Copilot(깃허브 코파일럿)은 본래 프로그래머를 위한 코드 작성 보조 도구(VS Code 확장 프로그램)로 출시되었으나, 현재는 범용 AI 채팅 서비스를 통합하여 제공하고 있습니다. 사용자는 별도의 소프트웨어 설치 없이 웹 브라우저 상에서 OpenAI, Google, Anthropic 등의 최신 AI 모델을 통합적으로 활용할 수 있습니다.
+
+\subsection{주요 특징}
+\begin{itemize}
+    \item \textbf{무료 라이선스 제공}: 대학 구성원(교수, 학생)에게는 월 \$10 상당의 \textbf{GitHub Copilot Pro} 기능이 무료로 제공됩니다.
+    \item \textbf{모델 통합 플랫폼}: GPT-5, Claude, Gemini 등 다양한 최신 LLM(Large Language Model)을 하나의 플랫폼에서 선택하여 사용할 수 있습니다.
+    \item \textbf{웹 기반 접근성}: 별도의 설치 과정 없이 웹사이트(\href{https://github.com/copilot}{copilot.github.com})를 통해 즉시 이용 가능합니다.
+\end{itemize}
+
+\subsection{지원 자격}
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{구분} & \textbf{신청 가능 여부} & \textbf{비고} \\
+        \midrule
+        학생(학부/대학원) & \textbf{가능} & 영문 재학증명서 제출 필요 \\
+        교수 & \textbf{가능} & 영문 재직증명서 제출 필요 \\
+        연구원 & 불가 & 단, 학생 또는 교원 신분 겸직 시 신청 가능 \\
+        행정 직원 & 불가 & 별도의 유료 라이선스 구매 필요 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{GitHub Copilot Pro 라이선스 혜택}
+대학 구성원 인증 시 일반 사용자 대비 확장된 기능을 제공받을 수 있습니다.
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \small
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{구분} & \textbf{무료 사용자 (Basic)} & \textbf{Pro 사용자 (대학 구성원)} \\
+        \midrule
+        \textbf{비용} & 무료 & \textbf{무료} (연 20만원 상당 지원) \\
+        \addlinespace
+        \textbf{대화 한도} & 기본 모델 월 50회 제한 & \textbf{기본 모델 무제한} \newline 프리미엄 모델 월 300회 (매월 1일 초기화) \\
+        \addlinespace
+        \textbf{사용 모델} & 기본 모델 제한적 사용 \newline (GPT-5 mini, GPT-4o 등) & \textbf{전체 모델 사용 가능} \newline (Grok, Claude Opus, Gemini Pro 등 포함) \\
+        \addlinespace
+        \textbf{데이터 보안} & 대화 내용이 학습에 사용될 수 있음 & \textbf{학습 데이터로 사용되지 않음} (철저한 보안) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\newpage
+
+\section{무료 사용 신청 가이드}
+신청 후 승인까지는 통상 영업일 기준 \textbf{1\textasciitilde3일}이 소요됩니다. 원활한 승인을 위해 아래 절차를 준수하여 주십시오.
+
+\subsection{사전 준비 사항 (필수)}
+\begin{itemize}
+    \item \textbf{학교 공식 이메일}: \texttt{@deu.ac.kr}, \texttt{@g.deu.ac.kr}, \texttt{@office.deu.ac.kr} 등 공식 도메인 사용을 권장합니다.
+    \item \textbf{영문 증명 서류}: 반드시 \textbf{영문(English)}으로 발급된 재학증명서(학생) 또는 재직증명서(교수)를 준비하십시오.
+    \begin{itemize}
+        \item 발급 받은 서류의 출력본(종이)과 서류 전체가 식별 가능한 스캔 파일(JPG/PNG)을 준비해야 합니다. 
+        \item PC 환경에 따라 카메라 촬영을 요구할 수도 있고, 파일을 업로드 해야 할 수도 있습니다.
+    \end{itemize}
+    \item \textbf{인증 앱(OTP)}: 스마트폰에 \textit{Microsoft Authenticator} 앱을 사전에 설치하십시오.
+\end{itemize}
+
+\subsection{단계별 등록 절차}
+\begin{enumerate}
+    \item \textbf{GitHub 회원가입}: \href{https://github.com}{github.com}에 접속하여 학교 공식 이메일로 가입을 진행합니다. 이메일로 발송된 8자리 인증 코드를 입력하여 완료합니다.
+    \item \textbf{2단계 인증(2FA) 설정}: 보안 정책상 필수 단계입니다.
+    \begin{itemize}
+        \item GitHub에 로그인 한 후, 우측 상단 프로필 $\rightarrow$ \textbf{Settings} $\rightarrow$ \textbf{Password and authentication}
+        \item \textbf{Two-factor authentication}을 활성화하고 OTP 앱으로 QR 코드를 스캔하여 등록합니다.
+        \item \textit{주의: 생성되는 복구 코드(Recovery codes)는 반드시 별도로 저장하십시오.}
+    \end{itemize}
+    \item \textbf{GitHub Education 신청}: \href{https://github.com/education}{github.com/education}으로 이동하여 \textbf{Join GitHub Education}을 선택, 신청서를 작성합니다.
+    \item \textbf{신분 및 학교 인증}:
+    \begin{itemize}
+        \item 신분(Student/Teacher)을 선택하면 우리 대학이 자동으로 선택됩니다(회원 가입에 사용한 이메일 주소의 도메인 기준).
+        \item 브라우저의 위치 공유 권한을 허용하여 현재 위치를 인증합니다.
+    \end{itemize}
+    \item \textbf{서류 제출}: 준비한 영문 증명서를 업로드하거나 카메라로 촬영하여 제출합니다. \textbf{Submit} 버튼을 누르면 신청이 완료됩니다.
+\end{enumerate}
+
+\section{설정 및 활용 방법}
+승인이 완료되면 웹 브라우저(\href{https://github.com/copilot}{copilot.github.com})에서 즉시 AI 기능을 사용할 수 있습니다.
+
+\subsection{모델 활성화 및 기능 설정}
+다양한 AI 모델을 활용하기 위해 다음 설정을 확인하시기 바랍니다.
+\begin{enumerate}
+    \item GitHub 로그인 후 프로필 메뉴의 \textbf{Copilot Settings}로 이동합니다.
+    \item \textbf{Features} 항목에서 비활성화(Disabled)된 모델들을 \textbf{Enabled}로 변경합니다.
+    \item \textbf{Dashboard entry point}를 활성화하면 GitHub 메인 화면에서 즉시 Copilot에 접근할 수 있습니다.
+    \item \textbf{Copilot can search the web} 기능을 활성화하면 실시간 웹 검색(Bing) 기반의 답변이 가능해집니다.
+\end{enumerate}
+
+\section{AI 모델 선택 가이드 (본 문서 작성일 기준)}
+업무의 성격에 따라 최적화된 모델을 선택하여 효율성을 높일 수 있습니다.
+
+\subsection{모델별 상세 사양}
+\begin{xltabular}{\textwidth}{@{}l l X@{}}
+\toprule
+\textbf{등급} & \textbf{모델명} & \textbf{특징 및 주요 강점} \\
+\midrule
+\endhead
+
+\textbf{일반} & GPT-5 mini & \textbf{가성비 및 속도 최적화}. GPT-5 수준의 지능을 경량화하여 빠른 응답 속도를 제공합니다. \\
+\addlinespace
+\textbf{일반} & GPT-4.1 & \textbf{안정성}. 이전 세대 플래그십 수준의 안정성과 정교한 지시 이행 능력을 갖춘 중상급 모델입니다. \\
+\addlinespace
+\textbf{일반} & GPT-4o & \textbf{멀티모달}. 텍스트, 음성, 시각 정보를 초저지연으로 처리하며 비전 인식에 특화되어 있습니다. \\
+\addlinespace
+\textbf{일반} & Claude Haiku 4.5 & \textbf{고속 텍스트 처리}. 단순 요약, 분류 작업 및 실시간 챗봇 백엔드 활용에 적합합니다. \\
+\midrule
+\textbf{프리미엄} & Grok Code Fast 1 & \textbf{코딩/개발 전용}. IDE 통합 워크플로우에 최적화되어 있으며, 초저지연 코드 자동완성 및 디버깅을 지원합니다. \\
+\addlinespace
+\textbf{프리미엄} & GPT-5 & \textbf{차세대 플래그십}. 복합 추론 능력과 창의성을 갖춘 범용 최상위 모델로, 심층 문제 해결에 탁월합니다. \\
+\addlinespace
+\textbf{프리미엄} & GPT-5.1 & \textbf{자율 에이전트}. 환각 현상(Hallucination)을 최소화하고 에이전트 기능을 강화하여 장기 프로젝트 수행에 적합합니다. \\
+\addlinespace
+\textbf{프리미엄} & Claude Sonnet 4.5 & \textbf{고성능 밸런스}. 우수한 논리력과 작문 능력을 갖추었으며, 보고서 작성 및 논리적 분석에 강점이 있습니다. \\
+\addlinespace
+\textbf{프리미엄} & Claude Opus 4.1 & \textbf{최상위 추론}. 복잡한 논리 분석, 학술 연구, 미묘한 뉘앙스 표현 및 창의적 글쓰기에 최적화되어 있습니다. \\
+\addlinespace
+\textbf{프리미엄} & Gemini 3 Pro & \textbf{생성형 UI/에이전트}. 자연어를 코드로 변환하는 'Vibe Coding' 및 자율 에이전트 기능이 탑재된 차세대 모델입니다. \\
+\bottomrule
+\end{xltabular}
+
+\subsection{상황별 추천 모델}
+\begin{itemize}
+    \item \textbf{심도 있는 추론과 연구가 필요할 때}: GPT-5.1, Claude Opus 4.1
+    \item \textbf{자연스러운 한국어 작문 및 보고서 작성}: Claude Sonnet 4.5
+    \item \textbf{방대한 문서 및 영상 자료 분석}: Gemini 3 Pro (대용량 컨텍스트 처리)
+    \item \textbf{빠른 속도의 대량 데이터 처리}: GPT-5 mini, Claude Haiku 4.5
+\end{itemize}
+
+\vspace{2em}
+\hrule
+\vspace{1em}
+
+\section*{면책 조항}
+\small
+본 문서는 작성 시점(\docversion) 기준의 정보를 담고 있으며, GitHub Copilot의 정책, 모델 사양, 기능 등은 지속적으로 변경될 수 있습니다. 일부 정보에 오류가 있거나 최신 내용과 상이할 가능성이 있으므로, 정확하고 최신의 정보는 반드시 GitHub Copilot 공식 페이지(\href{https://github.com/features/copilot}{github.com/features/copilot}) 및 공식 문서(\href{https://docs.github.com/en/copilot}{docs.github.com/copilot})를 통해 확인하시기 바랍니다.
+\end{document}
