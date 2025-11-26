@@ -1,0 +1,356 @@
+\documentclass[11pt, a4paper]{article}
+\input{_preamble}
+
+% --- 문서별 메타데이터 ---
+\renewcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
+
+\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot 행정직원용 가이드 \\ \large\vspace{0.2em} \textmd{행정 업무를 위한 AI 활용법}\vspace{-0.5em}}
+\author{\vspace{-0.5em}\authors}
+\date{\vspace{-0.5em}\docversion}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-1.5cm}
+
+\tableofcontents
+\newpage
+
+% ==============================================================================
+\section{개요 및 보안}
+% ==============================================================================
+
+\subsection{GitHub Copilot 소개}
+GitHub Copilot은 VS Code 편집기에서 사용할 수 있는 AI 비서입니다. 문서 작성, 데이터 정리, 이메일 초안 작성 등 행정 업무를 효율적으로 처리할 수 있도록 도와줍니다.
+
+\textbf{웹 기반 AI와의 차이점}:
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \small
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{항목} & \textbf{웹 기반 AI (ChatGPT 등)} & \textbf{VS Code + Copilot} \\
+        \midrule
+        파일 관리 & 복사-붙여넣기 필요 & 파일 직접 편집 \\
+        여러 파일 처리 & 하나씩 수동 처리 & Edits 기능으로 일괄 수정 \\
+        컨텍스트 유지 & 대화 길어지면 망각 & 프로젝트 전체 인식 \\
+        맞춤 설정 & 매번 지시 필요 & Instructions 파일로 자동화 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{보안 FAQ: 정보 유출 걱정 해소}
+\textbf{Q: 대학 내부 문서를 AI에 올려도 되나요?}
+
+\begin{itemize}
+    \item \textbf{무료 버전(일반용)}: 사용자의 데이터를 학습에 사용함 $\rightarrow$ 입력 금지
+    \item \textbf{기업용 버전(Copilot)}: \textbf{사용자의 데이터를 절대 학습하지 않음}. 입력 데이터는 암호화 처리 후 즉시 폐기 $\rightarrow$ 입력 가능
+\end{itemize}
+
+\textit{결론: 학교에서 제공하는 계정은 안전합니다. 단, 주민등록번호 등 민감한 개인정보는 마스킹(***) 처리하는 습관을 들이세요.}
+
+\subsection{AI의 한계 이해하기}
+AI를 \textbf{`일 잘하지만 가끔 엉뚱한 소리를 하는 똑똑한 인턴'}이라고 생각하세요.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{AI의 역할 (80\%)} & \textbf{사람의 역할 (20\%)} \\
+        \midrule
+        초안 작성, 아이디어 제안, 단순 반복 작업 & 팩트 체크, 최종 검수, 책임 지기 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{생성형 AI 활용의 3대 원칙}
+
+\subsubsection{원칙 1: 업무의 분업 (Delegation)}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \small
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{구분} & \textbf{AI에게 맡길 일} & \textbf{사람이 직접 해야 할 일} \\
+        \midrule
+        성격 & 초안 작성, 요약, 번역, 데이터 변환 & 최종 의사결정, 민감한 소통 \\
+        예시 & "지난달 회의록 3줄 요약해줘" & "이 안건을 총장님께 보고할지 결정" \\
+        예시 & "이 표를 엑셀 형식으로 바꿔줘" & "예산 삭감에 대한 정중한 거절 메일" \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsubsection{원칙 2: 검증의 의무 (Verification)}
+\begin{itemize}
+    \item \textbf{숫자 확인}: 예산, 날짜, 전화번호는 반드시 원본과 대조
+    \item \textbf{URL 확인}: AI가 만들어준 링크는 실제로 눌러봐야 합니다 (가짜 링크 가능성)
+    \item \textbf{팩트 체크}: "우리 학교 규정에 따르면..."이라고 AI가 말할 때, 실제 규정집 확인
+\end{itemize}
+
+\subsubsection{원칙 3: 일관성의 힘 (Consistency)}
+\begin{itemize}
+    \item \textbf{용어 정의}: 작업 시작 전에 "이 문서에서는 학생을 '재학생'으로 통일해줘"
+    \item \textbf{문체 통일}: "이전 문서의 말투와 똑같이 작성해줘"
+    \item \textbf{VS Code 활용}: 여러 파일을 하나의 폴더에 넣고 작업하면 일관성 자동 유지
+\end{itemize}
+
+% ==============================================================================
+\section{설치 및 기초}
+% ==============================================================================
+
+\subsection{VS Code 설치}
+\begin{enumerate}
+    \item \href{https://code.visualstudio.com}{code.visualstudio.com}에서 다운로드 및 설치
+    \item VS Code 왼쪽 `블록 아이콘(Extensions)' 클릭 $\rightarrow$ \texttt{GitHub Copilot} 검색 및 설치
+    \item 우측 하단 알림창 또는 왼쪽 프로필 아이콘을 눌러 GitHub 계정으로 로그인
+\end{enumerate}
+
+\textit{※ 중요: 2025년 버전부터는 `Copilot Chat'이 통합되어 별도 설치가 필요 없습니다.}
+
+\subsection{화면 구성 이해하기}
+\begin{itemize}
+    \item \textbf{편집기(Editor)}: 글을 쓰는 메인 화면 (한글/워드와 같은 곳)
+    \item \textbf{사이드바(Sidebar)}: 파일 목록이 보이는 왼쪽 영역
+    \item \textbf{보조 사이드바}: Copilot 채팅창이 열리는 오른쪽 영역 (\texttt{Ctrl/Cmd + Alt + I}로 열고 닫음)
+\end{itemize}
+
+\subsection{채팅 vs 자동완성}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{기능} & \textbf{단축키} & \textbf{용도} \\
+        \midrule
+        대화형 (Chat) & \texttt{Ctrl/Cmd + Alt + I} & 질문, 요약, 초안 생성, 복잡한 요청 \\
+        자동완성 (Ghost Text) & \texttt{Tab} 키로 수락 & 다음 문장 예측, 표 자동 채우기, 반복 패턴 완성 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textit{※ 팁: 보고서 목차를 짤 때는 자동완성이 편하고, 보고서 내용을 채울 때는 채팅이 편합니다.}
+
+% ==============================================================================
+\section{프롬프트 작성법}
+% ==============================================================================
+
+\subsection{R.C.O 공식}
+AI에게 일을 잘 시키는 3가지 핵심 요소:
+
+\begin{enumerate}
+    \item \textbf{Role (역할)}: "너는 10년 차 베테랑 행정가야."
+    \item \textbf{Context (맥락)}: "이번에 교육부 감사 대비 자료를 만들고 있어."
+    \item \textbf{Output (출력)}: "감사 지적 사항 예상 리스트를 표로 정리해줘."
+\end{enumerate}
+
+\textbf{예시}: "너는 베테랑 행정가야(Role) + 교육부 감사 대비(Context) + 표로 정리(Output)" $\rightarrow$ 명확한 결과
+
+\subsection{톤앤매너 조절하기}
+\begin{itemize}
+    \item "건조하고 객관적인 어조로 써줘." (보고서용)
+    \item "친절하고 부드러운 어조로 써줘." (안내문용)
+    \item "핵심만 요약해서 개조식으로 써줘." (임원 보고용)
+\end{itemize}
+
+\subsection{좋은 프롬프트 vs 나쁜 프롬프트}
+
+\textbf{나쁜 예시} (막연함):
+\begin{quote}
+"행사에 대한 이메일을 작성해줘."
+\end{quote}
+\textit{문제점: 맥락 없음, 어조 안내 없음, 형식 요구사항 없음}
+
+\textbf{좋은 예시} (R.C.O. 활용):
+\begin{quote}
+"당신은 대학 총무처 직원이 공식 이메일 초안을 작성하는 것을 돕고 있습니다.
+
+\textbf{맥락}: 우리 부서는 12월 22일 오후 6시에 연말 교수진 감사 만찬을 개최합니다.
+
+\textbf{출력 요구사항}:
+\begin{itemize}
+    \item 정중한 비즈니스 어조로 200자 분량 이메일 작성
+    \item 포함 사항: 행사 목적, 날짜/시간/장소, RSVP 마감일
+\end{itemize}"
+\end{quote}
+
+% ==============================================================================
+\section{핵심 기능}
+% ==============================================================================
+
+\subsection{Copilot Edits (다중 파일 수정)}
+\textbf{[2025 신기능]} 여러 파일을 한 번에 수정하는 강력한 기능입니다.
+
+\textbf{사용법}:
+\begin{enumerate}
+    \item 채팅창(\texttt{Ctrl/Cmd + Alt + I}) 하단의 모드를 \textbf{`Edits'}로 변경
+    \item 수정하고 싶은 파일들을 드래그하거나, \texttt{\#} 키를 눌러 선택
+    \item 명령을 내립니다: "여기 있는 5개 파일의 연도를 모두 2024년에서 2025년으로 바꿔줘"
+    \item Copilot이 수정 계획을 보여줍니다. \textbf{`Accept'}를 누르면 파일이 실제로 수정됩니다.
+\end{enumerate}
+
+\textbf{활용 사례}:
+\begin{itemize}
+    \item 여러 파일의 양식을 통일할 때
+    \item 규정이 바뀌어서 모든 문서의 특정 문구를 수정해야 할 때
+    \item 단순 반복 작업을 한 방에 끝내고 싶을 때
+\end{itemize}
+
+\subsection{@workspace 에이전트}
+채팅창에서 \texttt{@workspace}를 입력하면 프로젝트 전체 파일을 인식합니다.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{에이전트} & \textbf{기능} \\
+        \midrule
+        \texttt{@workspace} & 프로젝트 내 모든 파일 참조 \\
+        \texttt{@terminal} & 터미널 명령어 도우미 \\
+        \texttt{@vscode} & VS Code 사용법 안내 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{예시}: \texttt{@workspace 이 프로젝트의 규정 문서에서 휴학 신청 절차만 요약해줘}
+
+\subsection{Mermaid 다이어그램}
+텍스트만 입력하면 자동으로 다이어그램이 생성됩니다. VS Code에서 Mermaid 확장을 설치하면 실시간 미리보기가 가능합니다.
+
+\textbf{지원 다이어그램 유형}:
+\begin{itemize}
+    \item \textbf{Flowchart}: 업무 프로세스 흐름도
+    \item \textbf{Sequence Diagram}: 시스템 간 상호작용
+    \item \textbf{Gantt Chart}: 프로젝트 일정 관리
+    \item \textbf{Pie Chart}: 비율 시각화
+\end{itemize}
+
+% ==============================================================================
+\section{실전 워크북}
+% ==============================================================================
+
+\subsection{Workbook 1: 영문 이메일 3분 작성}
+\textbf{시나리오}: 해외 자매대학에 협정 갱신을 요청하는 이메일 작성
+
+\begin{enumerate}
+    \item VS Code에서 \texttt{email\_draft.md} 파일 생성
+    \item 채팅창(\texttt{Ctrl+Alt+I})을 열고 다음 프롬프트 입력:
+\end{enumerate}
+
+\begin{quote}
+"나는 OO대학교 국제교류팀 직원이야. 미국 자매대학인 ABC University에 교환학생 협정 갱신을 요청하는 이메일을 보내야 해. 정중하고 격식 있는 비즈니스 영어로 본문을 작성해줘."
+\end{quote}
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item 생성된 내용을 검토하고 필요시 수정
+    \item 이메일 마지막에 \texttt{Sincerely,} 입력 후 자동완성(\texttt{Tab}) 체험
+\end{enumerate}
+
+\subsection{Workbook 2: 연례 보고서 데이터 정리}
+\textbf{시나리오}: 단과대학별 입학 현황 데이터를 표로 정리
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"저는 기획처 직원으로 연례 보고서를 준비하고 있습니다. 위의 입학 현황 데이터를 사용하여:
+\begin{enumerate}
+    \item 마크다운 표 생성: 단과대학 | 2022년 | 2023년 | 2024년 | 3개년 증감률(\%)
+    \item 표 하단에 전체 합계 `총계' 행 추가
+    \item 표 아래에 입학 추세 분석 문장 2-3개 작성
+\end{enumerate}"
+\end{quote}
+
+\textbf{검증 사항}:
+\begin{itemize}
+    \item[$\square$] 증감률이 정확히 계산되었는지 확인
+    \item[$\square$] 총계가 각 열의 합계와 일치하는지 확인
+    \item[$\square$] 연도 레이블이 데이터와 일치하는지 확인
+\end{itemize}
+
+\subsection{Workbook 3: 작년 보고서 리모델링}
+\textbf{시나리오}: 작년 사업계획서를 올해 버전으로 업데이트
+
+\begin{enumerate}
+    \item 작년 사업계획서(\texttt{plan\_2024.md})와 올해 메모(\texttt{memo\_2025.txt}) 준비
+    \item 채팅창을 \textbf{Edits 모드}로 변경
+    \item 두 파일을 모두 참조(\texttt{\#})시킴
+    \item 프롬프트 입력:
+\end{enumerate}
+
+\begin{quote}
+"작년 계획서(\texttt{plan\_2024.md})를 바탕으로 \texttt{plan\_2025.md}를 새로 만들어줘. 단, \texttt{memo\_2025.txt}에 있는 올해 중점 과제를 반영해서 `추진 전략' 부분을 수정해야 해. 날짜는 모두 2025년으로 업데이트하고, 예산은 작년 대비 5\% 증액해서 계산해줘."
+\end{quote}
+
+\subsection{Workbook 4: 회의록 자동화}
+\textbf{시나리오}: 회의 메모를 구조화된 보고서로 변환
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"\texttt{@workspace meeting\_note.txt}를 바탕으로 임원 검토용 `주간 업무 보고서'를 작성해야 합니다.
+
+\textbf{출력 요구사항}:
+\begin{enumerate}
+    \item 주요 결정 사항을 3줄로 임원 요약 작성
+    \item 실행 항목 표 생성: 업무 | 담당자 | 마감일 | 상태
+    \item 프로젝트 일정을 보여주는 Mermaid 간트 차트 생성
+    \item 격식 있는 `보고' 어조 사용
+\end{enumerate}"
+\end{quote}
+
+% ==============================================================================
+\section{부록}
+% ==============================================================================
+
+\subsection{실전 시나리오 라이브러리}
+
+\begin{xltabular}{\textwidth}{@{}l X X@{}}
+\toprule
+\textbf{상황} & \textbf{Before (기존)} & \textbf{After (AI 활용)} \\
+\midrule
+\endhead
+
+규정 검색 & 규정집 PDF 5개를 열고 Ctrl+F로 검색 & "@workspace `학칙'에서 휴학 신청 기간과 절차만 요약해줘" \\
+공문 작성 & 작년 공문 찾아서 날짜/수신처 수정 & "작년 공문 참고해서 수신처만 `교육부'로 바꿔줘" \\
+행사 기획 & 식순, 준비물 리스트 엑셀에 수기 작성 & "신입생 오리엔테이션 식순과 체크리스트를 표로 만들어줘" \\
+\bottomrule
+\end{xltabular}
+
+\subsection{프롬프트 사전}
+\begin{itemize}
+    \item \textbf{요약}: "이 문서를 A4 1장 분량으로 요약하고, 핵심 키워드 3개를 뽑아줘."
+    \item \textbf{번역}: "이 이메일을 정중한 비즈니스 영어로 번역해줘."
+    \item \textbf{교정}: "이 보고서에서 오탈자와 비문을 찾아서 고쳐줘."
+    \item \textbf{아이디어}: "우리 대학 홍보 슬로건 10개만 제안해줘. (키워드: 혁신, 미래, 글로벌)"
+\end{itemize}
+
+\subsection{단축키 요약}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{단축키} & \textbf{기능} \\
+        \midrule
+        \texttt{Ctrl/Cmd + Alt + I} & Copilot 채팅창 열기/닫기 \\
+        \texttt{Tab} & 자동완성 제안 수락 \\
+        \texttt{Esc} & 자동완성 제안 무시 \\
+        \texttt{\#} & 채팅창에서 파일 참조 \\
+        \texttt{@} & 에이전트 호출 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{0.5em}
+
+\section*{유의 사항}
+\small
+본 문서는 작성 시점(\docdate) 기준이며, GitHub Copilot의 정책 및 기능은 변경될 수 있습니다. 최신 정보는 공식 문서(\href{https://docs.github.com/en/copilot}{docs.github.com/copilot})를 참조하십시오.
+
+\end{document}

@@ -1,0 +1,211 @@
+\documentclass[11pt, a4paper]{article}
+\input{_preamble}
+
+% --- 문서별 메타데이터 ---
+\renewcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
+
+\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot VS Code 가이드 \\ \large\vspace{0.2em} \textmd{AI와 함께 문서 작성하기}\vspace{-0.5em}}
+\author{\vspace{-0.5em}\authors}
+\date{\vspace{-0.5em}\docversion}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-1.5cm}
+
+\section{개요}
+
+\subsection{VS Code란?}
+Visual Studio Code(이하 VS Code)는 Microsoft에서 개발한 무료 코드 편집기입니다. 프로그래머뿐만 아니라 문서 작성, 데이터 분석 등 다양한 용도로 활용됩니다.
+
+\begin{itemize}
+    \item \textbf{무료}: 설치 및 사용에 비용 없음
+    \item \textbf{가벼움}: 빠른 실행 속도와 낮은 시스템 요구사항
+    \item \textbf{확장성}: 수천 개의 확장 프로그램으로 기능 확장 가능
+    \item \textbf{크로스 플랫폼}: Windows, macOS, Linux 모두 지원
+\end{itemize}
+
+\subsection{왜 VS Code + Copilot인가?}
+웹 기반 AI(ChatGPT, Claude 등)와 VS Code + Copilot의 차이점:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \small
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{항목} & \textbf{웹 기반 AI} & \textbf{VS Code + Copilot} \\
+        \midrule
+        \textbf{파일 관리} & 복사-붙여넣기 필요 & 파일 직접 편집 \\
+        \textbf{여러 파일 처리} & 하나씩 수동 처리 & Edits 기능으로 일괄 수정 \\
+        \textbf{컨텍스트 유지} & 대화 길어지면 망각 & 프로젝트 전체 인식 \\
+        \textbf{맞춤 설정} & 매번 지시 필요 & Instructions 파일로 자동화 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\section{설치 및 설정}
+
+\subsection{VS Code 설치}
+\begin{enumerate}
+    \item \href{https://code.visualstudio.com}{code.visualstudio.com} 접속
+    \item 운영체제(Windows/macOS/Linux)에 맞는 버전 다운로드
+    \item 설치 파일 실행 후 안내에 따라 설치 완료
+\end{enumerate}
+
+\subsection{GitHub Copilot 확장 설치}
+\begin{enumerate}
+    \item VS Code 실행
+    \item 왼쪽 사이드바의 \textbf{블록 아이콘(Extensions)} 클릭 또는 \texttt{Ctrl+Shift+X}
+    \item 검색창에 \texttt{GitHub Copilot} 입력
+    \item \textbf{GitHub Copilot} 확장 프로그램 설치 (2025년 버전부터 Chat 통합)
+\end{enumerate}
+
+\textit{※ 주의: `Copilot Chat`은 별도 설치 불필요. 기본 확장에 통합되어 있습니다.}
+
+\subsection{로그인 및 인증}
+\begin{enumerate}
+    \item VS Code 좌측 하단 \textbf{프로필 아이콘} 클릭
+    \item \textbf{Sign in to GitHub} 선택
+    \item 브라우저에서 GitHub 계정으로 로그인
+    \item 권한 승인 후 VS Code로 자동 복귀
+\end{enumerate}
+
+\section{핵심 기능}
+
+\subsection{화면 구성 이해하기}
+\begin{itemize}
+    \item \textbf{편집기(Editor)}: 파일 내용을 작성/수정하는 메인 화면
+    \item \textbf{사이드바(Sidebar)}: 왼쪽에 파일 탐색기, 검색, 확장 등
+    \item \textbf{보조 사이드바(Secondary Sidebar)}: 오른쪽에 Copilot 채팅창
+\end{itemize}
+
+\subsection{채팅 모드 (Chat)}
+대화형으로 AI에게 질문하고 답변을 받는 방식입니다.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{단축키} & \textbf{설명} \\
+        \midrule
+        \texttt{Ctrl+Alt+I} (Windows) & Copilot 채팅창 열기/닫기 \\
+        \texttt{Cmd+Alt+I} (macOS) & Copilot 채팅창 열기/닫기 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{사용 예시}:
+\begin{itemize}
+    \item "이 문서의 문법 오류를 찾아줘"
+    \item "영문 이메일 초안을 작성해줘"
+    \item "이 데이터를 표 형식으로 정리해줘"
+\end{itemize}
+
+\subsection{자동완성 (Ghost Text)}
+입력 중 AI가 다음에 올 내용을 회색 텍스트로 미리 제안합니다.
+
+\begin{itemize}
+    \item \textbf{Tab 키}: 제안된 내용 전체 수락
+    \item \textbf{Ctrl+$\rightarrow$}: 단어 단위로 부분 수락
+    \item \textbf{Esc 키}: 제안 무시
+\end{itemize}
+
+\textit{※ 생각을 읽어주는 기능: 문서 맥락을 파악하여 자연스러운 다음 문장을 제안합니다.}
+
+\subsection{Copilot Edits (다중 파일 수정)}
+\textbf{[2025 신기능]} 여러 파일을 한 번에 수정하는 강력한 기능입니다.
+
+\textbf{사용법}:
+\begin{enumerate}
+    \item 채팅창 하단의 모드를 \textbf{`Edits'}로 변경
+    \item 수정할 파일들을 채팅창으로 드래그하거나 \texttt{\#} 키로 선택
+    \item 수정 명령 입력 (예: "모든 문서의 연도를 2024에서 2025로 변경해줘")
+    \item 수정 계획 검토 후 \textbf{Accept} 클릭
+\end{enumerate}
+
+\textbf{활용 사례}:
+\begin{itemize}
+    \item 여러 파일의 양식 통일
+    \item 규정 변경에 따른 일괄 문구 수정
+    \item 반복 작업 자동화
+\end{itemize}
+
+\section{고급 기능}
+
+\subsection{@workspace 에이전트}
+채팅창에서 \texttt{@workspace}를 입력하면 프로젝트 전체 파일을 인식합니다.
+
+\begin{itemize}
+    \item \texttt{@workspace}: 프로젝트 내 모든 파일 참조
+    \item \texttt{@terminal}: 터미널 명령어 도우미
+    \item \texttt{@vscode}: VS Code 사용법 안내
+\end{itemize}
+
+\textbf{예시}: \texttt{@workspace 이 프로젝트의 구조를 설명해줘}
+
+\subsection{맞춤형 지침 (copilot-instructions.md)}
+프로젝트 폴더에 \texttt{.github/copilot-instructions.md} 파일을 생성하면, Copilot이 해당 규칙을 항상 따릅니다.
+
+\textbf{예시 내용}:
+\begin{enumerate}
+    \item 모든 문서는 공손한 '하십시오' 체로 작성할 것
+    \item 날짜 형식은 YYYY. MM. DD.로 통일할 것
+    \item 금액은 천 단위 쉼표와 '원' 표기 (예: 1,000,000원)
+    \item 개인정보는 마스킹 처리할 것 (예: 010-****-5678)
+\end{enumerate}
+
+\subsection{Mermaid 다이어그램}
+코드로 다이어그램을 그릴 수 있습니다. VS Code에서 Mermaid 프리뷰 확장을 설치하면 실시간으로 결과를 확인할 수 있습니다.
+
+\textbf{지원 다이어그램 유형}:
+\begin{itemize}
+    \item \textbf{Flowchart}: 업무 프로세스 흐름도
+    \item \textbf{Sequence Diagram}: 시스템 간 상호작용
+    \item \textbf{Gantt Chart}: 프로젝트 일정 관리
+    \item \textbf{Pie Chart}: 비율 시각화
+\end{itemize}
+
+\section{실전 활용}
+
+\subsection{문서 작성 워크플로우}
+
+\textbf{Step 1: 프로젝트 폴더 열기}
+\begin{enumerate}
+    \item VS Code에서 \textbf{File $\rightarrow$ Open Folder}
+    \item 작업할 문서가 있는 폴더 선택
+\end{enumerate}
+
+\textbf{Step 2: Copilot 채팅으로 초안 작성}
+\begin{enumerate}
+    \item \texttt{Ctrl+Alt+I}로 채팅창 열기
+    \item 상황 설명과 함께 작성 요청
+    \item 생성된 내용 검토 후 파일에 붙여넣기
+\end{enumerate}
+
+\textbf{Step 3: 자동완성으로 세부 수정}
+\begin{enumerate}
+    \item 문서 내용 입력 중 Ghost Text 제안 확인
+    \item Tab 키로 적절한 제안 수락
+    \item 필요시 수동 수정
+\end{enumerate}
+
+\subsection{데이터 분석 예시}
+\begin{enumerate}
+    \item CSV 파일을 VS Code에서 열기
+    \item 채팅창에서 파일 참조: \texttt{\#파일명.csv}
+    \item 분석 요청: "이 데이터의 연도별 추세를 분석하고 표로 정리해줘"
+    \item 결과 검토 및 Excel/보고서에 활용
+\end{enumerate}
+
+\vspace{1em}
+\hrule
+\vspace{0.5em}
+
+\section*{유의 사항}
+\small
+본 문서는 작성 시점(\docdate) 기준이며, VS Code 및 GitHub Copilot의 기능과 인터페이스는 업데이트에 따라 변경될 수 있습니다. 최신 정보는 공식 문서(\href{https://docs.github.com/en/copilot}{docs.github.com/copilot})를 참조하십시오.
+
+\end{document}

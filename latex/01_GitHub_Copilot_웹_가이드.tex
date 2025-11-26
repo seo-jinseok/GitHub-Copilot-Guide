@@ -1,95 +1,10 @@
 \documentclass[11pt, a4paper]{article}
+\input{_preamble}
 
-% --- DOCUMENT VERSION CONTROL ---
-% PDF 빌드 시점의 날짜와 시간(KST, UTC+9)이 자동으로 반영됩니다
-% 참고: Overleaf 서버는 CET(UTC+1) 시간대를 사용하므로 +8로 보정합니다
-\usepackage{datetime2}
-\ExplSyntaxOn
-\int_new:N \g_kst_hour_int
-\int_new:N \g_kst_day_int
-\int_new:N \g_kst_month_int
-\int_new:N \g_kst_year_int
-\int_gset:Nn \g_kst_hour_int { \the\time / 60 + 9 }
-\int_gset:Nn \g_kst_day_int { \the\day }
-\int_gset:Nn \g_kst_month_int { \the\month }
-\int_gset:Nn \g_kst_year_int { \the\year }
-\int_compare:nNnT { \g_kst_hour_int } > { 23 }
-  {
-    \int_gadd:Nn \g_kst_hour_int { -24 }
-    \int_gincr:N \g_kst_day_int
-  }
-\newcommand{\docversion}{최종~수정:~\int_use:N \g_kst_year_int.~\int_compare:nNnTF { \g_kst_month_int } < { 10 } {0}{} \int_use:N \g_kst_month_int.~\int_compare:nNnTF { \g_kst_day_int } < { 10 } {0}{} \int_use:N \g_kst_day_int.
-  \c_space_tl \int_compare:nNnTF { \g_kst_hour_int } < { 10 } {0}{} \int_use:N \g_kst_hour_int
-  : \int_compare:nNnTF { \int_mod:nn {\the\time} {60} } < { 10 } {0}{} \int_eval:n { \int_mod:nn {\the\time} {60} }}
-\newcommand{\docdate}{\int_use:N \g_kst_year_int 년~\int_compare:nNnTF { \g_kst_month_int } < { 10 } {0}{} \int_use:N \g_kst_month_int 월~\int_compare:nNnTF { \g_kst_day_int } < { 10 } {0}{} \int_use:N \g_kst_day_int 일}
-\ExplSyntaxOff
-\newcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
+% --- 문서별 메타데이터 ---
+\renewcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
 
-% --- UNIVERSAL PREAMBLE BLOCK ---
-\usepackage[a4paper, top=3cm, bottom=3cm, left=2.5cm, right=2.5cm, headheight=14pt]{geometry}
-\usepackage{fontspec}
-
-% Language setup for Korean
-\usepackage[korean, provide=*]{babel}
-
-% Fonts: Using Noto Serif for body (formal) and Noto Sans for headers
-\babelfont{rm}{Noto Serif CJK KR}
-\babelfont{sf}{Noto Sans CJK KR}
-
-% CJK 폰트는 이탤릭이 없으므로 폰트 대체 규칙 설정 (경고 방지)
-\DeclareFontShape{TU}{NotoSerifCJKKR(0)}{m}{it}{<->ssub*NotoSerifCJKKR(0)/m/n}{}
-\DeclareFontShape{TU}{NotoSerifCJKKR(0)}{m}{sl}{<->ssub*NotoSerifCJKKR(0)/m/n}{}
-\DeclareFontShape{TU}{NotoSerifCJKKR(0)}{bx}{it}{<->ssub*NotoSerifCJKKR(0)/bx/n}{}
-\DeclareFontShape{TU}{NotoSansCJKKR(0)}{m}{it}{<->ssub*NotoSansCJKKR(0)/m/n}{}
-\DeclareFontShape{TU}{NotoSansCJKKR(0)}{m}{sl}{<->ssub*NotoSansCJKKR(0)/m/n}{}
-\DeclareFontShape{TU}{NotoSansCJKKR(0)}{bx}{it}{<->ssub*NotoSansCJKKR(0)/bx/n}{}
-
-% Essential Packages
-\usepackage{enumitem}
-\usepackage{booktabs}   % Professional tables
-\usepackage{tabularx}   % Auto-width tables
-\usepackage{titlesec}   % Section formatting
-\usepackage{xcolor}     % Colors for visual hierarchy
-\usepackage{fancyhdr}   % Headers and footers
-\usepackage{setspace}   % Line spacing
-\usepackage{longtable}  % For tables that might span pages
-\usepackage{xltabular}  % For flexible width long tables
-\usepackage{float}      % For [H] option to fix table position
-\usepackage{kotex}      % Additional Korean support insurance
-\usepackage[hidelinks]{hyperref}
-
-% --- STYLING COMMANDS ---
-
-% Define a formal navy blue for headers
-\definecolor{eduNavy}{RGB}{0, 43, 91}
-
-% Section styling
-\titleformat{\section}
-  {\Large\sffamily\bfseries\color{eduNavy}}
-  {\thesection}{1em}{}
-  [\vspace{-0.5em}\hrule height 1pt]
-
-\titleformat{\subsection}
-  {\large\sffamily\bfseries\color{eduNavy}}
-  {\thesubsection}{1em}{}
-
-% List settings
-\setlist[itemize]{label=\textbullet, leftmargin=1.5em, itemsep=0.2em}
-\setlist[enumerate]{label=\arabic*., leftmargin=1.5em, itemsep=0.2em}
-
-% Line spacing for readability
-\setstretch{1.2}
-
-% Header and Footer
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small\sffamily \authors}
-\fancyhead[R]{\small\sffamily \docversion}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.5pt}
-
-% Metadata
-\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot 웹서비스 활용 가이드 \\ \large\vspace{0.2em} \textmd{대학 구성원을 위한 교육용 라이선스 등록 및 모델 활용 매뉴얼}\vspace{-0.5em}}
+\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot 웹 활용 가이드 \\ \large\vspace{0.2em} \textmd{브라우저에서 바로 사용하는 AI 채팅 서비스}\vspace{-0.5em}}
 \author{\vspace{-0.5em}\authors}
 \date{\vspace{-0.5em}\docversion}
 
@@ -150,7 +65,7 @@ GitHub Copilot(깃허브 코파일럿)은 웹 브라우저에서 OpenAI, Google,
     \item \textbf{영문 증명 서류}: \textbf{영문(English)} 재학증명서(학생) 또는 재직증명서(교수)
     \begin{itemize}
         \item \textbf{종이 원본}과 \textbf{스캔 파일} 모두 준비 (PC 환경에 따라 카메라 촬영만 가능한 경우도 있음)
-        \item \textbf{스캔 시 중요}: 반드시 \textbf{컬러 모드}로 스캔하고 \textbf{자동 문서 보정 기능} 비활성화. 학교 로고(워터마크)가 사라지면 위조 문서로 의심받아 승인이 거절됨
+        \item \textbf{스캔 시 중요}: 반드시 \textbf{JPG 형식}으로 \textbf{컬러 모드} 스캔하고 \textbf{자동 문서 보정 기능} 비활성화. PDF는 업로드 불가. 학교 로고(워터마크)가 사라지면 위조 문서로 의심받아 승인이 거절됨.
     \end{itemize}
     \item \textbf{인증 앱}: 스마트폰에 \textit{Microsoft Authenticator} 설치 (회원가입 불필요, 설치만)
 \end{itemize}

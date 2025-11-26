@@ -1,0 +1,412 @@
+\documentclass[11pt, a4paper]{article}
+\input{_preamble}
+
+% --- 문서별 메타데이터 ---
+\renewcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
+
+\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot 맞춤 설정 가이드 \\ \large\vspace{0.2em} \textmd{프로젝트별 AI 지침 파일 작성법}\vspace{-0.5em}}
+\author{\vspace{-0.5em}\authors}
+\date{\vspace{-0.5em}\docversion}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-1.5cm}
+
+\tableofcontents
+\newpage
+
+% ==============================================================================
+\section{개요}
+% ==============================================================================
+
+\subsection{Copilot 지침 파일이란?}
+GitHub Copilot 지침 파일은 AI 어시스턴트인 Copilot에게 \textbf{``이 프로젝트에서는 이렇게 답변해줘''}라고 미리 알려주는 설정 파일입니다.
+
+\textbf{비유로 이해하기}:
+\begin{itemize}
+    \item 새로 채용한 조교에게 ``우리 연구실에서는 보고서를 이런 형식으로 작성해''라고 알려주는 매뉴얼
+    \item 학생에게 ``이 과목 리포트는 APA 형식으로 작성하세요''라고 알려주는 가이드라인
+    \item 공문 작성 시 참고하는 기관 내부 양식집
+\end{itemize}
+
+\subsection{왜 필요한가? (대학 업무 관점)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{상황} & \textbf{지침 파일 없이} & \textbf{지침 파일 있으면} \\
+        \midrule
+        연구 제안서 작성 & 매번 형식 설명 필요 & 자동으로 형식 준수 \\
+        논문 작성 & 학술 용어 번역 불일관 & 일관된 전문용어 사용 \\
+        강의자료 제작 & 학과별 스타일 무시 & 학과 맞춤형 콘텐츠 \\
+        행정 문서 & 공문서 형식 오류 & 기관 양식 자동 적용 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{주요 이점}
+\begin{itemize}
+    \item \textbf{일관성}: 동일한 프로젝트에서 항상 같은 스타일로 응답
+    \item \textbf{효율성}: 매번 같은 설명을 반복할 필요 없음
+    \item \textbf{협업}: 연구실/학과 단위로 설정 공유 가능
+    \item \textbf{맥락 이해}: 프로젝트별 특수 용어나 요구사항 자동 적용
+\end{itemize}
+
+% ==============================================================================
+\section{주요 파일 유형}
+% ==============================================================================
+
+GitHub Copilot은 네 가지 유형의 지침 파일을 지원합니다.
+
+\subsection{copilot-instructions.md (프로젝트 기본 지침)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{항목} & \textbf{내용} \\
+        \midrule
+        용도 & 프로젝트 전체에 적용되는 기본 규칙 \\
+        위치 & \texttt{.github/copilot-instructions.md} \\
+        특징 & 프로젝트 폴더를 열면 자동으로 적용, 팀원과 Git으로 공유 가능 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{예시 (연구 프로젝트용)}:
+\begin{quote}
+\texttt{\# 연구 프로젝트 기본 지침} \\
+\texttt{\#\# 프로젝트 개요} \\
+이 프로젝트는 2026년도 NRF 기초연구사업 신청을 위한 연구 제안서 작성 프로젝트입니다. \\
+\texttt{\#\# 문서 작성 원칙} \\
+- 모든 문서는 한국어로 작성 \\
+- 학술 용어는 영문 병기 (예: 인공지능(Artificial Intelligence)) \\
+- 참고문헌은 APA 7th Edition 형식 사용
+\end{quote}
+
+\subsection{Instruction Files (.instructions.md)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{항목} & \textbf{내용} \\
+        \midrule
+        용도 & 특정 파일 유형이나 폴더에만 적용되는 세부 규칙 \\
+        위치 & \texttt{.github/instructions/*.instructions.md} \\
+        특징 & \texttt{applyTo} 패턴으로 적용 범위 지정 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{예시 (논문 작성용)}:
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/paper/**/*.md"} \\
+\texttt{---} \\
+\texttt{\# 논문 작성 지침} \\
+\texttt{\#\# 구조}: 초록(200단어 이내) $\rightarrow$ 서론 $\rightarrow$ 방법 $\rightarrow$ 결과 $\rightarrow$ 논의 $\rightarrow$ 결론 \\
+\texttt{\#\# 인용 형식}: 본문 내 인용 (저자, 연도), 참고문헌 APA 7th Edition
+\end{quote}
+
+\subsection{Prompt Files (.prompt.md)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{항목} & \textbf{내용} \\
+        \midrule
+        용도 & 재사용 가능한 프롬프트 템플릿 \\
+        위치 & \texttt{.github/prompts/*.prompt.md} \\
+        특징 & 채팅창에서 \texttt{/} 명령으로 호출, 변수 사용 가능 (\texttt{\$\{selection\}}, \texttt{\$\{input:제목\}}) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{예시 (논문 요약용)}:
+\begin{quote}
+\texttt{---} \\
+\texttt{description: "학술 논문을 구조화된 형식으로 요약"} \\
+\texttt{mode: "ask"} \\
+\texttt{---} \\
+다음 논문을 요약해주세요: \texttt{\$\{selection\}} \\
+형식: 연구 목적(1-2문장), 연구 방법(3-4문장), 주요 결과(목록), 인용 정보(APA)
+\end{quote}
+
+\subsection{AGENTS.md (에이전트 모드용)}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{항목} & \textbf{내용} \\
+        \midrule
+        용도 & Copilot 에이전트 모드에서 자율적 작업 수행 시 참조 \\
+        위치 & 프로젝트 루트 또는 하위 폴더의 \texttt{AGENTS.md} \\
+        특징 & 에이전트가 코드 수정, 명령 실행 시 참조 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+% ==============================================================================
+\section{지침 설정 방법}
+% ==============================================================================
+
+\subsection{프로젝트 레벨 설정 (팀 공유용)}
+\textbf{장점}: Git으로 공유, 팀원 모두 동일 설정 사용
+
+\begin{enumerate}
+    \item 프로젝트 폴더에 \texttt{.github} 폴더 생성
+    \item \texttt{copilot-instructions.md} 파일 생성
+    \item 지침 내용 작성
+    \item Git commit하여 팀과 공유
+\end{enumerate}
+
+\textbf{권장 프로젝트 폴더 구조}:
+\begin{quote}
+\texttt{프로젝트폴더/} \\
+\texttt{├── .github/} \\
+\texttt{│   ├── copilot-instructions.md} \hfill \textit{\# 기본 지침} \\
+\texttt{│   ├── instructions/} \hfill \textit{\# 세부 지침} \\
+\texttt{│   │   ├── paper.instructions.md} \\
+\texttt{│   │   └── proposal.instructions.md} \\
+\texttt{│   └── prompts/} \hfill \textit{\# 프롬프트 템플릿} \\
+\texttt{│       ├── summarize.prompt.md} \\
+\texttt{│       └── translate.prompt.md} \\
+\texttt{└── (프로젝트 파일들...)}
+\end{quote}
+
+\subsection{개인 설정 (모든 프로젝트 적용)}
+\textbf{장점}: 한 번 설정으로 모든 프로젝트에서 사용
+
+\begin{enumerate}
+    \item VS Code 설정 열기 (\texttt{Cmd+,} 또는 \texttt{Ctrl+,})
+    \item ``copilot chat prompts'' 검색
+    \item ``Chat: Prompts Folders'' 설정에 폴더 경로 추가
+    \item 해당 폴더에 \texttt{.instructions.md} 또는 \texttt{.prompt.md} 파일 생성
+\end{enumerate}
+
+\subsection{VS Code 설정 예시}
+\begin{quote}
+\texttt{\{} \\
+\texttt{\ \ "github.copilot.chat.codeGeneration.useInstructionFiles": true,} \\
+\texttt{\ \ "chat.promptFiles.locations": [} \\
+\texttt{\ \ \ \ \{ "path": "/Users/username/my-copilot-prompts" \}} \\
+\texttt{\ \ ]} \\
+\texttt{\}}
+\end{quote}
+
+% ==============================================================================
+\section{구성원별 활용 예시}
+% ==============================================================================
+
+\subsection{교수용}
+
+\subsubsection{연구 제안서 작성 지침}
+\textbf{파일}: \texttt{.github/instructions/proposal.instructions.md}
+
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/proposal/**"} \\
+\texttt{---} \\
+\texttt{\# 연구 제안서 작성 지침} \\
+\textbf{작성 원칙}: \\
+1. 간결하고 명확한 문장: 한 문장에 하나의 아이디어만 \\
+2. 객관적 근거 제시: 주장마다 참고문헌 인용 \\
+3. 정량적 표현 선호: ``많은'' 대신 ``약 70\%의'' \\
+\textbf{필수 포함 요소}: 연구 목적, 국내외 연구 동향, 연구 내용 및 방법, 기대 효과
+\end{quote}
+
+\subsubsection{논문 작성 지침}
+\textbf{파일}: \texttt{.github/instructions/paper.instructions.md}
+
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/papers/**/*.md"} \\
+\texttt{---} \\
+\texttt{\# 학술 논문 작성 지침} \\
+\textbf{문체}: 수동태보다 능동태 선호, 1인칭 복수 사용 (We propose, Our approach) \\
+\textbf{인용 형식}: IEEE 형식 [1], [2], [3-5] / 저자 언급 시: Kim et al. [1] proposed...
+\end{quote}
+
+\subsection{학생용}
+
+\subsubsection{과제 및 리포트 작성 지침}
+\textbf{파일}: \texttt{.github/instructions/assignment.instructions.md}
+
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/assignments/**"} \\
+\texttt{---} \\
+\texttt{\# 과제 작성 지침} \\
+\textbf{기본 형식}: 맑은 고딕 11pt, 줄간격 1.5줄, 여백 상하좌우 2.5cm \\
+\textbf{AI 활용 시 주의사항}: \\
+- AI는 아이디어 브레인스토밍에 활용 \\
+- 생성된 내용 반드시 검증 \\
+- AI 활용 사실 명시 (교수님 지침 따름)
+\end{quote}
+
+\subsection{연구원용}
+
+\subsubsection{실험 보고서 작성 지침}
+\textbf{파일}: \texttt{.github/instructions/experiment.instructions.md}
+
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/experiments/**"} \\
+\texttt{---} \\
+\texttt{\# 실험 보고서 작성 지침} \\
+\textbf{보고서 구조}: 실험 개요 $\rightarrow$ 실험 환경 $\rightarrow$ 실험 방법 $\rightarrow$ 실험 결과 $\rightarrow$ 결론 \\
+\textbf{재현성 보장 체크리스트}: \\
+$\square$ 랜덤 시드 기록 / $\square$ 코드 버전 (commit hash) / $\square$ 데이터셋 버전 / $\square$ 환경 설정 파일 첨부
+\end{quote}
+
+\subsection{행정직원용}
+
+\subsubsection{공문서 작성 지침}
+\textbf{파일}: \texttt{.github/instructions/official-document.instructions.md}
+
+\begin{quote}
+\texttt{---} \\
+\texttt{applyTo: "**/documents/**"} \\
+\texttt{---} \\
+\texttt{\# 공문서 작성 지침} \\
+\textbf{문서 형식}: A4 세로, 휴먼명조 또는 바탕체, 본문 13pt, 줄간격 160\% \\
+\textbf{문체 규칙}: 경어체 사용 (\textasciitilde습니다, \textasciitilde합니다), 간결하고 명확한 표현 \\
+\textbf{날짜 표기}: 2025. 11. 26. / \textbf{금액 표기}: 금 1,000,000원(일백만 원)
+\end{quote}
+
+% ==============================================================================
+\section{applyTo 패턴 활용법}
+% ==============================================================================
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{패턴} & \textbf{설명} & \textbf{적용 대상} \\
+        \midrule
+        \texttt{**/*.md} & 모든 Markdown 파일 & 프로젝트 내 모든 .md 파일 \\
+        \texttt{**/paper/**} & paper 폴더 내 모든 파일 & paper 폴더 하위 전체 \\
+        \texttt{src/**/*.py} & src 폴더의 Python 파일 & src 하위 모든 .py 파일 \\
+        \texttt{*.{md,txt}} & 루트의 md 또는 txt & 최상위 폴더만 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{주의사항}:
+\begin{itemize}
+    \item 패턴은 프로젝트 루트 기준
+    \item 대소문자 구분 (OS에 따라 다름)
+    \item 여러 instructions 파일이 같은 파일에 적용될 수 있음
+    \item 충돌 시 더 구체적인 패턴 우선
+\end{itemize}
+
+% ==============================================================================
+\section{시작하기 (단계별 가이드)}
+% ==============================================================================
+
+\subsection{Step 1: 첫 지침 파일 만들기}
+\begin{enumerate}
+    \item \textbf{프로젝트 폴더 열기}: File $\rightarrow$ Open Folder
+    \item \textbf{\texttt{.github} 폴더 생성}: 탐색기에서 우클릭 $\rightarrow$ New Folder
+    \item \textbf{\texttt{copilot-instructions.md} 파일 생성}
+    \item \textbf{기본 템플릿 작성}:
+\end{enumerate}
+
+\begin{quote}
+\texttt{\# 프로젝트 지침} \\
+\texttt{\#\# 기본 정보} \\
+이 프로젝트는 [프로젝트 설명]을 위한 것입니다. \\
+\texttt{\#\# 작성 규칙} \\
+- 한국어로 작성 \\
+- 존댓말 사용 \\
+- 간결한 문장 선호 \\
+\texttt{\#\# 용어집} \\
+- [용어1]: [설명]
+\end{quote}
+
+\subsection{Step 2: 동작 확인}
+\begin{enumerate}
+    \item Copilot Chat 열기 (\texttt{Cmd+Shift+I} 또는 \texttt{Ctrl+Shift+I})
+    \item 테스트 질문: ``이 프로젝트에 대해 알려줘''
+    \item 지침 파일 내용이 반영되었는지 확인
+\end{enumerate}
+
+\subsection{Step 3: 활용 확장}
+\begin{enumerate}
+    \item \texttt{.github/instructions/} 폴더 생성하여 상황별 지침 추가
+    \item \texttt{.github/prompts/} 폴더 생성하여 프롬프트 템플릿 추가
+    \item VS Code 설정에서 개인 프롬프트 폴더 경로 추가 (선택)
+\end{enumerate}
+
+% ==============================================================================
+\section{자주 묻는 질문 (FAQ)}
+% ==============================================================================
+
+\subsection{Q1: 지침 파일이 적용되었는지 어떻게 확인하나요?}
+Copilot Chat에서 ``현재 적용된 지침을 알려줘''라고 물어보면 됩니다. 또는 채팅창 상단의 컨텍스트 영역에서 첨부된 파일을 확인할 수 있습니다.
+
+\subsection{Q2: 여러 지침 파일이 충돌하면 어떻게 되나요?}
+모든 해당 지침이 합쳐져서 적용됩니다. 내용이 충돌하는 경우, Copilot이 가장 관련성 높은 규칙을 선택하거나 두 규칙을 조합합니다.
+
+\subsection{Q3: 지침 파일을 팀원과 공유하려면?}
+\texttt{.github} 폴더를 Git에 커밋하면 됩니다. 팀원이 저장소를 clone하면 자동으로 같은 지침이 적용됩니다.
+
+\subsection{Q4: 지침이 너무 길면 문제가 있나요?}
+Copilot은 컨텍스트 길이에 제한이 있으므로, 핵심 내용 위주로 간결하게 작성하는 것이 좋습니다. 긴 지침보다는 여러 개의 짧은 지침 파일로 분리하세요.
+
+\subsection{Q5: 영문 응답을 한글로 바꾸고 싶어요.}
+\texttt{copilot-instructions.md}에 다음을 추가하세요:
+\begin{quote}
+\texttt{\#\# 언어 설정} \\
+- 모든 응답은 한국어로 작성 \\
+- 전문용어는 영문 병기 가능
+\end{quote}
+
+% ==============================================================================
+\section{빠른 참조}
+% ==============================================================================
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l l l X@{}}
+        \toprule
+        \textbf{파일 유형} & \textbf{확장자} & \textbf{위치} & \textbf{용도} \\
+        \midrule
+        기본 지침 & \texttt{copilot-instructions.md} & \texttt{.github/} & 프로젝트 전체 규칙 \\
+        세부 지침 & \texttt{*.instructions.md} & \texttt{.github/instructions/} & 특정 파일/폴더 규칙 \\
+        프롬프트 & \texttt{*.prompt.md} & \texttt{.github/prompts/} & 재사용 템플릿 \\
+        에이전트 & \texttt{AGENTS.md} & 루트 또는 하위 폴더 & 에이전트 모드 지침 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{동작} & \textbf{Mac} & \textbf{Windows} \\
+        \midrule
+        Copilot Chat 열기 & \texttt{Cmd+Shift+I} & \texttt{Ctrl+Shift+I} \\
+        인라인 제안 수락 & \texttt{Tab} & \texttt{Tab} \\
+        다음 제안 & \texttt{Alt+]} & \texttt{Alt+]} \\
+        이전 제안 & \texttt{Alt+[} & \texttt{Alt+[} \\
+        제안 거부 & \texttt{Esc} & \texttt{Esc} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\end{document}

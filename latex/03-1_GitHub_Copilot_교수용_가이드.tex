@@ -1,0 +1,374 @@
+\documentclass[11pt, a4paper]{article}
+\input{_preamble}
+
+% --- 문서별 메타데이터 ---
+\renewcommand{\authors}{동의대학교 서진석(jsseo@deu.ac.kr)}
+
+\title{\vspace{-2.5cm} \Huge\sffamily\bfseries GitHub Copilot 교수용 가이드 \\ \large\vspace{0.2em} \textmd{강의 및 연구를 위한 AI 활용법}\vspace{-0.5em}}
+\author{\vspace{-0.5em}\authors}
+\date{\vspace{-0.5em}\docversion}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\vspace{-1.5cm}
+
+\tableofcontents
+\newpage
+
+% ==============================================================================
+\section{연구윤리 및 보안}
+% ==============================================================================
+
+\subsection{보안: 기업용 vs 무료 버전}
+연구 데이터의 보안에 대해 걱정하시는 교수님들이 많습니다. \textbf{기업용(Enterprise) 버전}은 다릅니다.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l X X@{}}
+        \toprule
+        \textbf{구분} & \textbf{무료 버전 (일반용)} & \textbf{기업용 버전 (Copilot)} \\
+        \midrule
+        데이터 학습 & 사용자 데이터를 학습에 사용 & \textbf{절대 학습하지 않음} \\
+        데이터 처리 & 서버에 저장될 수 있음 & 암호화 처리 후 즉시 폐기 \\
+        권장 & 민감 정보 입력 금지 & 연구 자료 입력 가능 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\subsection{AI 생성 콘텐츠와 학술적 정직성}
+
+\subsubsection{절대 금지 사항}
+\begin{itemize}
+    \item \textbf{AI 생성 콘텐츠 그대로 제출 금지}: AI가 생성한 논문, 보고서, 연구 계획서를 본인 저작물로 제출하는 것은 \textbf{표절}입니다.
+    \item \textbf{학생 과제 평가 시 주의}: AI로 작성 가능한 과제는 학생도 AI를 사용할 수 있습니다. 평가 방식을 재고하세요.
+\end{itemize}
+
+\subsubsection{권장 사용 방법}
+\begin{itemize}
+    \item \textbf{초안 작성 도우미}: AI로 아이디어를 브레인스토밍하고, 본인이 직접 검토·수정·보완
+    \item \textbf{문법 및 표현 개선}: 본인이 작성한 텍스트의 문법 오류나 표현을 다듬는 용도로 활용
+    \item \textbf{명시적 인용}: AI 도구를 사용했다면 각주나 방법론에 명시 \\
+    (예: "본 문서는 GitHub Copilot을 보조 도구로 활용하여 작성되었습니다.")
+\end{itemize}
+
+\subsubsection{학생의 AI 사용 감지 FAQ}
+\textbf{Q: "학생이 AI를 사용했는지 어떻게 알 수 있나요?"}
+
+\begin{itemize}
+    \item \textbf{AI 탐지 도구는 불완전}: GPTZero, Turnitin 등의 탐지 도구는 오탐(false positive)률이 높습니다.
+    \item \textbf{대안: 과정 중심 평가}: 최종 결과물만이 아닌, 작성 과정(초안$\rightarrow$수정본)을 함께 제출받으세요.
+    \item \textbf{구두 발표 추가}: 과제 내용에 대한 즉석 질문이나 발표를 통해 이해도를 확인하세요.
+\end{itemize}
+
+\subsection{학생 데이터 프라이버시 (개인정보 보호)}
+
+\subsubsection{준수해야 할 법률}
+\begin{itemize}
+    \item \textbf{미국 FERPA}: 학생 교육 기록의 프라이버시 보호 (Family Educational Rights and Privacy Act)
+    \item \textbf{한국 개인정보보호법}: 학생의 성명, 학번, 성적 등은 민감 정보로 분류
+\end{itemize}
+
+\subsubsection{안전한 사용법}
+\begin{itemize}
+    \item \textbf{익명화 필수}: 학생 이름 대신 "학생A", "학생B" 또는 "학번 마스킹(202X****)" 사용
+    \item \textbf{성적 데이터 금지}: 개별 학생의 점수, 평가 내역은 AI에 입력하지 마세요
+    \item \textbf{대안: 집합 데이터}: "30명 학생 중 15명이 80점 이상"과 같은 통계적 요약만 사용
+\end{itemize}
+
+% ==============================================================================
+\section{기본 사용법}
+% ==============================================================================
+
+\subsection{설치 및 설정}
+\begin{enumerate}
+    \item \textbf{Visual Studio Code 설치}: \href{https://code.visualstudio.com}{code.visualstudio.com}에서 다운로드 및 설치
+    \item \textbf{GitHub Copilot 확장 프로그램}: VS Code 왼쪽 `블록 아이콘(Extensions)' 클릭 $\rightarrow$ \texttt{GitHub Copilot} 검색 및 설치
+    \item \textbf{로그인}: 좌측 하단 프로필 아이콘을 눌러 GitHub 계정으로 로그인
+\end{enumerate}
+
+\textit{※ 중요: 2025년 버전부터는 `Copilot Chat'이 통합되어 별도 설치가 필요 없습니다.}
+
+\subsection{채팅 vs 자동완성}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{기능} & \textbf{단축키} & \textbf{용도} \\
+        \midrule
+        대화형 (Chat) & \texttt{Ctrl/Cmd + Alt + I} & 질문, 요약, 초안 생성, 복잡한 요청 \\
+        자동완성 (Ghost Text) & \texttt{Tab} 키로 수락 & 다음 문장 예측, 표 자동 채우기, 반복 패턴 완성 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+% ==============================================================================
+\section{학문 분야별 활용}
+% ==============================================================================
+
+\subsection{인문학: 문학 작품 분석 루브릭}
+\textbf{시나리오}: 세익스피어 희곡 분석 과제의 평가 기준표 작성
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"저는 영문학과 교수입니다. 학부생 대상 `햄릿' 분석 과제에 대한 평가 루브릭을 작성해주세요.
+
+평가 항목:
+\begin{enumerate}
+    \item 주제 분석 (30점) - 복수, 광기, 도덕적 딜레마
+    \item 인물 분석 (25점) - 햄릿의 심리 변화
+    \item 문학적 기법 (25점) - 독백, 상징, 비극적 결함
+    \item 학술적 논증 (20점) - 논리성, 근거 제시
+\end{enumerate}
+각 항목별로 우수/보통/미흡 기준을 구체적으로 작성해주세요."
+\end{quote}
+
+\subsection{사회과학: 질적 연구 데이터 코딩}
+\textbf{시나리오}: 인터뷰 녹취록에서 반복되는 주제 추출
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"저는 사회학과 교수로 노인 고독에 관한 질적 연구를 진행 중입니다. 아래 3명의 인터뷰 녹취록에서 공통 주제(themes)를 추출하고, 각 주제별 대표 인용구(quotes)를 정리해주세요.
+
+산출물 형식:
+\begin{itemize}
+    \item 주제 1: [제목]
+    \item 설명: [2문장]
+    \item 대표 인용: "..." (참가자 A)
+\end{itemize}"
+\end{quote}
+
+\subsection{자연과학: 실험 보고서 구조화}
+\textbf{시나리오}: 학생 제출 실험 보고서의 구조적 문제 진단
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"저는 화학과 교수입니다. 학생이 제출한 적정 실험 보고서를 검토해주세요.
+
+다음 관점에서 분석:
+\begin{enumerate}
+    \item IMRaD 구조 준수 여부 (Introduction-Methods-Results-Discussion)
+    \item 실험 방법의 재현 가능성
+    \item 데이터 표와 그래프의 적절성
+    \item 오차 분석 및 한계점 언급
+\end{enumerate}
+각 항목에 대해 `잘함' / `개선 필요'로 평가하고, 개선이 필요한 부분은 구체적인 수정 제안을 해주세요."
+\end{quote}
+
+\subsection{공학: 설계 문서 검토}
+\textbf{시나리오}: 캡스톤 프로젝트 설계 문서의 기술적 타당성 평가
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"저는 전기공학과 교수입니다. 학생팀의 `스마트 에너지 관리 시스템' 설계서를 검토해주세요.
+
+검토 항목:
+\begin{enumerate}
+    \item 시스템 아키텍처 (센서-마이크로컨트롤러-서버 연결)
+    \item 전력 소모 계산의 정확성
+    \item 보안 프로토콜 (데이터 암호화)
+    \item 비용 대비 효과
+    \item 제작 가능성 (부품 조달, 일정)
+\end{enumerate}
+각 항목별 점수(1-5점)와 개선 제안을 표 형식으로 정리해주세요."
+\end{quote}
+
+\subsection{예술: 작품 평가 기준 작성}
+\textbf{시나리오}: 시각예술 전공 학생의 포트폴리오 평가 기준 마련
+
+\textbf{평가 영역}:
+\begin{enumerate}
+    \item \textbf{독창성 (Originality)} - 30\%: 주제의 신선함, 표현 방식의 참신함
+    \item \textbf{기술적 완성도 (Technical Proficiency)} - 25\%: 재료 활용, 표현 기법 숙련도
+    \item \textbf{개념적 깊이 (Conceptual Depth)} - 25\%: 작가 노트와 작품의 연계성
+    \item \textbf{전시 구성 (Exhibition Composition)} - 20\%: 작품 간 조화, 공간 활용
+\end{enumerate}
+
+% ==============================================================================
+\section{교육학 프레임워크 적용}
+% ==============================================================================
+
+\subsection{Bloom's Taxonomy 기반 학습목표}
+Bloom의 교육목표 분류법은 학습 목표를 6단계 인지적 영역으로 구분합니다.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \small
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{단계} & \textbf{영문} & \textbf{동사 예시} \\
+        \midrule
+        1. 기억하기 & Remember & 정의하다, 나열하다, 식별하다, 암기하다 \\
+        2. 이해하기 & Understand & 설명하다, 요약하다, 분류하다, 비유하다 \\
+        3. 적용하기 & Apply & 적용하다, 실행하다, 해결하다, 시연하다 \\
+        4. 분석하기 & Analyze & 분석하다, 비교하다, 대조하다, 구분하다 \\
+        5. 평가하기 & Evaluate & 평가하다, 비판하다, 판단하다, 정당화하다 \\
+        6. 창조하기 & Create & 설계하다, 구성하다, 개발하다, 창조하다 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\textbf{Copilot 활용 프롬프트}:
+\begin{quote}
+"저는 교육심리학과 교수입니다. `학습 동기 이론' 3주차 강의의 학습 목표를 Bloom의 교육목표 분류법 기반으로 작성해주세요. 각 목표는 `학생은 \textasciitilde할 수 있다' 형식으로 시작하고, 측정 가능한(measurable) 동사를 사용해주세요."
+\end{quote}
+
+\subsection{Backward Design 강의 설계}
+Backward Design은 최종 학습 성과에서 역으로 설계하는 3단계 접근법입니다.
+
+\begin{enumerate}
+    \item \textbf{Step 1 - 학습 성과 정의}: 학기말 학생이 무엇을 알아야 하나?
+    \item \textbf{Step 2 - 평가 방법 설계}: 어떻게 성취를 확인할 것인가?
+    \item \textbf{Step 3 - 학습 활동 계획}: 목표 달성을 위한 수업은?
+\end{enumerate}
+
+\subsection{Constructive Alignment 체크리스트}
+Constructive Alignment는 학습 목표-교수 활동-평가 방법의 일치를 확인하는 원리입니다.
+
+\textbf{검토 예시}:
+\begin{quote}
+"다음 강의 요소가 Constructive Alignment 원리에 맞게 정렬되었는지 검토하고, 개선점을 제안해주세요.
+\begin{itemize}
+    \item \textbf{학습 목표}: "학생은 SWOT 분석을 실제 기업에 적용할 수 있다."
+    \item \textbf{교수 활동}: "SWOT 분석의 정의와 이론을 강의식으로 설명한다."
+    \item \textbf{평가 방법}: "4지선다형 객관식 시험으로 SWOT의 정의를 묻는다."
+\end{itemize}
+분석 결과: 정렬 상태, 문제점, 개선안"
+\end{quote}
+
+\subsection{학술 인용 자동화 (APA/MLA)}
+\textbf{APA 7판 프롬프트 예시}:
+\begin{quote}
+"아래 참고문헌을 APA 7판 형식으로 변환해주세요:
+\begin{enumerate}
+    \item 저자: Smith, J. / 출판년도: 2023 / 제목: The future of AI / 출판사: MIT Press
+    \item 저자: Lee, K. \& Park, M. / 출판년도: 2022 / 논문 제목: Machine learning applications / 학술지: Journal of Education / 권: 45 / 호: 3 / 페이지: 120-135
+\end{enumerate}"
+\end{quote}
+
+% ==============================================================================
+\section{LMS 연계}
+% ==============================================================================
+
+\subsection{Canvas LMS 연계}
+\textbf{SpeedGrader 워크플로우}:
+\begin{enumerate}
+    \item Canvas에서 과제 제출물 다운로드 (일괄 ZIP)
+    \item VS Code에서 폴더 열기
+    \item Copilot으로 각 파일 검토 및 피드백 초안 생성
+    \item 생성된 피드백을 SpeedGrader에 붙여넣기
+\end{enumerate}
+
+\textbf{프롬프트 예시}:
+\begin{quote}
+"이 학생의 에세이에 대해 Canvas SpeedGrader용 피드백을 작성해주세요:
+\begin{itemize}
+    \item 강점 2가지
+    \item 개선점 2가지
+    \item 점수: /100점
+\end{itemize}
+어조는 격려하되 구체적으로 작성해주세요."
+\end{quote}
+
+\subsection{Blackboard 연계}
+\textbf{루브릭 변환}:
+\begin{quote}
+"아래 평가 기준을 Blackboard 루브릭 임포트 형식(CSV)으로 변환해주세요:
+\begin{itemize}
+    \item 항목 1: 논증의 명확성 (30점)
+    \item 항목 2: 근거 제시 (25점)
+    \item 항목 3: 문법 및 구조 (20점)
+    \item 항목 4: 참고문헌 인용 (25점)
+\end{itemize}
+각 항목별로 4단계 기준 포함"
+\end{quote}
+
+\subsection{Moodle 연계}
+\textbf{XML 퀴즈 생성}:
+\begin{quote}
+"아래 내용을 Moodle XML 퀴즈 형식으로 변환해주세요:
+\begin{itemize}
+    \item 객관식 문제 5개 (4지선다)
+    \item 진위형 문제 3개
+    \item 단답형 문제 2개
+\end{itemize}
+주제: 교육심리학 - 동기 이론"
+\end{quote}
+
+% ==============================================================================
+\section{부록}
+% ==============================================================================
+
+\subsection{학문 분야별 Instructions 템플릿}
+
+\subsubsection{인문학 템플릿}
+프로젝트 폴더에 \texttt{.github/copilot-instructions.md} 파일을 생성:
+\begin{quote}
+\small
+\begin{verbatim}
+# 영문학과 강의 AI 지침
+## 1. 글쓰기 스타일
+- 학술적 어조 유지
+- MLA 9판 인용 형식 사용
+- 비평 용어 정확히 사용
+
+## 2. 분석 방법
+- 텍스트 근거 기반 논증
+- 역사적/문화적 맥락 고려
+- 다양한 비평 관점 제시
+\end{verbatim}
+\end{quote}
+
+\subsubsection{사회과학 템플릿}
+\begin{quote}
+\small
+\begin{verbatim}
+# 사회학과 강의 AI 지침
+## 1. 연구 방법론
+- APA 7판 인용 형식 사용
+- 통계 용어 정확히 사용
+
+## 2. 데이터 처리
+- 학생 정보 익명화 필수
+- 집합 데이터만 사용
+\end{verbatim}
+\end{quote}
+
+\subsection{교육용 프롬프트 사전}
+\begin{itemize}
+    \item \textbf{강의계획서}: "이 강의의 16주차 일정표를 표 형식으로 작성해주세요. 각 주차별로 주제, 학습 목표, 과제를 포함해주세요."
+    \item \textbf{평가 루브릭}: "이 과제에 대한 5단계 평가 루브릭을 작성해주세요. 각 항목별 점수 배점과 구체적인 기준을 포함해주세요."
+    \item \textbf{피드백 작성}: "이 학생의 보고서에 대해 건설적인 피드백을 작성해주세요. 강점과 개선점을 균형 있게 포함해주세요."
+    \item \textbf{퀴즈 생성}: "이 주제에 대한 객관식 문제 10개를 생성해주세요. 난이도는 중급으로 설정해주세요."
+\end{itemize}
+
+\subsection{단축키 요약}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\textwidth}{@{}l X@{}}
+        \toprule
+        \textbf{단축키} & \textbf{기능} \\
+        \midrule
+        \texttt{Ctrl/Cmd + Alt + I} & Copilot 채팅창 열기/닫기 \\
+        \texttt{Tab} & 자동완성 제안 수락 \\
+        \texttt{Esc} & 자동완성 제안 무시 \\
+        \texttt{\#} & 채팅창에서 파일 참조 \\
+        \texttt{@} & 에이전트 호출 (@workspace, @terminal 등) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+\vspace{1em}
+\hrule
+\vspace{0.5em}
+
+\section*{유의 사항}
+\small
+본 문서는 작성 시점(\docdate) 기준이며, GitHub Copilot의 정책 및 기능은 변경될 수 있습니다. AI 도구 사용 시 연구윤리 및 개인정보보호법을 준수하십시오. 최신 정보는 공식 문서(\href{https://docs.github.com/en/copilot}{docs.github.com/copilot})를 참조하십시오.
+
+\end{document}

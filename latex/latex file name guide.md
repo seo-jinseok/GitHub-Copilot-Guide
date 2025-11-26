@@ -1,10 +1,38 @@
-# LaTeX 파일 명명 규칙
+# LaTeX 문서 시리즈 가이드
 
-| 번호 | 파일명 | 문서 제목 |
-|------|--------|----------|
-| 01 | `01_GitHub_Copilot_웹서비스_가이드.tex` | GitHub Copilot 웹서비스 활용 가이드 |
-| 02 | `02_GitHub_Copilot_VSCode_가이드.tex` | GitHub Copilot VS Code 확장 활용 가이드 |
-| 03-1 | `03-1_GitHub_Copilot_교수용_가이드.tex` | GitHub Copilot 교수용 활용 가이드 |
-| 03-2 | `03-2_GitHub_Copilot_학생용_가이드.tex` | GitHub Copilot 학생용 활용 가이드 |
-| 03-3 | `03-3_GitHub_Copilot_연구원용_가이드.tex` | GitHub Copilot 연구원용 활용 가이드 |
-| 03-4 | `03-4_GitHub_Copilot_행정직원용_가이드.tex` | GitHub Copilot 행정직원용 활용 가이드 |
+## 파일 구성
+
+| 번호 | 파일명 | 문서 제목 | 부제목 | 단계 |
+|------|--------|----------|--------|------|
+| 01 | `01_GitHub_Copilot_웹_가이드.tex` | GitHub Copilot 웹 활용 가이드 | 브라우저에서 바로 사용하는 AI 채팅 서비스 | 기초 |
+| 02 | `02_GitHub_Copilot_VSCode_가이드.tex` | GitHub Copilot VS Code 가이드 | AI와 함께 문서 작성하기 | 중급 |
+| 03-1 | `03-1_GitHub_Copilot_교수용_가이드.tex` | GitHub Copilot 교수용 가이드 | 강의 및 연구를 위한 AI 활용법 | 실무 |
+| 03-2 | `03-2_GitHub_Copilot_학생용_가이드.tex` | GitHub Copilot 학생용 가이드 | 학습 및 과제를 위한 AI 활용법 | 실무 |
+| 03-3 | `03-3_GitHub_Copilot_연구원용_가이드.tex` | GitHub Copilot 연구원용 가이드 | 연구 및 논문 작성을 위한 AI 활용법 | 실무 |
+| 03-4 | `03-4_GitHub_Copilot_행정직원용_가이드.tex` | GitHub Copilot 행정직원용 가이드 | 행정 업무를 위한 AI 활용법 | 실무 |
+| 04 | `04_GitHub_Copilot_지침파일_가이드.tex` | GitHub Copilot 맞춤 설정 가이드 | 프로젝트별 AI 지침 파일 작성법 | 심화 |
+
+## 학습 경로
+
+```
+01 (웹) ─────────────────────────────────────→ [기초 완료]
+    │
+    ▼
+02 (VS Code) ────────────────────────────────→ [중급 완료]
+    │
+    ├──→ 03-1 (교수용)
+    ├──→ 03-2 (학생용)      ─→ 역할별 실무 활용
+    ├──→ 03-3 (연구원용)
+    └──→ 03-4 (행정직원용)
+              │
+              ▼
+           04 (지침 파일) ──────────────────→ [심화/고급]
+```
+
+## 명명 규칙
+
+| 항목 | 규칙 |
+|------|------|
+| 파일명 접두사 | 2자리 번호 + 언더스코어 (예: `01_`, `03-1_`) |
+| 제목 형식 | `GitHub Copilot [대상/기능] 가이드` |
+| 부제목 형식 | 핵심 목적을 한 문장으로 |
