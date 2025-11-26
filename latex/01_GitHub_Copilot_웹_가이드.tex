@@ -30,12 +30,16 @@ GitHub Copilot(깃허브 코파일럿)은 웹 브라우저에서 OpenAI, Google,
     \renewcommand{\arraystretch}{1.1}
     \begin{tabularx}{\textwidth}{@{}l l X@{}}
         \toprule
-        \textbf{구분} & \textbf{신청 가능 여부} & \textbf{비고} \\
+        \textbf{구분} & \textbf{신청 가능 여부} & \textbf{필요 서류 및 비고} \\
         \midrule
-        학생(학부/대학원) & \textbf{가능} & 영문 재학증명서 제출 필요 \\
-        교수 & \textbf{가능} & 영문 재직증명서 제출 필요 \\
-        연구원 & 직접 확인 필요 & 승인 사례가 일관되지 않음 \\
-        행정 직원 & 불가 & 별도의 유료 라이선스 구매 필요 \\
+        학부생 & \textbf{가능} & 영문 재학증명서 \\
+        대학원생 (석사/박사) & \textbf{가능} & 영문 재학증명서 \\
+        전임교원 & \textbf{가능} & 영문 재직증명서 \\
+        비전임교원 (강사, 겸임) & 직접 확인 필요 & 승인 사례 불일치 \\
+        연구원 & 직접 확인 필요 & 고용 형태에 따라 다름 \\
+        행정 직원 & \textbf{불가} & 유료 라이선스 구매 필요 \\
+        휴학생 & \textbf{불가} & 복학 후 재학증명서로 신청 \\
+        졸업생 & \textbf{불가} & 재학 중에만 사용 가능 \\
         \bottomrule
     \end{tabularx}
 \end{table}
@@ -79,12 +83,85 @@ GitHub Copilot(깃허브 코파일럿)은 웹 브라우저에서 OpenAI, Google,
     \begin{itemize}
         \item 프로필 $\rightarrow$ \textbf{Settings} $\rightarrow$ \textbf{Password and authentication} $\rightarrow$ \textbf{Two-factor authentication} 활성화
         \item Authenticator 앱에서 QR 코드 스캔 후 6자리 숫자 입력
-        \item \textit{주의: 복구 코드는 반드시 별도 저장 (USB, 클라우드, 인쇄물)}
+        \item \textbf{복구 코드 저장 (필수)}:
+        \begin{itemize}
+            \item 6자리 인증 코드 입력 후 \textbf{복구 코드 다운로드} 화면이 표시됨
+            \item 반드시 \textbf{Download} 버튼을 클릭하여 파일로 저장
+            \item 저장 위치: USB, 클라우드(OneDrive, Google Drive), 또는 인쇄물
+            \item \textbf{복구 코드가 필요한 상황}:
+            \begin{itemize}
+                \item 휴대폰 분실 또는 교체 시
+                \item 인증 앱(예: Microsoft Authenticator) 삭제 시
+                \item 인증 앱 데이터 초기화 시
+            \end{itemize}
+            \item \textit{주의: 복구 코드 없이 인증 수단을 분실하면 계정 접근이 영구적으로 불가능해질 수 있음}
+            \item \textit{권장: 복구 코드 화면을 캡처하여 별도 보관}
+        \end{itemize}
     \end{itemize}
-    \item \textbf{GitHub Education 신청}: \href{https://github.com/education}{github.com/education} 접속 $\rightarrow$ \textbf{Join GitHub Education}
-    \item \textbf{인증}: 신분(Student/Teacher) 선택, 브라우저 위치 공유 허용 (거부 시 신청 거절)
+
+\begin{tcolorbox}[colback=yellow!10, colframe=yellow!50!black, title=참고: 2FA와 비밀번호의 차이]
+\begin{itemize}
+    \item \textbf{비밀번호 분실}: 이메일로 비밀번호 재설정 가능
+    \item \textbf{2FA 인증 수단 분실}: 복구 코드가 유일한 대안
+\end{itemize}
+GitHub는 보안상 2FA를 우회하는 다른 방법을 제공하지 않으므로, 복구 코드 보관이 필수입니다.
+\end{tcolorbox}
+    \item \textbf{GitHub Education 신청}: GitHub 웹페이지에 로그인 된 상태에서 $\rightarrow$ 웹 브라우저 주소창에 다음 주소 입력(\href{https://github.com/education}{github.com/education} $\rightarrow$ \textbf{Join GitHub Education} 버튼 클릭 $\rightarrow$ (다음 웹 페이지에서) \textbf{Start an application} 버튼 클릭
+    \item \textbf{학교 선택}:
+    \begin{itemize}
+        \item 신분(Student/Teacher) 선택 후 학교 검색 화면이 표시됨
+        \item 브라우저 위치 공유 허용 (거부 시 신청 거절)
+        \item \textbf{자동 검색되는 경우}: 목록에서 학교를 찾아 \textbf{Select this school} 클릭
+        \item \textbf{검색되지 않는 경우}: 
+        \begin{enumerate}
+            \item 검색창에 \textbf{Dong-eui University} 직접 입력
+            \item 여전히 없으면 \textbf{I don't see my school} 또는 수동 입력 옵션 선택
+            \item ``How would you describe your school?''에서 \textbf{Higher-education: university college} 선택
+            \item City란에 \textbf{Busan} 입력
+            \item Country란에 \textbf{Korea, South} 선택
+            \item \textbf{Submit} 버튼 클릭
+        \end{enumerate}
+    \end{itemize}
     \item \textbf{서류 제출}: 영문 증명서 업로드 또는 카메라 촬영 후 \textbf{Submit}
 \end{enumerate}
+
+\subsection{증명서 스캔 시 주의사항}
+\begin{itemize}
+    \item \textbf{파일 형식}: \textbf{JPG 형식 필수} (PDF 업로드 불가)
+    \item \textbf{스캔 모드}: \textbf{컬러 모드}로 스캔 (흑백/그레이스케일 금지)
+    \item \textbf{자동 보정 기능 비활성화}: 
+    \begin{itemize}
+        \item 스캐너 소프트웨어에서 ``자동 문서 보정'', ``배경 제거'', ``화이트 밸런스'' 등의 기능을 \textbf{끄기}
+        \item 이 기능이 켜져 있으면 학교 로고(워터마크)가 흰색으로 처리되어 사라짐
+        \item 로고가 없으면 위조 문서로 의심받아 \textbf{승인 거절} 가능
+    \end{itemize}
+    \item \textbf{해상도}: 150-300 DPI 권장
+    \item \textbf{파일 크기}: 10MB 이하
+\end{itemize}
+
+\textbf{스캔이 어려운 경우}: 스마트폰 카메라로 촬영 가능 (평평한 곳에 증명서를 놓고 그림자 없이 촬영)
+
+\subsection{GitHub 영문 인터페이스 안내}
+GitHub은 영문으로 제공됩니다. 주요 메뉴 번역을 참고하십시오:
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{@{}l l X@{}}
+        \toprule
+        \textbf{영문} & \textbf{한국어} & \textbf{위치/용도} \\
+        \midrule
+        Sign up & 회원가입 & 첫 화면 우측 상단 \\
+        Sign in & 로그인 & 첫 화면 우측 상단 \\
+        Settings & 설정 & 프로필 아이콘 클릭 후 메뉴 \\
+        Profile & 프로필 & 개인정보 설정 \\
+        Billing & 결제 & 결제 정보 설정 \\
+        Password and authentication & 비밀번호 및 인증 & 2단계 인증 설정 \\
+        Submit & 제출 & 신청서 제출 버튼 \\
+        Download & 다운로드 & 복구 코드 저장 버튼 \\
+        Enable two-factor authentication & 2단계 인증 활성화 & 보안 설정 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
 
 \section{설정 및 활용 방법}
 승인 완료 후 \href{https://github.com/copilot}{copilot.github.com}에서 AI 기능을 사용할 수 있습니다.

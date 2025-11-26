@@ -5,4 +5,4 @@
 5. GitHub 사이트가 영문으로 되어있어서 처음할때 좀 어려울것 같다.
 6. 2.2 등록절차 부분에 웹페이지이 캡쳐화면을 넣어주면 좀 더 이해하기 쉬울 것 같다.
 7. 지원자격이 조금 더 구체적이면 좋을것 같다.
-8.
+   8.(2.2의 6)에서 신분을 선택한 후에 학교가 자동으로 검색되는 경우도 있으나(이 경우 "Select this school" 버튼 클릭), 직접 학교를 검색해야 하는 경우도 있음(Dong-eui University로 검색해야 할 경우도 있음) -> 검색이 안되는 경우 직접 입력(Dong-eui University) -> "How would you describe your school?"에 대한 답변으로 "Higher-education: university college" 선택 -> City란에 "Busan" 입력 -> Country란에 "Korea, South" 선택 -> "Submit" 버튼 클릭
