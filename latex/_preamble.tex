@@ -4,27 +4,18 @@
 % =============================================================================
 
 % --- DOCUMENT VERSION CONTROL ---
-% PDF 빌드 시점의 날짜와 시간(KST, UTC+9)이 자동으로 반영됩니다
-% 참고: Overleaf 서버는 CET(UTC+1) 시간대를 사용하므로 +8로 보정합니다
+% PDF 빌드 시점의 날짜와 시간이 자동으로 반영됩니다
+% 로컬 macOS 빌드 환경 기준 (시스템 시간대 사용)
 \usepackage{datetime2}
 \ExplSyntaxOn
-\int_new:N \g_kst_hour_int
-\int_new:N \g_kst_day_int
-\int_new:N \g_kst_month_int
-\int_new:N \g_kst_year_int
-\int_gset:Nn \g_kst_hour_int { \the\time / 60 + 9 }
-\int_gset:Nn \g_kst_day_int { \the\day }
-\int_gset:Nn \g_kst_month_int { \the\month }
-\int_gset:Nn \g_kst_year_int { \the\year }
-\int_compare:nNnT { \g_kst_hour_int } > { 23 }
-  {
-    \int_gadd:Nn \g_kst_hour_int { -24 }
-    \int_gincr:N \g_kst_day_int
-  }
-\newcommand{\docversion}{최종~수정:~\int_use:N \g_kst_year_int.~\int_compare:nNnTF { \g_kst_month_int } < { 10 } {0}{} \int_use:N \g_kst_month_int.~\int_compare:nNnTF { \g_kst_day_int } < { 10 } {0}{} \int_use:N \g_kst_day_int.
-  \c_space_tl \int_compare:nNnTF { \g_kst_hour_int } < { 10 } {0}{} \int_use:N \g_kst_hour_int
-  : \int_compare:nNnTF { \int_mod:nn {\the\time} {60} } < { 10 } {0}{} \int_eval:n { \int_mod:nn {\the\time} {60} }}
-\newcommand{\docdate}{\int_use:N \g_kst_year_int 년~\int_compare:nNnTF { \g_kst_month_int } < { 10 } {0}{} \int_use:N \g_kst_month_int 월~\int_compare:nNnTF { \g_kst_day_int } < { 10 } {0}{} \int_use:N \g_kst_day_int 일}
+\int_new:N \g_local_hour_int
+\int_new:N \g_local_minute_int
+\int_gset:Nn \g_local_hour_int { \the\time / 60 }
+\int_gset:Nn \g_local_minute_int { \int_mod:nn {\the\time} {60} }
+\newcommand{\docversion}{최종~수정:~\the\year.~\int_compare:nNnTF { \the\month } < { 10 } {0}{} \the\month.~\int_compare:nNnTF { \the\day } < { 10 } {0}{} \the\day.
+  \c_space_tl \int_compare:nNnTF { \g_local_hour_int } < { 10 } {0}{} \int_use:N \g_local_hour_int
+  : \int_compare:nNnTF { \g_local_minute_int } < { 10 } {0}{} \int_use:N \g_local_minute_int}
+\newcommand{\docdate}{\the\year 년~\int_compare:nNnTF { \the\month } < { 10 } {0}{} \the\month 월~\int_compare:nNnTF { \the\day } < { 10 } {0}{} \the\day 일}
 \ExplSyntaxOff
 
 % --- 저자 정보 (각 문서에서 재정의 가능) ---
@@ -57,12 +48,38 @@
 \usepackage{xcolor}     % Colors for visual hierarchy
 \usepackage{fancyhdr}   % Headers and footers
 \usepackage{setspace}   % Line spacing
+\usepackage{amssymb}    % Math symbols (e.g., \square)
 \usepackage{longtable}  % For tables that might span pages
 \usepackage{xltabular}  % For flexible width long tables
 \usepackage{float}      % For [H] option to fix table position
 \usepackage{kotex}      % Additional Korean support insurance
 \usepackage[hidelinks]{hyperref}
 \usepackage{tcolorbox}  % For colored info boxes
+\usepackage{graphicx}   % For image insertion
+\usepackage{grffile}    % Extended file name support for graphics
+
+% --- IMAGE PATH CONFIGURATION ---
+\graphicspath{{images/}{images/common/}}
+
+% Conditional inline image macro: displays image if exists, shows placeholder text if not
+% Usage: \inlineImage{filename} or \inlineImage[width=0.5\textwidth]{filename}
+\newcommand{\inlineImage}[2][width=0.85\textwidth]{%
+  \IfFileExists{images/01-web/#2}{%
+    \begin{center}
+      \includegraphics[#1]{images/01-web/#2}
+    \end{center}
+  }{%
+    \IfFileExists{images/#2}{%
+      \begin{center}
+        \includegraphics[#1]{images/#2}
+      \end{center}
+    }{%
+      \begin{center}
+        \fbox{\parbox{0.8\textwidth}{\centering\textit{[이미지: #2]}\\(이미지 파일 추가 예정)}}
+      \end{center}
+    }%
+  }%
+}
 
 % --- STYLING COMMANDS ---
 

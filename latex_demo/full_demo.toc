@@ -1,0 +1,52 @@
+\babel@toc {korean}{}\relax 
+\contentsline {section}{\numberline {1}폰트 쇼케이스 / Font Showcase}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}한글 폰트 (Korean Fonts)}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}영문 폰트 (English Fonts)}{6}{subsection.1.2}%
+\contentsline {section}{\numberline {2}수학 기능 / Mathematics}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}기본 수식 (Basic Equations)}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}정렬된 수식 (Aligned Equations)}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}행렬 (Matrices)}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}분수 및 적분 (Fractions and Integrals)}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}미분방정식 (Differential Equations)}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}급수와 극한 (Series and Limits)}{7}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}정리 환경 (Theorem Environments)}{7}{subsection.2.7}%
+\contentsline {section}{\numberline {3}표 / Tables}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}기본 표}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}전문적인 표 (Booktabs)}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}다중 행/열 표}{9}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}색상이 있는 표}{9}{subsection.3.4}%
+\contentsline {section}{\numberline {4}그래픽 / Graphics (TikZ)}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}기본 도형}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}화살표와 선}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}플로우차트}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}마인드맵}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}그래프 (PGFPlots)}{12}{subsection.4.5}%
+\contentsline {section}{\numberline {5}코드 리스팅 / Code Listings}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Python 코드}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}JavaScript 코드}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}LaTeX 코드}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}박스와 프레임 / Boxes \& Frames}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}tcolorbox 스타일}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}그림자 효과}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}분할 박스}{15}{subsection.6.3}%
+\contentsline {section}{\numberline {7}목록과 열거 / Lists \& Enumerations}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}기본 목록}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}커스텀 목록 기호}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}설명 목록}{16}{subsection.7.3}%
+\contentsline {section}{\numberline {8}아이콘 / Icons (FontAwesome5)}{17}{section.8}%
+\contentsline {section}{\numberline {9}QR 코드 / QR Codes}{18}{section.9}%
+\contentsline {section}{\numberline {10}특수 다이어그램 / Special Diagrams}{19}{section.10}%
+\contentsline {subsection}{\numberline {10.1}트리 구조 (Forest)}{19}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}화학식 (ChemFig)}{19}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}전기 회로 (CircuiTikZ)}{19}{subsection.10.3}%
+\contentsline {section}{\numberline {11}달력 / Calendar}{20}{section.11}%
+\contentsline {section}{\numberline {12}참조 및 하이퍼링크 / References \& Hyperlinks}{21}{section.12}%
+\contentsline {subsection}{\numberline {12.1}내부 참조}{21}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}외부 링크}{21}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}이메일 링크}{21}{subsection.12.3}%
+\contentsline {section}{\numberline {13}색상 팔레트 / Color Palette}{22}{section.13}%
+\contentsline {subsection}{\numberline {13.1}기본 색상}{22}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}밝기 변형}{22}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}혼합 색상}{22}{subsection.13.3}%
+\contentsline {section}{\numberline {14}폰트 크기 비교 / Font Size Comparison}{23}{section.14}%
+\contentsline {section}{\numberline {15}마무리 / Conclusion}{23}{section.15}%
